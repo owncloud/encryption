@@ -558,6 +558,9 @@ class Encryption implements IEncryptionModule {
 	 * @since 9.1.0
 	 */
 	public function isReadyForUser($user) {
+		if ($this->util->isMasterKeyEnabled() === true) {
+			return true;
+		}
 		return $this->keyManager->userHasKeys($user);
 	}
 }
