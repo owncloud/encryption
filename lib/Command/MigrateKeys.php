@@ -98,7 +98,7 @@ class MigrateKeys extends Command {
 			$output->writeln("Reorganize system folder structure");
 			$migration->reorganizeSystemFolderStructure();
 			$migration->updateDB();
-			foreach($this->userManager->getBackends() as $backend) {
+			foreach ($this->userManager->getBackends() as $backend) {
 				$name = get_class($backend);
 
 				if ($backend instanceof IUserBackend) {
@@ -116,7 +116,7 @@ class MigrateKeys extends Command {
 						$migration->reorganizeFolderStructureForUser($user);
 					}
 					$offset += $limit;
-				} while(count($users) >= $limit);
+				} while (count($users) >= $limit);
 			}
 		}
 

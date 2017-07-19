@@ -263,7 +263,7 @@ class KeyManager {
 	 */
 	public function setRecoveryKey($password, $keyPair) {
 		// Save Public Key
-		$this->keyStorage->setSystemUserKey($this->getRecoveryKeyId().
+		$this->keyStorage->setSystemUserKey($this->getRecoveryKeyId() .
 			'.publicKey',
 			$keyPair['publicKey'],
 			Encryption::ID);
@@ -348,7 +348,7 @@ class KeyManager {
 		$this->session->setStatus(Session::INIT_EXECUTED);
 
 		try {
-			if($this->util->isMasterKeyEnabled()) {
+			if ($this->util->isMasterKeyEnabled()) {
 				$uid = $this->getMasterKeyId();
 				$passPhrase = $this->getMasterKeyPassword();
 				$privateKey = $this->getSystemPrivateKey($uid);
@@ -448,7 +448,7 @@ class KeyManager {
 	 */
 	public function getVersion($path, View $view) {
 		$fileInfo = $view->getFileInfo($path);
-		if($fileInfo === false) {
+		if ($fileInfo === false) {
 			return 0;
 		}
 		return $fileInfo->getEncryptedVersion();
@@ -462,9 +462,9 @@ class KeyManager {
 	 * @param View $view
 	 */
 	public function setVersion($path, $version, View $view) {
-		$fileInfo= $view->getFileInfo($path);
+		$fileInfo = $view->getFileInfo($path);
 
-		if($fileInfo !== false) {
+		if ($fileInfo !== false) {
 			$cache = $fileInfo->getStorage()->getCache();
 			$cache->update($fileInfo->getId(), ['encrypted' => $version, 'encryptedVersion' => $version]);
 		}
@@ -688,7 +688,7 @@ class KeyManager {
 	 */
 	public function getMasterKeyPassword() {
 		$password = $this->config->getSystemValue('secret');
-		if (empty($password)){
+		if (empty($password)) {
 			throw new \Exception('Can not get secret from ownCloud instance');
 		}
 

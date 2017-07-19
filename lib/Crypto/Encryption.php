@@ -205,7 +205,7 @@ class Encryption implements IEncryptionModule {
 			// if we read a part file we need to increase the version by 1
 			// because the version number was also increased by writing
 			// the part file
-			if(Scanner::isPartialFile($path)) {
+			if (Scanner::isPartialFile($path)) {
 				$this->version = $this->version + 1;
 			}
 		}

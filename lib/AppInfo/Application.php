@@ -61,7 +61,7 @@ class Application extends \OCP\AppFramework\App {
 		$this->encryptionManager = \OC::$server->getEncryptionManager();
 		$this->config = \OC::$server->getConfig();
 		$this->registerServices();
-		if($encryptionSystemReady === false) {
+		if ($encryptionSystemReady === false) {
 			/** @var Session $session */
 			$session = $this->getContainer()->query('Session');
 			$session->setStatus(Session::RUN_MIGRATION);
@@ -132,7 +132,7 @@ class Application extends \OCP\AppFramework\App {
 		$container = $this->getContainer();
 
 		$container->registerService('Crypt',
-			function (IAppContainer $c) {
+			function(IAppContainer $c) {
 				$server = $c->getServer();
 				return new Crypt($server->getLogger(),
 					$server->getUserSession(),
@@ -141,14 +141,14 @@ class Application extends \OCP\AppFramework\App {
 			});
 
 		$container->registerService('Session',
-			function (IAppContainer $c) {
+			function(IAppContainer $c) {
 				$server = $c->getServer();
 				return new Session($server->getSession());
 			}
 		);
 
 		$container->registerService('KeyManager',
-			function (IAppContainer $c) {
+			function(IAppContainer $c) {
 				$server = $c->getServer();
 
 				return new KeyManager($server->getEncryptionKeyStorage(),
@@ -162,7 +162,7 @@ class Application extends \OCP\AppFramework\App {
 			});
 
 		$container->registerService('Recovery',
-			function (IAppContainer $c) {
+			function(IAppContainer $c) {
 				$server = $c->getServer();
 
 				return new Recovery(
@@ -176,7 +176,7 @@ class Application extends \OCP\AppFramework\App {
 					new View());
 			});
 
-		$container->registerService('RecoveryController', function (IAppContainer $c) {
+		$container->registerService('RecoveryController', function(IAppContainer $c) {
 			$server = $c->getServer();
 			return new RecoveryController(
 				$c->getAppName(),
@@ -186,7 +186,7 @@ class Application extends \OCP\AppFramework\App {
 				$c->query('Recovery'));
 		});
 
-		$container->registerService('StatusController', function (IAppContainer $c) {
+		$container->registerService('StatusController', function(IAppContainer $c) {
 			$server = $c->getServer();
 			return new StatusController(
 				$c->getAppName(),
@@ -196,7 +196,7 @@ class Application extends \OCP\AppFramework\App {
 			);
 		});
 
-		$container->registerService('SettingsController', function (IAppContainer $c) {
+		$container->registerService('SettingsController', function(IAppContainer $c) {
 			$server = $c->getServer();
 			return new SettingsController(
 				$c->getAppName(),
@@ -213,7 +213,7 @@ class Application extends \OCP\AppFramework\App {
 		});
 
 		$container->registerService('UserSetup',
-			function (IAppContainer $c) {
+			function(IAppContainer $c) {
 				$server = $c->getServer();
 				return new Setup($server->getLogger(),
 					$server->getUserSession(),
@@ -222,7 +222,7 @@ class Application extends \OCP\AppFramework\App {
 			});
 
 		$container->registerService('Util',
-			function (IAppContainer $c) {
+			function(IAppContainer $c) {
 				$server = $c->getServer();
 
 				return new Util(
@@ -235,7 +235,7 @@ class Application extends \OCP\AppFramework\App {
 			});
 
 		$container->registerService('EncryptAll',
-			function (IAppContainer $c) {
+			function(IAppContainer $c) {
 				$server = $c->getServer();
 				return new EncryptAll(
 					$c->query('UserSetup'),
@@ -253,7 +253,7 @@ class Application extends \OCP\AppFramework\App {
 		);
 
 		$container->registerService('DecryptAll',
-			function (IAppContainer $c) {
+			function(IAppContainer $c) {
 				return new DecryptAll(
 					$c->query('Util'),
 					$c->query('KeyManager'),
