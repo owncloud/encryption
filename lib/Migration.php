@@ -172,7 +172,7 @@ class Migration {
 
 		while ($row = $appSettings->fetch()) {
 			// 'installed_version' gets deleted at the end of the migration process
-			if ($row['configkey'] !== 'installed_version' ) {
+			if ($row['configkey'] !== 'installed_version') {
 				$this->config->setAppValue('encryption', $row['configkey'], $row['configvalue']);
 				$this->config->deleteAppValue('files_encryption', $row['configkey']);
 			}
@@ -222,10 +222,10 @@ class Migration {
 	 */
 	private function renameSystemPrivateKeys() {
 		$dh = $this->view->opendir('files_encryption');
-		$this->createPathForKeys('/files_encryption/' . $this->moduleId );
+		$this->createPathForKeys('/files_encryption/' . $this->moduleId);
 		if (is_resource($dh)) {
 			while (($privateKey = readdir($dh)) !== false) {
-				if (!\OC\Files\Filesystem::isIgnoredDir($privateKey) ) {
+				if (!\OC\Files\Filesystem::isIgnoredDir($privateKey)) {
 					if (!$this->view->is_dir('/files_encryption/' . $privateKey)) {
 						$this->view->rename('files_encryption/' . $privateKey, 'files_encryption/' . $this->moduleId . '/' . $privateKey);
 						$this->renameSystemPublicKey($privateKey);
@@ -242,7 +242,7 @@ class Migration {
 	 * @param string $privateKey private key for which we want to rename the corresponding public key
 	 */
 	private function renameSystemPublicKey($privateKey) {
-		$publicKey = substr($privateKey,0 , strrpos($privateKey, '.privateKey')) . '.publicKey';
+		$publicKey = substr($privateKey, 0, strrpos($privateKey, '.privateKey')) . '.publicKey';
 		$this->view->rename('files_encryption/public_keys/' . $publicKey, 'files_encryption/' . $this->moduleId . '/' . $publicKey);
 	}
 
@@ -348,12 +348,13 @@ class Migration {
 			$systemMountPoints = $this->getSystemMountPoints();
 			foreach ($systemMountPoints as $mountPoint) {
 				$normalizedMountPoint = \OC\Files\Filesystem::normalizePath($mountPoint['mountpoint']) . '/';
-				if (strpos($normalized, $normalizedMountPoint) === 0)
-					return $targetDir;
+				if (strpos($normalized, $normalizedMountPoint) === 0) {
+									return $targetDir;
+				}
 			}
-		} else if ($trash === false && $this->view->file_exists('/' . $user. '/files/' . $filePath)) {
+		} else if ($trash === false && $this->view->file_exists('/' . $user . '/files/' . $filePath)) {
 			return $targetDir;
-		} else if ($trash === true && $this->view->file_exists('/' . $user. '/files_trashbin/' . $filePath)) {
+		} else if ($trash === true && $this->view->file_exists('/' . $user . '/files_trashbin/' . $filePath)) {
 				return $targetDir;
 			}
 

@@ -62,7 +62,7 @@ class StatusController extends Controller {
 
 		$status = 'error';
 		$message = 'no valid init status';
-		switch( $this->session->getStatus()) {
+		switch ($this->session->getStatus()) {
 			case Session::RUN_MIGRATION:
 				$status = 'interactionNeeded';
 				$message = (string)$this->l->t(
