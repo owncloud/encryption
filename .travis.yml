@@ -53,13 +53,10 @@ matrix:
   include:
 #    - php: 5.6
 #      env: DB=mysql CORE_BRANCH=stable10
-    - php: 5.6
-      env: DB=mysql CODECHECK=1
+#    - php: 5.6
+#      env: DB=mysql CODECHECK=1
     - php: 5.6
       env: DB=mysql CODECHECK=2
   allow_failures:
     - php: nightly
-    - env:
-      - DB=mysql;CODECHECK=1
-      - DB=mysql;CODECHECK=2
   fast_finish: true
