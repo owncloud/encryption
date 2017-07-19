@@ -20,6 +20,7 @@
 	</documentation>
 	<rememberlogin>false</rememberlogin>
 	<version>1.3.0</version>
+	<category>security</category>
 	<types>
 		<filesystem/>
 	</types>
