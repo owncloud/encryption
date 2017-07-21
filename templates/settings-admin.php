@@ -9,12 +9,10 @@ style('encryption', 'settings-admin');
 	<?php if (!$_["initStatus"] and (\OC::$server->getAppConfig()->getValue('encryption', 'useMasterKey', '0') !== '0'
 		or \OC::$server->getAppConfig()->getValue('encryption', 'encryptHomeStorage', '') !== '')): ?>
 		<?php p($l->t("Encryption App is enabled but your keys are not initialized, please log-out and log-in again")); ?>
-	<?php else {
-	: ?>
+	<?php else: ?>
 		<label id="encryptionType">
 			<?php
 			$masterKey = \OC::$server->getAppConfig()->getValue('encryption', 'useMasterKey', '0');
-}
 			$userSpecificKey = \OC::$server->getAppConfig()->getValue('encryption', 'userSpecificKey', '');
 			if ($masterKey !== '0') {
 				p($l->t("Encryption type: Master Key"));

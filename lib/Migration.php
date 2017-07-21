@@ -91,9 +91,9 @@ class Migration {
 		$limit = 500;
 		$offset = 0;
 		do {
-			$users = \OCP\User::getUsers('', $limit, $offset);
+            $users = \OC::$server->getUserManager()->search('', $limit, $offset);
 			foreach ($users as $user) {
-				$this->reorganizeFolderStructureForUser($user);
+				$this->reorganizeFolderStructureForUser($user->getUID());
 			}
 			$offset += $limit;
 		} while (count($users) >= $limit);
