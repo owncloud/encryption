@@ -42,6 +42,9 @@ script:
   - cd tests
   - sh -c "if [ '$INTEGRATION' != '1' -a '$JSTESTS' != '1' -a '$CODECHECK' != '1' -a '$CODECHECK' != '2' ]; then ../../../lib/composer/bin/phpunit --configuration phpunit.xml; fi"
   - cd ..
+  # Run integration tests
+  - sh -c "if [ '$INTEGRATION' = 'encryption' ]; then cd tests/integration; OC_TEST_ALT_HOME=1 OC_TEST_ENCRYPTION_ENABLED=1 ./run.sh; fi"
+  - sh -c "if [ '$INTEGRATION' = 'encryption_master_key' ]; then cd tests/integration; OC_TEST_ALT_HOME=1 OC_TEST_ENCRYPTION_MASTER_KEY_ENABLED=1 ./run.sh; fi"
 
   # Create coverage report
   - cd tests
@@ -57,6 +60,11 @@ matrix:
 #      env: DB=mysql CODECHECK=1
     - php: 5.6
       env: DB=mysql CODECHECK=2
+    - php: 7.0
+      env: DB=mysql; INTEGRATION=encryption
+    - php: 7.0
+      env: DB=mysql; INTEGRATION=encryption_master_key
+
   allow_failures:
     - php: nightly
   fast_finish: true
