@@ -25,6 +25,7 @@
 namespace OCA\Encryption;
 
 
+use OC\Files\Cache\Cache;
 use OC\Files\View;
 use OCP\IConfig;
 use OCP\IDBConnection;
@@ -67,6 +68,7 @@ class Migration {
 	}
 
 	/**
+	 * FIXME don't run our own sql here, use the filecache
 	 * update file cache, copy unencrypted_size to the 'size' column
 	 */
 	private function updateFileCache() {
@@ -79,6 +81,7 @@ class Migration {
 				->where($query->expr()->eq('encrypted', $query->createParameter('encrypted')))
 				->setParameter('encrypted', 1);
 			$query->execute();
+			Cache::$metaDataCache->clear();
 		}
 	}
 
@@ -91,7 +94,7 @@ class Migration {
 		$limit = 500;
 		$offset = 0;
 		do {
-            $users = \OC::$server->getUserManager()->search('', $limit, $offset);
+			$users = \OC::$server->getUserManager()->search('', $limit, $offset);
 			foreach ($users as $user) {
 				$this->reorganizeFolderStructureForUser($user->getUID());
 			}
@@ -349,7 +352,7 @@ class Migration {
 			foreach ($systemMountPoints as $mountPoint) {
 				$normalizedMountPoint = \OC\Files\Filesystem::normalizePath($mountPoint['mountpoint']) . '/';
 				if (strpos($normalized, $normalizedMountPoint) === 0) {
-									return $targetDir;
+					return $targetDir;
 				}
 			}
 		} else if ($trash === false && $this->view->file_exists('/' . $user . '/files/' . $filePath)) {
