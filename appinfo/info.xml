@@ -36,4 +36,8 @@
 		<admin>OCA\Encryption\Panels\Admin</admin>
 		<personal>OCA\Encryption\Panels\Personal</personal>
 	</settings>
+	<settings-sections>
+		<admin>OCA\Encryption\AdminSection</admin>
+		<personal>OCA\Encryption\PersonalSection</personal>
+	</settings-sections>
 </info>
