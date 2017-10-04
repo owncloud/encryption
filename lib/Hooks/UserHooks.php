@@ -198,8 +198,16 @@ class UserHooks implements IHook {
 	public function postDeleteUser($params) {
 
 		if (App::isEnabled('encryption')) {
-			$this->keyManager->deletePublicKey($params['uid']);
+			/**
+			 * Adding a safe condition to make sure the uid is not
+			 * empty or null.
+			 */
+			if (!is_null($params['uid']) && ($params['uid'] !== '')) {
+				$this->keyManager->deletePublicKey($params['uid']);
+				\OC::$server->getEncryptionKeyStorage()->deleteAltUserStorageKeys($params['uid']);
+			}
 		}
+
 	}
 
 	/**
