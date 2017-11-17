@@ -49,6 +49,9 @@ script:
   - sh -c "if [ '$INTEGRATION' != '1' -a '$JSTESTS' != '1' -a '$CODECHECK' != '1' -a '$CODECHECK' != '2' -a '$TRAVIS_PHP_VERSION' != 'hhvm' ]; then php ocular.phar code-coverage:upload --format=php-clover clover.xml; fi"
   - cd ..
 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
 matrix:
   include:
 #    - php: 5.6
