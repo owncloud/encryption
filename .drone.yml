@@ -6,10 +6,12 @@ branches: [master, release*]
 
 pipeline:
   install-server:
-    image: owncloudci/core
+    image: patrickjahns/occore
     pull: true
     exclude: "apps/encryption"
     version: ${OC_VERSION}
+    db_type: ${DB_TYPE}
+    db_host: ${DB_HOST}
 
   code-check:
     image: owncloudci/php:${PHP_VERSION}
@@ -19,12 +21,20 @@ pipeline:
       #- cd /var/www/owncloud
       #- php ./occ app:check-code encryption -c private -c strong-comparison
       #- php ./occ app:check-code encryption -c deprecation
+    when:
+      matrix:
+        TEST_SUITE: phpunit
+
 
   phpunit:
     image: owncloudci/php:${PHP_VERSION}
     pull: true
     commands:
-      - ../../lib/composer/bin/phpunit --configuration tests/phpunit.xml
+      - ../../lib/composer/bin/phpunit --configuration tests/phpunit.xml --log-junit tests/output/junit/report2.xml
+    when:
+      matrix:
+        TEST_SUITE: phpunit
+
 
   configure-server:
     image: owncloudci/php:${PHP_VERSION}
@@ -33,20 +43,31 @@ pipeline:
       - cd /var/www/owncloud
       - php occ a:l
       - php occ a:e testing
+      - php occ a:e encryption
+      - php occ encryption:enable
+      - php occ encryption:select-encryption-type ${ENCRYPTION_TYPE} --yes
       - php occ a:l
       - php occ config:system:set trusted_domains 1 --value=server
       - php occ config:system:set trusted_domains 2 --value=federated
       - php occ log:manage --level 0
       - php occ config:list
+      - chown -R www-data. /var/www/owncloud
+    when:
+      matrix:
+        PREPARE_ACCEPTANCE: true
+
 
   api-acceptance-tests:
     image: owncloudci/php:${PHP_VERSION}
     pull: true
     environment:
-      - TEST_SERVER_URL=http://server/ocs/
-      - TEST_SERVER_FED_URL=http://federated/ocs/
+      - TEST_SERVER_URL=http://server/
+      - TEST_SERVER_FED_URL=http://federated/
+      - BEHAT_FILTER_TAGS=~@no_encryption
     commands:
     - cd /var/www/owncloud
+    - chmod +x ./tests/drone/test-api-acceptance.sh
+    - chmod +x ./tests/acceptance/run.sh
     - ./tests/drone/test-api-acceptance.sh
     when:
       matrix:
@@ -62,29 +83,32 @@ pipeline:
       - SRV_HOST_PORT=80
       - REMOTE_FED_SRV_HOST_NAME=federated
       - REMOTE_FED_SRV_HOST_PORT=80
-      - SKELETON_DIR=/drone/src/tests/acceptance/webUISkeleton
+      - SKELETON_DIR=/var/www/owncloud/tests/acceptance/webUISkeleton
       - SELENIUM_PORT=4444
       - PLATFORM=Linux
+      - MAILHOG_HOST=email
     commands:
       - cd /var/www/owncloud
-      - bash tests/travis/start_ui_tests.sh --remote
+      - chmod 777 /var/www/owncloud/tests/acceptance/filesForUpload -R
+      - bash tests/travis/start_ui_tests.sh --remote --all-suites
     when:
       matrix:
         TEST_SUITE: selenium
 
-  selenium:
-    image: selenium/standalone-chrome-debug:latest
-    pull: true
+  print-log:
+    image: owncloudci/php
+    commands:
+     - cat /var/www/owncloud/data/owncloud.log
     when:
-      matrix:
-        TEST_SUITE: selenium
+      status: [ failure ]
+
 
 services:
   server:
     image: owncloudci/php:${PHP_VERSION}
     pull: true
     environment:
-      - APACHE_WEBROOT=/drone/src/
+      - APACHE_WEBROOT=/var/www/owncloud
     command: [ "/usr/local/bin/apachectl", "-e", "debug" , "-D", "FOREGROUND" ]
     when:
       matrix:
@@ -94,30 +118,154 @@ services:
     image: owncloudci/php:${PHP_VERSION}
     pull: true
     environment:
-      - APACHE_WEBROOT=/drone/src/
+      - APACHE_WEBROOT=/var/www/owncloud
     command: [ "/usr/local/bin/apachectl", "-e", "debug" , "-D", "FOREGROUND" ]
     when:
       matrix:
         USE_FEDERATED_SERVER: true
 
+  selenium:
+    image: selenium/standalone-chrome-debug:latest
+    pull: true
+    when:
+      matrix:
+        TEST_SUITE: selenium
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_USER=owncloud
+      - MYSQL_PASSWORD=owncloud
+      - MYSQL_DATABASE=owncloud
+      - MYSQL_ROOT_PASSWORD=owncloud
+    when:
+      matrix:
+        DB_HOST: mysql
+
+  email:
+    image: mailhog/mailhog
+    pull: true
+    when:
+      matrix:
+        TEST_SUITE: selenium
+
+
 matrix:
   include:
+    # UnitTests
+
     #master
     - PHP_VERSION: 7.1
       OC_VERSION: daily-master-qa
+      TEST_SUITE: phpunit
+      DB_TYPE: sqlite
 
     - PHP_VERSION: 7.2
       OC_VERSION: daily-master-qa
+      TEST_SUITE: phpunit
+      DB_TYPE: sqlite
 
     # stable10
     - PHP_VERSION: 5.6
       OC_VERSION: daily-stable10-qa
+      TEST_SUITE: phpunit
+      DB_TYPE: sqlite
 
     - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
+      TEST_SUITE: phpunit
+      DB_TYPE: sqlite
 
     - PHP_VERSION: 7.1
       OC_VERSION: daily-stable10-qa
+      TEST_SUITE: phpunit
+      DB_TYPE: sqlite
 
     - PHP_VERSION: 7.2
       OC_VERSION: daily-stable10-qa
+      TEST_SUITE: phpunit
+      DB_TYPE: sqlite
+
+    # Acceptance Tests
+
+    ## API
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: api
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: api
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: api
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: api
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+
+    ## UI
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql

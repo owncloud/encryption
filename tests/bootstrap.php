@@ -33,3 +33,4 @@ require_once __DIR__ . '/../../../lib/base.php';
 
 // Fix for "Autoload path not allowed: .../notifications/tests/testcase.php"
 \OC_App::loadApp('encryption');
+\OC_App::enable('encryption');
