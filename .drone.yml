@@ -1,0 +1,123 @@
+workspace:
+  base: /var/www/owncloud
+  path: apps/encryption
+
+branches: [master, release*]
+
+pipeline:
+  install-server:
+    image: owncloudci/core
+    pull: true
+    exclude: "apps/encryption"
+    version: ${OC_VERSION}
+
+  code-check:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    commands:
+      - ../../lib/composer/bin/parallel-lint . --exclude 3rdparty --exclude build .
+      #- cd /var/www/owncloud
+      #- php ./occ app:check-code encryption -c private -c strong-comparison
+      #- php ./occ app:check-code encryption -c deprecation
+
+  phpunit:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    commands:
+      - ../../lib/composer/bin/phpunit --configuration tests/phpunit.xml
+
+  configure-server:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    commands:
+      - cd /var/www/owncloud
+      - php occ a:l
+      - php occ a:e testing
+      - php occ a:l
+      - php occ config:system:set trusted_domains 1 --value=server
+      - php occ config:system:set trusted_domains 2 --value=federated
+      - php occ log:manage --level 0
+      - php occ config:list
+
+  api-acceptance-tests:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - TEST_SERVER_URL=http://server/ocs/
+      - TEST_SERVER_FED_URL=http://federated/ocs/
+    commands:
+    - cd /var/www/owncloud
+    - ./tests/drone/test-api-acceptance.sh
+    when:
+      matrix:
+        TEST_SUITE: api
+
+  webui-acceptance-tests:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - BROWSER=chrome
+      - SELENIUM_HOST=selenium
+      - SRV_HOST_NAME=server
+      - SRV_HOST_PORT=80
+      - REMOTE_FED_SRV_HOST_NAME=federated
+      - REMOTE_FED_SRV_HOST_PORT=80
+      - SKELETON_DIR=/drone/src/tests/acceptance/webUISkeleton
+      - SELENIUM_PORT=4444
+      - PLATFORM=Linux
+    commands:
+      - cd /var/www/owncloud
+      - bash tests/travis/start_ui_tests.sh --remote
+    when:
+      matrix:
+        TEST_SUITE: selenium
+
+  selenium:
+    image: selenium/standalone-chrome-debug:latest
+    pull: true
+    when:
+      matrix:
+        TEST_SUITE: selenium
+
+services:
+  server:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - APACHE_WEBROOT=/drone/src/
+    command: [ "/usr/local/bin/apachectl", "-e", "debug" , "-D", "FOREGROUND" ]
+    when:
+      matrix:
+        USE_SERVER: true
+
+  federated:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - APACHE_WEBROOT=/drone/src/
+    command: [ "/usr/local/bin/apachectl", "-e", "debug" , "-D", "FOREGROUND" ]
+    when:
+      matrix:
+        USE_FEDERATED_SERVER: true
+
+matrix:
+  include:
+    #master
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+
+    - PHP_VERSION: 7.2
+      OC_VERSION: daily-master-qa
+
+    # stable10
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-stable10-qa
+
+    - PHP_VERSION: 7.2
+      OC_VERSION: daily-stable10-qa
