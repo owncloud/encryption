@@ -103,6 +103,8 @@ $(document).ready(function () {
 					$('p[name="changeRecoveryPasswordBlock"]').addClass("hidden");
 					$('input:button[name="enableRecoveryKey"]').attr('value', 'Enable recovery key');
 					$('input:button[name="enableRecoveryKey"]').attr('status', '0');
+					$("#encryptionRecoveryPassword").val("");
+					$("#repeatEncryptionRecoveryPassword").val("");
 				} else {
 					$('input:password[name="changeRecoveryPassword"]').val("");
 					$('p[name="changeRecoveryPasswordBlock"]').removeClass("hidden");
