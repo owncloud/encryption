@@ -49,6 +49,18 @@ pipeline:
         TEST_SUITE: phpunit
         PHP_VERSION: 7.1
 
+  scrutinizer:
+    image: owncloudci/php:7.1
+    pull: true
+    commands:
+      - wget -q https://scrutinizer-ci.com/ocular.phar
+      - php ocular.phar code-coverage:upload --format=php-clover tests/output/clover.xml --access-token="09d3585a3ed80b16c3b9eed9912b27cfd85e6ed8c190d95893a02bef73dbde68"
+    when:
+      local: false
+      matrix:
+        TEST_SUITE: phpunit
+        PHP_VERSION: 7.1
+
   print-log:
     image: owncloudci/php
     commands:
@@ -64,6 +76,7 @@ pipeline:
     when:
       local: false
       status: [ changed, failure ]
+      event: [ push, tag ]
 
 
 matrix:
