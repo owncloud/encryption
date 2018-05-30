@@ -25,10 +25,24 @@
 namespace OCA\Encryption\Tests\Crypto;
 
 
+use OC\Files\FileInfo;
+use OC\Files\Storage\Common;
+use OC\Files\View;
 use OCA\Encryption\Crypto\EncryptAll;
+use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Output\OutputInterface;
 use Test\TestCase;
+use Test\Traits\UserTrait;
 
+/**
+ * Class EncryptAllTest
+ *
+ * @group  DB
+ *
+ * @package OCA\Encryption\Tests\Crypto
+ */
 class EncryptAllTest extends TestCase {
+	use UserTrait;
 
 	/** @var  \PHPUnit_Framework_MockObject_MockObject | \OCA\Encryption\KeyManager */
 	protected $keyManager;
@@ -321,7 +335,84 @@ class EncryptAllTest extends TestCase {
 			->disableOriginalConstructor()->getMock();
 
 		$this->invokePrivate($encryptAll, 'encryptUsersFiles', ['user1', $progressBar, '']);
+	}
 
+	public function testEncryptUsersFilesIncomingShares() {
+		/** @var EncryptAll  | \PHPUnit_Framework_MockObject_MockObject  $encryptAll */
+		$encryptAll = $this->getMockBuilder('OCA\Encryption\Crypto\EncryptAll')
+			->setConstructorArgs(
+				[
+					$this->setupUser,
+					$this->userManager,
+					$this->view,
+					$this->keyManager,
+					$this->util,
+					$this->config,
+					$this->mailer,
+					$this->l,
+					$this->questionHelper,
+					$this->secureRandom
+				]
+			)
+			->setMethods(['encryptFile', 'setupUserFS'])
+			->getMock();
+
+		$this->util->expects($this->any())->method('isMasterKeyEnabled')->willReturn(false);
+
+		$commonStorage = $this->createMock(Common::class);
+		$commonStorage->expects($this->once())
+			->method('instanceOfStorage')
+			->with('\OCA\Files_Sharing\ISharedStorage')
+			->willReturn(true);
+		$fileInfo = $this->createMock(FileInfo::class);
+		$fileInfo->expects($this->once())
+			->method('getStorage')
+			->willReturn($commonStorage);
+		$this->view->expects($this->any())
+			->method('getDirectoryContent')
+			->with('/user1/files')
+			->willReturn([$fileInfo]);
+
+		$outputInterface = $this->createMock(OutputInterface::class);
+		$progressBar = new ProgressBar($outputInterface);
+
+		$result = $this->invokePrivate($encryptAll, 'encryptUsersFiles', ['user1', $progressBar, '']);
+		$this->assertNull($result);
+	}
+
+	public function testEncryptFileFileId() {
+		$this->createUser('user1', 'user1');
+		\OC::$server->getUserFolder('user1');
+
+		$view = new View('/user1/files');
+		$view->touch('bar.txt');
+		$oldFileInfo = $view->getFileInfo('bar.txt');
+
+		/** @var EncryptAll  | \PHPUnit_Framework_MockObject_MockObject  $encryptAll */
+		$encryptAll = $this->getMockBuilder('OCA\Encryption\Crypto\EncryptAll')
+			->setConstructorArgs(
+				[
+					$this->setupUser,
+					$this->userManager,
+					$this->view,
+					$this->keyManager,
+					$this->util,
+					$this->config,
+					$this->mailer,
+					$this->l,
+					$this->questionHelper,
+					$this->secureRandom
+				]
+			)
+			->setMethods(['setupUserFS'])
+			->getMock();
+
+		$result = $this->invokePrivate($encryptAll, 'encryptFile', ['/user1/files/bar.txt']);
+		$this->assertTrue($result);
+
+		$view1 = new View('/');
+		$fileInfo = $view1->getFileInfo('/user1/files/bar.txt');
+		$this->assertEquals($fileInfo->getId(), $oldFileInfo->getId());
 	}
 
 	public function testGenerateOneTimePassword() {
