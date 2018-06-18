@@ -6,9 +6,8 @@ branches: [master, release*, release/*]
 
 pipeline:
   install-server:
-    image: patrickjahns/occore
+    image: owncloudci/core
     pull: true
-    exclude: "apps/encryption"
     version: ${OC_VERSION}
     db_type: ${DB_TYPE}
     db_host: ${DB_HOST}
@@ -24,7 +23,6 @@ pipeline:
     when:
       matrix:
         TEST_SUITE: phpunit
-
 
   phpunit:
     image: owncloudci/php:${PHP_VERSION}
@@ -61,6 +59,48 @@ pipeline:
         TEST_SUITE: phpunit
         PHP_VERSION: 7.1
 
+  configure-server:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    commands:
+      - cd /var/www/owncloud
+      - php occ a:l
+      - php occ a:e testing
+      - php occ a:e encryption
+      - php occ encryption:enable
+      - php occ encryption:select-encryption-type ${ENCRYPTION_TYPE} --yes
+      - php occ a:l
+      - php occ config:system:set trusted_domains 1 --value=server
+      - php occ config:system:set trusted_domains 2 --value=federated
+      - php occ log:manage --level 0
+      - php occ config:list
+      - chown -R www-data. /var/www/owncloud
+    when:
+      matrix:
+        PREPARE_ACCEPTANCE: true
+
+  webui-acceptance-tests:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - BROWSER=chrome
+      - SELENIUM_HOST=selenium
+      - SRV_HOST_NAME=server
+      - SRV_HOST_PORT=80
+      - REMOTE_FED_SRV_HOST_NAME=federated
+      - REMOTE_FED_SRV_HOST_PORT=80
+      - SKELETON_DIR=/var/www/owncloud/tests/acceptance/webUISkeleton
+      - SELENIUM_PORT=4444
+      - PLATFORM=Linux
+      - MAILHOG_HOST=email
+    commands:
+      - cd /var/www/owncloud
+      - chmod 777 /var/www/owncloud/tests/acceptance/filesForUpload -R
+      - bash tests/travis/start_ui_tests.sh --remote --all-suites --tags '~@skipOnEncryption'
+    when:
+      matrix:
+        TEST_SUITE: selenium
+
   print-log:
     image: owncloudci/php
     commands:
@@ -78,6 +118,51 @@ pipeline:
       status: [ changed, failure ]
       event: [ push, tag ]
 
+services:
+  server:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - APACHE_WEBROOT=/var/www/owncloud
+    command: [ "/usr/local/bin/apachectl", "-e", "debug" , "-D", "FOREGROUND" ]
+    when:
+      matrix:
+        USE_SERVER: true
+
+  federated:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - APACHE_WEBROOT=/var/www/owncloud
+    command: [ "/usr/local/bin/apachectl", "-e", "debug" , "-D", "FOREGROUND" ]
+    when:
+      matrix:
+        USE_FEDERATED_SERVER: true
+
+  selenium:
+    image: selenium/standalone-chrome-debug:latest
+    pull: true
+    when:
+      matrix:
+        TEST_SUITE: selenium
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_USER=owncloud
+      - MYSQL_PASSWORD=owncloud
+      - MYSQL_DATABASE=owncloud
+      - MYSQL_ROOT_PASSWORD=owncloud
+    when:
+      matrix:
+        DB_HOST: mysql
+
+  email:
+    image: mailhog/mailhog
+    pull: true
+    when:
+      matrix:
+        TEST_SUITE: selenium
 
 matrix:
   include:
@@ -114,3 +199,45 @@ matrix:
       OC_VERSION: daily-stable10-qa
       TEST_SUITE: phpunit
       DB_TYPE: sqlite
+
+    # Acceptance Tests
+    ## UI
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
