@@ -6,9 +6,8 @@ branches: [master, release*, release/*]
 
 pipeline:
   install-server:
-    image: patrickjahns/occore
+    image: owncloudci/core
     pull: true
-    exclude: "apps/encryption"
     version: ${OC_VERSION}
     db_type: ${DB_TYPE}
     db_host: ${DB_HOST}
@@ -24,7 +23,6 @@ pipeline:
     when:
       matrix:
         TEST_SUITE: phpunit
-
 
   phpunit:
     image: owncloudci/php:${PHP_VERSION}
@@ -98,7 +96,7 @@ pipeline:
     commands:
       - cd /var/www/owncloud
       - chmod 777 /var/www/owncloud/tests/acceptance/filesForUpload -R
-      - bash tests/travis/start_ui_tests.sh --remote --all-suites
+      - bash tests/travis/start_ui_tests.sh --remote --all-suites --tags '~@skipOnEncryption'
     when:
       matrix:
         TEST_SUITE: selenium
