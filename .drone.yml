@@ -239,7 +239,7 @@ matrix:
       DB_TYPE: sqlite
 
     # Acceptance Tests
-    ## UI
+    ## UI core stable10 with masterkey encryption
     - PHP_VERSION: 5.6
       OC_VERSION: daily-stable10-qa
       PREPARE_ACCEPTANCE: true
@@ -336,6 +336,7 @@ matrix:
       DB_HOST: mysql
       PART: 8
 
+    ## UI core stable10 with user-keys encryption
     - PHP_VERSION: 5.6
       OC_VERSION: daily-stable10-qa
       PREPARE_ACCEPTANCE: true
@@ -432,6 +433,7 @@ matrix:
       DB_HOST: mysql
       PART: 8
 
+    ## UI core master with masterkey encryption
     - PHP_VERSION: 7.1
       OC_VERSION: daily-master-qa
       PREPARE_ACCEPTANCE: true
@@ -528,6 +530,7 @@ matrix:
       DB_HOST: mysql
       PART: 8
 
+    ## UI core master with user-keys encryption
     - PHP_VERSION: 7.1
       OC_VERSION: daily-master-qa
       PREPARE_ACCEPTANCE: true
