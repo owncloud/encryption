@@ -13,6 +13,41 @@ pipeline:
     db_type: ${DB_TYPE}
     db_host: ${DB_HOST}
 
+  install-fed-server:
+    image: owncloudci/core
+    pull: true
+    version: ${FEDERATION_OC_VERSION}
+    core_path: /var/www/owncloud/fed-server
+    when:
+      matrix:
+        USE_FEDERATED_SERVER: true
+
+  configure-federation-server:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    commands:
+      - cd /var/www/owncloud/fed-server
+      - php occ a:l
+      - php occ a:e testing
+      - php occ a:l
+      - php occ config:system:set trusted_domains 1 --value=server
+      - php occ config:system:set trusted_domains 2 --value=federated
+      - php occ log:manage --level 0
+      - php occ config:list
+      - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
+    when:
+      matrix:
+        USE_FEDERATED_SERVER: true
+
+  fix-permissions-federation-server:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    commands:
+      - chown www-data /var/www/owncloud/fed-server -R
+    when:
+      matrix:
+        USE_FEDERATED_SERVER: true
+
   code-check:
     image: owncloudci/php:${PHP_VERSION}
     pull: true
@@ -61,6 +96,49 @@ pipeline:
         TEST_SUITE: phpunit
         PHP_VERSION: 7.1
 
+  configure-server:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    commands:
+      - cd /var/www/owncloud
+      - php occ a:l
+      - php occ a:e testing
+      - php occ a:e encryption
+      - php occ encryption:enable
+      - php occ encryption:select-encryption-type ${ENCRYPTION_TYPE} --yes
+      - php occ a:l
+      - php occ config:system:set trusted_domains 1 --value=server
+      - php occ config:system:set trusted_domains 2 --value=federated
+      - php occ log:manage --level 0
+      - php occ config:list
+      - chown -R www-data. /var/www/owncloud
+    when:
+      matrix:
+        PREPARE_ACCEPTANCE: true
+
+  webui-acceptance-tests:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - BROWSER=chrome
+      - SELENIUM_HOST=selenium
+      - TEST_SERVER_URL=http://server
+      - SELENIUM_PORT=4444
+      - PLATFORM=Linux
+      - MAILHOG_HOST=email
+      - DIVIDE_INTO_NUM_PARTS=8
+      - RUN_PART=${PART}
+    commands:
+      - cd /var/www/owncloud/tests/acceptance/
+      - chmod 777 filesForUpload -R
+      - chmod +x run.sh
+      - touch /var/www/owncloud/saved-settings.sh
+      - . /var/www/owncloud/saved-settings.sh
+      - su-exec www-data ./run.sh --remote --type webUI --tags '~@skipOnEncryption&&~@skip'
+    when:
+      matrix:
+        TEST_SUITE: selenium
+
   print-log:
     image: owncloudci/php
     commands:
@@ -78,6 +156,51 @@ pipeline:
       status: [ changed, failure ]
       event: [ push, tag ]
 
+services:
+  server:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - APACHE_WEBROOT=/var/www/owncloud
+    command: [ "/usr/local/bin/apachectl", "-e", "debug" , "-D", "FOREGROUND" ]
+    when:
+      matrix:
+        USE_SERVER: true
+
+  federated:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - APACHE_WEBROOT=/var/www/owncloud/fed-server
+    command: [ "/usr/local/bin/apachectl", "-e", "debug" , "-D", "FOREGROUND" ]
+    when:
+      matrix:
+        USE_FEDERATED_SERVER: true
+
+  selenium:
+    image: selenium/standalone-chrome-debug:latest
+    pull: true
+    when:
+      matrix:
+        TEST_SUITE: selenium
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_USER=owncloud
+      - MYSQL_PASSWORD=owncloud
+      - MYSQL_DATABASE=owncloud
+      - MYSQL_ROOT_PASSWORD=owncloud
+    when:
+      matrix:
+        DB_HOST: mysql
+
+  email:
+    image: mailhog/mailhog
+    pull: true
+    when:
+      matrix:
+        TEST_SUITE: selenium
 
 matrix:
   include:
@@ -114,3 +237,392 @@ matrix:
       OC_VERSION: daily-stable10-qa
       TEST_SUITE: phpunit
       DB_TYPE: sqlite
+
+    # Acceptance Tests
+    ## UI core stable10 with masterkey encryption
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 1
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 2
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 3
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 4
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 5
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 6
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 7
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 8
+
+    ## UI core stable10 with user-keys encryption
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 1
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 2
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 3
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 4
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 5
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 6
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 7
+
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 8
+
+    ## UI core master with masterkey encryption
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 1
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 2
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 3
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 4
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 5
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 6
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 7
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 8
+
+    ## UI core master with user-keys encryption
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 1
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 2
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 3
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 4
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 5
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 6
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 7
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      PART: 8
