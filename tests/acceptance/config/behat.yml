@@ -1,0 +1,21 @@
+default:
+  autoload:
+     '': %paths.base%/../features/bootstrap
+
+  suites:
+    apiEncryption:
+      paths:
+        - %paths.base%/../features/apiEncryption
+      contexts:
+        - EncryptionContext:
+        - FeatureContext: &common_feature_context_params
+            baseUrl:  http://localhost:8080
+            adminUsername: admin
+            adminPassword: admin
+            regularUserPassword: 123456
+            ocPath: apps/testing/api/v1/occ
+
+  extensions:
+      jarnaiz\JUnitFormatter\JUnitFormatterExtension:
+          filename: report.xml
+          outputDir: %paths.base%/../output/

@@ -13,6 +13,12 @@ pipeline:
     db_type: ${DB_TYPE}
     db_host: ${DB_HOST}
 
+  print-log:
+    image: owncloudci/php
+    detach: true
+    commands:
+     - tail -f /var/www/owncloud/data/owncloud.log
+
   install-fed-server:
     image: owncloudci/core
     pull: true
@@ -111,12 +117,34 @@ pipeline:
       - php occ config:system:set trusted_domains 2 --value=federated
       - php occ log:manage --level 0
       - php occ config:list
-      - chown -R www-data. /var/www/owncloud
     when:
       matrix:
         PREPARE_ACCEPTANCE: true
 
-  webui-acceptance-tests:
+  fix-permissions:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    commands:
+      - chown www-data /var/www/owncloud -R
+      - chmod 777 /var/www/owncloud/tests/acceptance/filesForUpload -R
+      - chmod +x /var/www/owncloud/tests/acceptance/run.sh
+    when:
+      matrix:
+        PREPARE_ACCEPTANCE: true
+
+  api-acceptance-tests:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - TEST_SERVER_URL=http://server
+    commands:
+      - cd /var/www/owncloud/tests/acceptance/
+      - su-exec www-data ./run.sh --remote --config /var/www/owncloud/apps/encryption/tests/acceptance/config/behat.yml
+    when:
+      matrix:
+        TEST_SOURCE: encryption
+
+  core-webui-acceptance-tests:
     image: owncloudci/php:${PHP_VERSION}
     pull: true
     environment:
@@ -130,21 +158,12 @@ pipeline:
       - RUN_PART=${PART}
     commands:
       - cd /var/www/owncloud/tests/acceptance/
-      - chmod 777 filesForUpload -R
-      - chmod +x run.sh
       - touch /var/www/owncloud/saved-settings.sh
       - . /var/www/owncloud/saved-settings.sh
-      - su-exec www-data ./run.sh --remote --type webUI --tags '~@skipOnEncryption&&~@skip'
+      - su-exec www-data ./run.sh --remote --type webUI --tags '~@skipOnEncryption&&~@skipOnEncryptionType:${ENCRYPTION_TYPE}&&~@skip'
     when:
       matrix:
-        TEST_SUITE: selenium
-
-  print-log:
-    image: owncloudci/php
-    commands:
-     - cat /var/www/owncloud/data/owncloud.log
-    when:
-      status: [ failure ]
+        TEST_SOURCE: core-webUI
 
   slack:
     image: plugins/slack:1
@@ -239,6 +258,17 @@ matrix:
       DB_TYPE: sqlite
 
     # Acceptance Tests
+    ## encryption API acceptance tests masterkey encryption
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      TEST_SUITE: api
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SOURCE: encryption
+    
     ## UI core stable10 with masterkey encryption
     - PHP_VERSION: 5.6
       OC_VERSION: daily-stable10-qa
@@ -250,6 +280,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 1
 
     - PHP_VERSION: 5.6
@@ -262,6 +293,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 2
 
     - PHP_VERSION: 5.6
@@ -274,6 +306,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 3
 
     - PHP_VERSION: 5.6
@@ -286,6 +319,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 4
 
     - PHP_VERSION: 5.6
@@ -298,6 +332,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 5
 
     - PHP_VERSION: 5.6
@@ -310,6 +345,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 6
 
     - PHP_VERSION: 5.6
@@ -322,6 +358,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 7
 
     - PHP_VERSION: 5.6
@@ -334,6 +371,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 8
 
     ## UI core stable10 with user-keys encryption
@@ -347,6 +385,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 1
 
     - PHP_VERSION: 5.6
@@ -359,6 +398,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 2
 
     - PHP_VERSION: 5.6
@@ -371,6 +411,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 3
 
     - PHP_VERSION: 5.6
@@ -383,6 +424,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 4
 
     - PHP_VERSION: 5.6
@@ -395,6 +437,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 5
 
     - PHP_VERSION: 5.6
@@ -407,6 +450,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 6
 
     - PHP_VERSION: 5.6
@@ -419,6 +463,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 7
 
     - PHP_VERSION: 5.6
@@ -431,6 +476,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 8
 
     ## UI core master with masterkey encryption
@@ -444,6 +490,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 1
 
     - PHP_VERSION: 7.1
@@ -456,6 +503,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 2
 
     - PHP_VERSION: 7.1
@@ -468,6 +516,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 3
 
     - PHP_VERSION: 7.1
@@ -480,6 +529,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 4
 
     - PHP_VERSION: 7.1
@@ -492,6 +542,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 5
 
     - PHP_VERSION: 7.1
@@ -504,6 +555,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 6
 
     - PHP_VERSION: 7.1
@@ -516,6 +568,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 7
 
     - PHP_VERSION: 7.1
@@ -528,6 +581,7 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 8
 
     ## UI core master with user-keys encryption
@@ -541,6 +595,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 1
 
     - PHP_VERSION: 7.1
@@ -553,6 +608,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 2
 
     - PHP_VERSION: 7.1
@@ -565,6 +621,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 3
 
     - PHP_VERSION: 7.1
@@ -577,6 +634,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 4
 
     - PHP_VERSION: 7.1
@@ -589,6 +647,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 5
 
     - PHP_VERSION: 7.1
@@ -601,6 +660,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 6
 
     - PHP_VERSION: 7.1
@@ -613,6 +673,7 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 7
 
     - PHP_VERSION: 7.1
@@ -625,4 +686,5 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+      TEST_SOURCE: core-webUI
       PART: 8
