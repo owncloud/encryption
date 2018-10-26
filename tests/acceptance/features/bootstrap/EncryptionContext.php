@@ -22,7 +22,9 @@
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
+use TestHelpers\HttpRequestHelper;
 use TestHelpers\SetupHelper;
+use Doctrine\DBAL\Types\VarDateTimeImmutableType;
 
 require_once 'bootstrap.php';
 
@@ -46,6 +48,106 @@ class EncryptionContext implements Context {
 	public function recreateMasterKeyUsingOccCommand() {
 		$this->featureContext->runOcc(['encryption:recreate-master-key', '-y']);
 		$this->featureContext->theCommandShouldHaveBeenSuccessful();
+	}
+
+	/**
+	 * @Given encryption has been enabled
+	 *
+	 * @return void
+	 */
+	public function encryptionHasBeenEnabled() {
+		$this->featureContext->runOcc(['encryption:enable']);
+	}
+
+	/**
+	 * @When the administrator sets the encryption type to :encryptionType using the occ command
+	 * @Given the administrator has set the encryption type to :encryptionType
+	 *
+	 * @param string $encryptionType
+	 *
+	 * @return void
+	 * @throws \Exception
+	 */
+	public function theAdministratorSetsEncryptionTypeToUsingTheOccCommand($encryptionType) {
+		$this->featureContext->runOcc(
+			["encryption:select-encryption-type", $encryptionType, "-y"]
+		);
+	}
+
+	/**
+	 * @When the administrator encrypts all data using the occ command
+	 * @Given the administrator has encrypted all the data
+	 *
+	 * @return void
+	 */
+	public function theAdministratorEncryptsAllDataUsingTheOccCommand() {
+		$this->featureContext->runOcc(["encryption:encrypt-all", "-n"]);
+	}
+
+	/**
+	 * @When the administrator decrypts user keys based encryption with recovery key :recoveryKey using the occ command
+	 *
+	 * @param string $recoveryKey
+	 *
+	 * @return void
+	 */
+	public function theAdministratorDecryptsUserKeysBasedEncryptionWithKey($recoveryKey) {
+		$this->featureContext->invokingTheCommandWithEnvVariable(
+			"encryption:decrypt-all -m recovery -c yes",
+			'OC_RECOVERY_PASSWORD',
+			$recoveryKey
+		);
+	}
+
+	/**
+	 * @Then the file :fileName of user :username should not be encrypted
+	 *
+	 * @param string $fileName
+	 * @param string $username
+	 *
+	 * @return void
+	 */
+	public function theFileOfUserShouldNotBeEncrypted($fileName, $username) {
+		$fileName = \ltrim($fileName, "/");
+		$filePath = "data/$username/files/$fileName";
+		$this->featureContext->readFileInServerRoot($filePath);
+
+		$response = $this->featureContext->getResponse();
+		$parsedResponse = HttpRequestHelper::getResponseXml($response);
+		$encodedFileContent = (string)$parsedResponse->data->element->contentUrlEncoded;
+		$fileContent = urldecode($encodedFileContent);
+
+		$this->featureContext->userDownloadsTheFileUsingTheAPI($username, "/$fileName");
+		$fileContentServer = (string)$this->featureContext->getResponse()->getBody();
+
+		PHPUnit_Framework_Assert::assertEquals(
+			\trim($fileContentServer),
+			$fileContent
+		);
+	}
+
+	/**
+	 * @Then the file :fileName of user :username should be encrypted
+	 *
+	 * @param string $fileName
+	 * @param string $username
+	 *
+	 * @return void
+	 */
+	public function theFileOfUserShouldBeEncrypted($fileName, $username) {
+		$fileName = \ltrim($fileName, "/");
+		$filePath = "data/$username/files/$fileName";
+		$this->featureContext->readFileInServerRoot($filePath);
+
+		$response = $this->featureContext->getResponse();
+		$parsedResponse = HttpRequestHelper::getResponseXml($this->featureContext->getResponse());
+		$encodedFileContent = (string)$parsedResponse->data->element->contentUrlEncoded;
+		$fileContent = urldecode($encodedFileContent);
+
+		PHPUnit_Framework_Assert::assertStringStartsWith(
+			"HBEGIN:oc_encryption_module:OC_DEFAULT_MODULE:cipher:AES-256-CTR:signed:true",
+			$fileContent
+		);
 	}
 
 	/**
