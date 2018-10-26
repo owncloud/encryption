@@ -15,6 +15,17 @@ default:
             regularUserPassword: 123456
             ocPath: apps/testing/api/v1/occ
 
+    webUIUserKeysType:
+      paths:
+        - %paths.base%/../features/webUIUserKeysType
+      contexts:
+        - EncryptionContext:
+        - WebUIAdminEncryptionSettingsContext:
+        - WebUIPersonalEncryptionSettingsContext:
+        - WebUIGeneralContext:
+        - WebUILoginContext:
+        - FeatureContext: *common_feature_context_params
+
   extensions:
       jarnaiz\JUnitFormatter\JUnitFormatterExtension:
           filename: report.xml
