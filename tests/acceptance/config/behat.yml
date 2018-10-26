@@ -3,9 +3,9 @@ default:
      '': %paths.base%/../features/bootstrap
 
   suites:
-    apiEncryption:
+    cliEncryption:
       paths:
-        - %paths.base%/../features/apiEncryption
+        - %paths.base%/../features/cliEncryption
       contexts:
         - EncryptionContext:
         - FeatureContext: &common_feature_context_params

@@ -132,14 +132,14 @@ pipeline:
       matrix:
         PREPARE_ACCEPTANCE: true
 
-  api-acceptance-tests:
+  cli-acceptance-tests:
     image: owncloudci/php:${PHP_VERSION}
     pull: true
     environment:
       - TEST_SERVER_URL=http://server
     commands:
       - cd /var/www/owncloud/tests/acceptance/
-      - su-exec www-data ./run.sh --remote --config /var/www/owncloud/apps/encryption/tests/acceptance/config/behat.yml
+      - su-exec www-data ./run.sh --remote --config /var/www/owncloud/apps/encryption/tests/acceptance/config/behat.yml --type cli
     when:
       matrix:
         TEST_SOURCE: encryption
