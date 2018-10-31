@@ -29,6 +29,7 @@ use OC\Files\FileInfo;
 use OC\Files\Storage\Common;
 use OC\Files\View;
 use OCA\Encryption\Crypto\EncryptAll;
+use OCP\Files\Mount\IMountPoint;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -314,18 +315,23 @@ class EncryptAllTest extends TestCase {
 
 		$this->util->method('isMasterKeyEnabled')->willReturn(false);
 
+		$commonStorage = $this->createMock(Common::class);
+		$mountPoint = $this->createMock(IMountPoint::class);
+		$fileInfo1 = new FileInfo('/usr1/files/foo', $commonStorage, 'foo', ['name' => 'foo', 'type'=>'dir'], $mountPoint);
+		$fileInfo2 = new FileInfo('/usr1/files/bar', $commonStorage, 'foo', ['name' => 'bar', 'type'=>'file'], $mountPoint);
 		$this->view->expects($this->at(0))->method('getDirectoryContent')
 			->with('/user1/files')->willReturn(
 				[
-					['name' => 'foo', 'type'=>'dir'],
-					['name' => 'bar', 'type'=>'file'],
+					$fileInfo1,
+					$fileInfo2,
 				]
 			);
 
+		$fileInfo3 = new FileInfo('/usr1/files/foo/subfile', $commonStorage, 'foo', ['name' => 'subfile', 'type'=>'file'], $mountPoint);
 		$this->view->expects($this->at(3))->method('getDirectoryContent')
 			->with('/user1/files/foo')->willReturn(
 				[
-					['name' => 'subfile', 'type'=>'file']
+					$fileInfo3
 				]
 			);
 
