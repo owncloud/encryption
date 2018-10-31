@@ -71,7 +71,7 @@ class WebUIPersonalEncryptionSettingsContext extends RawMinkContext implements C
 	}
 
 	/**
-	 * @Given the user has browsed to personal encryption settings page
+	 * @Given the user/administrator has browsed to personal encryption settings page
 	 *
 	 * @return void
 	 */
@@ -81,7 +81,7 @@ class WebUIPersonalEncryptionSettingsContext extends RawMinkContext implements C
 	}
 
 	/**
-	 * @Given the user has enabled password recovery
+	 * @Given the user/administrator has enabled password recovery
 	 *
 	 * @return void
 	 */

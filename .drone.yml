@@ -142,7 +142,25 @@ pipeline:
       - su-exec www-data ./run.sh --remote --config /var/www/owncloud/apps/encryption/tests/acceptance/config/behat.yml --type cli
     when:
       matrix:
-        TEST_SOURCE: encryption
+        TEST_SOURCE: cli-encryption
+
+  webui-acceptance-tests:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    environment:
+      - BROWSER=chrome
+      - SELENIUM_HOST=selenium
+      - SELENIUM_PORT=4444
+      - TEST_SERVER_URL=http://server
+      - PLATFORM=Linux
+      - BEHAT_SUITE=${BEHAT_SUITE}
+      - MAILHOG_HOST=email
+    commands:
+      - cd /var/www/owncloud/tests/acceptance/
+      - su-exec www-data ./run.sh --remote --config /var/www/owncloud/apps/encryption/tests/acceptance/config/behat.yml --type webUI
+    when:
+      matrix:
+        TEST_SOURCE: webui-encryption
 
   core-webui-acceptance-tests:
     image: owncloudci/php:${PHP_VERSION}
@@ -280,11 +298,11 @@ matrix:
       OC_VERSION: daily-master-qa
       PREPARE_ACCEPTANCE: true
       USE_SERVER: true
-      TEST_SUITE: api
+      TEST_SUITE: cli
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
-      TEST_SOURCE: encryption
+      TEST_SOURCE: cli-encryption
     
     ## UI core stable10 with masterkey encryption
     - PHP_VERSION: 5.6
@@ -1540,3 +1558,14 @@ matrix:
       DB_HOST: mysql
       TEST_SOURCE: core-api
       PART: 12
+
+    ## encryption WebUI acceptance tests user-keys encryption
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      PREPARE_ACCEPTANCE: true
+      USE_SERVER: true
+      TEST_SUITE: selenium
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SOURCE: webui-encryption

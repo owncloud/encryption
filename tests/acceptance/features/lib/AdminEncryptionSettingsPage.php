@@ -50,17 +50,20 @@ class AdminEncryptionSettingsPage extends OwncloudPage {
 	 * @return void
 	 */
 	public function enableRecoveryKeyAndSetRecoveryKeyTo($recoveryKey) {
-		$this->fillField($this->encryptionRecoveryPasswordFieldId, $recoveryKey);
-		$this->fillField($this->repeatEncryptionRecoveryPasswordFieldId, $recoveryKey);
-
 		$enableRecoveryKeyBtn = $this->findById($this->enableRecoveryBtnId);
 		$this->assertElementNotNull(
 			$enableRecoveryKeyBtn,
 			__METHOD__ .
 			" id $this->enableRecoveryBtnId " .
-			"could not find enable recovery key button"
+			"could not find enable/disable recovery key button"
 		);
 
+		$action = $enableRecoveryKeyBtn->getAttribute("value");
+		if ($action === "Disable recovery key") {
+			return;
+		}
+		$this->fillField($this->encryptionRecoveryPasswordFieldId, $recoveryKey);
+		$this->fillField($this->repeatEncryptionRecoveryPasswordFieldId, $recoveryKey);
 		$enableRecoveryKeyBtn->click();
 	}
 
