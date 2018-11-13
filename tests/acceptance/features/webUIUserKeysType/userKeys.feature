@@ -5,7 +5,7 @@ Feature: encrypt files using user specific keys
   So that users can use specific keys for encrypting their files
 
   Background:
-    Given the app "encryption" has been enabled
+    Given app "encryption" has been enabled
     And these users have been created but not initialized:
       | username         |
       | brand-new-user   |
@@ -27,17 +27,17 @@ Feature: encrypt files using user specific keys
       | username         |
       | another-new-user |
     And the administrator has set the encryption type to "user-keys"
-    And the administrator has browsed to admin encryption settings page
+    And the administrator has browsed to the admin encryption settings page
     And the administrator has enabled recovery key and set the recovery key to "recoverypass"
-    And the administrator has browsed to personal encryption settings page
+    And the administrator has browsed to the personal encryption settings page
     And the administrator has enabled password recovery
     And the administrator has logged out of the webUI
     And user "brand-new-user" has logged in using the webUI
-    And the user has browsed to personal encryption settings page
+    And the user has browsed to the personal encryption settings page
     And the user has enabled password recovery
     And the user has logged out of the webUI
     And user "another-new-user" has logged in using the webUI
-    And the user has browsed to personal encryption settings page
+    And the user has browsed to the personal encryption settings page
     And the user has enabled password recovery
     When the administrator decrypts user keys based encryption with recovery key "recoverypass" using the occ command
     Then the file "textfile0.txt" of user "brand-new-user" should not be encrypted
