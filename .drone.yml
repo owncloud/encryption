@@ -62,9 +62,9 @@ pipeline:
     pull: true
     commands:
       - ../../lib/composer/bin/parallel-lint . --exclude 3rdparty --exclude build .
-      #- cd /var/www/owncloud
+      - cd /var/www/owncloud
       #- php ./occ app:check-code encryption -c private -c strong-comparison
-      #- php ./occ app:check-code encryption -c deprecation
+      - php ./occ app:check-code encryption -c deprecation
     when:
       matrix:
         TEST_SUITE: phpunit
