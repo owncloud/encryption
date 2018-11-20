@@ -24,7 +24,6 @@ use Behat\Behat\Context\Context;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use TestHelpers\HttpRequestHelper;
 use TestHelpers\SetupHelper;
-use Doctrine\DBAL\Types\VarDateTimeImmutableType;
 
 require_once 'bootstrap.php';
 
@@ -39,8 +38,8 @@ class EncryptionContext implements Context {
 	private $featureContext;
 
 	/**
-	 * @When /^the administrator successfully recreates the encryption masterkey using the occ command$/
-	 * @Given /^the administrator has successfully recreated the encryption masterkey$/
+	 * @When the administrator successfully recreates the encryption masterkey using the occ command
+	 * @Given the administrator has successfully recreated the encryption masterkey
 	 *
 	 * @return void
 	 * @throws \Exception
@@ -100,14 +99,14 @@ class EncryptionContext implements Context {
 	}
 
 	/**
-	 * @Then the file :fileName of user :username should not be encrypted
+	 * @Then file :fileName of user :username should not be encrypted
 	 *
 	 * @param string $fileName
 	 * @param string $username
 	 *
 	 * @return void
 	 */
-	public function theFileOfUserShouldNotBeEncrypted($fileName, $username) {
+	public function fileOfUserShouldNotBeEncrypted($fileName, $username) {
 		$fileName = \ltrim($fileName, "/");
 		$filePath = "data/$username/files/$fileName";
 		$this->featureContext->readFileInServerRoot($filePath);
@@ -117,7 +116,7 @@ class EncryptionContext implements Context {
 		$encodedFileContent = (string)$parsedResponse->data->element->contentUrlEncoded;
 		$fileContent = urldecode($encodedFileContent);
 
-		$this->featureContext->userDownloadsTheFileUsingTheAPI($username, "/$fileName");
+		$this->featureContext->userDownloadsFileUsingTheAPI($username, "/$fileName");
 		$fileContentServer = (string)$this->featureContext->getResponse()->getBody();
 
 		PHPUnit_Framework_Assert::assertEquals(
@@ -127,14 +126,14 @@ class EncryptionContext implements Context {
 	}
 
 	/**
-	 * @Then the file :fileName of user :username should be encrypted
+	 * @Then file :fileName of user :username should be encrypted
 	 *
 	 * @param string $fileName
 	 * @param string $username
 	 *
 	 * @return void
 	 */
-	public function theFileOfUserShouldBeEncrypted($fileName, $username) {
+	public function fileOfUserShouldBeEncrypted($fileName, $username) {
 		$fileName = \ltrim($fileName, "/");
 		$filePath = "data/$username/files/$fileName";
 		$this->featureContext->readFileInServerRoot($filePath);
