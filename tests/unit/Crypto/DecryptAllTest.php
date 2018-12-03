@@ -201,7 +201,8 @@ class DecryptAllTest extends TestCase {
 	 * @expectedExceptionMessage Invalid credentials provided
 	 */
 	public function testPrepareLoginException($loginType) {
-		$this->createUser('user1', 'pass');
+		$username = "decrypt_test_user1_";
+		$this->createUser($username, 'pass');
 		$input = $this->createMock(InputInterface::class);
 		$output = $this->createMock(OutputInterface::class);
 
