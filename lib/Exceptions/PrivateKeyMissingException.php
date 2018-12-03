@@ -36,5 +36,4 @@ class PrivateKeyMissingException extends GenericEncryptionException {
 		}
 		parent::__construct("Private Key missing for user: $userId");
 	}
-
 }

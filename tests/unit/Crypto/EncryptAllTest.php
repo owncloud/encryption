@@ -21,9 +21,7 @@
  *
  */
 
-
 namespace OCA\Encryption\Tests\Crypto;
-
 
 use OC\Files\FileInfo;
 use OC\Files\Storage\Common;
@@ -98,7 +96,7 @@ class EncryptAllTest extends TestCase {
 	/** @var  EncryptAll */
 	protected $encryptAll;
 
-	function setUp() {
+	public function setUp() {
 		parent::setUp();
 		$this->setupUser = $this->getMockBuilder(Setup::class)
 			->disableOriginalConstructor()->getMock();
@@ -125,7 +123,6 @@ class EncryptAllTest extends TestCase {
 		$this->userInterface = $this->getMockBuilder(UserInterface::class)
 			->disableOriginalConstructor()->getMock();
 
-
 		$this->outputInterface->method('getFormatter')
 			->willReturn($this->createMock('\Symfony\Component\Console\Formatter\OutputFormatterInterface'));
 
@@ -136,7 +133,6 @@ class EncryptAllTest extends TestCase {
 		$this->secureRandom->method('getMediumStrengthGenerator')->willReturn($this->secureRandom);
 		$this->secureRandom->method('getLowStrengthGenerator')->willReturn($this->secureRandom);
 		$this->secureRandom->method('generate')->willReturn('12345678');
-
 
 		$this->encryptAll = new EncryptAll(
 			$this->setupUser,
@@ -178,7 +174,6 @@ class EncryptAllTest extends TestCase {
 		$encryptAll->expects($this->at(2))->method('outputPasswords')->with();
 
 		$encryptAll->encryptAll($this->inputInterface, $this->outputInterface);
-
 	}
 
 	public function testEncryptAllWithMasterKey() {
@@ -208,7 +203,6 @@ class EncryptAllTest extends TestCase {
 		$encryptAll->expects($this->never())->method('outputPasswords');
 
 		$encryptAll->encryptAll($this->inputInterface, $this->outputInterface);
-
 	}
 
 	public function testCreateKeyPairs() {
@@ -230,7 +224,6 @@ class EncryptAllTest extends TestCase {
 			)
 			->setMethods(['setupUserFS', 'generateOneTimePassword'])
 			->getMock();
-
 
 		// set protected property $output
 		$this->invokePrivate($encryptAll, 'output', [$this->outputInterface]);
@@ -290,7 +283,6 @@ class EncryptAllTest extends TestCase {
 		$encryptAll->expects($this->at(1))->method('encryptUsersFiles')->with('user2');
 
 		$this->invokePrivate($encryptAll, 'encryptAllUsersFiles');
-
 	}
 
 	public function testEncryptUsersFiles() {
@@ -337,7 +329,7 @@ class EncryptAllTest extends TestCase {
 
 		$this->view->method('is_dir')
 			->willReturnCallback(
-				function($path) {
+				function ($path) {
 					if ($path === '/user1/files/foo') {
 						return true;
 					}
@@ -434,7 +426,7 @@ class EncryptAllTest extends TestCase {
 	public function testGenerateOneTimePassword() {
 		$password = $this->invokePrivate($this->encryptAll, 'generateOneTimePassword', ['user1']);
 		$this->assertInternalType('string', $password);
-		$this->assertSame(8, strlen($password));
+		$this->assertSame(8, \strlen($password));
 
 		$userPasswords = $this->invokePrivate($this->encryptAll, 'userPasswords');
 		$this->assertCount(1, $userPasswords);

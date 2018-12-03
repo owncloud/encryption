@@ -19,7 +19,6 @@
 *
 */
 
-
 namespace OCA\Encryption\Command;
 
 use OC\Encryption\DecryptAll;
@@ -129,7 +128,6 @@ class RecreateMasterKey extends Command {
 								IAppManager $appManager, IAppConfig $appConfig, IConfig $config, ISession $session,
 								Manager $encryptionManager, QuestionHelper $questionHelper, Setup $userSetup, IMailer $mailer,
 								ISecureRandom $secureRandom, IL10N $l, ILogger $logger) {
-
 		parent::__construct();
 		$this->userManager = $userManager;
 		$this->rootView = $rootView;
@@ -172,7 +170,6 @@ class RecreateMasterKey extends Command {
 				'Warning: In order to re-create master key, the entire ownCloud filesystem will be decrypted and then encrypted using new master key.'
 				. ' Do you want to continue? (y/n)', false);
 			if ($yes || $this->questionHelper->ask($input, $output, $question)) {
-
 				$output->writeln("Decryption started\n");
 				$progress = new ProgressBar($output);
 				$progress->start();
@@ -183,7 +180,6 @@ class RecreateMasterKey extends Command {
 				$progress->finish();
 
 				if (empty($this->failed)) {
-
 					$this->appManager->disableApp('encryption');
 
 					//Delete the files_encryption dir
@@ -200,7 +196,6 @@ class RecreateMasterKey extends Command {
 					$this->appConfig->deleteKey('encryption', 'recoveryKeyId');
 					$this->appConfig->deleteKey('encryption', 'publicShareKeyId');
 					$this->appConfig->deleteKey('files_encryption', 'installed_version');
-
 				}
 				$output->writeln("\nDecryption completed\n");
 
@@ -241,7 +236,7 @@ class RecreateMasterKey extends Command {
 
 	protected function decryptAllUsers(InputInterface $input, OutputInterface $output) {
 		$this->decryptAll = new DecryptAll($this->encryptionManager, $this->userManager, $this->rootView, $this->logger);
-		$this->decryptAll->decryptAll($input,$output);
+		$this->decryptAll->decryptAll($input, $output);
 	}
 
 	protected function encryptAllUsers(InputInterface $input, OutputInterface $output) {
@@ -260,4 +255,3 @@ class RecreateMasterKey extends Command {
 		$this->encryptAll->encryptAll($input, $output);
 	}
 }
-

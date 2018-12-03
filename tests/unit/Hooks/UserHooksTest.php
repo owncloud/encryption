@@ -23,10 +23,7 @@
  *
  */
 
-
-
 namespace OCA\Encryption\Tests\Hooks;
-
 
 use OC\User\Manager;
 use OCA\Encryption\Crypto\Crypt;
@@ -206,7 +203,7 @@ class UserHooksTest extends TestCase {
 		$this->keyManagerMock->expects($this->exactly(4))
 			->method('setPrivateKey')
 			->willReturnCallback(function ($user, $key) {
-				$header = substr($key, 0, strlen(Crypt::HEADER_START));
+				$header = \substr($key, 0, \strlen(Crypt::HEADER_START));
 				$this->assertSame(
 					Crypt::HEADER_START,
 					$header, 'every encrypted file should start with a header');
@@ -219,7 +216,6 @@ class UserHooksTest extends TestCase {
 			->method('isRecoveryEnabledForUser')
 			->with('testUser')
 			->willReturnOnConsecutiveCalls(true, false);
-
 
 		$this->instance = $this->getMockBuilder('OCA\Encryption\Hooks\UserHooks')
 			->setConstructorArgs(
@@ -464,7 +460,5 @@ class UserHooksTest extends TestCase {
 					$this->config
 				]
 			)->setMethods(['setupFS'])->getMock();
-
 	}
-
 }

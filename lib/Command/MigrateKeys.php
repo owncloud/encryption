@@ -59,7 +59,6 @@ class MigrateKeys extends Command {
 								IDBConnection $connection,
 								IConfig $config,
 								ILogger $logger) {
-
 		$this->userManager = $userManager;
 		$this->view = $view;
 		$this->connection = $connection;
@@ -99,7 +98,7 @@ class MigrateKeys extends Command {
 			$migration->reorganizeSystemFolderStructure();
 			$migration->updateDB();
 			foreach ($this->userManager->getBackends() as $backend) {
-				$name = get_class($backend);
+				$name = \get_class($backend);
 
 				if ($backend instanceof IUserBackend) {
 					$name = $backend->getBackendName();
@@ -116,11 +115,10 @@ class MigrateKeys extends Command {
 						$migration->reorganizeFolderStructureForUser($user);
 					}
 					$offset += $limit;
-				} while (count($users) >= $limit);
+				} while (\count($users) >= $limit);
 			}
 		}
 
 		$migration->finalCleanUp();
-
 	}
 }

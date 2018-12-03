@@ -24,7 +24,6 @@
 
 namespace OCA\Encryption;
 
-
 use OCA\Encryption\Crypto\Crypt;
 use OCP\Encryption\Keys\IStorage;
 use OCP\IConfig;
@@ -36,7 +35,6 @@ use OC\Files\View;
 use OCP\Encryption\IFile;
 
 class Recovery {
-
 
 	/**
 	 * @var null|IUser
@@ -109,7 +107,7 @@ class Recovery {
 
 		if (!$keyManager->recoveryKeyExists()) {
 			$keyPair = $this->crypt->createKeyPair();
-			if (!is_array($keyPair)) {
+			if (!\is_array($keyPair)) {
 				return false;
 			}
 
@@ -194,7 +192,6 @@ class Recovery {
 	 * @return bool
 	 */
 	public function setRecoveryForUser($value) {
-
 		try {
 			$this->config->setUserValue($this->user->getUID(),
 				'encryption',
@@ -291,7 +288,6 @@ class Recovery {
 				$this->recoverFile($filePath, $privateKey, $uid);
 			}
 		}
-
 	}
 
 	/**
@@ -323,8 +319,5 @@ class Recovery {
 			$encryptedKeyfiles = $this->crypt->multiKeyEncrypt($fileKey, $publicKeys);
 			$this->keyManager->setAllFileKeys($path, $encryptedKeyfiles);
 		}
-
 	}
-
-
 }

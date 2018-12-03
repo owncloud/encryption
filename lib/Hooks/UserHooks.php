@@ -24,7 +24,6 @@
 
 namespace OCA\Encryption\Hooks;
 
-
 use OC\Files\Filesystem;
 use OCP\IConfig;
 use OCP\IUserManager;
@@ -105,7 +104,6 @@ class UserHooks implements IHook {
 								Session $session,
 								Crypt $crypt,
 								Recovery $recovery, IConfig $config) {
-
 		$this->keyManager = $keyManager;
 		$this->userManager = $userManager;
 		$this->logger = $logger;
@@ -151,7 +149,6 @@ class UserHooks implements IHook {
 		}
 	}
 
-
 	/**
 	 * Startup encryption backend upon user login
 	 *
@@ -160,7 +157,6 @@ class UserHooks implements IHook {
 	 * @return boolean|null
 	 */
 	public function login($params) {
-
 		if (!App::isEnabled('encryption')) {
 			return true;
 		}
@@ -195,7 +191,6 @@ class UserHooks implements IHook {
 	 * @param array $params
 	 */
 	public function postCreateUser($params) {
-
 		if (App::isEnabled('encryption')) {
 			$this->userSetup->setupUser($params['uid'], $params['password']);
 		}
@@ -208,18 +203,16 @@ class UserHooks implements IHook {
 	 * @note This method should never be called for users using client side encryption
 	 */
 	public function postDeleteUser($params) {
-
 		if (App::isEnabled('encryption')) {
 			/**
 			 * Adding a safe condition to make sure the uid is not
 			 * empty or null.
 			 */
-			if (!is_null($params['uid']) && ($params['uid'] !== '')) {
+			if (($params['uid'] !== null) && ($params['uid'] !== '')) {
 				$this->keyManager->deletePublicKey($params['uid']);
 				\OC::$server->getEncryptionKeyStorage()->deleteAltUserStorageKeys($params['uid']);
 			}
 		}
-
 	}
 
 	/**
@@ -230,7 +223,6 @@ class UserHooks implements IHook {
 	 */
 	public function preSetPassphrase($params) {
 		if (App::isEnabled('encryption')) {
-
 			$user = $this->userManager->get($params['uid']);
 
 			if ($user && !$user->canChangePassword()) {
@@ -322,7 +314,6 @@ class UserHooks implements IHook {
 	protected function initMountPoints($user) {
 		Filesystem::initMountPoints($user);
 	}
-
 
 	/**
 	 * after password reset we create a new key pair for the user
