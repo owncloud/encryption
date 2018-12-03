@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<phpunit bootstrap="tests/bootstrap.php"
+<phpunit bootstrap="tests/unit/bootstrap.php"
 		 strict="true"
 		 verbose="true"
 		 failOnWarning="true"
@@ -8,7 +8,7 @@
 		 timeoutForLargeTests="900"
 		>
 	<testsuite name='unit'>
-		<directory suffix='Test.php'>./tests</directory>
+		<directory suffix='Test.php'>./tests/unit</directory>
 	</testsuite>
 	<!-- filters for code coverage -->
 	<filter>
@@ -23,4 +23,3 @@
 		<log type="coverage-clover" target="./tests/output/clover.xml"/>
 	</logging>
 </phpunit>
-
