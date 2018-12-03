@@ -19,7 +19,6 @@
 *
 */
 
-
 namespace OCA\Encryption\Command;
 
 use OCA\Encryption\Util;
@@ -51,7 +50,6 @@ class SelectEncryptionType extends Command {
 	public function __construct(Util $util,
 								IConfig $config,
 								QuestionHelper $questionHelper) {
-
 		$this->util = $util;
 		$this->config = $config;
 		$this->questionHelper = $questionHelper;
@@ -120,7 +118,5 @@ class SelectEncryptionType extends Command {
 		} else {
 			$output->writeln("The option provided for encryption-type " . $encryptionType . " is not valid. The available options are: 'masterkey' or 'user-keys'");
 		}
-
 	}
 }
-

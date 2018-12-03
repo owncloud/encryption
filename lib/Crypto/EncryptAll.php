@@ -21,7 +21,6 @@
  *
  */
 
-
 namespace OCA\Encryption\Crypto;
 
 use OC\Encryption\Exceptions\DecryptionFailedException;
@@ -127,14 +126,13 @@ class EncryptAll {
 	 * @param OutputInterface $output
 	 */
 	public function encryptAll(InputInterface $input, OutputInterface $output) {
-
 		$this->input = $input;
 		$this->output = $output;
 
 		$headline = 'Encrypt all files with the ' . Encryption::DISPLAY_NAME;
 		$this->output->writeln("\n");
 		$this->output->writeln($headline);
-		$this->output->writeln(str_pad('', strlen($headline), '='));
+		$this->output->writeln(\str_pad('', \strlen($headline), '='));
 		$this->output->writeln("\n");
 
 		if ($this->util->isMasterKeyEnabled()) {
@@ -196,7 +194,7 @@ class EncryptAll {
 					}
 				}
 				$offset += $limit;
-			} while (count($users) >= $limit);
+			} while (\count($users) >= $limit);
 		}
 
 		$progress->setMessage('Key-pair created for all users');
@@ -211,7 +209,7 @@ class EncryptAll {
 		$progress = new ProgressBar($this->output);
 		$progress->setFormat(" %message% \n [%bar%]");
 		$progress->start();
-		$numberOfUsers = count($this->userPasswords);
+		$numberOfUsers = \count($this->userPasswords);
 		$userNo = 1;
 		if ($this->util->isMasterKeyEnabled()) {
 			$this->encryptAllUserFilesWithMasterKey($progress);
@@ -224,7 +222,6 @@ class EncryptAll {
 		}
 		$progress->setMessage("all files encrypted");
 		$progress->finish();
-
 	}
 
 	/**
@@ -245,7 +242,7 @@ class EncryptAll {
 					$userNo++;
 				}
 				$offset += $limit;
-			} while (count($users) >= $limit);
+			} while (\count($users) >= $limit);
 		}
 	}
 
@@ -257,12 +254,11 @@ class EncryptAll {
 	 * @param string $userCount
 	 */
 	protected function encryptUsersFiles($uid, ProgressBar $progress, $userCount) {
-
 		$this->setupUserFS($uid);
 		$directories = [];
 		$directories[] = '/' . $uid . '/files';
 
-		while ($root = array_pop($directories)) {
+		while ($root = \array_pop($directories)) {
 			$content = $this->rootView->getDirectoryContent($root);
 			foreach ($content as $file) {
 				// only encrypt files owned by the user, exclude incoming local shares, and incoming federated shares
@@ -292,9 +288,8 @@ class EncryptAll {
 	 * @return bool
 	 */
 	protected function encryptFile($path) {
-
 		$source = $path;
-		$target = $path . '.encrypted.' . time() . '.part';
+		$target = $path . '.encrypted.' . \time() . '.part';
 
 		try {
 			$version = $this->keyManager->getVersion($source, $this->rootView);
@@ -363,9 +358,9 @@ class EncryptAll {
 	protected function writePasswordsToFile(array $passwords) {
 		$fp = $this->rootView->fopen('oneTimeEncryptionPasswords.csv', 'w');
 		foreach ($passwords as $pwd) {
-			fputcsv($fp, $pwd);
+			\fputcsv($fp, $pwd);
 		}
-		fclose($fp);
+		\fclose($fp);
 		$this->output->writeln("\n");
 		$this->output->writeln('A list of all newly created passwords was written to data/oneTimeEncryptionPasswords.csv');
 		$this->output->writeln('');
@@ -405,7 +400,7 @@ class EncryptAll {
 		$noMail = [];
 
 		$this->output->writeln('');
-		$progress = new ProgressBar($this->output, count($this->userPasswords));
+		$progress = new ProgressBar($this->output, \count($this->userPasswords));
 		$progress->start();
 
 		foreach ($this->userPasswords as $uid => $password) {
@@ -456,7 +451,6 @@ class EncryptAll {
 			$table->setRows($rows);
 			$table->render();
 		}
-
 	}
 
 	/**
@@ -466,7 +460,6 @@ class EncryptAll {
 	 * @return array an array of the html mail body and the plain text mail body
 	 */
 	protected function createMailBody($password) {
-
 		$html = new \OC_Template("encryption", "mail", "");
 		$html->assign('password', $password);
 		$htmlMail = $html->fetchPage();
@@ -477,5 +470,4 @@ class EncryptAll {
 
 		return [$htmlMail, $plainTextMail];
 	}
-
 }
