@@ -368,21 +368,21 @@ matrix:
       OC_VERSION: daily-master-qa
       PREPARE_ACCEPTANCE: true
       USE_SERVER: true
-      TEST_SUITE: api
+      TEST_SUITE: cli
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: pgsql
       DB_HOST: pgsql
-      TEST_SOURCE: encryption
+      TEST_SOURCE: cli-encryption
 
     - PHP_VERSION: 7.2
       OC_VERSION: daily-master-qa
       PREPARE_ACCEPTANCE: true
       USE_SERVER: true
-      TEST_SUITE: api
+      TEST_SUITE: cli
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
-      TEST_SOURCE: encryption
+      TEST_SOURCE: cli-encryption
 
     ## UI core stable10 with masterkey encryption
     - PHP_VERSION: 5.6
