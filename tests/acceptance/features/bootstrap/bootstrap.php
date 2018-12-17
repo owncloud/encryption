@@ -19,8 +19,8 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-require __DIR__ . '/../../../../../../lib/base.php';
-require __DIR__ . '/../../../../../../lib/composer/autoload.php';
+
+require_once __DIR__ . '/../../../../../../tests/acceptance/features/bootstrap/bootstrap.php';
 
 $classLoader = new \Composer\Autoload\ClassLoader();
 $classLoader->addPsr4(
@@ -29,9 +29,6 @@ $classLoader->addPsr4(
 $classLoader->addPsr4("Page\\", __DIR__ . "/../lib", true);
 $classLoader->addPsr4(
 	"Page\\", __DIR__ . "/../../../../../../tests/acceptance/features/lib", true
-);
-$classLoader->addPsr4(
-	"TestHelpers\\", __DIR__ . "/../../../../../../tests/TestHelpers", true
 );
 
 $classLoader->register();
