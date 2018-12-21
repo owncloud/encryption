@@ -25,14 +25,14 @@ PHPSTAN=php -d zend.enable_gc=0 vendor-bin/phpstan/vendor/bin/phpstan
 .DEFAULT_GOAL := help
 
 help:
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//' | sed -e 's/  */ /' | column -t -s :
 
-##
+##---------------------
 ## Build targets
-##--------------------------------------
+##---------------------
 
 .PHONY: dist
-dist:                       ## Build distribution
+dist: ## Build distribution
 dist: distdir package
 
 .PHONY: distdir
@@ -45,63 +45,63 @@ distdir:
 package:
 	tar -czf $(dist_dir)/$(app_name).tar.gz -C $(dist_dir) $(app_name)
 
-##
+##---------------------
 ## Tests
-##--------------------------------------
+##---------------------
 
 .PHONY: test-php-unit
-test-php-unit:             ## Run php unit tests
+test-php-unit: ## Run php unit tests
 test-php-unit: ../../lib/composer/bin/phpunit
 	$(PHPUNIT) --configuration ./phpunit.xml --testsuite unit
 
 .PHONY: test-php-unit-dbg
-test-php-unit-dbg:         ## Run php unit tests using phpdbg
+test-php-unit-dbg: ## Run php unit tests using phpdbg
 test-php-unit-dbg: ../../lib/composer/bin/phpunit
 	$(PHPUNITDBG) --configuration ./phpunit.xml --testsuite unit
 
 .PHONY: test-php-lint
-test-php-lint:             ## Run phan
+test-php-lint: ## Run phan
 test-php-lint: vendor-bin/php-parallel-lint/vendor
 	$(PHPLINT) appinfo lib
 
 .PHONY: test-php-style
-test-php-style:            ## Run php-cs-fixer and check owncloud code-style
+test-php-style: ## Run php-cs-fixer and check owncloud code-style
 test-php-style: vendor-bin/owncloud-codestyle/vendor
 	$(PHP_CS_FIXER) fix -v --diff --diff-format udiff --allow-risky yes --dry-run
 
 .PHONY: test-php-style-fix
-test-php-style-fix:        ## Run php-cs-fixer and fix code style issues
+test-php-style-fix: ## Run php-cs-fixer and fix code style issues
 test-php-style-fix: vendor-bin/owncloud-codestyle/vendor
 	$(PHP_CS_FIXER) fix -v --diff --diff-format udiff --allow-risky yes
 
 .PHONY: test-php-phan
-test-php-phan:             ## Run phan
+test-php-phan: ## Run phan
 test-php-phan: vendor-bin/phan/vendor
 	$(PHAN) --config-file .phan/config.php --require-config-exists
 
 .PHONY: test-php-phpstan
-test-php-phpstan:          ## Run phpstan
+test-php-phpstan: ## Run phpstan
 test-php-phpstan: vendor-bin/phpstan/vendor
 	$(PHPSTAN) analyse --memory-limit=4G --configuration=./phpstan.neon --no-progress --level=5 appinfo lib
 
 .PHONY: test-acceptance-api
-test-acceptance-api:        ## Run php-cs-fixer and fix code style issues
+test-acceptance-api: ## Run php-cs-fixer and fix code style issues
 test-acceptance-api: vendor
 	../../tests/acceptance/run.sh --remote --type api
 
 .PHONY: test-acceptance-cli
-test-acceptance-cli:       ## Run CLI acceptance tests
+test-acceptance-cli: ## Run CLI acceptance tests
 test-acceptance-cli: vendor
 	../../tests/acceptance/run.sh --remote --type cli
 
 .PHONY: test-acceptance-webui
-test-acceptance-webui:     ## Run webUI acceptance tests
+test-acceptance-webui: ## Run webUI acceptance tests
 test-acceptance-webui: vendor
 	../../tests/acceptance/run.sh --remote --type webUI
 
 #
 # Dependency management
-#--------------------------------------
+#----------------------
 
 composer.lock: composer.json
 	@echo composer.lock is not up to date.
