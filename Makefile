@@ -85,7 +85,7 @@ test-php-phpstan: vendor-bin/phpstan/vendor
 	$(PHPSTAN) analyse --memory-limit=4G --configuration=./phpstan.neon --no-progress --level=5 appinfo lib
 
 .PHONY: test-acceptance-api
-test-acceptance-api: ## Run php-cs-fixer and fix code style issues
+test-acceptance-api: ## Run API acceptance tests
 test-acceptance-api: vendor
 	../../tests/acceptance/run.sh --remote --type api
 
@@ -98,6 +98,16 @@ test-acceptance-cli: vendor
 test-acceptance-webui: ## Run webUI acceptance tests
 test-acceptance-webui: vendor
 	../../tests/acceptance/run.sh --remote --type webUI
+
+.PHONY: test-acceptance-core-api
+test-acceptance-core-api: ## Run core API acceptance tests
+test-acceptance-core-api: vendor
+	../../tests/acceptance/run.sh --remote --type api -c ../../tests/acceptance/config/behat.yml --tags '~@skipOnEncryption&&~@skipOnEncryptionType:${ENCRYPTION_TYPE}&&~@skip'
+
+.PHONY: test-acceptance-core-webui
+test-acceptance-core-webui: ## Run core webUI acceptance tests
+test-acceptance-core-webui: vendor
+	../../tests/acceptance/run.sh --remote --type webui -c ../../tests/acceptance/config/behat.yml --tags '~@skipOnEncryption&&~@skipOnEncryptionType:${ENCRYPTION_TYPE}&&~@skip'
 
 #
 # Dependency management
