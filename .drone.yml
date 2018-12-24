@@ -218,10 +218,9 @@ pipeline:
       - DIVIDE_INTO_NUM_PARTS=15
       - RUN_PART=${PART}
     commands:
-      - cd /var/www/owncloud/tests/acceptance/
       - touch /var/www/owncloud/saved-settings.sh
       - . /var/www/owncloud/saved-settings.sh
-      - su-exec www-data ./run.sh --remote --type webUI --tags '~@skipOnEncryption&&~@skipOnEncryptionType:${ENCRYPTION_TYPE}&&~@skip'
+      - make test-acceptance-core-webui
     when:
       matrix:
         TEST_SUITE: core-web-acceptance
@@ -235,10 +234,9 @@ pipeline:
       - DIVIDE_INTO_NUM_PARTS=15
       - RUN_PART=${PART}
     commands:
-      - cd /var/www/owncloud/tests/acceptance/
       - touch /var/www/owncloud/saved-settings.sh
       - . /var/www/owncloud/saved-settings.sh
-      - su-exec www-data ./run.sh --remote --type api --tags '~@skipOnEncryption&&~@skipOnEncryptionType:${ENCRYPTION_TYPE}&&~@skip'
+      - make test-acceptance-core-api
     when:
       matrix:
         TEST_SUITE: core-api-acceptance
