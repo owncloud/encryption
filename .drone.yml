@@ -107,7 +107,6 @@ pipeline:
     image: owncloudci/php:${PHP_VERSION}
     pull: true
     commands:
-      - ../../lib/composer/bin/parallel-lint . --exclude 3rdparty --exclude build .
       - cd /var/www/owncloud
       #- php ./occ app:check-code encryption -c private -c strong-comparison
       - php ./occ app:check-code encryption -c deprecation
@@ -322,6 +321,12 @@ matrix:
   include:
     # owncloud-coding-standard
     - PHP_VERSION: 7.1
+      TEST_SUITE: owncloud-coding-standard
+
+    - PHP_VERSION: 7.2
+      TEST_SUITE: owncloud-coding-standard
+
+    - PHP_VERSION: 7.3
       TEST_SUITE: owncloud-coding-standard
 
     # Unit Tests
