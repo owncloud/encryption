@@ -14,6 +14,7 @@ default:
             adminPassword: admin
             regularUserPassword: 123456
             ocPath: apps/testing/api/v1/occ
+        - OccContext:
 
     webUIUserKeysType:
       paths:
@@ -25,6 +26,7 @@ default:
         - WebUIGeneralContext:
         - WebUILoginContext:
         - FeatureContext: *common_feature_context_params
+        - OccContext:
 
   extensions:
       jarnaiz\JUnitFormatter\JUnitFormatterExtension:

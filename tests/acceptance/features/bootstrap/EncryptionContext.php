@@ -38,6 +38,11 @@ class EncryptionContext implements Context {
 	private $featureContext;
 
 	/**
+	 * @var OccContext
+	 */
+	private $occContext;
+
+	/**
 	 * @When the administrator successfully recreates the encryption masterkey using the occ command
 	 * @Given the administrator has successfully recreated the encryption masterkey
 	 *
@@ -46,7 +51,7 @@ class EncryptionContext implements Context {
 	 */
 	public function recreateMasterKeyUsingOccCommand() {
 		$this->featureContext->runOcc(['encryption:recreate-master-key', '-y']);
-		$this->featureContext->theCommandShouldHaveBeenSuccessful();
+		$this->occContext->theCommandShouldHaveBeenSuccessful();
 	}
 
 	/**
@@ -91,7 +96,7 @@ class EncryptionContext implements Context {
 	 * @return void
 	 */
 	public function theAdministratorDecryptsUserKeysBasedEncryptionWithKey($recoveryKey) {
-		$this->featureContext->invokingTheCommandWithEnvVariable(
+		$this->occContext->invokingTheCommandWithEnvVariable(
 			"encryption:decrypt-all -m recovery -c yes",
 			'OC_RECOVERY_PASSWORD',
 			$recoveryKey
@@ -161,6 +166,7 @@ class EncryptionContext implements Context {
 		$environment = $scope->getEnvironment();
 		// Get all the contexts you need in this context
 		$this->featureContext = $environment->getContext('FeatureContext');
+		$this->occContext = $environment->getContext('OccContext');
 		SetupHelper::init(
 			$this->featureContext->getAdminUsername(),
 			$this->featureContext->getAdminPassword(),
