@@ -38,7 +38,7 @@ use OCA\Encryption\Recovery;
 use OCA\Encryption\Session;
 use OCA\Encryption\Users\Setup;
 use OCA\Encryption\Util;
-use OCP\App;
+use OCA\Encryption\Crypto\CryptHSM;
 use OCP\AppFramework\IAppContainer;
 use OCP\Encryption\IManager;
 use OCP\IConfig;
@@ -128,10 +128,25 @@ class Application extends \OCP\AppFramework\App {
 		$container->registerService('Crypt',
 			function (IAppContainer $c) {
 				$server = $c->getServer();
-				return new Crypt($server->getLogger(),
-					$server->getUserSession(),
-					$server->getConfig(),
-					$server->getL10N($c->getAppName()));
+
+				if ($this->config->getAppValue('encryption', 'hsm.url', '') !== '') {
+					$this->config->setAppValue('crypto.engine', 'internal', 'hsm');
+				}
+
+				if ($this->config->getAppValue('crypto.engine', 'internal', '') === 'hsm') {
+					return new CryptHSM($server->getLogger(),
+						$server->getUserSession(),
+						$server->getConfig(),
+						$server->getL10N($c->getAppName()),
+						$server->getHTTPClientService(),
+						$server->getRequest(),
+						$server->getTimeFactory());
+				} else {
+					return new Crypt($server->getLogger(),
+						$server->getUserSession(),
+						$server->getConfig(),
+						$server->getL10N($c->getAppName()));
+				}
 			});
 
 		$container->registerService('Session',
