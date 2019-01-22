@@ -84,7 +84,7 @@ class WebUIAdminEncryptionSettingsContext extends RawMinkContext implements Cont
 	/**
 	 * @Given the administrator has enabled recovery key and set the recovery key to :recoveryKey
 	 *
-	 * @param string recoveryKey
+	 * @param string $recoveryKey
 	 *
 	 * @return void
 	 */
