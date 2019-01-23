@@ -13,6 +13,8 @@ doc_files=README.md LICENSE
 src_dirs=appinfo css img js l10n lib templates
 all_src=$(src_dirs) $(doc_files)
 
+acceptance_test_deps=vendor-bin/behat/vendor
+
 # bin file definitions
 PHPUNIT=php -d zend.enable_gc=0 ../../lib/composer/bin/phpunit
 PHPUNITDBG=phpdbg -qrr -d memory_limit=4096M -d zend.enable_gc=0 "../../lib/composer/bin/phpunit"
@@ -20,12 +22,20 @@ PHP_CS_FIXER=php -d zend.enable_gc=0 vendor-bin/owncloud-codestyle/vendor/bin/ph
 PHP_CODESNIFFER=vendor-bin/php_codesniffer/vendor/bin/phpcs
 PHAN=php -d zend.enable_gc=0 vendor-bin/phan/vendor/bin/phan
 PHPSTAN=php -d zend.enable_gc=0 vendor-bin/phpstan/vendor/bin/phpstan
+BEHAT_BIN=vendor-bin/behat/vendor/bin/behat
 
 # start with displaying help
 .DEFAULT_GOAL := help
 
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//' | sed -e 's/  */ /' | column -t -s :
+
+.PHONY: clean
+clean: clean-composer-deps
+
+.PHONY: clean-composer-deps
+clean-composer-deps:
+	rm -Rf vendor-bin/**/vendor vendor-bin/**/composer.lock
 
 ##---------------------
 ## Build targets
@@ -82,28 +92,28 @@ test-php-phpstan: vendor-bin/phpstan/vendor
 
 .PHONY: test-acceptance-api
 test-acceptance-api: ## Run API acceptance tests
-test-acceptance-api: vendor
-	../../tests/acceptance/run.sh --remote --type api
+test-acceptance-api: $(acceptance_test_deps)
+	BEHAT_BIN=$(BEHAT_BIN) ../../tests/acceptance/run.sh --remote --type api
 
 .PHONY: test-acceptance-cli
 test-acceptance-cli: ## Run CLI acceptance tests
-test-acceptance-cli: vendor
-	../../tests/acceptance/run.sh --remote --type cli
+test-acceptance-cli: $(acceptance_test_deps)
+	BEHAT_BIN=$(BEHAT_BIN) ../../tests/acceptance/run.sh --remote --type cli
 
 .PHONY: test-acceptance-webui
 test-acceptance-webui: ## Run webUI acceptance tests
-test-acceptance-webui: vendor
-	../../tests/acceptance/run.sh --remote --type webUI
+test-acceptance-webui: $(acceptance_test_deps)
+	BEHAT_BIN=$(BEHAT_BIN) ../../tests/acceptance/run.sh --remote --type webUI
 
 .PHONY: test-acceptance-core-api
 test-acceptance-core-api: ## Run core API acceptance tests
-test-acceptance-core-api: vendor
-	../../tests/acceptance/run.sh --remote --type api -c ../../tests/acceptance/config/behat.yml --tags '~@skipOnEncryption&&~@skipOnEncryptionType:${ENCRYPTION_TYPE}&&~@skip'
+test-acceptance-core-api: $(acceptance_test_deps)
+	BEHAT_BIN=$(BEHAT_BIN) ../../tests/acceptance/run.sh --remote --type api -c ../../tests/acceptance/config/behat.yml --tags '~@skipOnEncryption&&~@skipOnEncryptionType:${ENCRYPTION_TYPE}&&~@skip'
 
 .PHONY: test-acceptance-core-webui
 test-acceptance-core-webui: ## Run core webUI acceptance tests
-test-acceptance-core-webui: vendor
-	../../tests/acceptance/run.sh --remote --type webui -c ../../tests/acceptance/config/behat.yml --tags '~@skipOnEncryption&&~@skipOnEncryptionType:${ENCRYPTION_TYPE}&&~@skip'
+test-acceptance-core-webui: $(acceptance_test_deps)
+	BEHAT_BIN=$(BEHAT_BIN) ../../tests/acceptance/run.sh --remote --type webui -c ../../tests/acceptance/config/behat.yml --tags '~@skipOnEncryption&&~@skipOnEncryptionType:${ENCRYPTION_TYPE}&&~@skip'
 
 #
 # Dependency management
@@ -141,3 +151,9 @@ vendor-bin/phpstan/vendor: vendor/bamarni/composer-bin-plugin vendor-bin/phpstan
 
 vendor-bin/phpstan/composer.lock: vendor-bin/phpstan/composer.json
 	@echo phpstan composer.lock is not up to date.
+
+vendor-bin/behat/vendor: vendor/bamarni/composer-bin-plugin vendor-bin/behat/composer.lock
+	composer bin behat install --no-progress
+
+vendor-bin/behat/composer.lock: vendor-bin/behat/composer.json
+	@echo behat composer.lock is not up to date.
