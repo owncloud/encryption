@@ -1,11 +1,11 @@
 default:
   autoload:
-     '': %paths.base%/../features/bootstrap
+     '': '%paths.base%/../features/bootstrap'
 
   suites:
     cliEncryption:
       paths:
-        - %paths.base%/../features/cliEncryption
+        - '%paths.base%/../features/cliEncryption'
       contexts:
         - EncryptionContext:
         - FeatureContext: &common_feature_context_params
@@ -18,7 +18,7 @@ default:
 
     webUIUserKeysType:
       paths:
-        - %paths.base%/../features/webUIUserKeysType
+        - '%paths.base%/../features/webUIUserKeysType'
       contexts:
         - EncryptionContext:
         - WebUIAdminEncryptionSettingsContext:
@@ -31,4 +31,4 @@ default:
   extensions:
       jarnaiz\JUnitFormatter\JUnitFormatterExtension:
           filename: report.xml
-          outputDir: %paths.base%/../output/
+          outputDir: '%paths.base%/../output/'
