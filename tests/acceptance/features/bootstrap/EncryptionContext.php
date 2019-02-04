@@ -85,7 +85,7 @@ class EncryptionContext implements Context {
 	 * @return void
 	 */
 	public function theAdministratorEncryptsAllDataUsingTheOccCommand() {
-		$this->featureContext->runOcc(["encryption:encrypt-all", "-n"]);
+		$this->featureContext->runOcc(["encryption:encrypt-all", "-y"]);
 	}
 
 	/**
