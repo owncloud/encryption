@@ -319,7 +319,7 @@ services:
 
 matrix:
   include:
-    ## UI core stable10 with masterkey encryption
+    ## UI core stable10 with masterkey encryption 1
     - PHP_VERSION: 5.6
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
@@ -333,9 +333,153 @@ matrix:
       DB_TYPE: mysql
       DB_HOST: mysql
       TEST_SUITE: core-web-acceptance
-      BEHAT_FEATURE: /var/www/owncloud/server/tests/acceptance/features/webUISharingExternal/federationSharing.feature:295
+      BEHAT_FEATURE: webUISharingExternal
 
-    ## UI core stable10 with user-keys encryption
+    ## UI core stable10 with masterkey encryption 2
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with masterkey encryption 3
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with masterkey encryption 4
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_FEATURE: webUISharingExternal
+
+    ## UI core stable10 with masterkey encryption 5
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with masterkey encryption 6
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with masterkey encryption 7
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_FEATURE: webUISharingExternal
+
+    ## UI core stable10 with masterkey encryption 8
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_FEATURE: webUISharingExternal
+
+    ## UI core stable10 with masterkey encryption 9
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_FEATURE: webUISharingExternal
+
+    ## UI core stable10 with masterkey encryption 10
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with user-keys encryption 1
     - PHP_VERSION: 5.6
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
@@ -349,9 +493,153 @@ matrix:
       DB_TYPE: mysql
       DB_HOST: mysql
       TEST_SUITE: core-web-acceptance
-      BEHAT_FEATURE: /var/www/owncloud/server/tests/acceptance/features/webUISharingExternal/federationSharing.feature:295
+      BEHAT_SUITE: webUISharingExternal
 
-    ## UI core master with masterkey encryption
+    ## UI core stable10 with user-keys encryption 2
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with user-keys encryption 3
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with user-keys encryption 4
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with user-keys encryption 5
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with user-keys encryption 6
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with user-keys encryption 7
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with user-keys encryption 8
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with user-keys encryption 9
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core stable10 with user-keys encryption 10
+    - PHP_VERSION: 5.6
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core master with masterkey encryption 1
     - PHP_VERSION: 7.1
       OC_VERSION: daily-master-qa
       NEED_CORE: true
@@ -365,9 +653,153 @@ matrix:
       DB_TYPE: mysql
       DB_HOST: mysql
       TEST_SUITE: core-web-acceptance
-      BEHAT_FEATURE: /var/www/owncloud/server/tests/acceptance/features/webUISharingExternal/federationSharing.feature:295
+      BEHAT_SUITE: webUISharingExternal
 
-    ## UI core master with user-keys encryption
+    ## UI core master with masterkey encryption 2
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core master with masterkey encryption 3
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core master with masterkey encryption 4
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core master with masterkey encryption 5
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core master with masterkey encryption 6
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core master with masterkey encryption 7
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core master with masterkey encryption 8
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core master with masterkey encryption 9
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core master with masterkey encryption 10
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core master with user-keys encryption 1
     - PHP_VERSION: 7.1
       OC_VERSION: daily-master-qa
       NEED_CORE: true
@@ -381,4 +813,149 @@ matrix:
       DB_TYPE: mysql
       DB_HOST: mysql
       TEST_SUITE: core-web-acceptance
-      BEHAT_FEATURE: /var/www/owncloud/server/tests/acceptance/features/webUISharingExternal/federationSharing.feature:295
+      BEHAT_SUITE: webUISharingExternal
+
+    ## UI core master with user-keys encryption 2
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+      
+    ## UI core master with user-keys encryption 3
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+      
+    ## UI core master with user-keys encryption 4
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+      
+    ## UI core master with user-keys encryption 5
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+      
+    ## UI core master with user-keys encryption 6
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+      
+    ## UI core master with user-keys encryption 7
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+      
+    ## UI core master with user-keys encryption 8
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+      
+    ## UI core master with user-keys encryption 9
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+      
+    ## UI core master with user-keys encryption 10
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      BEHAT_SUITE: webUISharingExternal
+      
