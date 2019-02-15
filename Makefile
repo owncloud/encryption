@@ -113,7 +113,7 @@ test-acceptance-core-api: $(acceptance_test_deps)
 .PHONY: test-acceptance-core-webui
 test-acceptance-core-webui: ## Run core webUI acceptance tests
 test-acceptance-core-webui: $(acceptance_test_deps)
-	BEHAT_BIN=$(BEHAT_BIN) ../../tests/acceptance/run.sh --remote --type webui -c ../../tests/acceptance/config/behat.yml --tags '~@skipOnEncryption&&~@skipOnEncryptionType:${ENCRYPTION_TYPE}&&~@skip'
+	BEHAT_BIN=$(BEHAT_BIN) ../../tests/acceptance/run.sh --remote --type webui -c ../../tests/acceptance/config/behat.yml --tags '~@skip'
 
 #
 # Dependency management
