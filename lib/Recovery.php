@@ -33,6 +33,7 @@ use OCP\PreConditionNotMetException;
 use OCP\Security\ISecureRandom;
 use OC\Files\View;
 use OCP\Encryption\IFile;
+use OCP\Files\FileInfo;
 
 class Recovery {
 
@@ -217,6 +218,9 @@ class Recovery {
 	private function addRecoveryKeys($path) {
 		$dirContent = $this->view->getDirectoryContent($path);
 		foreach ($dirContent as $item) {
+			if ($this->isSharedStorage($item)) {
+				continue;
+			}
 			$filePath = $item->getPath();
 			if ($item['type'] === 'dir') {
 				$this->addRecoveryKeys($filePath . '/');
@@ -245,6 +249,9 @@ class Recovery {
 	private function removeRecoveryKeys($path) {
 		$dirContent = $this->view->getDirectoryContent($path);
 		foreach ($dirContent as $item) {
+			if ($this->isSharedStorage($item)) {
+				continue;
+			}
 			$filePath = $item->getPath();
 			if ($item['type'] === 'dir') {
 				$this->removeRecoveryKeys($filePath . '/');
@@ -319,5 +326,23 @@ class Recovery {
 			$encryptedKeyfiles = $this->crypt->multiKeyEncrypt($fileKey, $publicKeys);
 			$this->keyManager->setAllFileKeys($path, $encryptedKeyfiles);
 		}
+	}
+
+	/**
+	 * check if the item is on a shared storage
+	 *
+	 * @param FileInfo $item
+	 * @return bool
+	 */
+	protected function isSharedStorage(FileInfo $item) {
+		/**
+		 * hardcoded class to prevent dependency on files_sharing app and federated share
+		 * TODO: add filter callback to view::getDirectoryContent() or its successor
+		 * so we can filter by more than just mimetype
+		 */
+		if ($item->getStorage()->instanceOfStorage('OCA\Files_Sharing\ISharedStorage')) {
+			return true;
+		}
+		return false;
 	}
 }
