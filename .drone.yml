@@ -333,7 +333,7 @@ matrix:
       DB_TYPE: mysql
       DB_HOST: mysql
       TEST_SUITE: core-web-acceptance
-      BEHAT_SUITE: webUISharingExternal
+      BEHAT_FEATURE: /var/www/owncloud/server/tests/acceptance/features/webUISharingExternal/federationSharing.feature:295
 
     ## UI core stable10 with user-keys encryption
     - PHP_VERSION: 5.6
@@ -349,7 +349,7 @@ matrix:
       DB_TYPE: mysql
       DB_HOST: mysql
       TEST_SUITE: core-web-acceptance
-      BEHAT_SUITE: webUISharingExternal
+      BEHAT_FEATURE: /var/www/owncloud/server/tests/acceptance/features/webUISharingExternal/federationSharing.feature:295
 
     ## UI core master with masterkey encryption
     - PHP_VERSION: 7.1
@@ -365,7 +365,7 @@ matrix:
       DB_TYPE: mysql
       DB_HOST: mysql
       TEST_SUITE: core-web-acceptance
-      BEHAT_SUITE: webUISharingExternal
+      BEHAT_FEATURE: /var/www/owncloud/server/tests/acceptance/features/webUISharingExternal/federationSharing.feature:295
 
     ## UI core master with user-keys encryption
     - PHP_VERSION: 7.1
@@ -381,4 +381,4 @@ matrix:
       DB_TYPE: mysql
       DB_HOST: mysql
       TEST_SUITE: core-web-acceptance
-      BEHAT_SUITE: webUISharingExternal
+      BEHAT_FEATURE: /var/www/owncloud/server/tests/acceptance/features/webUISharingExternal/federationSharing.feature:295
