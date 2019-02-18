@@ -143,7 +143,7 @@ class KeyManager {
 	public function validateShareKey() {
 		$shareKey = $this->getPublicShareKey();
 		if (empty($shareKey)) {
-			$keyPair = $this->crypt->createKeyPair();
+			$keyPair = $this->crypt->createKeyPair("oc:".$this->publicShareKeyId);
 
 			// Save public key
 			$this->keyStorage->setSystemUserKey(
@@ -167,7 +167,7 @@ class KeyManager {
 
 		$masterKey = $this->getPublicMasterKey();
 		if (empty($masterKey)) {
-			$keyPair = $this->crypt->createKeyPair();
+			$keyPair = $this->crypt->createKeyPair("oc:".$this->masterKeyId);
 
 			// Save public key
 			$this->keyStorage->setSystemUserKey(

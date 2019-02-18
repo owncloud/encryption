@@ -63,13 +63,13 @@ class Crypt {
 	const HEADER_END = 'HEND';
 
 	/** @var ILogger */
-	private $logger;
+	protected $logger;
 
 	/** @var string */
 	private $user;
 
 	/** @var IConfig */
-	private $config;
+	protected $config;
 
 	/** @var array */
 	private $supportedKeyFormats;
