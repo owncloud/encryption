@@ -35,6 +35,7 @@ use OCP\IConfig;
 use OCP\IL10N;
 use OCP\ILogger;
 use OCP\IUserSession;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 /**
  * Class Crypt provides the encryption implementation of the default ownCloud
@@ -84,6 +85,10 @@ class Crypt {
 		'AES-256-CFB' => 32,
 		'AES-128-CFB' => 16,
 	];
+
+	//When signature mismatch happens this variable is set to true else false.
+	/** @var bool */
+	private static $signatureMismatchHappened = false;
 
 	/**
 	 * @param ILogger $logger
@@ -454,7 +459,12 @@ class Crypt {
 		$catFile = $this->splitMetaData($keyFileContents, $cipher);
 
 		if ($catFile['signature'] !== false) {
-			$this->checkSignature($catFile['encrypted'], $passPhrase . $version . $position, $catFile['signature']);
+			try {
+				$this->checkSignature($catFile['encrypted'], $passPhrase . $version . $position, $catFile['signature']);
+			} catch (HintException $e) {
+				$this->logger->logException($e);
+				$this->setSignatureMismatch(true);
+			}
 		}
 
 		return $this->decrypt($catFile['encrypted'],
@@ -679,6 +689,27 @@ class Crypt {
 			];
 		} else {
 			throw new MultiKeyEncryptException('multikeyencryption failed ' . \openssl_error_string());
+		}
+	}
+
+	/**
+	 * This method sets the signatureMismatchHappened variable.
+	 * @param $didHappened , sets the signatureMismatchHappend with this value
+	 */
+	protected function setSignatureMismatch($didHappened) {
+		self::$signatureMismatchHappened = $didHappened;
+	}
+
+	/**
+	 * This method add signature mismatch to the even listened
+	 * 'files.aftersignaturemismatch'.
+	 * @param GenericEvent $event
+	 */
+	public function signatureMismatchEvent(GenericEvent $event) {
+		if (self::$signatureMismatchHappened === true) {
+			$event->setArgument('signatureMismatch', true);
+			//Reset it
+			$this->setSignatureMismatch(false);
 		}
 	}
 }

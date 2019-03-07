@@ -24,7 +24,9 @@
 
 namespace OCA\Encryption\Tests\Crypto;
 
+use OC\HintException;
 use OCA\Encryption\Crypto\Crypt;
+use Symfony\Component\EventDispatcher\GenericEvent;
 use Test\TestCase;
 
 class CryptTest extends TestCase {
@@ -447,5 +449,49 @@ class CryptTest extends TestCase {
 		$this->assertFalse(
 			$this->invokePrivate($this->crypt, 'isValidPrivateKey', ['foo'])
 		);
+	}
+
+	public function testsymmetricDecryptFileContentForHintException() {
+		/** @var \OCA\Encryption\Crypto\Crypt | \PHPUnit_Framework_MockObject_MockObject $crypt */
+		$crypt = $this->getMockBuilder('OCA\Encryption\Crypto\Crypt')
+			->setConstructorArgs(
+				[
+					$this->logger,
+					$this->userSession,
+					$this->config,
+					$this->l
+				]
+			)
+			->setMethods(
+				[
+					'splitMetaData',
+					'parseHeader',
+					'generatePasswordHash',
+					'checkSignature',
+					'isValidPrivateKey',
+					'setSignatureMismatch',
+				]
+			)
+			->getMock();
+
+		$crypt->method('splitMetaData')
+			->willReturn(['signature' => true]);
+		$crypt->method('checkSignature')
+			->willThrowException(new HintException("Missing Signature"));
+
+		$this->logger->expects($this->once())
+			->method('logException');
+		$crypt->expects($this->once())
+			->method('setSignatureMismatch')
+			->with(true);
+
+		$crypt->symmetricDecryptFileContent("encryptedContent00iv00123456789012345600sig00e1992521e437f6915f9173b190a512cfc38a00ac24502db44e0ba10c2bb0cc86xxx", "test", "AES-256-CFB");
+	}
+
+	public function testsignatureMismatchEvent() {
+		$genericEvent = new GenericEvent(null, []);
+		$this->invokePrivate($this->crypt, 'setSignatureMismatch', [true]);
+		$this->crypt->signatureMismatchEvent($genericEvent);
+		$this->assertFalse($this->invokePrivate($this->crypt, 'signatureMismatchHappened', []));
 	}
 }

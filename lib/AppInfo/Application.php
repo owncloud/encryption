@@ -134,7 +134,7 @@ class Application extends \OCP\AppFramework\App {
 				}
 
 				if ($this->config->getAppValue('crypto.engine', 'internal', '') === 'hsm') {
-					return new CryptHSM($server->getLogger(),
+					$cryptObj =  new CryptHSM($server->getLogger(),
 						$server->getUserSession(),
 						$server->getConfig(),
 						$server->getL10N($c->getAppName()),
@@ -142,11 +142,13 @@ class Application extends \OCP\AppFramework\App {
 						$server->getRequest(),
 						$server->getTimeFactory());
 				} else {
-					return new Crypt($server->getLogger(),
+					$cryptObj =  new Crypt($server->getLogger(),
 						$server->getUserSession(),
 						$server->getConfig(),
 						$server->getL10N($c->getAppName()));
 				}
+				$server->getEventDispatcher()->addListener('files.aftersignaturemismatch', [$cryptObj, 'signatureMismatchEvent'], 30);
+				return $cryptObj;
 			});
 
 		$container->registerService('Session',
