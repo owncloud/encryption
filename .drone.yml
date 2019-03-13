@@ -383,33 +383,25 @@ matrix:
     #
     # stable10
     #
-    # php 5.6
-    - PHP_VERSION: 5.6
+    # php 7.0
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       TEST_SUITE: phpunit
       DB_TYPE: sqlite
       NEED_CORE: true
 
-    - PHP_VERSION: 5.6
-      OC_VERSION: daily-stable10-qa
-      TEST_SUITE: phpunit
-      DB_TYPE: mysql
-      DB_HOST: mysql
-      NEED_CORE: true
-
-    - PHP_VERSION: 5.6
-      OC_VERSION: daily-stable10-qa
-      TEST_SUITE: phpunit
-      DB_TYPE: pgsql
-      DB_HOST: pgsql
-      NEED_CORE: true
-
-    # php 7.0
     - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       TEST_SUITE: phpunit
       DB_TYPE: mysql
       DB_HOST: mysql
+      NEED_CORE: true
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      TEST_SUITE: phpunit
+      DB_TYPE: pgsql
+      DB_HOST: pgsql
       NEED_CORE: true
 
     # php 7.1
@@ -477,7 +469,7 @@ matrix:
       DB_HOST: mysql
 
     ## UI core stable10 with masterkey encryption
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -492,7 +484,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 1
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -507,7 +499,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 2
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -522,7 +514,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 3
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -537,7 +529,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 4
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -552,7 +544,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 5
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -567,7 +559,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 6
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -582,7 +574,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 7
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -597,7 +589,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 8
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -612,7 +604,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 9
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -627,7 +619,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 10
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -642,7 +634,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 11
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -657,7 +649,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 12
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -672,7 +664,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 13
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -687,7 +679,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 14
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -703,7 +695,7 @@ matrix:
       PART: 15
 
     ## UI core stable10 with user-keys encryption
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -718,7 +710,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 1
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -733,7 +725,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 2
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -748,7 +740,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 3
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -763,7 +755,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 4
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -778,7 +770,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 5
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -793,7 +785,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 6
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -808,7 +800,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 7
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -823,7 +815,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 8
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -838,7 +830,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 9
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -853,7 +845,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 10
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -868,7 +860,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 11
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -883,7 +875,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 12
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -898,7 +890,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 13
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -913,7 +905,7 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 14
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1381,7 +1373,7 @@ matrix:
       PART: 15
 
     ## API core stable10 with masterkey encryption
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1394,7 +1386,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 1
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1407,7 +1399,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 2
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1420,7 +1412,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 3
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1433,7 +1425,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 4
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1446,7 +1438,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 5
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1459,7 +1451,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 6
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1472,7 +1464,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 7
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1485,7 +1477,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 8
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1498,7 +1490,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 9
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1511,7 +1503,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 10
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1524,7 +1516,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 11
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1537,7 +1529,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 12
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1550,7 +1542,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 13
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1563,7 +1555,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 14
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1577,7 +1569,7 @@ matrix:
       PART: 15
 
     ## API core stable10 with user-keys encryption
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1590,7 +1582,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 1
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1603,7 +1595,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 2
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1616,7 +1608,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 3
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1629,7 +1621,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 4
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1642,7 +1634,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 5
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1655,7 +1647,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 6
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1668,7 +1660,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 7
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1681,7 +1673,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 8
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1694,7 +1686,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 9
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1707,7 +1699,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 10
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1720,7 +1712,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 11
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1733,7 +1725,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 12
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1746,7 +1738,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 13
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
@@ -1759,7 +1751,7 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 14
 
-    - PHP_VERSION: 5.6
+    - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
       NEED_CORE: true
       NEED_INSTALL_APP: true
