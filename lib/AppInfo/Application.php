@@ -145,7 +145,8 @@ class Application extends \OCP\AppFramework\App {
 					return new Crypt($server->getLogger(),
 						$server->getUserSession(),
 						$server->getConfig(),
-						$server->getL10N($c->getAppName()));
+						$server->getL10N($c->getAppName()),
+						$server->getEventDispatcher());
 				}
 			});
 

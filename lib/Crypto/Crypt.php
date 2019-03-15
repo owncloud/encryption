@@ -35,6 +35,8 @@ use OCP\IConfig;
 use OCP\IL10N;
 use OCP\ILogger;
 use OCP\IUserSession;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 /**
  * Class Crypt provides the encryption implementation of the default ownCloud
@@ -77,6 +79,9 @@ class Crypt {
 	/** @var IL10N */
 	private $l;
 
+	/** @var EventDispatcherInterface */
+	private $eventDispatcher;
+
 	/** @var array */
 	private $supportedCiphersAndKeySize = [
 		'AES-256-CTR' => 32,
@@ -86,16 +91,27 @@ class Crypt {
 	];
 
 	/**
+	 * This variable reads the custom event and updates the value accordingly
+	 * Kindly do not manually edit the value of this variable.
+	 * @var bool
+	 */
+	private $disableSignatureCheck = false;
+
+	/**
 	 * @param ILogger $logger
 	 * @param IUserSession $userSession
 	 * @param IConfig $config
 	 * @param IL10N $l
 	 */
-	public function __construct(ILogger $logger, IUserSession $userSession, IConfig $config, IL10N $l) {
+	public function __construct(ILogger $logger,
+								IUserSession $userSession,
+								IConfig $config, IL10N $l,
+								EventDispatcherInterface $eventDispatcher) {
 		$this->logger = $logger;
 		$this->user = $userSession && $userSession->isLoggedIn() ? $userSession->getUser()->getUID() : '"no user given"';
 		$this->config = $config;
 		$this->l = $l;
+		$this->eventDispatcher = $eventDispatcher;
 		$this->supportedKeyFormats = ['hash', 'password'];
 	}
 
@@ -451,9 +467,17 @@ class Crypt {
 	 * @throws DecryptionFailedException
 	 */
 	public function symmetricDecryptFileContent($keyFileContents, $passPhrase, $cipher = self::DEFAULT_CIPHER, $version = 0, $position = 0) {
+		$this->eventDispatcher->addListener('files.aftersignaturemismatch', function (GenericEvent $event) {
+			if ($event->hasArgument('retryWithIgnoreSignature')) {
+				$this->disableSignatureCheck = $event->getArgument('retryWithIgnoreSignature');
+			} else {
+				$this->disableSignatureCheck = false;
+			}
+			$event->stopPropagation();
+		}, 10);
 		$catFile = $this->splitMetaData($keyFileContents, $cipher);
 
-		if ($catFile['signature'] !== false) {
+		if (($catFile['signature'] !== false) && ($this->disableSignatureCheck === false)) {
 			$this->checkSignature($catFile['encrypted'], $passPhrase . $version . $position, $catFile['signature']);
 		}
 
