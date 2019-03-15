@@ -1,4 +1,4 @@
-@webUI @skipOnEncryptionType:masterkey
+@webUI @skipOnEncryptionType:masterkey @skipOnStorage:ceph
 Feature: encrypt files using user specific keys
   As an admin
   I want to be able to encrypt user files using user specific keys
@@ -7,8 +7,8 @@ Feature: encrypt files using user specific keys
   Background:
     Given app "encryption" has been enabled
     And these users have been created but not initialized:
-      | username         |
-      | brand-new-user   |
+      | username       |
+      | brand-new-user |
     And encryption has been enabled
 
   @issue-33
