@@ -128,8 +128,7 @@ class UserHooksTest extends TestCase {
 			->method('deletePublicKey')
 			->with('testUser');
 
-		$this->instance->postDeleteUser($this->params);
-		$this->assertTrue(true);
+		$this->assertNull($this->instance->postDeleteUser($this->params));
 	}
 
 	/**
@@ -177,7 +176,7 @@ class UserHooksTest extends TestCase {
 				->with($this->params);
 		}
 
-		$instance->preSetPassphrase($this->params);
+		$this->assertNull($instance->preSetPassphrase($this->params));
 	}
 
 	public function dataTestPreSetPassphrase() {
@@ -304,7 +303,7 @@ class UserHooksTest extends TestCase {
 		$logger->expects($this->never())
 			->method('error');
 
-		$userHooks->setPassphrase($this->params);
+		$this->assertNull($userHooks->setPassphrase($this->params));
 	}
 
 	public function testSetPassphraseWithoutSessionLoggerError() {
@@ -340,7 +339,7 @@ class UserHooksTest extends TestCase {
 			->method('error')
 			->with('Encryption Could not update users encryption password');
 
-		$userHooks->setPassphrase($this->params);
+		$this->assertNull($userHooks->setPassphrase($this->params));
 	}
 
 	public function testSetPasswordNoUser() {
@@ -388,8 +387,7 @@ class UserHooksTest extends TestCase {
 			->method('setupUser')
 			->with('testUser', 'password');
 
-		$this->instance->postPasswordReset($this->params);
-		$this->assertTrue(true);
+		$this->assertNull($this->instance->postPasswordReset($this->params));
 	}
 
 	protected function setUp() {
