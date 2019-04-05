@@ -458,5 +458,11 @@ class UserHooksTest extends TestCase {
 					$this->config
 				]
 			)->setMethods(['setupFS'])->getMock();
+		\OC_App::enable('encryption');
+	}
+
+	protected function tearDown() {
+		parent::tearDown();
+		\OC_App::disable('encryption');
 	}
 }
