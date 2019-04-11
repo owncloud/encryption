@@ -147,7 +147,7 @@ The file /test_enc_version_affected_user1/files/Documents/Example.odt is: OK
 ", $output);
 		/**
 		 * We need to add ob_start at the end because if not done, it would be considered as a risky test.
-		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestcCase.php is found to be 1
+		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestCase.php is found to be 1
 		 * where as the ob_get_level is found to be zero.
 		 */
 		\ob_start();
@@ -231,7 +231,7 @@ The file /test_enc_version_affected_user1/files/Documents/Example.odt is: OK
 ", $output);
 		/**
 		 * We need to add ob_start at the end because if not done, it would be considered as a risky test.
-		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestcCase.php is found to be 1
+		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestCase.php is found to be 1
 		 * where as the ob_get_level is found to be zero.
 		 */
 		\ob_start();
@@ -316,7 +316,7 @@ The file /test_enc_version_affected_user1/files/Documents/Example.odt is: OK
 ", $output);
 		/**
 		 * We need to add ob_start at the end because if not done, it would be considered as a risky test.
-		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestcCase.php is found to be 1
+		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestCase.php is found to be 1
 		 * where as the ob_get_level is found to be zero.
 		 */
 		\ob_start();
