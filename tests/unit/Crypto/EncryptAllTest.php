@@ -33,7 +33,6 @@ use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Test\TestCase;
 use Test\Traits\UserTrait;
-use OCA\Files_Sharing\ISharedStorage;
 use OCP\Security\ISecureRandom;
 use OCP\UserInterface;
 use OCP\IL10N;
