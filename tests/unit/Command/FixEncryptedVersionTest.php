@@ -21,7 +21,6 @@
 
 namespace OCA\Encryption\Tests\Command;
 
-use OC\Files\Cache\Cache;
 use OC\Files\View;
 use OCA\Encryption\Command\FixEncryptedVersion;
 use OCA\Encryption\Crypto\Crypt;
