@@ -3,7 +3,7 @@
  * @author Björn Schießle <bjoern@schiessle.org>
  * @author Joas Schilling <coding@schilljs.com>
  *
- * @copyright Copyright (c) 2017, ownCloud GmbH
+ * @copyright Copyright (c) 2019, ownCloud GmbH
  * @license AGPL-3.0
  *
  * This code is free software: you can redistribute it and/or modify
@@ -140,11 +140,11 @@ class SettingsController extends Controller {
 		if ($result === true) {
 			$this->session->setStatus(Session::INIT_SUCCESSFUL);
 			return new DataResponse(
-				['message' => (string)$this->l->t('Private key password successfully updated.')]
+				['message' => (string) $this->l->t('Private key password successfully updated.')]
 			);
 		} else {
 			return new DataResponse(
-				['message' => (string)$errorMessage],
+				['message' => (string) $errorMessage],
 				Http::STATUS_BAD_REQUEST
 			);
 		}

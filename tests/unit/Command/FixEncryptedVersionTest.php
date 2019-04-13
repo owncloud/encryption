@@ -102,7 +102,7 @@ class FixEncryptedVersionTest extends TestCase {
 	 * In this test the encrypted version is set to zero whereas it should have been
 	 * set to a positive non zero number.
 	 */
-	public function testEncryptedVersionZero() {
+	public function testEncryptedVersionIsNotZero() {
 		\OC::$server->getUserSession()->login(self::TEST_ENCRYPTION_VERSION_AFFECTED_USER, 'foo');
 		$view = new View("/" . self::TEST_ENCRYPTION_VERSION_AFFECTED_USER . "/files");
 
@@ -130,7 +130,7 @@ class FixEncryptedVersionTest extends TestCase {
 Attempting to fix the path: /test_enc_version_affected_user1/files/hello.txt
 Increment the encrypted version to 1
 The file /test_enc_version_affected_user1/files/hello.txt is: OK
-Fixed the file /test_enc_version_affected_user1/files/hello.txt with version 1
+Fixed the file: /test_enc_version_affected_user1/files/hello.txt with version 1
 Verifying the content of file /test_enc_version_affected_user1/files/ownCloud Manual.pdf
 The file /test_enc_version_affected_user1/files/ownCloud Manual.pdf is: OK
 Verifying the content of file /test_enc_version_affected_user1/files/world.txt
@@ -208,7 +208,7 @@ Increment the encrypted version to 4
 Increment the encrypted version to 5
 Increment the encrypted version to 6
 The file /test_enc_version_affected_user1/files/hello.txt is: OK
-Fixed the file /test_enc_version_affected_user1/files/hello.txt with version 6
+Fixed the file: /test_enc_version_affected_user1/files/hello.txt with version 6
 Verifying the content of file /test_enc_version_affected_user1/files/ownCloud Manual.pdf
 The file /test_enc_version_affected_user1/files/ownCloud Manual.pdf is: OK
 Verifying the content of file /test_enc_version_affected_user1/files/world.txt
@@ -218,7 +218,7 @@ Increment the encrypted version to 3
 Increment the encrypted version to 4
 Increment the encrypted version to 5
 The file /test_enc_version_affected_user1/files/world.txt is: OK
-Fixed the file /test_enc_version_affected_user1/files/world.txt with version 5
+Fixed the file: /test_enc_version_affected_user1/files/world.txt with version 5
 Verifying the content of file /test_enc_version_affected_user1/files/Photos/Paris.jpg
 The file /test_enc_version_affected_user1/files/Photos/Paris.jpg is: OK
 Verifying the content of file /test_enc_version_affected_user1/files/Photos/San Francisco.jpg
@@ -291,7 +291,7 @@ Decrement the encrypted version to 11
 Decrement the encrypted version to 10
 Decrement the encrypted version to 9
 The file /test_enc_version_affected_user1/files/hello.txt is: OK
-Fixed the file /test_enc_version_affected_user1/files/hello.txt with version 9
+Fixed the file: /test_enc_version_affected_user1/files/hello.txt with version 9
 Verifying the content of file /test_enc_version_affected_user1/files/ownCloud Manual.pdf
 The file /test_enc_version_affected_user1/files/ownCloud Manual.pdf is: OK
 Verifying the content of file /test_enc_version_affected_user1/files/world.txt
@@ -303,7 +303,7 @@ Decrement the encrypted version to 11
 Decrement the encrypted version to 10
 Decrement the encrypted version to 9
 The file /test_enc_version_affected_user1/files/world.txt is: OK
-Fixed the file /test_enc_version_affected_user1/files/world.txt with version 9
+Fixed the file: /test_enc_version_affected_user1/files/world.txt with version 9
 Verifying the content of file /test_enc_version_affected_user1/files/Photos/Paris.jpg
 The file /test_enc_version_affected_user1/files/Photos/Paris.jpg is: OK
 Verifying the content of file /test_enc_version_affected_user1/files/Photos/San Francisco.jpg

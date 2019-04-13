@@ -5,7 +5,7 @@
  * @author Thomas Müller <thomas.mueller@tmit.eu>
  * @author Vincent Petry <pvince81@owncloud.com>
  *
- * @copyright Copyright (c) 2017, ownCloud GmbH
+ * @copyright Copyright (c) 2019, ownCloud GmbH
  * @license AGPL-3.0
  *
  * This code is free software: you can redistribute it and/or modify
@@ -240,7 +240,7 @@ class UserHooks implements IHook {
 	public function setPassphrase($params) {
 		$privateKey = null;
 		$user = null;
-		//Check if a session is there or not
+		//Check if the session is there or not
 		if ($this->user->getUser() !== null) {
 			// Get existing decrypted private key
 			$privateKey = $this->session->getPrivateKey();
