@@ -289,7 +289,7 @@ class EncryptAll {
 	 */
 	protected function encryptFile($path) {
 		$source = $path;
-		$target = $path . '.encrypted.' . \time() . '.part';
+		$target = $path . '.encrypted.' . $this->getTimeStamp() . '.part';
 
 		try {
 			$version = $this->keyManager->getVersion($source, $this->rootView);
@@ -379,6 +379,15 @@ class EncryptAll {
 	protected function setupUserFS($uid) {
 		\OC_Util::tearDownFS();
 		\OC_Util::setupFS($uid);
+	}
+
+	/**
+	 * get current timestamp
+	 *
+	 * @return int
+	 */
+	protected function getTimeStamp() {
+		return \time();
 	}
 
 	/**

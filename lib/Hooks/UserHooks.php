@@ -240,7 +240,7 @@ class UserHooks implements IHook {
 	public function setPassphrase($params) {
 		$privateKey = null;
 		$user = null;
-		//Check if a session is there or not
+		//Check if the session is there or not
 		if ($this->user->getUser() !== null) {
 			// Get existing decrypted private key
 			$privateKey = $this->session->getPrivateKey();
