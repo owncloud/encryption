@@ -2729,3 +2729,17 @@ matrix:
       ENCRYPTION_TYPE: user-keys
       DB_TYPE: mysql
       DB_HOST: mysql
+
+    ## encryption WebUI acceptance tests master-keys encryption
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      BEHAT_SUITE: webUIMasterKeyType
+      TEST_SUITE: web-acceptance
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
