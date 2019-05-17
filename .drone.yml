@@ -7,7 +7,7 @@ branches: [master, release*, release/*]
 pipeline:
   install-core:
     image: owncloudci/core
-    version: ${OC_VERSION}
+    git_reference: encryptionCIproblem
     core_path: /var/www/owncloud/server
     pull: true
     exclude: "apps/encryption"
@@ -39,8 +39,8 @@ pipeline:
       - php occ a:l
       - php occ config:system:set trusted_domains 1 --value=owncloud
       - php occ config:system:set trusted_domains 2 --value=federated
-      - php occ log:manage --level 0
-      - php occ config:list
+      - php occ log:manage --level 2
+      - php occ config:list  --private
       - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
     when:
       matrix:
@@ -68,8 +68,8 @@ pipeline:
       - php occ a:l
       - php occ config:system:set trusted_domains 1 --value=owncloud
       - php occ config:system:set trusted_domains 2 --value=federated
-      - php occ log:manage --level 0
-      - php occ config:list
+      - php occ log:manage --level 2
+      - php occ config:list  --private
     when:
       matrix:
         NEED_INSTALL_APP: true
