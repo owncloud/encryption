@@ -39,7 +39,7 @@ pipeline:
       - php occ a:l
       - php occ config:system:set trusted_domains 1 --value=owncloud
       - php occ config:system:set trusted_domains 2 --value=federated
-      - php occ log:manage --level 0
+      - php occ log:manage --level 2
       - php occ config:list
       - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
     when:
@@ -68,7 +68,7 @@ pipeline:
       - php occ a:l
       - php occ config:system:set trusted_domains 1 --value=owncloud
       - php occ config:system:set trusted_domains 2 --value=federated
-      - php occ log:manage --level 0
+      - php occ log:manage --level 2
       - php occ config:list
     when:
       matrix:
@@ -215,7 +215,7 @@ pipeline:
       - SELENIUM_PORT=4444
       - PLATFORM=Linux
       - MAILHOG_HOST=email
-      - DIVIDE_INTO_NUM_PARTS=15
+      - DIVIDE_INTO_NUM_PARTS=20
       - RUN_PART=${PART}
     commands:
       - touch /var/www/owncloud/saved-settings.sh
@@ -231,7 +231,7 @@ pipeline:
     environment:
       - TEST_SERVER_URL=http://owncloud
       - MAILHOG_HOST=email
-      - DIVIDE_INTO_NUM_PARTS=15
+      - DIVIDE_INTO_NUM_PARTS=20
       - RUN_PART=${PART}
     commands:
       - touch /var/www/owncloud/saved-settings.sh
@@ -694,6 +694,81 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 15
 
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 16
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 17
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 18
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 19
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 20
+
     ## UI core stable10 with user-keys encryption
     - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
@@ -919,6 +994,81 @@ matrix:
       DB_HOST: mysql
       TEST_SUITE: core-web-acceptance
       PART: 15
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 16
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 17
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 18
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 19
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 20
 
     ## UI core master with masterkey encryption
     - PHP_VERSION: 7.1
@@ -1146,6 +1296,81 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 15
 
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 16
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 17
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 18
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 19
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 20
+
     ## UI core master with user-keys encryption
     - PHP_VERSION: 7.1
       OC_VERSION: daily-master-qa
@@ -1372,6 +1597,81 @@ matrix:
       TEST_SUITE: core-web-acceptance
       PART: 15
 
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 16
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 17
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 18
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 19
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-web-acceptance
+      PART: 20
+
     ## API core stable10 with masterkey encryption
     - PHP_VERSION: 7.0
       OC_VERSION: daily-stable10-qa
@@ -1567,6 +1867,71 @@ matrix:
       DB_HOST: mysql
       TEST_SUITE: core-api-acceptance
       PART: 15
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 16
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 17
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 18
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 19
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 20
 
     ## API core stable10 with user-keys encryption
     - PHP_VERSION: 7.0
@@ -1764,6 +2129,71 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 15
 
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 16
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 17
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 18
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 19
+
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-stable10-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 20
+
     ## API core master with masterkey encryption
     - PHP_VERSION: 7.1
       OC_VERSION: daily-master-qa
@@ -1960,6 +2390,71 @@ matrix:
       TEST_SUITE: core-api-acceptance
       PART: 15
 
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 16
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 17
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 18
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 19
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 20
+
     ## API core master with user-keys encryption
     - PHP_VERSION: 7.1
       OC_VERSION: daily-master-qa
@@ -2155,6 +2650,71 @@ matrix:
       DB_HOST: mysql
       TEST_SUITE: core-api-acceptance
       PART: 15
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 16
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 17
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 18
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 19
+
+    - PHP_VERSION: 7.1
+      OC_VERSION: daily-master-qa
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      USE_FEDERATED_SERVER: true
+      FEDERATION_OC_VERSION: daily-stable10-qa
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      TEST_SUITE: core-api-acceptance
+      PART: 20
 
     ## encryption WebUI acceptance tests user-keys encryption
     - PHP_VERSION: 7.1
