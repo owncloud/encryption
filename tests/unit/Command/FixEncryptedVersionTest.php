@@ -84,7 +84,6 @@ class FixEncryptedVersionTest extends TestCase {
 		if ($user !== null) {
 			$user->delete();
 		}
-		\OC_App::disable('encryption');
 		\OC::$server->getConfig()->deleteAppValue('core', 'encryption_enabled');
 		\OC::$server->getConfig()->deleteAppValue('core', 'default_encryption_module');
 		\OC::$server->getConfig()->deleteAppValues('encryption');
