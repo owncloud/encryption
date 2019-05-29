@@ -28,6 +28,19 @@ default:
         - FeatureContext: *common_feature_context_params
         - OccContext:
 
+    webUIMasterKeyType:
+      paths:
+        - '%paths.base%/../features/webUIMasterKeyType'
+      contexts:
+        - EncryptionContext:
+        - WebUIAdminEncryptionSettingsContext:
+        - WebUIPersonalEncryptionSettingsContext:
+        - WebUIGeneralContext:
+        - WebUILoginContext:
+        - WebUIFilesContext:
+        - FeatureContext: *common_feature_context_params
+        - OccContext:
+
   extensions:
       jarnaiz\JUnitFormatter\JUnitFormatterExtension:
           filename: report.xml
