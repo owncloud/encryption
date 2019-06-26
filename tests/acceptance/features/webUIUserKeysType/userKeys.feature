@@ -11,16 +11,14 @@ Feature: encrypt files using user specific keys
       | brand-new-user |
     And encryption has been enabled
 
-  @issue-33
   Scenario: encrypt all files using user keys based encryption via the occ command
     Given these users have been initialized:
       | username       |
       | brand-new-user |
     When the administrator sets the encryption type to "user-keys" using the occ command
     And the administrator encrypts all data using the occ command
-    Then the command should have failed with exit code 1
-    #Then the command should have been successful
-    #And file "textfile0.txt" of user "brand-new-user" should be encrypted
+    Then the command should have been successful
+    And file "textfile0.txt" of user "brand-new-user" should be encrypted
 
   Scenario: file gets encrypted if the encryption is enabled and administrator has not encrypted all files but the user has logged in
     When the administrator sets the encryption type to "user-keys" using the occ command
