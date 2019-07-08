@@ -29,6 +29,19 @@ pipeline:
       matrix:
         USE_FEDERATED_SERVER: true
 
+  install-testrunner:
+    image: owncloudci/php:${PHP_VERSION}
+    pull: true
+    commands:
+      - git clone -b stable10 --depth=1 https://github.com/owncloud/core.git /var/www/owncloud/testrunner
+      - cp -r /var/www/owncloud/server/apps/encryption /var/www/owncloud/testrunner/apps/
+      - cd /var/www/owncloud/testrunner
+      - make install-composer-deps
+      - make vendor-bin-deps
+    when:
+      matrix:
+        USE_RELEASE_TARBALL: true
+
   configure-federation-server:
     image: owncloudci/php:${PHP_VERSION}
     pull: true
@@ -79,8 +92,14 @@ pipeline:
     pull: true
     commands:
       - chown www-data /var/www/owncloud/server -R
-      - chmod 777 /var/www/owncloud/server/tests/acceptance/filesForUpload -R
-      - chmod +x /var/www/owncloud/server/tests/acceptance/run.sh
+      - if [ "${USE_RELEASE_TARBALL}" = "true" ];
+        then
+        chmod 777 /var/www/owncloud/testrunner/tests/acceptance/filesForUpload -R;
+        chmod +x /var/www/owncloud/testrunner/tests/acceptance/run.sh;
+        else
+        chmod 777 /var/www/owncloud/server/tests/acceptance/filesForUpload -R;
+        chmod +x /var/www/owncloud/server/tests/acceptance/run.sh;
+        fi
     when:
       matrix:
         NEED_SERVER: true
@@ -183,6 +202,7 @@ pipeline:
       - PLATFORM=Linux
       - BEHAT_SUITE=${BEHAT_SUITE}
     commands:
+      - if [ "${USE_RELEASE_TARBALL}" = "true" ]; then cd /var/www/owncloud/testrunner/apps/encryption; fi
       - make test-acceptance-cli
     when:
       matrix:
@@ -200,6 +220,7 @@ pipeline:
       - BEHAT_SUITE=${BEHAT_SUITE}
       - MAILHOG_HOST=email
     commands:
+      - if [ "${USE_RELEASE_TARBALL}" = "true" ]; then cd /var/www/owncloud/testrunner/apps/encryption; fi
       - make test-acceptance-webui
     when:
       matrix:
@@ -2743,3 +2764,50 @@ matrix:
       ENCRYPTION_TYPE: masterkey
       DB_TYPE: mysql
       DB_HOST: mysql
+
+    # Release Tarball
+    # Acceptance Tests
+    ## encryption CLI acceptance tests masterkey encryption
+    - PHP_VERSION: 7.2
+      OC_VERSION: 10.2.1
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      BEHAT_SUITE: cliEncryption
+      TEST_SUITE: cli-acceptance
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      USE_RELEASE_TARBALL: true
+
+    # Release Tarball
+    ## encryption WebUI acceptance tests user-keys encryption
+    - PHP_VERSION: 7.1
+      OC_VERSION: 10.2.1
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      BEHAT_SUITE: webUIUserKeysType
+      TEST_SUITE: web-acceptance
+      ENCRYPTION_TYPE: user-keys
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      USE_RELEASE_TARBALL: true
+
+    # Release Tarball
+    ## encryption WebUI acceptance tests master-keys encryption
+    - PHP_VERSION: 7.1
+      OC_VERSION: 10.2.1
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      NEED_SERVER: true
+      NEED_SELENIUM: true
+      NEED_EMAIL: true
+      BEHAT_SUITE: webUIMasterKeyType
+      TEST_SUITE: web-acceptance
+      ENCRYPTION_TYPE: masterkey
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      USE_RELEASE_TARBALL: true
