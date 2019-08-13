@@ -9,7 +9,7 @@ endif
 app_name=$(notdir $(CURDIR))
 build_dir=$(CURDIR)/build
 dist_dir=$(build_dir)/dist
-doc_files=README.md LICENSE
+doc_files=README.md CHANGELOG.md LICENSE
 src_dirs=appinfo css img js l10n lib templates
 all_src=$(src_dirs) $(doc_files)
 
