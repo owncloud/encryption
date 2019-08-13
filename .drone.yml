@@ -236,6 +236,7 @@ pipeline:
       - SELENIUM_PORT=4444
       - PLATFORM=Linux
       - MAILHOG_HOST=email
+      - ENCRYPTION_TYPE=${ENCRYPTION_TYPE}
       - DIVIDE_INTO_NUM_PARTS=20
       - RUN_PART=${PART}
     commands:
@@ -252,6 +253,7 @@ pipeline:
     environment:
       - TEST_SERVER_URL=http://owncloud
       - MAILHOG_HOST=email
+      - ENCRYPTION_TYPE=${ENCRYPTION_TYPE}
       - DIVIDE_INTO_NUM_PARTS=20
       - RUN_PART=${PART}
     commands:
