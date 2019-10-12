@@ -896,6 +896,7 @@ def acceptance():
 		'filterTags': '',
 		'logLevel': '2',
 		'emailNeeded': False,
+		'ldapNeeded': False,
 		'cephS3': False,
 		'scalityS3': False,
 		'extraSetup': [],
@@ -1002,6 +1003,9 @@ def acceptance():
 								if params['emailNeeded']:
 									environment['MAILHOG_HOST'] = 'email'
 
+								if params['ldapNeeded']:
+									environment['TEST_EXTERNAL_USER_BACKENDS'] = True
+
 								if (needObjectStore):
 									environment['OC_TEST_ON_OBJECTSTORE'] = '1'
 									if (params['cephS3'] != False):
@@ -1071,6 +1075,7 @@ def acceptance():
 										databaseService(db) +
 										browserService(browser) +
 										emailService(params['emailNeeded']) +
+										ldapService(params['ldapNeeded']) +
 										cephService(params['cephS3']) +
 										scalityService(params['scalityS3']) +
 										params['extraServices'] +
@@ -1201,6 +1206,23 @@ def emailService(emailNeeded):
 			'name': 'email',
 			'image': 'mailhog/mailhog',
 			'pull': 'always',
+		}]
+
+	return []
+
+def ldapService(ldapNeeded):
+	if ldapNeeded:
+		return [{
+			'name': 'ldap',
+			'image': 'osixia/openldap',
+			'pull': 'always',
+			'environment': {
+				'LDAP_DOMAIN': 'owncloud.com',
+				'LDAP_ORGANISATION': 'owncloud',
+				'LDAP_ADMIN_PASSWORD': 'admin',
+				'LDAP_TLS_VERIFY_CLIENT': 'never',
+				'HOSTNAME': 'ldap',
+			}
 		}]
 
 	return []
@@ -1419,7 +1441,6 @@ def setupCeph(cephS3):
 		]
 	}]
 
-
 def setupScality(scalityS3):
 	if type(scalityS3) == "bool":
 		if scalityS3:
@@ -1446,7 +1467,6 @@ def setupScality(scalityS3):
 			'for I in $(seq 1 9); do php ./occ s3:create-bucket  owncloud$I --accept-warning; done',
 		] if createExtraBuckets else [])
 	}]
-
 
 def fixPermissions(phpVersion, federatedServerNeeded):
 	return [{
