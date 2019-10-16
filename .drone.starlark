@@ -60,7 +60,7 @@ config = {
 			'servers': [
 				'daily-master-qa',
 				'latest',
-				'10.3.0RC1'
+				'10.3.0'
 			],
 			'extraSetup': [
 				{
@@ -86,7 +86,7 @@ config = {
 			'servers': [
 				'daily-master-qa',
 				'latest',
-				'10.3.0RC1'
+				'10.3.0'
 			],
 			'emailNeeded': True,
 			'extraSetup': [
@@ -113,7 +113,7 @@ config = {
 			'servers': [
 				'daily-master-qa',
 				'latest',
-				'10.3.0RC1'
+				'10.3.0'
 			],
 			'emailNeeded': True,
 			'extraSetup': [

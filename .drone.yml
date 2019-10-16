@@ -1358,7 +1358,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: cliEncryption-10.3.0RC1-mysql5.5-php7.0
+name: cliEncryption-10.3.0-mysql5.5-php7.0
 
 platform:
   os: linux
@@ -1380,7 +1380,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: 10.3.0RC1
+    version: 10.3.0
 
 - name: install-testrunner
   pull: always
@@ -1475,7 +1475,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: cliEncryption-10.3.0RC1-postgres9.4-php7.0
+name: cliEncryption-10.3.0-postgres9.4-php7.0
 
 platform:
   os: linux
@@ -1497,7 +1497,7 @@ steps:
     db_type: pgsql
     db_username: owncloud
     exclude: apps/encryption
-    version: 10.3.0RC1
+    version: 10.3.0
 
 - name: install-testrunner
   pull: always
@@ -1855,7 +1855,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIMasterKey-10.3.0RC1-chrome-mysql5.5-php7.0
+name: webUIMasterKey-10.3.0-chrome-mysql5.5-php7.0
 
 platform:
   os: linux
@@ -1877,7 +1877,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: 10.3.0RC1
+    version: 10.3.0
 
 - name: install-testrunner
   pull: always
@@ -2251,7 +2251,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIUserKeys-10.3.0RC1-chrome-mysql5.5-php7.0
+name: webUIUserKeys-10.3.0-chrome-mysql5.5-php7.0
 
 platform:
   os: linux
@@ -2273,7 +2273,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: 10.3.0RC1
+    version: 10.3.0
 
 - name: install-testrunner
   pull: always
@@ -19073,14 +19073,14 @@ depends_on:
 - cliEncryption-master-postgres9.4-php7.0
 - cliEncryption-latest-mysql5.5-php7.0
 - cliEncryption-latest-postgres9.4-php7.0
-- cliEncryption-10.3.0RC1-mysql5.5-php7.0
-- cliEncryption-10.3.0RC1-postgres9.4-php7.0
+- cliEncryption-10.3.0-mysql5.5-php7.0
+- cliEncryption-10.3.0-postgres9.4-php7.0
 - webUIMasterKey-master-chrome-mysql5.5-php7.0
 - webUIMasterKey-latest-chrome-mysql5.5-php7.0
-- webUIMasterKey-10.3.0RC1-chrome-mysql5.5-php7.0
+- webUIMasterKey-10.3.0-chrome-mysql5.5-php7.0
 - webUIUserKeys-master-chrome-mysql5.5-php7.0
 - webUIUserKeys-latest-chrome-mysql5.5-php7.0
-- webUIUserKeys-10.3.0RC1-chrome-mysql5.5-php7.0
+- webUIUserKeys-10.3.0-chrome-mysql5.5-php7.0
 - apiCoreMKey-25-1-master-mysql5.7-php7.0
 - apiCoreMKey-25-2-master-mysql5.7-php7.0
 - apiCoreMKey-25-3-master-mysql5.7-php7.0
