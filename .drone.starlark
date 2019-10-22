@@ -59,8 +59,7 @@ config = {
 			],
 			'servers': [
 				'daily-master-qa',
-				'latest',
-				'10.3.0'
+				'latest'
 			],
 			'extraSetup': [
 				{
@@ -85,8 +84,7 @@ config = {
 			],
 			'servers': [
 				'daily-master-qa',
-				'latest',
-				'10.3.0'
+				'latest'
 			],
 			'emailNeeded': True,
 			'extraSetup': [
@@ -112,8 +110,7 @@ config = {
 			],
 			'servers': [
 				'daily-master-qa',
-				'latest',
-				'10.3.0'
+				'latest'
 			],
 			'emailNeeded': True,
 			'extraSetup': [
