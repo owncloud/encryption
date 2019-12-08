@@ -390,7 +390,7 @@ class UserHooksTest extends TestCase {
 		$this->assertNull($this->instance->postPasswordReset($this->params));
 	}
 
-	protected function setUp() {
+	protected function setUp(): void {
 		parent::setUp();
 		$this->loggerMock = $this->createMock('OCP\ILogger');
 		$this->keyManagerMock = $this->getMockBuilder('OCA\Encryption\KeyManager')
@@ -461,7 +461,7 @@ class UserHooksTest extends TestCase {
 		\OC_App::enable('encryption');
 	}
 
-	protected function tearDown() {
+	protected function tearDown(): void {
 		parent::tearDown();
 		\OC_App::disable('encryption');
 	}

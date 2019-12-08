@@ -28,7 +28,7 @@ class JWTTest extends TestCase {
 	/** @var JWT | \PHPUnit\Framework\MockObject\MockObject */
 	private $jwt;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->jwt = new JWT();
 	}

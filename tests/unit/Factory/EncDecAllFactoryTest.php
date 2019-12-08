@@ -59,7 +59,7 @@ class EncDecAllFactoryTest extends TestCase {
 	private $userSession;
 	private $encdecAllFactory;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		$this->encryptionManager = $this->createMock(Manager::class);

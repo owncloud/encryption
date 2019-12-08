@@ -63,7 +63,7 @@ class KeyManagerTest extends TestCase {
 	/** @var \OCP\IConfig|\PHPUnit\Framework\MockObject\MockObject */
 	private $configMock;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->userId = 'user1';
 		$this->systemKeyId = 'systemKeyId';

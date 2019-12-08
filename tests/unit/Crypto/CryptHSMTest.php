@@ -51,7 +51,7 @@ class CryptHSMTest extends TestCase {
 	private $l10n;
 	/** @var CryptHSM */
 	private $cryptHSM;
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->logger = $this->createMock(ILogger::class);
 		$this->userSession = $this->createMock(IUserSession::class);

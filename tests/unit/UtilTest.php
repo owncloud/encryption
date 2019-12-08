@@ -66,7 +66,7 @@ class UtilTest extends TestCase {
 		$this->assertTrue($this->instance->userHasFiles('admin'));
 	}
 
-	protected function setUp() {
+	protected function setUp(): void {
 		parent::setUp();
 		$this->mountMock = $this->createMock('\OCP\Files\Mount\IMountPoint');
 		$this->filesMock = $this->createMock('OC\Files\View');

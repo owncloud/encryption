@@ -266,7 +266,7 @@ class RecoveryTest extends TestCase {
 		$this->assertEquals(true, $this->instance->setRecoveryForUser('1'));
 	}
 
-	protected function setUp() {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->userSessionMock = $this->getMockBuilder('OCP\IUserSession')
