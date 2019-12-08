@@ -700,7 +700,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: setup-server-encryption
   pull: always
@@ -816,7 +816,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: setup-server-encryption
   pull: always
@@ -931,7 +931,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: setup-server-encryption
   pull: always
@@ -1047,7 +1047,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: setup-server-encryption
   pull: always
@@ -1162,7 +1162,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: setup-server-encryption
   pull: always
@@ -1293,7 +1293,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: setup-server-encryption
   pull: always
@@ -1424,7 +1424,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: setup-server-encryption
   pull: always
@@ -1555,7 +1555,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: setup-server-encryption
   pull: always
@@ -1686,7 +1686,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -1844,7 +1844,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -2002,7 +2002,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -2160,7 +2160,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -2318,7 +2318,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -2476,7 +2476,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -2634,7 +2634,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -2792,7 +2792,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -2950,7 +2950,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -3108,7 +3108,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -3266,7 +3266,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -3424,7 +3424,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -3582,7 +3582,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -3740,7 +3740,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -3898,7 +3898,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -4056,7 +4056,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -4214,7 +4214,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -4372,7 +4372,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -4530,7 +4530,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -4688,7 +4688,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -4846,7 +4846,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -5004,7 +5004,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -5162,7 +5162,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -5320,7 +5320,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -5478,7 +5478,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -5636,7 +5636,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -5792,7 +5792,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -5948,7 +5948,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -6104,7 +6104,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -6260,7 +6260,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -6416,7 +6416,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -6572,7 +6572,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -6728,7 +6728,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -6884,7 +6884,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -7040,7 +7040,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -7196,7 +7196,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -7352,7 +7352,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -7508,7 +7508,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -7664,7 +7664,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -7820,7 +7820,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -7976,7 +7976,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -8132,7 +8132,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -8288,7 +8288,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -8444,7 +8444,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -8600,7 +8600,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -8756,7 +8756,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -8912,7 +8912,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -9068,7 +9068,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -9224,7 +9224,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -9380,7 +9380,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -9536,7 +9536,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -9694,7 +9694,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -9852,7 +9852,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -10010,7 +10010,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -10168,7 +10168,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -10326,7 +10326,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -10484,7 +10484,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -10642,7 +10642,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -10800,7 +10800,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -10958,7 +10958,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -11116,7 +11116,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -11274,7 +11274,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -11432,7 +11432,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -11590,7 +11590,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -11748,7 +11748,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -11906,7 +11906,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -12064,7 +12064,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -12222,7 +12222,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -12380,7 +12380,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -12538,7 +12538,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -12696,7 +12696,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -12854,7 +12854,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -13012,7 +13012,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -13170,7 +13170,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -13328,7 +13328,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -13486,7 +13486,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -13642,7 +13642,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -13798,7 +13798,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -13954,7 +13954,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -14110,7 +14110,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -14266,7 +14266,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -14422,7 +14422,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -14578,7 +14578,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -14734,7 +14734,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -14890,7 +14890,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -15046,7 +15046,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -15202,7 +15202,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -15358,7 +15358,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -15514,7 +15514,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -15670,7 +15670,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -15826,7 +15826,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -15982,7 +15982,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -16138,7 +16138,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -16294,7 +16294,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -16450,7 +16450,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -16606,7 +16606,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -16762,7 +16762,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -16918,7 +16918,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -17074,7 +17074,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -17230,7 +17230,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -17386,7 +17386,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -17559,7 +17559,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -17732,7 +17732,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -17905,7 +17905,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -18078,7 +18078,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -18251,7 +18251,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -18424,7 +18424,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -18597,7 +18597,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -18770,7 +18770,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -18943,7 +18943,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -19116,7 +19116,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -19289,7 +19289,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -19462,7 +19462,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -19635,7 +19635,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -19808,7 +19808,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -19981,7 +19981,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -20154,7 +20154,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -20327,7 +20327,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -20500,7 +20500,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -20673,7 +20673,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -20846,7 +20846,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -21019,7 +21019,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -21192,7 +21192,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -21365,7 +21365,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -21538,7 +21538,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -21711,7 +21711,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -21882,7 +21882,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -22053,7 +22053,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -22224,7 +22224,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -22395,7 +22395,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -22566,7 +22566,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -22737,7 +22737,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -22908,7 +22908,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -23079,7 +23079,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -23250,7 +23250,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -23421,7 +23421,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -23592,7 +23592,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -23763,7 +23763,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -23934,7 +23934,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -24105,7 +24105,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -24276,7 +24276,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -24447,7 +24447,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -24618,7 +24618,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -24789,7 +24789,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -24960,7 +24960,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -25131,7 +25131,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -25302,7 +25302,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -25473,7 +25473,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -25644,7 +25644,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -25815,7 +25815,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -25986,7 +25986,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -26159,7 +26159,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -26332,7 +26332,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -26505,7 +26505,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -26678,7 +26678,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -26851,7 +26851,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -27024,7 +27024,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -27197,7 +27197,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -27370,7 +27370,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -27543,7 +27543,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -27716,7 +27716,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -27889,7 +27889,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -28062,7 +28062,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -28235,7 +28235,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -28408,7 +28408,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -28581,7 +28581,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -28754,7 +28754,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -28927,7 +28927,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -29100,7 +29100,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -29273,7 +29273,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -29446,7 +29446,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -29619,7 +29619,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -29792,7 +29792,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -29965,7 +29965,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -30138,7 +30138,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -30311,7 +30311,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -30482,7 +30482,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -30653,7 +30653,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -30824,7 +30824,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -30995,7 +30995,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -31166,7 +31166,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -31337,7 +31337,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -31508,7 +31508,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -31679,7 +31679,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -31850,7 +31850,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -32021,7 +32021,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -32192,7 +32192,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -32363,7 +32363,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -32534,7 +32534,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -32705,7 +32705,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -32876,7 +32876,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -33047,7 +33047,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -33218,7 +33218,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -33389,7 +33389,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -33560,7 +33560,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -33731,7 +33731,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -33902,7 +33902,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -34073,7 +34073,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -34244,7 +34244,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
@@ -34415,7 +34415,7 @@ steps:
   - rsync -aIX /tmp/testrunner /var/www/owncloud
   - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
   - cd /var/www/owncloud/testrunner
-  - make install-composer-deps vendor-bin-deps
+  - make install-composer-deps
 
 - name: install-federation
   pull: always
