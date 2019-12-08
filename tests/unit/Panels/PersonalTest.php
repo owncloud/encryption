@@ -53,7 +53,7 @@ class PersonalTest extends \Test\TestCase {
 	/** @var IStorage */
 	private $encKeyStorage;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->config = $this->getMockBuilder(IConfig::class)->getMock();
 		$this->logger = $this->getMockBuilder(ILogger::class)->getMock();

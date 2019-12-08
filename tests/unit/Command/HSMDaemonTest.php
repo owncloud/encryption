@@ -44,7 +44,7 @@ class HSMDaemonTest extends TestCase {
 	/** @var HSMDaemon */
 	private $hsmDeamon;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->httpClient = $this->createMock(IClientService::class);
 		$this->config = $this->createMock(IConfig::class);

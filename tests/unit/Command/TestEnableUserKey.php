@@ -45,7 +45,7 @@ class TestEnableUserKey extends TestCase {
 	/** @var  \Symfony\Component\Console\Input\InputInterface | \PHPUnit\Framework\MockObject\MockObject */
 	protected $input;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		$this->util = $this->getMockBuilder('OCA\Encryption\Util')

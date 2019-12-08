@@ -136,7 +136,7 @@ class RecoveryControllerTest extends TestCase {
 		$this->assertEquals($expectedStatus, $response->getStatus());
 	}
 
-	protected function setUp() {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->requestMock = $this->getMockBuilder('OCP\IRequest')

@@ -65,7 +65,7 @@ class MigrationTest extends \Test\TestCase {
 		parent::tearDownAfterClass();
 	}
 
-	public function setUp() {
+	public function setUp(): void {
 		$this->logger = $this->getMockBuilder('\OCP\ILogger')->disableOriginalConstructor()->getMock();
 		$this->view = new \OC\Files\View();
 		$this->moduleId = \OCA\Encryption\Crypto\Encryption::ID;

@@ -59,7 +59,7 @@ class EncryptionTest extends TestCase {
 	/** @var \OCP\Files\Storage|\PHPUnit\Framework\MockObject\MockObject */
 	private $storageMock;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		$this->storageMock = $this->getMockBuilder('OCP\Files\Storage')

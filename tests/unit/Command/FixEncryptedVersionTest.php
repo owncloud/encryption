@@ -90,7 +90,7 @@ class FixEncryptedVersionTest extends TestCase {
 		Filesystem::getLoader()->removeStorageWrapper("oc_encryption");
 	}
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->rootFolder = \OC::$server->getRootFolder();
 		$this->userManager = \OC::$server->getUserManager();

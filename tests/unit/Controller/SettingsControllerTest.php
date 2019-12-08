@@ -60,7 +60,7 @@ class SettingsControllerTest extends TestCase {
 	/** @var \OCA\Encryption\Util|\PHPUnit\Framework\MockObject\MockObject */
 	private $utilMock;
 
-	protected function setUp() {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->requestMock = $this->createMock('OCP\IRequest');
