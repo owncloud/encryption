@@ -58,7 +58,7 @@ class FixEncryptedVersionTest extends TestCase {
 	/** @var CommandTester */
 	private $commandTester;
 
-	public static function setUpBeforeClass() {
+	public static function setUpBeforeClass(): void {
 		parent::setUpBeforeClass();
 		//Enable encryption app
 		\OC_App::enable("encryption");
@@ -78,7 +78,7 @@ class FixEncryptedVersionTest extends TestCase {
 		\OC::$server->getUserManager()->createUser(self::TEST_ENCRYPTION_VERSION_AFFECTED_USER, 'foo');
 	}
 
-	public static function tearDownAfterClass() {
+	public static function tearDownAfterClass(): void {
 		parent::tearDownAfterClass();
 		$user = \OC::$server->getUserManager()->get(self::TEST_ENCRYPTION_VERSION_AFFECTED_USER);
 		if ($user !== null) {
