@@ -138,6 +138,7 @@ config = {
 			'runCoreTests': True,
 			'runAllSuites': True,
 			'numberOfParts': 25,
+			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'extraEnvironment': {
 				'ENCRYPTION_TYPE': 'masterkey',
@@ -169,6 +170,7 @@ config = {
 			'runCoreTests': True,
 			'runAllSuites': True,
 			'numberOfParts': 25,
+			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'cron': 'nightly',
 			'extraEnvironment': {
@@ -201,6 +203,7 @@ config = {
 			'runCoreTests': True,
 			'runAllSuites': True,
 			'numberOfParts': 25,
+			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'extraEnvironment': {
 				'ENCRYPTION_TYPE': 'user-keys',
@@ -232,6 +235,7 @@ config = {
 			'runCoreTests': True,
 			'runAllSuites': True,
 			'numberOfParts': 25,
+			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'cron': 'nightly',
 			'extraEnvironment': {
