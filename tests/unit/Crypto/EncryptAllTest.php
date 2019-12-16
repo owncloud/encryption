@@ -426,7 +426,7 @@ class EncryptAllTest extends TestCase {
 
 	public function testGenerateOneTimePassword() {
 		$password = $this->invokePrivate($this->encryptAll, 'generateOneTimePassword', ['user1']);
-		$this->assertInternalType('string', $password);
+		$this->assertIsString($password);
 		$this->assertSame(8, \strlen($password));
 
 		$userPasswords = $this->invokePrivate($this->encryptAll, 'userPasswords');

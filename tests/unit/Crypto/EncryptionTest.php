@@ -116,9 +116,10 @@ class EncryptionTest extends TestCase {
 	/**
 	 * test if public key from owner is missing
 	 *
-	 * @expectedException \OCA\Encryption\Exceptions\PublicKeyMissingException
 	 */
 	public function testEndUser2() {
+		$this->expectException(\OCA\Encryption\Exceptions\PublicKeyMissingException::class);
+
 		$this->instance->begin('/foo/bar', 'user2', 'r', [], ['users' => ['user1', 'user2', 'user3']]);
 		$this->endTest();
 	}
@@ -397,10 +398,11 @@ class EncryptionTest extends TestCase {
 	}
 
 	/**
-	 * @expectedException \OC\Encryption\Exceptions\DecryptionFailedException
-	 * @expectedExceptionMessage Can not decrypt this file, probably this is a shared file. Please ask the file owner to reshare the file with you.
 	 */
 	public function testDecrypt() {
+		$this->expectException(\OC\Encryption\Exceptions\DecryptionFailedException::class);
+		$this->expectExceptionMessage('Can not decrypt this file, probably this is a shared file. Please ask the file owner to reshare the file with you.');
+
 		$this->instance->decrypt('abc');
 	}
 

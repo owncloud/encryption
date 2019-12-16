@@ -105,10 +105,11 @@ class DecryptAllTest extends TestCase {
 
 	/**
 	 * @dataProvider providesEnvVal
-	 * @expectedException \OC\User\LoginException
-	 * @expectedExceptionMessage Invalid credentials provided
 	 */
 	public function testPrepareWithUnsetEnv($method, $env) {
+		$this->expectException(\OC\User\LoginException::class);
+		$this->expectExceptionMessage('Invalid credentials provided');
+
 		$input = $this->createMock(InputInterface::class);
 		$output = $this->createMock(OutputInterface::class);
 
@@ -196,10 +197,11 @@ class DecryptAllTest extends TestCase {
 	}
 	/**
 	 * @dataProvider providerPrepareLoginException
-	 * @expectedException \OC\User\LoginException
-	 * @expectedExceptionMessage Invalid credentials provided
 	 */
 	public function testPrepareLoginException($loginType) {
+		$this->expectException(\OC\User\LoginException::class);
+		$this->expectExceptionMessage('Invalid credentials provided');
+
 		$username = "decrypt_test_user1_";
 		$this->createUser($username, 'pass');
 		$input = $this->createMock(InputInterface::class);

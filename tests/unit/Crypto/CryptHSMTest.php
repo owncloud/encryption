@@ -107,9 +107,10 @@ lQIDAQAB
 	}
 	/**
 	 * @dataProvider providesMultiKeyDecrypt
-	 * @expectedException OCA\Encryption\Exceptions\MultiKeyDecryptException
 	 */
 	public function testMultiKeyDecryptExceptions($encKeyFile, $shareKey, $privateKey) {
+		$this->expectException(\OCA\Encryption\Exceptions\MultiKeyDecryptException::class);
+
 		if (!$encKeyFile) {
 			$this->cryptHSM->multiKeyDecrypt($encKeyFile, $shareKey, $privateKey);
 		}
@@ -161,10 +162,11 @@ lQIDAQAB
 	}
 
 	/**
-	 * @expectedException OCA\Encryption\Exceptions\MultiKeyEncryptException
-	 * @expectedExceptionMessage Could not create sealed content
 	 */
 	public function testMultiKeyEncryptException() {
+		$this->expectException(\OCA\Encryption\Exceptions\MultiKeyEncryptException::class);
+		$this->expectExceptionMessage('Could not create sealed content');
+
 		$cryptHSM = $this->getMockBuilder(CryptHSM::class)
 			->setConstructorArgs([$this->logger, $this->userSession, $this->config,
 				$this->l10n, $this->clientService, $this->request, $this->timeFactory])
