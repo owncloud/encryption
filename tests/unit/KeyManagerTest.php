@@ -208,9 +208,10 @@ class KeyManagerTest extends TestCase {
 	}
 
 	/**
-	 * @expectedException \OCA\Encryption\Exceptions\PrivateKeyMissingException
 	 */
 	public function testUserHasKeysMissingPrivateKey() {
+		$this->expectException(\OCA\Encryption\Exceptions\PrivateKeyMissingException::class);
+
 		$this->keyStorageMock->expects($this->exactly(2))
 			->method('getUserKey')
 			->willReturnCallback(function ($uid, $keyID, $encryptionModuleId) {
@@ -224,9 +225,10 @@ class KeyManagerTest extends TestCase {
 	}
 
 	/**
-	 * @expectedException \OCA\Encryption\Exceptions\PublicKeyMissingException
 	 */
 	public function testUserHasKeysMissingPublicKey() {
+		$this->expectException(\OCA\Encryption\Exceptions\PublicKeyMissingException::class);
+
 		$this->keyStorageMock->expects($this->exactly(2))
 			->method('getUserKey')
 			->willReturnCallback(function ($uid, $keyID, $encryptionModuleId) {
@@ -548,9 +550,10 @@ class KeyManagerTest extends TestCase {
 	}
 
 	/**
-	 * @expectedException \Exception
 	 */
 	public function testGetMasterKeyPasswordException() {
+		$this->expectException(\Exception::class);
+
 		$this->configMock->expects($this->once())->method('getSystemValue')->with('secret')
 			->willReturn('');
 

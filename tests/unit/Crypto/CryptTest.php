@@ -119,9 +119,10 @@ class CryptTest extends TestCase {
 	/**
 	 * test generateHeader with invalid key format
 	 *
-	 * @expectedException \InvalidArgumentException
 	 */
 	public function testGenerateHeaderInvalid() {
+		$this->expectException(\InvalidArgumentException::class);
+
 		$this->crypt->generateHeader('unknown');
 	}
 
@@ -246,9 +247,10 @@ class CryptTest extends TestCase {
 
 	/**
 	 * @dataProvider dataTestHasSignatureFail
-	 * @expectedException \OC\HintException
 	 */
 	public function testHasSignatureFail($cipher) {
+		$this->expectException(\OC\HintException::class);
+
 		$data = 'encryptedContent00iv001234567890123456xx';
 		$this->invokePrivate($this->crypt, 'hasSignature', [$data, $cipher]);
 	}
@@ -360,9 +362,10 @@ class CryptTest extends TestCase {
 	/**
 	 * test exception if cipher is unknown
 	 *
-	 * @expectedException \InvalidArgumentException
 	 */
 	public function testGetKeySizeFailure() {
+		$this->expectException(\InvalidArgumentException::class);
+
 		$this->invokePrivate($this->crypt, 'getKeySize', ['foo']);
 	}
 
