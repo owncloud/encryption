@@ -1737,6 +1737,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -1914,6 +1916,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -2091,6 +2095,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -2268,6 +2274,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -2445,6 +2453,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -2622,6 +2632,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -2799,6 +2811,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -2976,6 +2990,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -3153,6 +3169,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -3330,6 +3348,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -3507,6 +3527,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -3684,6 +3706,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -3861,6 +3885,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -4038,6 +4064,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -4215,6 +4243,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -4392,6 +4422,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -4569,6 +4601,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -4746,6 +4780,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -4923,6 +4959,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -5100,6 +5138,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -5277,6 +5317,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -5454,6 +5496,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -5631,6 +5675,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -5808,6 +5854,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -5985,6 +6033,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -6162,6 +6212,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -6339,6 +6391,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -6516,6 +6570,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -6693,6 +6749,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -6870,6 +6928,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -7047,6 +7107,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -7224,6 +7286,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -13001,6 +13065,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -13178,6 +13244,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -13355,6 +13423,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -13532,6 +13602,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -13709,6 +13781,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -13886,6 +13960,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -14063,6 +14139,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -14240,6 +14318,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -14417,6 +14497,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -14594,6 +14676,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -14771,6 +14855,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -14948,6 +15034,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -15125,6 +15213,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -15302,6 +15392,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -15479,6 +15571,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -15656,6 +15750,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -15833,6 +15929,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -16010,6 +16108,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -16187,6 +16287,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -16364,6 +16466,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -16541,6 +16645,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -16718,6 +16824,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -16895,6 +17003,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -17072,6 +17182,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -17249,6 +17361,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -17426,6 +17540,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -17603,6 +17719,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -17780,6 +17898,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -17957,6 +18077,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -18134,6 +18256,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -18311,6 +18435,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -18488,6 +18614,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -24265,6 +24393,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -24452,6 +24582,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -24639,6 +24771,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -24826,6 +24960,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -25013,6 +25149,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -25200,6 +25338,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -25387,6 +25527,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -25574,6 +25716,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -25761,6 +25905,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -25948,6 +26094,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -26135,6 +26283,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -26322,6 +26472,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -26509,6 +26661,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -26696,6 +26850,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -26883,6 +27039,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -27070,6 +27228,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -27257,6 +27417,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -27444,6 +27606,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -27631,6 +27795,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -27818,6 +27984,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -28005,6 +28173,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -28192,6 +28362,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -28379,6 +28551,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -28566,6 +28740,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -28753,6 +28929,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -28940,6 +29118,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -29127,6 +29307,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type masterkey --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -34309,6 +34491,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -34496,6 +34680,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -34683,6 +34869,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -34870,6 +35058,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -35057,6 +35247,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -35244,6 +35436,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -35431,6 +35625,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -35618,6 +35814,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -35805,6 +36003,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -35992,6 +36192,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -36179,6 +36381,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -36366,6 +36570,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -36553,6 +36759,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -36740,6 +36948,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -36927,6 +37137,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -37114,6 +37326,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -37301,6 +37515,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -37488,6 +37704,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -37675,6 +37893,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -37862,6 +38082,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -38049,6 +38271,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -38236,6 +38460,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -38423,6 +38649,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -38610,6 +38838,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -38797,6 +39027,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -38984,6 +39216,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
@@ -39171,6 +39405,8 @@ steps:
   - php occ encryption:enable
   - php occ encryption:select-encryption-type user-keys --yes
   - php occ config:list
+  - cd /var/www/owncloud/server/apps
+  - git clone https://github.com/owncloud/notifications.git
 
 - name: fix-permissions
   pull: always
