@@ -137,7 +137,7 @@ config = {
 			],
 			'runCoreTests': True,
 			'runAllSuites': True,
-			'numberOfParts': 32,
+			'numberOfParts': 30,
 			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'extraEnvironment': {
@@ -169,7 +169,7 @@ config = {
 			],
 			'runCoreTests': True,
 			'runAllSuites': True,
-			'numberOfParts': 32,
+			'numberOfParts': 30,
 			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'cron': 'nightly',
@@ -202,7 +202,7 @@ config = {
 			],
 			'runCoreTests': True,
 			'runAllSuites': True,
-			'numberOfParts': 32,
+			'numberOfParts': 30,
 			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'extraEnvironment': {
@@ -234,7 +234,7 @@ config = {
 			],
 			'runCoreTests': True,
 			'runAllSuites': True,
-			'numberOfParts': 32,
+			'numberOfParts': 30,
 			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'cron': 'nightly',
@@ -286,38 +286,6 @@ config = {
 				}
 			],
 		},
-		'cli-core-latest-masterkey': {
-			'suites': [
-				'cliCoreMKey',
-			],
-			'databases': [
-				'mysql:5.7',
-			],
-			'servers': [
-				'latest',
-			],
-			'runCoreTests': True,
-			'runAllSuites': True,
-			'numberOfParts': 6,
-			'emailNeeded': True,
-			'cron': 'nightly',
-			'extraEnvironment': {
-				'ENCRYPTION_TYPE': 'masterkey',
-			},
-			'extraSetup': [
-				{
-					'name': 'configure-app',
-					'image': 'owncloudci/php:7.1',
-					'pull': 'always',
-					'commands': [
-						'cd /var/www/owncloud/server',
-						'php occ encryption:enable',
-						'php occ encryption:select-encryption-type masterkey --yes',
-						'php occ config:list',
-					]
-				}
-			],
-		},
 		'cli-core-userkeys': {
 			'suites': [
 				'cliCoreUKey',
@@ -332,38 +300,6 @@ config = {
 			'runAllSuites': True,
 			'numberOfParts': 6,
 			'emailNeeded': True,
-			'extraEnvironment': {
-				'ENCRYPTION_TYPE': 'user-keys',
-			},
-			'extraSetup': [
-				{
-					'name': 'configure-app',
-					'image': 'owncloudci/php:7.1',
-					'pull': 'always',
-					'commands': [
-						'cd /var/www/owncloud/server',
-						'php occ encryption:enable',
-						'php occ encryption:select-encryption-type user-keys --yes',
-						'php occ config:list',
-					]
-				}
-			],
-		},
-		'cli-core-latest-userkeys': {
-			'suites': [
-				'cliCoreUKey',
-			],
-			'databases': [
-				'mysql:5.7',
-			],
-			'servers': [
-				'latest',
-			],
-			'runCoreTests': True,
-			'runAllSuites': True,
-			'numberOfParts': 6,
-			'emailNeeded': True,
-			'cron': 'nightly',
 			'extraEnvironment': {
 				'ENCRYPTION_TYPE': 'user-keys',
 			},
