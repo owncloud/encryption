@@ -759,12 +759,8 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
@@ -873,12 +869,8 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
@@ -988,12 +980,8 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
@@ -1102,12 +1090,8 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
@@ -1232,12 +1216,8 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
@@ -1362,12 +1342,8 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
@@ -1492,12 +1468,8 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
@@ -1622,12 +1594,8 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
@@ -1778,24 +1746,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -1955,24 +1915,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -2132,24 +2084,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -2309,24 +2253,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -2486,24 +2422,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -2663,24 +2591,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -2840,24 +2760,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -3017,24 +2929,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -3194,24 +3098,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -3371,24 +3267,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -3548,24 +3436,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -3725,24 +3605,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -3902,24 +3774,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -4079,24 +3943,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -4256,24 +4112,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -4433,24 +4281,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -4610,24 +4450,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -4787,24 +4619,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -4964,24 +4788,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -5141,24 +4957,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -5318,24 +5126,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -5495,24 +5295,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -5672,24 +5464,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -5849,24 +5633,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -6026,24 +5802,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -6203,24 +5971,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -6380,24 +6140,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -6557,24 +6309,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -6734,24 +6478,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -6911,24 +6647,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -7088,24 +6816,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -7265,24 +6985,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -7442,24 +7154,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -7617,24 +7321,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -7792,24 +7488,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -7967,24 +7655,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -8142,24 +7822,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -8317,24 +7989,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -8492,24 +8156,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -8667,24 +8323,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -8842,24 +8490,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -9017,24 +8657,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -9192,24 +8824,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -9367,24 +8991,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -9542,24 +9158,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -9717,24 +9325,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -9892,24 +9492,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -10067,24 +9659,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -10242,24 +9826,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -10417,24 +9993,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -10592,24 +10160,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -10767,24 +10327,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -10942,24 +10494,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -11117,24 +10661,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -11292,24 +10828,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -11467,24 +10995,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -11642,24 +11162,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -11817,24 +11329,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -11992,24 +11496,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -12167,24 +11663,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -12342,24 +11830,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -12517,24 +11997,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -12692,24 +12164,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -12867,24 +12331,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -13042,24 +12498,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -13219,24 +12667,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -13396,24 +12836,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -13573,24 +13005,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -13750,24 +13174,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -13927,24 +13343,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -14104,24 +13512,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -14281,24 +13681,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -14458,24 +13850,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -14635,24 +14019,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -14812,24 +14188,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -14989,24 +14357,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -15166,24 +14526,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -15343,24 +14695,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -15520,24 +14864,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -15697,24 +15033,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -15874,24 +15202,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -16051,24 +15371,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -16228,24 +15540,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -16405,24 +15709,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -16582,24 +15878,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -16759,24 +16047,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -16936,24 +16216,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -17113,24 +16385,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -17290,24 +16554,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -17467,24 +16723,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -17644,24 +16892,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -17821,24 +17061,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -17998,24 +17230,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -18175,24 +17399,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -18352,24 +17568,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -18529,24 +17737,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -18706,24 +17906,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -18881,24 +18073,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -19056,24 +18240,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -19231,24 +18407,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -19406,24 +18574,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -19581,24 +18741,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -19756,24 +18908,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -19931,24 +19075,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -20106,24 +19242,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -20281,24 +19409,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -20456,24 +19576,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -20631,24 +19743,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -20806,24 +19910,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -20981,24 +20077,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -21156,24 +20244,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -21331,24 +20411,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -21506,24 +20578,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -21681,24 +20745,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -21856,24 +20912,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -22031,24 +21079,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -22206,24 +21246,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -22381,24 +21413,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -22556,24 +21580,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -22731,24 +21747,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -22906,24 +21914,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -23081,24 +22081,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -23256,24 +22248,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -23431,24 +22415,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -23606,24 +22582,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -23781,24 +22749,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -23956,24 +22916,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -24131,24 +23083,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -24316,24 +23260,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -24503,24 +23439,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -24690,24 +23618,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -24877,24 +23797,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -25064,24 +23976,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -25251,24 +24155,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -25438,24 +24334,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -25625,24 +24513,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -25812,24 +24692,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -25999,24 +24871,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -26186,24 +25050,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -26373,24 +25229,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -26560,24 +25408,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -26747,24 +25587,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -26934,24 +25766,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -27121,24 +25945,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -27308,24 +26124,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -27495,24 +26303,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -27682,24 +26482,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -27869,24 +26661,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -28056,24 +26840,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -28243,24 +27019,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -28430,24 +27198,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -28617,24 +27377,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -28804,24 +27556,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -28991,24 +27735,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -29178,24 +27914,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -29365,24 +28093,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -29550,24 +28270,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -29735,24 +28447,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -29920,24 +28624,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -30105,24 +28801,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -30290,24 +28978,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -30475,24 +29155,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -30660,24 +29332,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -30845,24 +29509,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -31030,24 +29686,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -31215,24 +29863,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -31400,24 +30040,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -31585,24 +30217,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -31770,24 +30394,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -31955,24 +30571,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -32140,24 +30748,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -32325,24 +30925,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -32510,24 +31102,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -32695,24 +31279,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -32880,24 +31456,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -33065,24 +31633,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -33250,24 +31810,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -33435,24 +31987,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -33620,24 +32164,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -33805,24 +32341,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -33990,24 +32518,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -34175,24 +32695,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -34360,24 +32872,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -34547,24 +33051,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -34734,24 +33230,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -34921,24 +33409,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -35108,24 +33588,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -35295,24 +33767,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -35482,24 +33946,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -35669,24 +34125,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -35856,24 +34304,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -36043,24 +34483,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -36230,24 +34662,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -36417,24 +34841,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -36604,24 +35020,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -36791,24 +35199,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -36978,24 +35378,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -37165,24 +35557,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -37352,24 +35736,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -37539,24 +35915,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -37726,24 +36094,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -37913,24 +36273,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -38100,24 +36452,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -38287,24 +36631,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -38474,24 +36810,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -38661,24 +36989,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -38848,24 +37168,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -39035,24 +37347,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -39222,24 +37526,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -39409,24 +37705,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -39594,24 +37882,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -39779,24 +38059,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -39964,24 +38236,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -40149,24 +38413,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -40334,24 +38590,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -40519,24 +38767,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -40704,24 +38944,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -40889,24 +39121,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -41074,24 +39298,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -41259,24 +39475,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -41444,24 +39652,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -41629,24 +39829,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -41814,24 +40006,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -41999,24 +40183,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -42184,24 +40360,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -42369,24 +40537,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -42554,24 +40714,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -42739,24 +40891,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -42924,24 +41068,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -43109,24 +41245,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -43294,24 +41422,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -43479,24 +41599,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -43664,24 +41776,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -43849,24 +41953,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -44034,24 +42130,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
@@ -44219,24 +42307,16 @@ services:
 - name: server
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/server
 
 - name: federated
   pull: always
   image: owncloudci/php:7.1
-  command:
-  - /usr/local/bin/apachectl
-  - -e
-  - debug
-  - -D
-  - FOREGROUND
+  commands:
+  - /usr/local/bin/apachectl -e debug -D FOREGROUND
   environment:
     APACHE_WEBROOT: /var/www/owncloud/federated
 
