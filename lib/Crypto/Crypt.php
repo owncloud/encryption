@@ -93,7 +93,7 @@ class Crypt {
 	 */
 	public function __construct(ILogger $logger, IUserSession $userSession, IConfig $config, IL10N $l) {
 		$this->logger = $logger;
-		$this->user = $userSession && $userSession->isLoggedIn() ? $userSession->getUser()->getUID() : '"no user given"';
+		$this->user = $userSession !== null && $userSession->isLoggedIn() ? $userSession->getUser()->getUID() : '"no user given"';
 		$this->config = $config;
 		$this->l = $l;
 		$this->supportedKeyFormats = ['hash', 'password'];
@@ -116,7 +116,7 @@ class Crypt {
 				$log->error('Encryption library openssl_pkey_new() fails: ' . \openssl_error_string(),
 					['app' => 'encryption']);
 			}
-		} elseif (\openssl_pkey_export($res,
+		} elseif (\openssl_pkey_export($res, /** @phpstan-ignore-line */
 			$privateKey,
 			null,
 			$this->getOpenSSLConfig())) {
@@ -141,7 +141,7 @@ class Crypt {
 	/**
 	 * Generates a new private key
 	 *
-	 * @return resource
+	 * @return resource|bool
 	 */
 	public function getOpenSSLPKey() {
 		$config = $this->getOpenSSLConfig();
@@ -229,7 +229,7 @@ class Crypt {
 		$encryptedContent = \openssl_encrypt($plainContent,
 			$cipher,
 			$passPhrase,
-			false,
+			0,
 			$iv);
 
 		if (!$encryptedContent) {
@@ -262,7 +262,7 @@ class Crypt {
 		}
 
 		// Workaround for OpenSSL 0.9.8. Fallback to an old cipher that should work.
-		if (OPENSSL_VERSION_NUMBER < 0x1000101f) {
+		if (OPENSSL_VERSION_NUMBER < 0x1000101f) { /** @phpstan-ignore-line */
 			if ($cipher === 'AES-256-CTR' || $cipher === 'AES-128-CTR') {
 				$cipher = self::LEGACY_CIPHER;
 			}
@@ -570,7 +570,7 @@ class Crypt {
 		$plainContent = \openssl_decrypt($encryptedContent,
 			$cipher,
 			$passPhrase,
-			false,
+			0,
 			$iv);
 
 		if ($plainContent) {
@@ -628,9 +628,9 @@ class Crypt {
 	}
 
 	/**
-	 * @param $encKeyFile
-	 * @param $shareKey
-	 * @param $privateKey
+	 * @param string $encKeyFile
+	 * @param string $shareKey
+	 * @param string $privateKey
 	 * @return string
 	 * @throws MultiKeyDecryptException
 	 */

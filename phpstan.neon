@@ -1,4 +1,8 @@
 parameters:
   bootstrap: %currentWorkingDirectory%/../../lib/base.php
+  inferPrivatePropertyTypeFromConstructor: true
+  excludes_analyse:
+    - %currentWorkingDirectory%/appinfo/Migrations/*.php
+    - %currentWorkingDirectory%/appinfo/routes.php
   ignoreErrors:
 

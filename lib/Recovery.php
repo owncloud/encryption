@@ -88,7 +88,7 @@ class Recovery {
 								IStorage $keyStorage,
 								IFile $file,
 								View $view) {
-		$this->user = ($user && $user->isLoggedIn()) ? $user->getUser() : false;
+		$this->user = ($user !== null && $user->isLoggedIn()) ? $user->getUser() : false;
 		$this->crypt = $crypt;
 		$this->random = $random;
 		$this->keyManager = $keyManager;
@@ -107,7 +107,7 @@ class Recovery {
 		$keyManager = $this->keyManager;
 
 		if (!$keyManager->recoveryKeyExists()) {
-			$keyPair = $this->crypt->createKeyPair("oc:".$this->keyManager->getRecoveryKeyId());
+			$keyPair = $this->crypt->createKeyPair();
 			if (!\is_array($keyPair)) {
 				return false;
 			}
@@ -116,7 +116,7 @@ class Recovery {
 		}
 
 		if ($keyManager->checkRecoveryPassword($password)) {
-			$appConfig->setAppValue('encryption', 'recoveryAdminEnabled', 1);
+			$appConfig->setAppValue('encryption', 'recoveryAdminEnabled', '1');
 			return true;
 		}
 
@@ -154,7 +154,7 @@ class Recovery {
 
 		if ($keyManager->checkRecoveryPassword($recoveryPassword)) {
 			// Set recoveryAdmin as disabled
-			$this->config->setAppValue('encryption', 'recoveryAdminEnabled', 0);
+			$this->config->setAppValue('encryption', 'recoveryAdminEnabled', '0');
 			return true;
 		}
 		return false;

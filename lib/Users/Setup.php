@@ -58,7 +58,7 @@ class Setup {
 								Crypt $crypt,
 								KeyManager $keyManager) {
 		$this->logger = $logger;
-		$this->user = $userSession && $userSession->isLoggedIn() ? $userSession->getUser()->getUID() : false;
+		$this->user = $userSession !== null && $userSession->isLoggedIn() ? $userSession->getUser()->getUID() : false;
 		$this->crypt = $crypt;
 		$this->keyManager = $keyManager;
 	}
@@ -71,7 +71,7 @@ class Setup {
 	public function setupUser($uid, $password) {
 		if (!$this->keyManager->userHasKeys($uid)) {
 			return $this->keyManager->storeKeyPair($uid, $password,
-				$this->crypt->createKeyPair("oc:uid:$uid"));
+				$this->crypt->createKeyPair());
 		}
 		return true;
 	}

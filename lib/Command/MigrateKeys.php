@@ -78,6 +78,11 @@ class MigrateKeys extends Command {
 			);
 	}
 
+	/**
+	 * @param InputInterface $input
+	 * @param OutputInterface $output
+	 * @return int|void
+	 */
 	protected function execute(InputInterface $input, OutputInterface $output) {
 
 		// perform system reorganization

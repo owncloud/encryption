@@ -124,7 +124,7 @@ class KeyManager {
 		$this->recoveryKeyId = $this->config->getAppValue('encryption',
 			'recoveryKeyId');
 		if (empty($this->recoveryKeyId)) {
-			$this->recoveryKeyId = 'recoveryKey_' . \substr(\md5(\time()), 0, 8);
+			$this->recoveryKeyId = 'recoveryKey_' . \substr(\md5((string)\time()), 0, 8);
 			$this->config->setAppValue('encryption',
 				'recoveryKeyId',
 				$this->recoveryKeyId);
@@ -132,7 +132,7 @@ class KeyManager {
 
 		$this->setPublicShareKeyIDAndMasterKeyId();
 
-		$this->keyId = $userSession && $userSession->isLoggedIn() ? $userSession->getUser()->getUID() : false;
+		$this->keyId = $userSession !== null && $userSession->isLoggedIn() ? $userSession->getUser()->getUID() : false;
 		$this->log = $log;
 	}
 
@@ -142,7 +142,7 @@ class KeyManager {
 	public function validateShareKey() {
 		$shareKey = $this->getPublicShareKey();
 		if (empty($shareKey)) {
-			$keyPair = $this->crypt->createKeyPair("oc:".$this->publicShareKeyId);
+			$keyPair = $this->crypt->createKeyPair();
 
 			// Save public key
 			$this->keyStorage->setSystemUserKey(
@@ -166,7 +166,7 @@ class KeyManager {
 
 		$masterKey = $this->getPublicMasterKey();
 		if (empty($masterKey)) {
-			$keyPair = $this->crypt->createKeyPair("oc:".$this->masterKeyId);
+			$keyPair = $this->crypt->createKeyPair();
 
 			// Save public key
 			$this->keyStorage->setSystemUserKey(
@@ -223,7 +223,7 @@ class KeyManager {
 	/**
 	 * @param string $uid
 	 * @param string $password
-	 * @param string $keyPair
+	 * @param array $keyPair
 	 * @return bool
 	 */
 	public function storeKeyPair($uid, $password, $keyPair) {
@@ -264,8 +264,8 @@ class KeyManager {
 	}
 
 	/**
-	 * @param $userId
-	 * @param $key
+	 * @param string $userId
+	 * @param string $key
 	 * @return bool
 	 */
 	public function setPublicKey($userId, $key) {
@@ -273,7 +273,7 @@ class KeyManager {
 	}
 
 	/**
-	 * @param $userId
+	 * @param string $userId
 	 * @param string $key
 	 * @return bool
 	 */
@@ -363,7 +363,7 @@ class KeyManager {
 	}
 
 	/**
-	 * @param $userId
+	 * @param string $userId
 	 * @return string
 	 * @throws PrivateKeyMissingException
 	 */
@@ -379,7 +379,7 @@ class KeyManager {
 
 	/**
 	 * @param string $path
-	 * @param $uid
+	 * @param string $uid
 	 * @return string
 	 */
 	public function getFileKey($path, $uid) {
@@ -482,8 +482,8 @@ class KeyManager {
 	}
 
 	/**
-	 * @param $path
-	 * @param $uid
+	 * @param string $path
+	 * @param string $uid
 	 * @return mixed
 	 */
 	public function getShareKey($path, $uid) {
@@ -526,7 +526,7 @@ class KeyManager {
 	}
 
 	/**
-	 * @param $userId
+	 * @param string $userId
 	 * @return mixed
 	 * @throws PublicKeyMissingException
 	 */
@@ -573,7 +573,7 @@ class KeyManager {
 	}
 
 	/**
-	 * @param $uid
+	 * @param string $uid
 	 * @return bool
 	 */
 	public function deletePublicKey($uid) {
@@ -704,14 +704,14 @@ class KeyManager {
 		$this->publicShareKeyId = $this->config->getAppValue('encryption',
 			'publicShareKeyId');
 		if (($this->publicShareKeyId === null) || ($this->publicShareKeyId === '')) {
-			$this->publicShareKeyId = 'pubShare_' . \substr(\md5(\time()), 0, 8);
+			$this->publicShareKeyId = 'pubShare_' . \substr(\md5((string)\time()), 0, 8);
 			$this->config->setAppValue('encryption', 'publicShareKeyId', $this->publicShareKeyId);
 		}
 
 		$this->masterKeyId = $this->config->getAppValue('encryption',
 			'masterKeyId');
 		if (($this->masterKeyId === null) || ($this->masterKeyId === '')) {
-			$this->masterKeyId = 'master_' . \substr(\md5(\time()), 0, 8);
+			$this->masterKeyId = 'master_' . \substr(\md5((string)\time()), 0, 8);
 			$this->config->setAppValue('encryption', 'masterKeyId', $this->masterKeyId);
 		}
 	}
