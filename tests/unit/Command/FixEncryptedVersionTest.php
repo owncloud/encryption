@@ -128,12 +128,12 @@ class FixEncryptedVersionTest extends TestCase {
 
 		$output = $this->commandTester->getDisplay();
 
-		$this->assertContains("Verifying the content of file /test_enc_version_affected_user1/files/hello.txt
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/hello.txt
 Attempting to fix the path: /test_enc_version_affected_user1/files/hello.txt
 Increment the encrypted version to 1
 The file /test_enc_version_affected_user1/files/hello.txt is: OK
 Fixed the file: /test_enc_version_affected_user1/files/hello.txt with version 1", $output);
-		$this->assertContains("Verifying the content of file /test_enc_version_affected_user1/files/world.txt
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/world.txt
 The file /test_enc_version_affected_user1/files/world.txt is: OK", $output);
 		/**
 		 * We need to add ob_start at the end because if not done, it would be considered as a risky test.
@@ -190,9 +190,9 @@ The file /test_enc_version_affected_user1/files/world.txt is: OK", $output);
 
 		$output = $this->commandTester->getDisplay();
 
-		$this->assertContains("Verifying the content of file /test_enc_version_affected_user1/files/foo.txt
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/foo.txt
 The file /test_enc_version_affected_user1/files/foo.txt is: OK", $output);
-		$this->assertContains("Verifying the content of file /test_enc_version_affected_user1/files/hello.txt
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/hello.txt
 Attempting to fix the path: /test_enc_version_affected_user1/files/hello.txt
 Decrement the encrypted version to 1
 Increment the encrypted version to 3
@@ -201,7 +201,7 @@ Increment the encrypted version to 5
 Increment the encrypted version to 6
 The file /test_enc_version_affected_user1/files/hello.txt is: OK
 Fixed the file: /test_enc_version_affected_user1/files/hello.txt with version 6", $output);
-		$this->assertContains("Verifying the content of file /test_enc_version_affected_user1/files/world.txt
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/world.txt
 Attempting to fix the path: /test_enc_version_affected_user1/files/world.txt
 Increment the encrypted version to 2
 Increment the encrypted version to 3
@@ -262,9 +262,9 @@ Fixed the file: /test_enc_version_affected_user1/files/world.txt with version 5"
 
 		$output = $this->commandTester->getDisplay();
 
-		$this->assertContains("Verifying the content of file /test_enc_version_affected_user1/files/foo.txt
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/foo.txt
 The file /test_enc_version_affected_user1/files/foo.txt is: OK", $output);
-		$this->assertContains("Verifying the content of file /test_enc_version_affected_user1/files/hello.txt
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/hello.txt
 Attempting to fix the path: /test_enc_version_affected_user1/files/hello.txt
 Decrement the encrypted version to 14
 Decrement the encrypted version to 13
@@ -274,7 +274,7 @@ Decrement the encrypted version to 10
 Decrement the encrypted version to 9
 The file /test_enc_version_affected_user1/files/hello.txt is: OK
 Fixed the file: /test_enc_version_affected_user1/files/hello.txt with version 9", $output);
-		$this->assertContains("Verifying the content of file /test_enc_version_affected_user1/files/world.txt
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/world.txt
 Attempting to fix the path: /test_enc_version_affected_user1/files/world.txt
 Decrement the encrypted version to 14
 Decrement the encrypted version to 13
