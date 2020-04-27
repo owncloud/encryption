@@ -76,6 +76,6 @@ class AdminTest extends \Test\TestCase {
 
 	public function testGetPanel() {
 		$templateHtml = $this->panel->getPanel()->fetchPage();
-		$this->assertContains('<form id="ocDefaultEncryptionModule" class="sub-section">', $templateHtml);
+		$this->assertStringContainsString('<form id="ocDefaultEncryptionModule" class="sub-section">', $templateHtml);
 	}
 }

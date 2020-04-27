@@ -85,6 +85,6 @@ class PersonalTest extends \Test\TestCase {
 		$mockUser->expects($this->once())->method('getUID')->willReturn('testUser');
 		$this->userSession->expects($this->once())->method('getUser')->willReturn($mockUser);
 		$templateHtml = $this->panel->getPanel()->fetchPage();
-		$this->assertContains('<form id="ocDefaultEncryptionModule" class="section">', $templateHtml);
+		$this->assertStringContainsString('<form id="ocDefaultEncryptionModule" class="section">', $templateHtml);
 	}
 }
