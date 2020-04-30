@@ -287,6 +287,7 @@ class UserHooks implements IHook {
 				$keyPair = $this->crypt->createKeyPair("oc:uid:$user");
 
 				if ($keyPair === null) {
+					$this->logger->error('Encryption Could not update users encryption password');
 					return null;
 				}
 

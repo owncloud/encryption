@@ -299,8 +299,8 @@ class UserHooksTest extends TestCase {
 			->method('setPrivateKey')
 			->willReturn(true);
 
-		//No logger error should appear
-		$logger->expects($this->never())
+		//logger error should appear when keypair is null
+		$logger->expects($this->exactly(1))
 			->method('error');
 
 		$this->assertNull($userHooks->setPassphrase($this->params));
