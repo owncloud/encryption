@@ -191,7 +191,7 @@ class UserHooksTest extends TestCase {
 			->method('getPrivateKey')
 			->willReturnOnConsecutiveCalls(true, false);
 
-		$this->cryptMock->expects($this->exactly(4))
+		$this->cryptMock->expects($this->exactly(1))
 			->method('encryptPrivateKey')
 			->willReturn(true);
 
@@ -199,7 +199,7 @@ class UserHooksTest extends TestCase {
 			->method('generateHeader')
 			->willReturn(Crypt::HEADER_START . ':Cipher:test:' . Crypt::HEADER_END);
 
-		$this->keyManagerMock->expects($this->exactly(4))
+		$this->keyManagerMock->expects($this->exactly(1))
 			->method('setPrivateKey')
 			->willReturnCallback(function ($user, $key) {
 				$header = \substr($key, 0, \strlen(Crypt::HEADER_START));
@@ -254,10 +254,10 @@ class UserHooksTest extends TestCase {
 		$this->cryptMock->expects($this->once())
 			->method('createKeyPair');
 
-		$this->keyManagerMock->expects($this->once())
+		$this->keyManagerMock->expects($this->exactly(0))
 			->method('setPrivateKey');
 
-		$this->recoveryMock->expects($this->once())
+		$this->recoveryMock->expects($this->exactly(0))
 			->method('recoverUsersFiles')
 			->with('password', 'testUser');
 

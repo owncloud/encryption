@@ -219,7 +219,7 @@ class UserHooks implements IHook {
 	 * If the password can't be changed within ownCloud, than update the key password in advance.
 	 *
 	 * @param array $params : uid, password
-	 * @return boolean|null
+	 * @return void
 	 */
 	public function preSetPassphrase($params) {
 		if (App::isEnabled('encryption')) {
@@ -286,6 +286,10 @@ class UserHooks implements IHook {
 
 				$keyPair = $this->crypt->createKeyPair("oc:uid:$user");
 
+				if ($keyPair === null) {
+					return null;
+				}
+
 				// Save public key
 				$this->keyManager->setPublicKey($user, $keyPair['publicKey']);
 
@@ -300,6 +304,7 @@ class UserHooks implements IHook {
 					}
 				} else {
 					$this->logger->error('Encryption Could not update users encryption password');
+					return null;
 				}
 			}
 		}
