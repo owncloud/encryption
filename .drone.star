@@ -56,8 +56,7 @@ config = {
 				'postgres:9.4',
 			],
 			'servers': [
-				'daily-master-qa',
-				'latest'
+				'daily-master-qa'
 			],
 			'extraSetup': [
 				{
@@ -81,8 +80,7 @@ config = {
 				'mysql:5.5',
 			],
 			'servers': [
-				'daily-master-qa',
-				'latest'
+				'daily-master-qa'
 			],
 			'emailNeeded': True,
 			'extraSetup': [
@@ -107,8 +105,7 @@ config = {
 				'mysql:5.5',
 			],
 			'servers': [
-				'daily-master-qa',
-				'latest'
+				'daily-master-qa'
 			],
 			'emailNeeded': True,
 			'extraSetup': [
@@ -1570,7 +1567,7 @@ def installCore(version, db, useBundledApp):
 		'image': 'owncloudci/core',
 		'pull': 'always',
 		'settings': {
-			'version': version,
+			'git_reference': 'adjust-method-signatures-in-Encryption.php',
 			'core_path': '/var/www/owncloud/server',
 			'db_type': dbType,
 			'db_name': database,
