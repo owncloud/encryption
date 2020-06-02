@@ -62,7 +62,7 @@ class CryptHSM extends Crypt {
 	private $clockSkew;
 
 	/**
-	 * @var
+	 * @var string
 	 */
 	private $secret;
 
@@ -101,7 +101,7 @@ class CryptHSM extends Crypt {
 	 * create new private/public key-pair for user
 	 * any key config happens in the service
 	 *
-	 * @param $label string human readable name
+	 * @param string $label human readable name
 	 * @return array|bool
 	 */
 	public function createKeyPair($label = null) {
@@ -136,9 +136,9 @@ class CryptHSM extends Crypt {
 	}
 
 	/**
-	 * @param $encKeyFile
-	 * @param $shareKey
-	 * @param $privateKey string contains the key uuid in the hsm
+	 * @param string $encKeyFile
+	 * @param string $shareKey
+	 * @param string $privateKey string contains the key uuid in the hsm
 	 * @return string
 	 * @throws MultiKeyDecryptException
 	 */

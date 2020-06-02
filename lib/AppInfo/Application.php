@@ -127,6 +127,7 @@ class Application extends \OCP\AppFramework\App {
 
 		$container->registerService('Crypt',
 			function (IAppContainer $c) {
+				/** @var \OC\Server $server */
 				$server = $c->getServer();
 
 				if ($this->config->getAppValue('encryption', 'hsm.url', '') !== '') {

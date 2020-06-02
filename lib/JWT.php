@@ -35,7 +35,7 @@ class JWT {
 	}
 
 	/**
-	 * @param array $header
+	 * @param array $payload
 	 * @return string
 	 */
 	public static function payload($payload) {

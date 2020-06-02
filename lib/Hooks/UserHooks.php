@@ -119,7 +119,7 @@ class UserHooks implements IHook {
 	/**
 	 * Connects Hooks
 	 *
-	 * @return null
+	 * @return void|null
 	 */
 	public function addHooks() {
 		OCUtil::connectHook('OC_User', 'post_login', $this, 'login');
@@ -154,7 +154,7 @@ class UserHooks implements IHook {
 	 *
 	 * @note This method should never be called for users using client side encryption
 	 * @param array $params
-	 * @return boolean|null
+	 * @return boolean|null|void
 	 */
 	public function login($params) {
 		if (!App::isEnabled('encryption')) {
@@ -219,7 +219,7 @@ class UserHooks implements IHook {
 	 * If the password can't be changed within ownCloud, than update the key password in advance.
 	 *
 	 * @param array $params : uid, password
-	 * @return boolean|null
+	 * @return void
 	 */
 	public function preSetPassphrase($params) {
 		if (App::isEnabled('encryption')) {
@@ -235,7 +235,7 @@ class UserHooks implements IHook {
 	 * Change a user's encryption passphrase
 	 *
 	 * @param array $params keys: uid, password
-	 * @return boolean|null
+	 * @return void
 	 */
 	public function setPassphrase($params) {
 		$privateKey = null;
@@ -248,7 +248,7 @@ class UserHooks implements IHook {
 		}
 
 		// current logged in user changes his own password
-		if ($user && $params['uid'] === $user->getUID() && $privateKey) {
+		if ($user !== null && $params['uid'] === $user->getUID() && $privateKey) {
 
 			// Encrypt private key with new user pwd as passphrase
 			$encryptedPrivateKey = $this->crypt->encryptPrivateKey($privateKey, $params['password'], $params['uid']);
@@ -284,7 +284,7 @@ class UserHooks implements IHook {
 
 				$newUserPassword = $params['password'];
 
-				$keyPair = $this->crypt->createKeyPair("oc:uid:$user");
+				$keyPair = $this->crypt->createKeyPair();
 
 				// Save public key
 				$this->keyManager->setPublicKey($user, $keyPair['publicKey']);

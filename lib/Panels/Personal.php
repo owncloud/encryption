@@ -72,6 +72,9 @@ class Personal implements ISettings {
 		return 'encryption';
 	}
 
+	/**
+	 * @return \OCP\AppFramework\Http\TemplateResponse|Template|null
+	 */
 	public function getPanel() {
 		$session = new \OCA\Encryption\Session($this->session);
 		$template = new Template('encryption', 'settings-personal');

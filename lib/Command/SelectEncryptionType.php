@@ -77,6 +77,11 @@ class SelectEncryptionType extends Command {
 		);
 	}
 
+	/**
+	 * @param InputInterface $input
+	 * @param OutputInterface $output
+	 * @return int|void
+	 */
 	protected function execute(InputInterface $input, OutputInterface $output) {
 		if ($this->config->getAppValue('core', 'encryption_enabled', 'no') === 'no') {
 			$output->writeln('Kindly enable encryption to select the encryption type.');

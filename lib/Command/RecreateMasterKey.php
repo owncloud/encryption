@@ -94,6 +94,12 @@ class RecreateMasterKey extends Command {
 		);
 	}
 
+	/**
+	 * @param InputInterface $input
+	 * @param OutputInterface $output
+	 * @return int
+	 * @throws \Exception
+	 */
 	protected function execute(InputInterface $input, OutputInterface $output) {
 		$yes = $input->getOption('yes');
 		if ($this->util->isMasterKeyEnabled()) {
@@ -138,7 +144,7 @@ class RecreateMasterKey extends Command {
 
 				//Get the EncryptAll object from factory
 				$encryptAll = $this->encDecAllFactory->getEncryptAllObj();
-				if ($encryptAll->createMasterKey($input, $output) === false) {
+				if ($encryptAll->createMasterKey() === false) {
 					$output->writeln("<error>Error: masterkeys creation failed</error>");
 					return 1;
 				}

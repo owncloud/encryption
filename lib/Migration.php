@@ -326,7 +326,7 @@ class Migration {
 	 * @param string $keyPath
 	 * @param string $filename
 	 * @param bool $trash
-	 * @return string
+	 * @return string|bool
 	 */
 	private function getTargetDir($user, $keyPath, $filename, $trash) {
 		if ($trash) {

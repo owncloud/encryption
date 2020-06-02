@@ -232,7 +232,7 @@ class Encryption implements IEncryptionModule {
 	 * buffer.
 	 *
 	 * @param string $path to the file
-	 * @param int $position
+	 * @param int|string $position
 	 * @return string remained data which should be written to the file in case
 	 *                of a write operation
 	 * @throws PublicKeyMissingException
@@ -285,7 +285,7 @@ class Encryption implements IEncryptionModule {
 	 * encrypt data
 	 *
 	 * @param string $data you want to encrypt
-	 * @param int $position
+	 * @param int|string $position
 	 * @return string encrypted data
 	 */
 	public function encrypt($data, $position = 0) {
@@ -346,7 +346,7 @@ class Encryption implements IEncryptionModule {
 	 * decrypt data
 	 *
 	 * @param string $data you want to decrypt
-	 * @param int $position
+	 * @param int|string $position
 	 * @return string decrypted data
 	 * @throws DecryptionFailedException
 	 */
@@ -368,7 +368,7 @@ class Encryption implements IEncryptionModule {
 	 * @param string $path path to the file which should be updated
 	 * @param string $uid of the user who performs the operation
 	 * @param array $accessList who has access to the file contains the key 'users' and 'public'
-	 * @return boolean
+	 * @return boolean|void
 	 */
 	public function update($path, $uid, array $accessList) {
 		if (empty($accessList)) {

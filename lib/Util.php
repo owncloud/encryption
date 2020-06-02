@@ -78,7 +78,7 @@ class Util {
 		$this->files = $files;
 		$this->crypt = $crypt;
 		$this->logger = $logger;
-		$this->user = $userSession && $userSession->isLoggedIn() ? $userSession->getUser() : false;
+		$this->user = $userSession !== null && $userSession->isLoggedIn() ? $userSession->getUser() : false;
 		$this->config = $config;
 		$this->userManager = $userManager;
 	}
@@ -138,7 +138,7 @@ class Util {
 	}
 
 	/**
-	 * @param $enabled
+	 * @param boolean $enabled
 	 * @return bool
 	 */
 	public function setRecoveryForUser($enabled) {

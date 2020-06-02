@@ -45,10 +45,10 @@ class HSMDaemon extends Command {
 	private $timeFactory;
 
 	/**
-	 * @param IEncryptionModule $encryption
-	 * @param IClient $httpClient
+	 * @param IClientService $httpClient
 	 * @param IConfig $config
 	 * @param ILogger $logger
+	 * @param ITimeFactory $timeFactory
 	 */
 	public function __construct(IClientService $httpClient,
 								IConfig $config,
@@ -88,7 +88,14 @@ class HSMDaemon extends Command {
 		);
 	}
 
+	/**
+	 * @param InputInterface $input
+	 * @param OutputInterface $output
+	 * @return int|void
+	 * @throws \Exception
+	 */
 	protected function execute(InputInterface $input, OutputInterface $output) {
+		/** @var string|null $hsmUrl */
 		$hsmUrl = $this->config->getAppValue('encryption', 'hsm.url');
 		if (\is_string($hsmUrl) && $hsmUrl !== '') {
 			$decrypt = $input->getOption('decrypt');

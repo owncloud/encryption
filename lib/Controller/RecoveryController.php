@@ -89,12 +89,12 @@ class RecoveryController extends Controller {
 				Http::STATUS_BAD_REQUEST);
 		}
 
-		if (isset($adminEnableRecovery) && $adminEnableRecovery === '1') {
+		if ($adminEnableRecovery === '1') {
 			if ($this->recovery->enableAdminRecovery($recoveryPassword)) {
 				return new DataResponse(['data' => ['message' => (string)$this->l->t('Recovery key successfully enabled')]]);
 			}
 			return new DataResponse(['data' => ['message' => (string)$this->l->t('Could not enable recovery key. Please check your recovery key password!')]], Http::STATUS_BAD_REQUEST);
-		} elseif (isset($adminEnableRecovery) && $adminEnableRecovery === '0') {
+		} elseif ($adminEnableRecovery === '0') {
 			if ($this->recovery->disableAdminRecovery($recoveryPassword)) {
 				return new DataResponse(['data' => ['message' => (string)$this->l->t('Recovery key successfully disabled')]]);
 			}

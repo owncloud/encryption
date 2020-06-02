@@ -205,7 +205,7 @@ class DecryptAll {
 			}
 		}
 
-		$privateKey = $this->getPrivateKey($user, $password);
+		$privateKey = $this->getPrivateKey($user, $password); /** @phpstan-ignore-line */
 		if ($privateKey !== false) {
 			$this->updateSession($user, $privateKey);
 			return true;
