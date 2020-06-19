@@ -45,3 +45,17 @@ Feature: encrypt files using user specific keys
     When the administrator decrypts user keys based encryption with recovery key "recoverypass" using the occ command
     Then file "textfile0.txt" of user "Alice" should not be encrypted
     And file "textfile0.txt" of user "Brian" should not be encrypted
+
+  @issue-encryption-206
+  Scenario Outline: Sharer shares a file where receiver already has a file with the matching name
+    Given using OCS API version "<ocs_api_version>"
+    And user "Brian" has been created with default attributes and skeleton files
+    And user "Alice" has shared file "textfile0.txt" with user "Brian"
+    When user "Alice" gets all shares shared by him using the sharing API
+    Then the OCS status code should be "<ocs_status_code>"
+    And the HTTP status code should be "200"
+    And file "textfile0 (2).txt" should be included in the response
+    Examples:
+      | ocs_api_version | ocs_status_code |
+      | 1               | 100             |
+      | 2               | 200             |
