@@ -116,7 +116,7 @@ class Crypt {
 				$log->error('Encryption library openssl_pkey_new() fails: ' . \openssl_error_string(),
 					['app' => 'encryption']);
 			}
-		} elseif (\openssl_pkey_export($res, /** @phpstan-ignore-line */
+		} elseif (\openssl_pkey_export($res,
 			$privateKey,
 			null,
 			$this->getOpenSSLConfig())) {
