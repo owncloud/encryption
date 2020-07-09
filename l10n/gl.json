@@ -39,7 +39,7 @@
     "Please select an encryption option" : "Seleccione unha opción de cifrado",
     "Master Key" : "Chave mestra",
     "User-specific key" : "Chave específica do usuario",
-    "Permanently select this mode" : "Seleccionar este modo permanentemente",
+    "Permanently select this mode" : "Seleccionar este modo de xeito permanente",
     "Encrypt the home storage" : "Cifrar o almacenamento persoal",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Activando esta opción, cifrará todos os ficheiros almacenados no almacenamento principal, se non, cifraránse só os ficheiros do almacenamento externo",
     "Enable recovery key" : "Activar a chave de recuperación",
