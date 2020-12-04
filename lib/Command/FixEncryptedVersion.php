@@ -57,36 +57,63 @@ class FixEncryptedVersion extends Command {
 				'user',
 				InputArgument::REQUIRED,
 				'The id of the user whose files need fixing'
+			)->addOption(
+				'path',
+				'p',
+				InputArgument::OPTIONAL,
+				'Limit files to fix with path, e.g., --path="/Music/Artist". If path indicates a directory, all the files inside directory will be fixed.'
 			);
 	}
 
 	/**
 	 * @param InputInterface $input
 	 * @param OutputInterface $output
-	 * @return int|void
+	 * @return int
 	 */
 	protected function execute(InputInterface $input, OutputInterface $output) {
 		$user = $input->getArgument('user');
+		$pathToWalk = "/$user/files";
+
+		/**
+		 * trim() returns an empty string when the argument is an unset/null
+		 */
+		$pathOption = \trim($input->getOption('path'), '/');
+		if ($pathOption !== "") {
+			$pathToWalk = "$pathToWalk/$pathOption";
+		}
 
 		if ($user === null) {
 			$output->writeln("<error>No user id provided.</error>\n");
+			return 1;
 		}
 
 		if ($this->userManager->get($user) === null) {
 			$output->writeln("<error>User id $user does not exist. Please provide a valid user id</error>");
 			return 1;
 		}
-		$this->walkUserFolder($user, $output);
+		return $this->walkPathOfUser($user, $pathToWalk, $output);
 	}
 
 	/**
 	 * @param string $user
+	 * @param string $path
 	 * @param OutputInterface $output
+	 * @return int 0 for success, 1 for error
 	 */
-	private function walkUserFolder($user, OutputInterface $output) {
+	private function walkPathOfUser($user, $path, OutputInterface $output) {
 		$this->setupUserFs($user);
+		if (!$this->view->file_exists($path)) {
+			$output->writeln("<error>Path $path does not exist. Please provide a valid path.</error>");
+			return 1;
+		}
+
+		if ($this->view->is_file($path)) {
+			$output->writeln("Verifying the content of file $path");
+			$this->verifyFileContent($path, $output);
+			return 0;
+		}
 		$directories = [];
-		$directories[] = '/' . $user . '/files';
+		$directories[] = $path;
 		while ($root = \array_pop($directories)) {
 			$directoryContent = $this->view->getDirectoryContent($root);
 			foreach ($directoryContent as $file) {
@@ -99,6 +126,7 @@ class FixEncryptedVersion extends Command {
 				}
 			}
 		}
+		return 0;
 	}
 
 	/**
@@ -134,6 +162,7 @@ class FixEncryptedVersion extends Command {
 	/**
 	 * @param string $path
 	 * @param OutputInterface $output
+	 * @return bool
 	 */
 	private function correctEncryptedVersion($path, OutputInterface $output) {
 		$fileInfo = $this->view->getFileInfo($path);
@@ -188,6 +217,7 @@ class FixEncryptedVersion extends Command {
 				$increment++;
 			}
 		}
+		return false;
 	}
 
 	/**

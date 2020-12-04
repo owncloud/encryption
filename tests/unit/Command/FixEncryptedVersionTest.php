@@ -60,8 +60,6 @@ class FixEncryptedVersionTest extends TestCase {
 
 	public static function setUpBeforeClass(): void {
 		parent::setUpBeforeClass();
-		//Enable encryption app
-		\OC_App::enable("encryption");
 		//Enable encryption
 		\OC::$server->getConfig()->setAppValue('core', 'encryption_enabled', 'yes');
 		//Enable Masterkey
@@ -243,7 +241,7 @@ Fixed the file: /test_enc_version_affected_user1/files/world.txt with version 5"
 		$cache1 = $storage1->getCache();
 		$fileCache1 = $cache1->get($fileInfo1->getId());
 
-		//Now change the encrypted version to fifteem
+		//Now change the encrypted version to fifteen
 		$cacheInfo = ['encryptedVersion' => 15, 'encrypted' => 15];
 		$cache1->put($fileCache1->getPath(), $cacheInfo);
 
@@ -290,5 +288,81 @@ Fixed the file: /test_enc_version_affected_user1/files/world.txt with version 9"
 		 * where as the ob_get_level is found to be zero.
 		 */
 		\ob_start();
+	}
+
+	/**
+	 * Test commands with a file path
+	 */
+	public function testExecuteWithFilePathOption() {
+		\OC::$server->getUserSession()->login(self::TEST_ENCRYPTION_VERSION_AFFECTED_USER, 'foo');
+
+		$this->commandTester->execute([
+			'user' => self::TEST_ENCRYPTION_VERSION_AFFECTED_USER,
+			'--path' => "/hello.txt"
+		]);
+
+		$output = $this->commandTester->getDisplay();
+
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/hello.txt
+The file /test_enc_version_affected_user1/files/hello.txt is: OK", $output);
+		/**
+		 * We need to add ob_start at the end because if not done, it would be considered as a risky test.
+		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestCase.php is found to be 1
+		 * where as the ob_get_level is found to be zero.
+		 */
+		\ob_start();
+	}
+
+	/**
+	 * Test commands with a directory path
+	 */
+	public function testExecuteWithDirectoryPathOption() {
+		$this->commandTester->execute([
+			'user' => self::TEST_ENCRYPTION_VERSION_AFFECTED_USER,
+			'--path' => "/"
+		]);
+
+		$output = $this->commandTester->getDisplay();
+
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/hello.txt
+The file /test_enc_version_affected_user1/files/hello.txt is: OK", $output);
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/world.txt
+The file /test_enc_version_affected_user1/files/world.txt is: OK", $output);
+		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/foo.txt
+The file /test_enc_version_affected_user1/files/foo.txt is: OK", $output);
+		/**
+		 * We need to add ob_start at the end because if not done, it would be considered as a risky test.
+		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestCase.php is found to be 1
+		 * where as the ob_get_level is found to be zero.
+		 */
+		\ob_start();
+	}
+
+	/**
+	 * Test commands with a directory path
+	 */
+	public function testExecuteWithNoUser() {
+		$this->commandTester->execute([
+			'user' => null,
+			'--path' => "/"
+		]);
+
+		$output = $this->commandTester->getDisplay();
+
+		$this->assertStringContainsString("No user id provided.", $output);
+	}
+
+	/**
+	 * Test commands with a directory path
+	 */
+	public function testExecuteWithNonExistentPath() {
+		$this->commandTester->execute([
+			'user' => self::TEST_ENCRYPTION_VERSION_AFFECTED_USER,
+			'--path' => "/non-exist"
+		]);
+
+		$output = $this->commandTester->getDisplay();
+
+		$this->assertStringContainsString("Please provide a valid path.", $output);
 	}
 }
