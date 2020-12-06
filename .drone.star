@@ -30,7 +30,7 @@ config = {
 			],
 			'databases': [
 				'sqlite',
-				'mysql:5.5',
+				'mysql:8.0',
 				'postgres:9.4',
 			],
 		},
@@ -41,7 +41,7 @@ config = {
 			],
 			'databases': [
 				'sqlite',
-				'mysql:5.5',
+				'mysql:8.0',
 				'postgres:9.4',
 			],
 			'coverage': False
