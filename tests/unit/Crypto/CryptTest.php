@@ -131,9 +131,9 @@ class CryptTest extends TestCase {
 	 */
 	public function dataTestGenerateHeader() {
 		return [
-			[null, 'HBEGIN:cipher:AES-128-CFB:keyFormat:hash:HEND'],
-			['password', 'HBEGIN:cipher:AES-128-CFB:keyFormat:password:HEND'],
-			['hash', 'HBEGIN:cipher:AES-128-CFB:keyFormat:hash:HEND']
+			[null, 'HBEGIN:cipher:AES-128-CFB:keyFormat:hash:encoding:binary:HEND'],
+			['password', 'HBEGIN:cipher:AES-128-CFB:keyFormat:password:encoding:binary:HEND'],
+			['hash', 'HBEGIN:cipher:AES-128-CFB:keyFormat:hash:encoding:binary:HEND']
 		];
 	}
 
@@ -314,7 +314,7 @@ class CryptTest extends TestCase {
 	/**
 	 * test encrypt()
 	 *
-	 * @return string
+	 * @return array
 	 */
 	public function testEncrypt() {
 		$decrypted = 'content';
@@ -344,7 +344,7 @@ class CryptTest extends TestCase {
 		$result = self::invokePrivate(
 			$this->crypt,
 			'decrypt',
-			[$data['encrypted'], $data['iv'], $data['password']]);
+			[$data['encrypted'], $data['iv'], $data['password'], $this->crypt::DEFAULT_CIPHER, true]);
 
 		$this->assertSame($data['decrypted'], $result);
 	}

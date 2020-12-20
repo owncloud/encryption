@@ -62,6 +62,18 @@ class Crypt {
 	const HEADER_START = 'HBEGIN';
 	const HEADER_END = 'HEND';
 
+	/**
+	 * @var string Encoding type has been changed to binary from base64.
+	 * Reading the old format is still supported, new files are written with binary encoding by default.
+	 */
+	const DEFAULT_ENCODING_FORMAT = 'binary';
+
+	/**
+	 * @var boolean $useLegacyEncoding
+	 * Writing file with legacy base64 encoding is still supported for testing purposes
+	 */
+	private $useLegacyEncoding;
+
 	/** @var ILogger */
 	protected $logger;
 
@@ -97,6 +109,10 @@ class Crypt {
 		$this->config = $config;
 		$this->l = $l;
 		$this->supportedKeyFormats = ['hash', 'password'];
+		$this->useLegacyEncoding = $this->config->getSystemValue('encryption.use_legacy_encoding', false);
+		if ($this->useLegacyEncoding !== true) {
+			$this->useLegacyEncoding = false;
+		}
 	}
 
 	/**
@@ -207,14 +223,14 @@ class Crypt {
 			throw new \InvalidArgumentException('key format "' . $keyFormat . '" is not supported');
 		}
 
-		$cipher = $this->getCipher();
-
 		$header = self::HEADER_START
-			. ':cipher:' . $cipher
-			. ':keyFormat:' . $keyFormat
-			. ':' . self::HEADER_END;
+			. ':cipher:' . $this->getCipher()
+			. ':keyFormat:' . $keyFormat;
 
-		return $header;
+		if ($this->useLegacyEncoding !== true) {
+			$header .= ':encoding:' . self::DEFAULT_ENCODING_FORMAT;
+		}
+		return $header . ':' . self::HEADER_END;
 	}
 
 	/**
@@ -226,10 +242,11 @@ class Crypt {
 	 * @throws EncryptionFailedException
 	 */
 	private function encrypt($plainContent, $iv, $passPhrase = '', $cipher = self::DEFAULT_CIPHER) {
+		$options = $this->useLegacyEncoding === true ? 0 : OPENSSL_RAW_DATA;
 		$encryptedContent = \openssl_encrypt($plainContent,
 			$cipher,
 			$passPhrase,
-			0,
+			$options,
 			$iv);
 
 		if (!$encryptedContent) {
@@ -402,6 +419,8 @@ class Crypt {
 			$password = $this->generatePasswordHash($password, $cipher, $uid);
 		}
 
+		$binaryEncode = isset($header['encoding']) && $header['encoding'] === self::DEFAULT_ENCODING_FORMAT;
+
 		// If we found a header we need to remove it from the key we want to decrypt
 		if (!empty($header)) {
 			$privateKey = \substr($privateKey,
@@ -413,7 +432,9 @@ class Crypt {
 			$privateKey,
 			$password,
 			$cipher,
-			0
+			0,
+			0,
+			$binaryEncode
 		);
 
 		if ($this->isValidPrivateKey($plainKey) === false) {
@@ -447,10 +468,12 @@ class Crypt {
 	 * @param string $cipher
 	 * @param int $version
 	 * @param int $position
+	 * @param boolean $binaryEncode
 	 * @return string
 	 * @throws DecryptionFailedException
+	 * @throws HintException
 	 */
-	public function symmetricDecryptFileContent($keyFileContents, $passPhrase, $cipher = self::DEFAULT_CIPHER, $version = 0, $position = 0) {
+	public function symmetricDecryptFileContent($keyFileContents, $passPhrase, $cipher = self::DEFAULT_CIPHER, $version = 0, $position = 0, $binaryEncode = false) {
 		$catFile = $this->splitMetaData($keyFileContents, $cipher);
 
 		if ($catFile['signature'] !== false) {
@@ -465,7 +488,9 @@ class Crypt {
 		return $this->decrypt($catFile['encrypted'],
 			$catFile['iv'],
 			$passPhrase,
-			$cipher);
+			$cipher,
+			$binaryEncode
+		);
 	}
 
 	/**
@@ -568,14 +593,16 @@ class Crypt {
 	 * @param string $iv
 	 * @param string $passPhrase
 	 * @param string $cipher
+	 * @param boolean $binaryEncode
 	 * @return string
 	 * @throws DecryptionFailedException
 	 */
-	private function decrypt($encryptedContent, $iv, $passPhrase = '', $cipher = self::DEFAULT_CIPHER) {
+	private function decrypt($encryptedContent, $iv, $passPhrase = '', $cipher = self::DEFAULT_CIPHER, $binaryEncode = false) {
+		$options = $binaryEncode === true ? OPENSSL_RAW_DATA : 0;
 		$plainContent = \openssl_decrypt($encryptedContent,
 			$cipher,
 			$passPhrase,
-			0,
+			$options,
 			$iv);
 
 		if ($plainContent) {
@@ -685,5 +712,12 @@ class Crypt {
 		} else {
 			throw new MultiKeyEncryptException('multikeyencryption failed ' . \openssl_error_string());
 		}
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function useLegacyEncoding(): bool {
+		return $this->useLegacyEncoding;
 	}
 }
