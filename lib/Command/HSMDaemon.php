@@ -21,13 +21,7 @@
 
 namespace OCA\Encryption\Command;
 
-use OCA\Encryption\JWT;
-use OCP\AppFramework\Utility\ITimeFactory;
-use OCP\Encryption\IEncryptionModule;
-use OCP\Http\Client\IClient;
-use OCP\Http\Client\IClientService;
 use OCP\IConfig;
-use OCP\ILogger;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -35,35 +29,19 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class HSMDaemon extends Command {
 
-	/** @var IClient */
-	private $httpClient;
 	/** @var IConfig */
 	private $config;
-	/** @var  ILogger */
-	private $logger;
-	/** @var ITimeFactory */
-	private $timeFactory;
 
 	/**
-	 * @param IClientService $httpClient
 	 * @param IConfig $config
-	 * @param ILogger $logger
-	 * @param ITimeFactory $timeFactory
 	 */
-	public function __construct(IClientService $httpClient,
-								IConfig $config,
-								ILogger $logger,
-								ITimeFactory $timeFactory) {
-		$this->httpClient = $httpClient->newClient();
+	public function __construct(IConfig $config) {
 		$this->config = $config;
-		$this->logger = $logger;
-		$this->timeFactory = $timeFactory;
 		parent::__construct();
 	}
 
 	// TODO add route for hsmdaemon to post current secret
 	// TODO add encrypt masterkey command / as option
-	// TODO add decrypt option
 	protected function configure() {
 		$this
 			->setName('encryption:hsmdaemon')
@@ -80,12 +58,6 @@ class HSMDaemon extends Command {
 			InputOption::VALUE_REQUIRED,
 			'import a base64 encoded private masterkey'
 		);
-		$this->addOption(
-			'decrypt',
-			null,
-			InputOption::VALUE_REQUIRED,
-			'decrypt a base64 encoded value with the hsm'
-		);
 	}
 
 	/**
@@ -98,19 +70,7 @@ class HSMDaemon extends Command {
 		/** @var string|null $hsmUrl */
 		$hsmUrl = $this->config->getAppValue('encryption', 'hsm.url');
 		if (\is_string($hsmUrl) && $hsmUrl !== '') {
-			$decrypt = $input->getOption('decrypt');
-			if ($decrypt) {
-				$response = $this->httpClient->post($hsmUrl, [
-					'headers' => [
-						'Authorization' => 'Bearer ' . JWT::token([
-								'exp' => $this->timeFactory->getTime() + 120 // 2min for clock skew
-							], 'secret')
-					],
-					'body' => \base64_decode($decrypt)
-				]);
-
-				$output->writeln("received: '".$response->getBody()."'");
-			} elseif ($input->getOption('export-masterkey')) {
+			if ($input->getOption('export-masterkey')) {
 				$manager = \OC::$server->getEncryptionKeyStorage();
 				$keyId = $this->config->getAppValue('encryption', 'masterKeyId').'.privateKey';
 				$key = $manager->getSystemUserKey($keyId, \OC::$server->getEncryptionManager()->getDefaultEncryptionModuleId());

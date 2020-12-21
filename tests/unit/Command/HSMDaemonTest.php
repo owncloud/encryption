@@ -22,68 +22,21 @@
 namespace OCA\Encryption\Tests\Command;
 
 use OCA\Encryption\Command\HSMDaemon;
-use OCP\AppFramework\Utility\ITimeFactory;
-use OCP\Http\Client\IClientService;
-use GuzzleHttp\Client;
-use OCP\Http\Client\IResponse;
 use OCP\IConfig;
-use OCP\ILogger;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Test\TestCase;
 
 class HSMDaemonTest extends TestCase {
-	/** @var IClientService | \PHPUnit\Framework\MockObject\MockObject */
-	private $httpClient;
 	/** @var IConfig | \PHPUnit\Framework\MockObject\MockObject */
 	private $config;
-	/** @var ILogger | \PHPUnit\Framework\MockObject\MockObject */
-	private $logger;
-	/** @var ITimeFactory | \PHPUnit\Framework\MockObject\MockObject */
-	private $timeFactory;
 	/** @var HSMDaemon */
 	private $hsmDeamon;
 
 	public function setUp(): void {
 		parent::setUp();
-		$this->httpClient = $this->createMock(IClientService::class);
 		$this->config = $this->createMock(IConfig::class);
-		$this->logger = $this->createMock(ILogger::class);
-		$this->timeFactory = $this->createMock(ITimeFactory::class);
-
-		$newClient = $this->createMock(Client::class);
-
-		$iResponse = $this->createMock(IResponse::class);
-		$iResponse->method('getBody')
-			->willReturn(\base64_decode(\base64_encode("foo")));
-
-		$newClient->method('post')
-			->willReturn($iResponse);
-
-		$this->httpClient->method('newClient')
-			->willReturn($newClient);
-		$this->hsmDeamon = new HSMDaemon($this->httpClient, $this->config, $this->logger, $this->timeFactory);
-	}
-
-	public function testExecuteWithDecryptOption() {
-		$inputInterface = $this->createMock(InputInterface::class);
-		$inputInterface->method('getOption')
-			->with('decrypt')
-			->willReturn(true);
-
-		$outputInterface = $this->createMock(OutputInterface::class);
-		$outputInterface->expects($this->once())
-			->method('writeln')
-			->with("received: 'foo'");
-
-		$this->config->method('getAppValue')
-			->willReturn('http://localhost:1234');
-
-		$iRespose = $this->createMock(IResponse::class);
-		$iRespose->method('getBody')
-			->willReturn(\base64_decode(\base64_encode("foo")));
-
-		$this->invokePrivate($this->hsmDeamon, 'execute', [$inputInterface, $outputInterface]);
+		$this->hsmDeamon = new HSMDaemon($this->config);
 	}
 
 	public function testExecuteWithExportMasterKey() {
