@@ -143,7 +143,9 @@ class FixEncryptedVersion extends Command {
 			 * mismatch error. Which as of now, is enough to proceed ahead to
 			 * correct the encrypted version.
 			 */
-			if ($this->view->readfilePart($path, 0, 9000) !== false) {
+			$handle = $this->view->fopen($path, 'rb');
+
+			if (\fread($handle, 9001)) {
 				$output->writeln("<info>The file $path is: OK</info>");
 			}
 			return true;
