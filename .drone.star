@@ -1176,6 +1176,7 @@ def acceptance(ctx):
 		'runCoreTests': False,
 		'numberOfParts': 1,
 		'cron': '',
+		'pullRequestAndCron': 'nightly',
 	}
 
 	if 'defaults' in config:
@@ -1343,13 +1344,22 @@ def acceptance(ctx):
 					'trigger': {}
 				}
 
-				if (testConfig['cron'] == ''):
-					result['trigger']['ref'] = [
-						'refs/pull/**',
-						'refs/tags/**'
-					]
+				if (testConfig['pullRequestAndCron'] != ''):
+					if ctx.build.event == 'pull_request':
+						result['trigger']['ref'] = [
+							'refs/pull/**',
+							'refs/tags/**'
+						]
+					else:
+						result['trigger']['cron'] = testConfig['pullRequestAndCron']
 				else:
-					result['trigger']['cron'] = testConfig['cron']
+					if (testConfig['cron'] != ''):
+						result['trigger']['cron'] = testConfig['cron']
+					else:
+						result['trigger']['ref'] = [
+							'refs/pull/**',
+							'refs/tags/**'
+						]
 
 				pipelines.append(result)
 
