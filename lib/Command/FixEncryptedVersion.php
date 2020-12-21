@@ -145,9 +145,12 @@ class FixEncryptedVersion extends Command {
 			 */
 			$handle = $this->view->fopen($path, 'rb');
 
-			if (\fread($handle, 9001)) {
+			if (\fread($handle, 9001) !== false) {
 				$output->writeln("<info>The file $path is: OK</info>");
 			}
+
+			\fclose($handle);
+
 			return true;
 		} catch (HintException $e) {
 			\OC::$server->getLogger()->warning("Issue: " . $e->getMessage());
