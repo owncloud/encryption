@@ -134,12 +134,6 @@ The file /test_enc_version_affected_user1/files/hello.txt is: OK
 Fixed the file: /test_enc_version_affected_user1/files/hello.txt with version 1", $output);
 		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/world.txt
 The file /test_enc_version_affected_user1/files/world.txt is: OK", $output);
-		/**
-		 * We need to add ob_start at the end because if not done, it would be considered as a risky test.
-		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestCase.php is found to be 1
-		 * where as the ob_get_level is found to be zero.
-		 */
-		\ob_start();
 	}
 
 	/**
@@ -208,12 +202,6 @@ Increment the encrypted version to 4
 Increment the encrypted version to 5
 The file /test_enc_version_affected_user1/files/world.txt is: OK
 Fixed the file: /test_enc_version_affected_user1/files/world.txt with version 5", $output);
-		/**
-		 * We need to add ob_start at the end because if not done, it would be considered as a risky test.
-		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestCase.php is found to be 1
-		 * where as the ob_get_level is found to be zero.
-		 */
-		\ob_start();
 	}
 
 	/**
@@ -283,12 +271,6 @@ Decrement the encrypted version to 10
 Decrement the encrypted version to 9
 The file /test_enc_version_affected_user1/files/world.txt is: OK
 Fixed the file: /test_enc_version_affected_user1/files/world.txt with version 9", $output);
-		/**
-		 * We need to add ob_start at the end because if not done, it would be considered as a risky test.
-		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestCase.php is found to be 1
-		 * where as the ob_get_level is found to be zero.
-		 */
-		\ob_start();
 	}
 
 	/**
@@ -306,12 +288,6 @@ Fixed the file: /test_enc_version_affected_user1/files/world.txt with version 9"
 
 		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/hello.txt
 The file /test_enc_version_affected_user1/files/hello.txt is: OK", $output);
-		/**
-		 * We need to add ob_start at the end because if not done, it would be considered as a risky test.
-		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestCase.php is found to be 1
-		 * where as the ob_get_level is found to be zero.
-		 */
-		\ob_start();
 	}
 
 	/**
@@ -331,12 +307,6 @@ The file /test_enc_version_affected_user1/files/hello.txt is: OK", $output);
 The file /test_enc_version_affected_user1/files/world.txt is: OK", $output);
 		$this->assertStringContainsString("Verifying the content of file /test_enc_version_affected_user1/files/foo.txt
 The file /test_enc_version_affected_user1/files/foo.txt is: OK", $output);
-		/**
-		 * We need to add ob_start at the end because if not done, it would be considered as a risky test.
-		 * The reason is outputBufferingLevel in phpunit/src/Framework/TestCase.php is found to be 1
-		 * where as the ob_get_level is found to be zero.
-		 */
-		\ob_start();
 	}
 
 	/**
