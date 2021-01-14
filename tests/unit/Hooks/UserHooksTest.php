@@ -396,7 +396,7 @@ class UserHooksTest extends TestCase {
 		$this->recoveryMock = $recoveryMock;
 		$this->utilMock = $this->createMock(Util::class);
 		$this->utilMock->expects($this->any())->method('isMasterKeyEnabled')->willReturn(false);
-		$this->eventDispatcher = \OC::$server->getEventDispatcher();
+		$this->eventDispatcher = $this->createMock(EventDispatcher::class);
 
 		$userMock = $this->createMock(IUser::class);
 		$userMock->expects($this->any())->method('getUID')->willReturn('testUser');
