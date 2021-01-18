@@ -38,6 +38,8 @@ use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IUserSession;
 use PHPUnit\Framework\MockObject\MockObject;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\EventDispatcher\GenericEvent;
 use Test\TestCase;
 
 /**
@@ -91,7 +93,10 @@ class UserHooksTest extends TestCase {
 	 */
 	private $instance;
 
-	private $params = ['uid' => 'testUser', 'password' => 'password'];
+	/** @var  EventDispatcher */
+	private $eventDispatcher;
+
+	private $params;
 
 	private $keyPair = ['publicKey' => 'abcd', 'privateKey' => 'efgh'];
 
@@ -136,19 +141,20 @@ class UserHooksTest extends TestCase {
 		$this->assertNull($this->instance->postDeleteUser($this->params));
 	}
 
+	public function dataTestPreSetPassphrase() {
+		return [
+			[true],
+			[false]
+		];
+	}
+
 	/**
 	 * @dataProvider dataTestPreSetPassphrase
 	 */
 	public function testPreSetPassphrase($canChange) {
 		/** @var UserHooks | MockObject  $instance */
 		$instance = $this->getInstanceMock(['setPassphrase']);
-
-		$userMock = $this->createMock(IUser::class);
-
-		$this->userManagerMock->expects($this->once())
-			->method('get')
-			->with($this->params['uid'])
-			->willReturn($userMock);
+		$userMock = $this->params['user'];
 		$userMock->expects($this->once())
 			->method('canChangePassword')
 			->willReturn($canChange);
@@ -165,13 +171,6 @@ class UserHooksTest extends TestCase {
 		}
 
 		$this->assertNull($instance->preSetPassphrase($this->params));
-	}
-
-	public function dataTestPreSetPassphrase() {
-		return [
-			[true],
-			[false]
-		];
 	}
 
 	public function testSetPassphrase() {
@@ -341,7 +340,8 @@ class UserHooksTest extends TestCase {
 					$this->sessionMock,
 					$this->cryptMock,
 					$this->recoveryMock,
-					$this->config
+					$this->config,
+					$this->eventDispatcher
 			])
 			->onlyMethods($methods)
 			->getMock();
@@ -396,7 +396,11 @@ class UserHooksTest extends TestCase {
 		$this->recoveryMock = $recoveryMock;
 		$this->utilMock = $this->createMock(Util::class);
 		$this->utilMock->expects($this->any())->method('isMasterKeyEnabled')->willReturn(false);
+		$this->eventDispatcher = $this->createMock(EventDispatcher::class);
 
+		$userMock = $this->createMock(IUser::class);
+		$userMock->expects($this->any())->method('getUID')->willReturn('testUser');
+		$this->params = new GenericEvent(null, ['uid' => 'testUser', 'password' => 'password', 'user' => $userMock]);
 		$this->instance = $this->getInstanceMock(['setupFS']);
 	}
 

@@ -78,6 +78,7 @@ class FixEncryptedVersionTest extends TestCase {
 
 	public static function tearDownAfterClass(): void {
 		parent::tearDownAfterClass();
+		\OC\Files\Filesystem::clearMounts();
 		$user = \OC::$server->getUserManager()->get(self::TEST_ENCRYPTION_VERSION_AFFECTED_USER);
 		if ($user !== null) {
 			$user->delete();
