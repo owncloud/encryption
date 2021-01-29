@@ -93,12 +93,6 @@ class Encryption implements IEncryptionModule {
 	/** @var DecryptAll  */
 	private $decryptAll;
 
-	/** @var int unencrypted block size if block contains signature */
-	private $unencryptedBlockSizeSigned = 8096;
-
-	/** @var int signature size */
-	private $signatureSize = 54;
-
 	/**
 	 * @var boolean $useLegacyEncoding
 	 * In write operation, it is equal to crypt->useLegacyEncoding(),
@@ -464,20 +458,29 @@ class Encryption implements IEncryptionModule {
 	 * get size of the unencrypted payload per block.
 	 * ownCloud read/write files with a block size of 8192 byte
 	 *
+	 * Every block has 22 bytes IV and 2 bytes padding
+	 * Signed blocks have 71 bytes sign and 1 additional padding byte
+	 * unsigned unencrypted block size = 8196 - 24 = 8168
+	 * signed unencrypted block size = 8168 - 71 - 1 = 8096
+	 *
+	 * Legacy base64 encoding reduces unencrypted block size in a 3/4 ratio.
+	 * base64 encoded unsigned unencrypted block size = 8168 * 3/4 = 6126
+	 * base64 encoded signed unencrypted block size = 8096 * 3/4 = 6072
+	 *
 	 * @param bool $signed
 	 * @return int
 	 */
 	public function getUnencryptedBlockSize($signed = false) {
-		$blockSize = $this->unencryptedBlockSizeSigned;
-		if ($this->useLegacyEncoding) {
-			// Legacy base64 encoding reduces unencrypted block size to 3/4
-			$blockSize = ($blockSize/4) * 3;
-		}
-		if ($signed === false) {
-			$blockSize = $blockSize + $this->signatureSize;
+		$unencryptedBlockSize = 8168;
+		if ($signed === true) {
+			$unencryptedBlockSize = 8096;
 		}
 
-		return $blockSize;
+		if ($this->useLegacyEncoding) {
+			$unencryptedBlockSize = ($unencryptedBlockSize * 3) / 4;
+		}
+
+		return $unencryptedBlockSize;
 	}
 
 	/**

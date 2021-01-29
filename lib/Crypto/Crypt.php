@@ -109,10 +109,7 @@ class Crypt {
 		$this->config = $config;
 		$this->l = $l;
 		$this->supportedKeyFormats = ['hash', 'password'];
-		$this->useLegacyEncoding = $this->config->getSystemValue('encryption.use_legacy_encoding', false);
-		if ($this->useLegacyEncoding !== true) {
-			$this->useLegacyEncoding = false;
-		}
+		$this->useLegacyEncoding = $this->config->getSystemValue('encryption.use_legacy_encoding', false) === true;
 	}
 
 	/**
