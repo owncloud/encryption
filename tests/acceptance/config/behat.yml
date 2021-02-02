@@ -16,6 +16,15 @@ default:
             ocPath: apps/testing/api/v1/occ
         - OccContext:
 
+    apiEncryption:
+      paths:
+        - '%paths.base%/../features/apiEncryption'
+      contexts:
+        - EncryptionContext:
+        - FeatureContext: *common_feature_context_params
+        - OccContext:
+        - TrashbinContext:
+
     webUIUserKeysType:
       paths:
         - '%paths.base%/../features/webUIUserKeysType'
