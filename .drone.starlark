@@ -1407,11 +1407,17 @@ def sonarAnalysis(ctx, phpVersion = '7.4'):
 					'SONAR_TOKEN': {
 						'from_secret': 'sonar_token'
 					},
-					'SONAR_PULL_REQUEST_BASE': 'master',
-					'SONAR_PULL_REQUEST_BRANCH': '${DRONE_SOURCE_BRANCH}',
-					'SONAR_PULL_REQUEST_KEY': '${DRONE_COMMIT_REF}'.replace("refs/pull/", "").split("/")[0],
 					'SONAR_SCANNER_OPTS': '-Xdebug'
 				},
+				'commands': [
+					"""
+						if [ "${DRONE_BUILD_EVENT}}" = "pull_request" ]; then
+							export SONAR_PULL_REQUEST_BASE="master",
+							export SONAR_PULL_REQUEST_BRANCH="${DRONE_SOURCE_BRANCH}",
+						fi
+					"""
+					# export SONAR_PULL_REQUEST_KEY="${DRONE_COMMIT_REF}'.replace("refs/pull/", "").split("/")[0],
+				],
 				'when': {
 					'instance': [
 						'drone.owncloud.services',
@@ -1440,9 +1446,6 @@ def sonarAnalysis(ctx, phpVersion = '7.4'):
 			]
 		}
 	}
-
-	for branch in config['branches']:
-		result['trigger']['ref'].append('refs/heads/%s' % branch)
 
 	return result
 
