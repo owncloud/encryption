@@ -93,11 +93,12 @@ class Encryption implements IEncryptionModule {
 	/** @var DecryptAll  */
 	private $decryptAll;
 
-	/** @var int unencrypted block size if block contains signature */
-	private $unencryptedBlockSizeSigned = 6072;
-
-	/** @var int unencrypted block size */
-	private $unencryptedBlockSize = 6126;
+	/**
+	 * @var boolean $useLegacyEncoding
+	 * In write operation, it is equal to crypt->useLegacyEncoding(),
+	 * In read operation, it is false if header contains "encoding:binary" otherwise true.
+	 */
+	private $useLegacyEncoding = false;
 
 	/** @var int Current version of the file */
 	private $version = 0;
@@ -174,6 +175,11 @@ class Encryption implements IEncryptionModule {
 		$this->user = $user;
 		$this->isWriteOperation = false;
 		$this->writeCache = '';
+		$this->useLegacyEncoding = true;
+
+		if (isset($header['encoding'])) {
+			$this->useLegacyEncoding = $header['encoding'] !== Crypt::DEFAULT_ENCODING_FORMAT;
+		}
 
 		if ($this->session->decryptAllModeActivated()) {
 			$encryptedFileKey = $this->keyManager->getEncryptedFileKey($this->path);
@@ -215,6 +221,7 @@ class Encryption implements IEncryptionModule {
 
 		if ($this->isWriteOperation) {
 			$this->cipher = $this->crypt->getCipher();
+			$this->useLegacyEncoding = $this->crypt->useLegacyEncoding();
 		} elseif (isset($header['cipher'])) {
 			$this->cipher = $header['cipher'];
 		} else {
@@ -223,7 +230,11 @@ class Encryption implements IEncryptionModule {
 			$this->cipher = $this->crypt->getLegacyCipher();
 		}
 
-		return ['cipher' => $this->cipher, 'signed' => 'true'];
+		$return = ['cipher' => $this->cipher, 'signed' => 'true'];
+		if ($this->useLegacyEncoding !== true) {
+			$return['encoding'] = $this->crypt::DEFAULT_ENCODING_FORMAT;
+		}
+		return $return;
 	}
 
 	/**
@@ -310,8 +321,8 @@ class Encryption implements IEncryptionModule {
 			$remainingLength = \strlen($data);
 
 			// If data remaining to be written is less than the
-			// size of 1 6126 byte block
-			if ($remainingLength < $this->unencryptedBlockSizeSigned) {
+			// size of 1 unencrypted block size byte block
+			if ($remainingLength < $this->getUnencryptedBlockSize(true)) {
 
 				// Set writeCache to contents of $data
 				// The writeCache will be carried over to the
@@ -328,14 +339,14 @@ class Encryption implements IEncryptionModule {
 			} else {
 
 				// Read the chunk from the start of $data
-				$chunk = \substr($data, 0, $this->unencryptedBlockSizeSigned);
+				$chunk = \substr($data, 0, $this->getUnencryptedBlockSize(true));
 
 				$encrypted .= $this->crypt->symmetricEncryptFileContent($chunk, $this->fileKey, $this->version + 1, $position);
 
 				// Remove the chunk we just processed from
 				// $data, leaving only unprocessed data in $data
 				// var, for handling on the next round
-				$data = \substr($data, $this->unencryptedBlockSizeSigned);
+				$data = \substr($data, $this->getUnencryptedBlockSize(true));
 			}
 		}
 
@@ -359,7 +370,7 @@ class Encryption implements IEncryptionModule {
 			throw new DecryptionFailedException($msg, $hint);
 		}
 
-		return $this->crypt->symmetricDecryptFileContent($data, $this->fileKey, $this->cipher, $this->version, $position);
+		return $this->crypt->symmetricDecryptFileContent($data, $this->fileKey, $this->cipher, $this->version, $position, !$this->useLegacyEncoding);
 	}
 
 	/**
@@ -447,15 +458,29 @@ class Encryption implements IEncryptionModule {
 	 * get size of the unencrypted payload per block.
 	 * ownCloud read/write files with a block size of 8192 byte
 	 *
+	 * Every block has 22 bytes IV and 2 bytes padding
+	 * Signed blocks have 71 bytes sign and 1 additional padding byte
+	 * unsigned unencrypted block size = 8196 - 24 = 8168
+	 * signed unencrypted block size = 8168 - 71 - 1 = 8096
+	 *
+	 * Legacy base64 encoding reduces unencrypted block size in a 3/4 ratio.
+	 * base64 encoded unsigned unencrypted block size = 8168 * 3/4 = 6126
+	 * base64 encoded signed unencrypted block size = 8096 * 3/4 = 6072
+	 *
 	 * @param bool $signed
 	 * @return int
 	 */
 	public function getUnencryptedBlockSize($signed = false) {
-		if ($signed === false) {
-			return $this->unencryptedBlockSize;
+		$unencryptedBlockSize = 8168;
+		if ($signed === true) {
+			$unencryptedBlockSize = 8096;
 		}
 
-		return $this->unencryptedBlockSizeSigned;
+		if ($this->useLegacyEncoding) {
+			$unencryptedBlockSize = ($unencryptedBlockSize * 3) / 4;
+		}
+
+		return $unencryptedBlockSize;
 	}
 
 	/**
