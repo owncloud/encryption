@@ -836,7 +836,7 @@ steps:
   commands:
   - ls -l results
 
-- name: sonarcloud
+- name: sonarcloud-pr
   pull: always
   image: sonarsource/sonar-scanner-cli
   environment:
@@ -847,9 +847,20 @@ steps:
     SONAR_TOKEN:
       from_secret: sonar_token
   when:
-    instance:
-    - drone.owncloud.services
-    - drone.owncloud.com
+    event:
+    - pull_request
+
+- name: sonarcloud-master
+  pull: always
+  image: sonarsource/sonar-scanner-cli
+  environment:
+    SONAR_SCANNER_OPTS: -Xdebug
+    SONAR_TOKEN:
+      from_secret: sonar_token
+  when:
+    event:
+      exclude:
+      - pull_request
 
 - name: purge-cache
   image: minio/mc:RELEASE.2020-12-18T10-53-53Z

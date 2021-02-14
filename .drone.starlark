@@ -1452,7 +1452,7 @@ def sonarAnalysis(ctx, phpVersion = '7.4'):
 				]
 			},
 			{
-				'name': 'sonarcloud',
+				'name': 'sonarcloud-pr',
 				'image': 'sonarsource/sonar-scanner-cli',
 				'pull': 'always',
 				'environment': {
@@ -1465,10 +1465,29 @@ def sonarAnalysis(ctx, phpVersion = '7.4'):
 					'SONAR_SCANNER_OPTS': '-Xdebug'
 				},
 				'when': {
-					'instance': [
-						'drone.owncloud.services',
-						'drone.owncloud.com'
-					],
+					'event': {
+						'include': [
+							'pull_request'
+						],
+					},
+				}
+			},
+			{
+				'name': 'sonarcloud-master',
+				'image': 'sonarsource/sonar-scanner-cli',
+				'pull': 'always',
+				'environment': {
+					'SONAR_TOKEN': {
+						'from_secret': 'sonar_token'
+					},
+					'SONAR_SCANNER_OPTS': '-Xdebug'
+				},
+				'when': {
+					'event': {
+						'exclude': [
+							'pull_request'
+						],
+					},
 				}
 			},
 			{
