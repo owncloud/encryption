@@ -2756,7 +2756,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-1-master-mysql8.0-php7.2
+name: apiCoreMKey-39-1-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -2866,7 +2866,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 1
@@ -2930,7 +2930,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-2-master-mysql8.0-php7.2
+name: apiCoreMKey-39-2-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -3040,7 +3040,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 2
@@ -3104,7 +3104,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-3-master-mysql8.0-php7.2
+name: apiCoreMKey-39-3-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -3214,7 +3214,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 3
@@ -3278,7 +3278,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-4-master-mysql8.0-php7.2
+name: apiCoreMKey-39-4-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -3388,7 +3388,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 4
@@ -3452,7 +3452,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-5-master-mysql8.0-php7.2
+name: apiCoreMKey-39-5-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -3562,7 +3562,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 5
@@ -3626,7 +3626,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-6-master-mysql8.0-php7.2
+name: apiCoreMKey-39-6-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -3736,7 +3736,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 6
@@ -3800,7 +3800,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-7-master-mysql8.0-php7.2
+name: apiCoreMKey-39-7-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -3910,7 +3910,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 7
@@ -3974,7 +3974,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-8-master-mysql8.0-php7.2
+name: apiCoreMKey-39-8-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -4084,7 +4084,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 8
@@ -4148,7 +4148,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-9-master-mysql8.0-php7.2
+name: apiCoreMKey-39-9-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -4258,7 +4258,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 9
@@ -4322,7 +4322,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-10-master-mysql8.0-php7.2
+name: apiCoreMKey-39-10-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -4432,7 +4432,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 10
@@ -4496,7 +4496,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-11-master-mysql8.0-php7.2
+name: apiCoreMKey-39-11-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -4606,7 +4606,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 11
@@ -4670,7 +4670,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-12-master-mysql8.0-php7.2
+name: apiCoreMKey-39-12-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -4780,7 +4780,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 12
@@ -4844,7 +4844,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-13-master-mysql8.0-php7.2
+name: apiCoreMKey-39-13-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -4954,7 +4954,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 13
@@ -5018,7 +5018,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-14-master-mysql8.0-php7.2
+name: apiCoreMKey-39-14-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -5128,7 +5128,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 14
@@ -5192,7 +5192,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-15-master-mysql8.0-php7.2
+name: apiCoreMKey-39-15-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -5302,7 +5302,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 15
@@ -5366,7 +5366,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-16-master-mysql8.0-php7.2
+name: apiCoreMKey-39-16-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -5476,7 +5476,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 16
@@ -5540,7 +5540,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-17-master-mysql8.0-php7.2
+name: apiCoreMKey-39-17-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -5650,7 +5650,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 17
@@ -5714,7 +5714,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-18-master-mysql8.0-php7.2
+name: apiCoreMKey-39-18-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -5824,7 +5824,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 18
@@ -5888,7 +5888,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-19-master-mysql8.0-php7.2
+name: apiCoreMKey-39-19-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -5998,7 +5998,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 19
@@ -6062,7 +6062,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-20-master-mysql8.0-php7.2
+name: apiCoreMKey-39-20-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -6172,7 +6172,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 20
@@ -6236,7 +6236,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-21-master-mysql8.0-php7.2
+name: apiCoreMKey-39-21-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -6346,7 +6346,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 21
@@ -6410,7 +6410,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-22-master-mysql8.0-php7.2
+name: apiCoreMKey-39-22-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -6520,7 +6520,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 22
@@ -6584,7 +6584,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-23-master-mysql8.0-php7.2
+name: apiCoreMKey-39-23-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -6694,7 +6694,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 23
@@ -6758,7 +6758,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-24-master-mysql8.0-php7.2
+name: apiCoreMKey-39-24-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -6868,7 +6868,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 24
@@ -6932,7 +6932,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-25-master-mysql8.0-php7.2
+name: apiCoreMKey-39-25-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -7042,7 +7042,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 25
@@ -7106,7 +7106,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-26-master-mysql8.0-php7.2
+name: apiCoreMKey-39-26-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -7216,7 +7216,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 26
@@ -7280,7 +7280,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-27-master-mysql8.0-php7.2
+name: apiCoreMKey-39-27-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -7390,7 +7390,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 27
@@ -7454,7 +7454,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-28-master-mysql8.0-php7.2
+name: apiCoreMKey-39-28-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -7564,7 +7564,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 28
@@ -7628,7 +7628,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-29-master-mysql8.0-php7.2
+name: apiCoreMKey-39-29-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -7738,7 +7738,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 29
@@ -7802,7 +7802,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-30-master-mysql8.0-php7.2
+name: apiCoreMKey-39-30-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -7912,7 +7912,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 30
@@ -7976,7 +7976,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-31-master-mysql8.0-php7.2
+name: apiCoreMKey-39-31-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -8086,7 +8086,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 31
@@ -8150,7 +8150,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-32-master-mysql8.0-php7.2
+name: apiCoreMKey-39-32-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -8260,7 +8260,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 32
@@ -8324,7 +8324,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-33-master-mysql8.0-php7.2
+name: apiCoreMKey-39-33-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -8434,7 +8434,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 33
@@ -8498,7 +8498,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-34-master-mysql8.0-php7.2
+name: apiCoreMKey-39-34-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -8608,7 +8608,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 34
@@ -8672,7 +8672,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-35-master-mysql8.0-php7.2
+name: apiCoreMKey-39-35-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -8782,7 +8782,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 35
@@ -8846,7 +8846,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-36-master-mysql8.0-php7.2
+name: apiCoreMKey-39-36-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -8956,7 +8956,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 36
@@ -9020,7 +9020,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-37-master-mysql8.0-php7.2
+name: apiCoreMKey-39-37-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -9130,7 +9130,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 37
@@ -9194,7 +9194,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-38-master-mysql8.0-php7.2
+name: apiCoreMKey-39-38-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -9304,7 +9304,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 38
@@ -9368,7 +9368,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-39-master-mysql8.0-php7.2
+name: apiCoreMKey-39-39-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -9478,7 +9478,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 39
@@ -9542,181 +9542,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-40-master-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: daily-master-qa
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: daily-master-qa
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type masterkey --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-api
-  environment:
-    DIVIDE_INTO_NUM_PARTS: 40
-    ENCRYPTION_TYPE: masterkey
-    MAILHOG_HOST: email
-    RUN_PART: 40
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  ref:
-  - refs/pull/**
-  - refs/tags/**
-  - refs/heads/master
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: apiCoreMKey-40-1-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-1-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -9826,7 +9652,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 1
@@ -9888,7 +9714,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-2-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-2-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -9998,7 +9824,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 2
@@ -10060,7 +9886,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-3-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-3-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -10170,7 +9996,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 3
@@ -10232,7 +10058,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-4-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-4-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -10342,7 +10168,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 4
@@ -10404,7 +10230,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-5-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-5-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -10514,7 +10340,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 5
@@ -10576,7 +10402,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-6-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-6-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -10686,7 +10512,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 6
@@ -10748,7 +10574,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-7-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-7-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -10858,7 +10684,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 7
@@ -10920,7 +10746,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-8-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-8-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -11030,7 +10856,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 8
@@ -11092,7 +10918,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-9-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-9-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -11202,7 +11028,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 9
@@ -11264,7 +11090,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-10-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-10-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -11374,7 +11200,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 10
@@ -11436,7 +11262,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-11-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-11-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -11546,7 +11372,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 11
@@ -11608,7 +11434,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-12-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-12-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -11718,7 +11544,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 12
@@ -11780,7 +11606,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-13-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-13-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -11890,7 +11716,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 13
@@ -11952,7 +11778,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-14-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-14-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -12062,7 +11888,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 14
@@ -12124,7 +11950,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-15-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-15-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -12234,7 +12060,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 15
@@ -12296,7 +12122,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-16-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-16-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -12406,7 +12232,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 16
@@ -12468,7 +12294,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-17-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-17-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -12578,7 +12404,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 17
@@ -12640,7 +12466,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-18-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-18-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -12750,7 +12576,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 18
@@ -12812,7 +12638,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-19-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-19-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -12922,7 +12748,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 19
@@ -12984,7 +12810,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-20-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-20-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -13094,7 +12920,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 20
@@ -13156,7 +12982,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-21-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-21-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -13266,7 +13092,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 21
@@ -13328,7 +13154,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-22-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-22-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -13438,7 +13264,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 22
@@ -13500,7 +13326,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-23-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-23-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -13610,7 +13436,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 23
@@ -13672,7 +13498,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-24-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-24-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -13782,7 +13608,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 24
@@ -13844,7 +13670,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-25-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-25-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -13954,7 +13780,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 25
@@ -14016,7 +13842,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-26-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-26-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -14126,7 +13952,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 26
@@ -14188,7 +14014,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-27-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-27-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -14298,7 +14124,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 27
@@ -14360,7 +14186,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-28-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-28-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -14470,7 +14296,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 28
@@ -14532,7 +14358,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-29-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-29-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -14642,7 +14468,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 29
@@ -14704,7 +14530,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-30-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-30-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -14814,7 +14640,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 30
@@ -14876,7 +14702,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-31-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-31-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -14986,7 +14812,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 31
@@ -15048,7 +14874,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-32-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-32-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -15158,7 +14984,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 32
@@ -15220,7 +15046,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-33-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-33-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -15330,7 +15156,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 33
@@ -15392,7 +15218,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-34-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-34-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -15502,7 +15328,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 34
@@ -15564,7 +15390,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-35-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-35-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -15674,7 +15500,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 35
@@ -15736,7 +15562,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-36-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-36-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -15846,7 +15672,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 36
@@ -15908,7 +15734,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-37-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-37-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -16018,7 +15844,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 37
@@ -16080,7 +15906,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-38-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-38-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -16190,7 +16016,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 38
@@ -16252,7 +16078,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-39-latest-mysql8.0-php7.2
+name: apiCoreMKey-39-39-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -16362,7 +16188,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     RUN_PART: 39
@@ -16424,179 +16250,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreMKey-40-40-latest-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: latest
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: latest
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type masterkey --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-api
-  environment:
-    DIVIDE_INTO_NUM_PARTS: 40
-    ENCRYPTION_TYPE: masterkey
-    MAILHOG_HOST: email
-    RUN_PART: 40
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  cron:
-  - nightly
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: apiCoreUKey-40-1-master-mysql8.0-php7.2
+name: apiCoreUKey-39-1-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -16706,7 +16360,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 1
@@ -16770,7 +16424,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-2-master-mysql8.0-php7.2
+name: apiCoreUKey-39-2-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -16880,7 +16534,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 2
@@ -16944,7 +16598,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-3-master-mysql8.0-php7.2
+name: apiCoreUKey-39-3-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -17054,7 +16708,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 3
@@ -17118,7 +16772,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-4-master-mysql8.0-php7.2
+name: apiCoreUKey-39-4-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -17228,7 +16882,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 4
@@ -17292,7 +16946,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-5-master-mysql8.0-php7.2
+name: apiCoreUKey-39-5-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -17402,7 +17056,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 5
@@ -17466,7 +17120,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-6-master-mysql8.0-php7.2
+name: apiCoreUKey-39-6-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -17576,7 +17230,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 6
@@ -17640,7 +17294,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-7-master-mysql8.0-php7.2
+name: apiCoreUKey-39-7-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -17750,7 +17404,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 7
@@ -17814,7 +17468,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-8-master-mysql8.0-php7.2
+name: apiCoreUKey-39-8-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -17924,7 +17578,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 8
@@ -17988,7 +17642,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-9-master-mysql8.0-php7.2
+name: apiCoreUKey-39-9-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -18098,7 +17752,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 9
@@ -18162,7 +17816,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-10-master-mysql8.0-php7.2
+name: apiCoreUKey-39-10-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -18272,7 +17926,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 10
@@ -18336,7 +17990,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-11-master-mysql8.0-php7.2
+name: apiCoreUKey-39-11-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -18446,7 +18100,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 11
@@ -18510,7 +18164,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-12-master-mysql8.0-php7.2
+name: apiCoreUKey-39-12-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -18620,7 +18274,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 12
@@ -18684,7 +18338,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-13-master-mysql8.0-php7.2
+name: apiCoreUKey-39-13-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -18794,7 +18448,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 13
@@ -18858,7 +18512,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-14-master-mysql8.0-php7.2
+name: apiCoreUKey-39-14-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -18968,7 +18622,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 14
@@ -19032,7 +18686,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-15-master-mysql8.0-php7.2
+name: apiCoreUKey-39-15-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -19142,7 +18796,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 15
@@ -19206,7 +18860,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-16-master-mysql8.0-php7.2
+name: apiCoreUKey-39-16-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -19316,7 +18970,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 16
@@ -19380,7 +19034,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-17-master-mysql8.0-php7.2
+name: apiCoreUKey-39-17-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -19490,7 +19144,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 17
@@ -19554,7 +19208,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-18-master-mysql8.0-php7.2
+name: apiCoreUKey-39-18-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -19664,7 +19318,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 18
@@ -19728,7 +19382,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-19-master-mysql8.0-php7.2
+name: apiCoreUKey-39-19-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -19838,7 +19492,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 19
@@ -19902,7 +19556,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-20-master-mysql8.0-php7.2
+name: apiCoreUKey-39-20-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -20012,7 +19666,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 20
@@ -20076,7 +19730,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-21-master-mysql8.0-php7.2
+name: apiCoreUKey-39-21-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -20186,7 +19840,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 21
@@ -20250,7 +19904,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-22-master-mysql8.0-php7.2
+name: apiCoreUKey-39-22-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -20360,7 +20014,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 22
@@ -20424,7 +20078,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-23-master-mysql8.0-php7.2
+name: apiCoreUKey-39-23-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -20534,7 +20188,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 23
@@ -20598,7 +20252,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-24-master-mysql8.0-php7.2
+name: apiCoreUKey-39-24-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -20708,7 +20362,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 24
@@ -20772,7 +20426,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-25-master-mysql8.0-php7.2
+name: apiCoreUKey-39-25-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -20882,7 +20536,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 25
@@ -20946,7 +20600,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-26-master-mysql8.0-php7.2
+name: apiCoreUKey-39-26-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -21056,7 +20710,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 26
@@ -21120,7 +20774,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-27-master-mysql8.0-php7.2
+name: apiCoreUKey-39-27-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -21230,7 +20884,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 27
@@ -21294,7 +20948,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-28-master-mysql8.0-php7.2
+name: apiCoreUKey-39-28-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -21404,7 +21058,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 28
@@ -21468,7 +21122,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-29-master-mysql8.0-php7.2
+name: apiCoreUKey-39-29-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -21578,7 +21232,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 29
@@ -21642,7 +21296,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-30-master-mysql8.0-php7.2
+name: apiCoreUKey-39-30-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -21752,7 +21406,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 30
@@ -21816,7 +21470,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-31-master-mysql8.0-php7.2
+name: apiCoreUKey-39-31-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -21926,7 +21580,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 31
@@ -21990,7 +21644,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-32-master-mysql8.0-php7.2
+name: apiCoreUKey-39-32-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -22100,7 +21754,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 32
@@ -22164,7 +21818,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-33-master-mysql8.0-php7.2
+name: apiCoreUKey-39-33-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -22274,7 +21928,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 33
@@ -22338,7 +21992,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-34-master-mysql8.0-php7.2
+name: apiCoreUKey-39-34-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -22448,7 +22102,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 34
@@ -22512,7 +22166,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-35-master-mysql8.0-php7.2
+name: apiCoreUKey-39-35-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -22622,7 +22276,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 35
@@ -22686,7 +22340,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-36-master-mysql8.0-php7.2
+name: apiCoreUKey-39-36-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -22796,7 +22450,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 36
@@ -22860,7 +22514,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-37-master-mysql8.0-php7.2
+name: apiCoreUKey-39-37-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -22970,7 +22624,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 37
@@ -23034,7 +22688,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-38-master-mysql8.0-php7.2
+name: apiCoreUKey-39-38-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -23144,7 +22798,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 38
@@ -23208,7 +22862,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-39-master-mysql8.0-php7.2
+name: apiCoreUKey-39-39-master-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -23318,7 +22972,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 39
@@ -23382,181 +23036,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-40-master-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: daily-master-qa
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: daily-master-qa
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type user-keys --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-api
-  environment:
-    DIVIDE_INTO_NUM_PARTS: 40
-    ENCRYPTION_TYPE: user-keys
-    MAILHOG_HOST: email
-    RUN_PART: 40
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  ref:
-  - refs/pull/**
-  - refs/tags/**
-  - refs/heads/master
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: apiCoreUKey-40-1-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-1-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -23666,7 +23146,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 1
@@ -23728,7 +23208,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-2-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-2-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -23838,7 +23318,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 2
@@ -23900,7 +23380,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-3-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-3-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -24010,7 +23490,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 3
@@ -24072,7 +23552,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-4-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-4-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -24182,7 +23662,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 4
@@ -24244,7 +23724,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-5-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-5-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -24354,7 +23834,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 5
@@ -24416,7 +23896,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-6-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-6-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -24526,7 +24006,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 6
@@ -24588,7 +24068,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-7-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-7-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -24698,7 +24178,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 7
@@ -24760,7 +24240,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-8-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-8-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -24870,7 +24350,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 8
@@ -24932,7 +24412,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-9-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-9-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -25042,7 +24522,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 9
@@ -25104,7 +24584,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-10-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-10-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -25214,7 +24694,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 10
@@ -25276,7 +24756,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-11-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-11-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -25386,7 +24866,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 11
@@ -25448,7 +24928,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-12-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-12-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -25558,7 +25038,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 12
@@ -25620,7 +25100,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-13-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-13-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -25730,7 +25210,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 13
@@ -25792,7 +25272,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-14-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-14-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -25902,7 +25382,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 14
@@ -25964,7 +25444,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-15-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-15-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -26074,7 +25554,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 15
@@ -26136,7 +25616,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-16-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-16-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -26246,7 +25726,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 16
@@ -26308,7 +25788,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-17-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-17-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -26418,7 +25898,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 17
@@ -26480,7 +25960,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-18-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-18-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -26590,7 +26070,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 18
@@ -26652,7 +26132,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-19-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-19-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -26762,7 +26242,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 19
@@ -26824,7 +26304,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-20-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-20-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -26934,7 +26414,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 20
@@ -26996,7 +26476,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-21-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-21-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -27106,7 +26586,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 21
@@ -27168,7 +26648,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-22-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-22-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -27278,7 +26758,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 22
@@ -27340,7 +26820,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-23-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-23-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -27450,7 +26930,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 23
@@ -27512,7 +26992,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-24-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-24-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -27622,7 +27102,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 24
@@ -27684,7 +27164,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-25-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-25-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -27794,7 +27274,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 25
@@ -27856,7 +27336,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-26-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-26-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -27966,7 +27446,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 26
@@ -28028,7 +27508,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-27-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-27-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -28138,7 +27618,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 27
@@ -28200,7 +27680,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-28-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-28-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -28310,7 +27790,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 28
@@ -28372,7 +27852,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-29-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-29-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -28482,7 +27962,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 29
@@ -28544,7 +28024,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-30-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-30-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -28654,7 +28134,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 30
@@ -28716,7 +28196,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-31-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-31-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -28826,7 +28306,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 31
@@ -28888,7 +28368,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-32-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-32-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -28998,7 +28478,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 32
@@ -29060,7 +28540,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-33-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-33-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -29170,7 +28650,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 33
@@ -29232,7 +28712,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-34-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-34-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -29342,7 +28822,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 34
@@ -29404,7 +28884,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-35-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-35-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -29514,7 +28994,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 35
@@ -29576,7 +29056,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-36-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-36-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -29686,7 +29166,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 36
@@ -29748,7 +29228,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-37-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-37-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -29858,7 +29338,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 37
@@ -29920,7 +29400,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-38-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-38-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -30030,7 +29510,7 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 38
@@ -30092,7 +29572,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: apiCoreUKey-40-39-latest-mysql8.0-php7.2
+name: apiCoreUKey-39-39-latest-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -30202,182 +29682,10 @@ steps:
   - . /var/www/owncloud/saved-settings.sh
   - make test-acceptance-core-api
   environment:
-    DIVIDE_INTO_NUM_PARTS: 40
+    DIVIDE_INTO_NUM_PARTS: 39
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     RUN_PART: 39
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  cron:
-  - nightly
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: apiCoreUKey-40-40-latest-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: latest
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: latest
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type user-keys --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-api
-  environment:
-    DIVIDE_INTO_NUM_PARTS: 40
-    ENCRYPTION_TYPE: user-keys
-    MAILHOG_HOST: email
-    RUN_PART: 40
     TEST_SERVER_URL: http://server
 
 services:
@@ -45114,166 +44422,162 @@ depends_on:
 - apiUserKeys-latest-postgres9.4-php7.2
 - webUIUserKeys-master-chrome-mysql8.0-php7.2
 - webUIUserKeys-latest-chrome-mysql8.0-php7.2
-- apiCoreMKey-40-1-master-mysql8.0-php7.2
-- apiCoreMKey-40-2-master-mysql8.0-php7.2
-- apiCoreMKey-40-3-master-mysql8.0-php7.2
-- apiCoreMKey-40-4-master-mysql8.0-php7.2
-- apiCoreMKey-40-5-master-mysql8.0-php7.2
-- apiCoreMKey-40-6-master-mysql8.0-php7.2
-- apiCoreMKey-40-7-master-mysql8.0-php7.2
-- apiCoreMKey-40-8-master-mysql8.0-php7.2
-- apiCoreMKey-40-9-master-mysql8.0-php7.2
-- apiCoreMKey-40-10-master-mysql8.0-php7.2
-- apiCoreMKey-40-11-master-mysql8.0-php7.2
-- apiCoreMKey-40-12-master-mysql8.0-php7.2
-- apiCoreMKey-40-13-master-mysql8.0-php7.2
-- apiCoreMKey-40-14-master-mysql8.0-php7.2
-- apiCoreMKey-40-15-master-mysql8.0-php7.2
-- apiCoreMKey-40-16-master-mysql8.0-php7.2
-- apiCoreMKey-40-17-master-mysql8.0-php7.2
-- apiCoreMKey-40-18-master-mysql8.0-php7.2
-- apiCoreMKey-40-19-master-mysql8.0-php7.2
-- apiCoreMKey-40-20-master-mysql8.0-php7.2
-- apiCoreMKey-40-21-master-mysql8.0-php7.2
-- apiCoreMKey-40-22-master-mysql8.0-php7.2
-- apiCoreMKey-40-23-master-mysql8.0-php7.2
-- apiCoreMKey-40-24-master-mysql8.0-php7.2
-- apiCoreMKey-40-25-master-mysql8.0-php7.2
-- apiCoreMKey-40-26-master-mysql8.0-php7.2
-- apiCoreMKey-40-27-master-mysql8.0-php7.2
-- apiCoreMKey-40-28-master-mysql8.0-php7.2
-- apiCoreMKey-40-29-master-mysql8.0-php7.2
-- apiCoreMKey-40-30-master-mysql8.0-php7.2
-- apiCoreMKey-40-31-master-mysql8.0-php7.2
-- apiCoreMKey-40-32-master-mysql8.0-php7.2
-- apiCoreMKey-40-33-master-mysql8.0-php7.2
-- apiCoreMKey-40-34-master-mysql8.0-php7.2
-- apiCoreMKey-40-35-master-mysql8.0-php7.2
-- apiCoreMKey-40-36-master-mysql8.0-php7.2
-- apiCoreMKey-40-37-master-mysql8.0-php7.2
-- apiCoreMKey-40-38-master-mysql8.0-php7.2
-- apiCoreMKey-40-39-master-mysql8.0-php7.2
-- apiCoreMKey-40-40-master-mysql8.0-php7.2
-- apiCoreMKey-40-1-latest-mysql8.0-php7.2
-- apiCoreMKey-40-2-latest-mysql8.0-php7.2
-- apiCoreMKey-40-3-latest-mysql8.0-php7.2
-- apiCoreMKey-40-4-latest-mysql8.0-php7.2
-- apiCoreMKey-40-5-latest-mysql8.0-php7.2
-- apiCoreMKey-40-6-latest-mysql8.0-php7.2
-- apiCoreMKey-40-7-latest-mysql8.0-php7.2
-- apiCoreMKey-40-8-latest-mysql8.0-php7.2
-- apiCoreMKey-40-9-latest-mysql8.0-php7.2
-- apiCoreMKey-40-10-latest-mysql8.0-php7.2
-- apiCoreMKey-40-11-latest-mysql8.0-php7.2
-- apiCoreMKey-40-12-latest-mysql8.0-php7.2
-- apiCoreMKey-40-13-latest-mysql8.0-php7.2
-- apiCoreMKey-40-14-latest-mysql8.0-php7.2
-- apiCoreMKey-40-15-latest-mysql8.0-php7.2
-- apiCoreMKey-40-16-latest-mysql8.0-php7.2
-- apiCoreMKey-40-17-latest-mysql8.0-php7.2
-- apiCoreMKey-40-18-latest-mysql8.0-php7.2
-- apiCoreMKey-40-19-latest-mysql8.0-php7.2
-- apiCoreMKey-40-20-latest-mysql8.0-php7.2
-- apiCoreMKey-40-21-latest-mysql8.0-php7.2
-- apiCoreMKey-40-22-latest-mysql8.0-php7.2
-- apiCoreMKey-40-23-latest-mysql8.0-php7.2
-- apiCoreMKey-40-24-latest-mysql8.0-php7.2
-- apiCoreMKey-40-25-latest-mysql8.0-php7.2
-- apiCoreMKey-40-26-latest-mysql8.0-php7.2
-- apiCoreMKey-40-27-latest-mysql8.0-php7.2
-- apiCoreMKey-40-28-latest-mysql8.0-php7.2
-- apiCoreMKey-40-29-latest-mysql8.0-php7.2
-- apiCoreMKey-40-30-latest-mysql8.0-php7.2
-- apiCoreMKey-40-31-latest-mysql8.0-php7.2
-- apiCoreMKey-40-32-latest-mysql8.0-php7.2
-- apiCoreMKey-40-33-latest-mysql8.0-php7.2
-- apiCoreMKey-40-34-latest-mysql8.0-php7.2
-- apiCoreMKey-40-35-latest-mysql8.0-php7.2
-- apiCoreMKey-40-36-latest-mysql8.0-php7.2
-- apiCoreMKey-40-37-latest-mysql8.0-php7.2
-- apiCoreMKey-40-38-latest-mysql8.0-php7.2
-- apiCoreMKey-40-39-latest-mysql8.0-php7.2
-- apiCoreMKey-40-40-latest-mysql8.0-php7.2
-- apiCoreUKey-40-1-master-mysql8.0-php7.2
-- apiCoreUKey-40-2-master-mysql8.0-php7.2
-- apiCoreUKey-40-3-master-mysql8.0-php7.2
-- apiCoreUKey-40-4-master-mysql8.0-php7.2
-- apiCoreUKey-40-5-master-mysql8.0-php7.2
-- apiCoreUKey-40-6-master-mysql8.0-php7.2
-- apiCoreUKey-40-7-master-mysql8.0-php7.2
-- apiCoreUKey-40-8-master-mysql8.0-php7.2
-- apiCoreUKey-40-9-master-mysql8.0-php7.2
-- apiCoreUKey-40-10-master-mysql8.0-php7.2
-- apiCoreUKey-40-11-master-mysql8.0-php7.2
-- apiCoreUKey-40-12-master-mysql8.0-php7.2
-- apiCoreUKey-40-13-master-mysql8.0-php7.2
-- apiCoreUKey-40-14-master-mysql8.0-php7.2
-- apiCoreUKey-40-15-master-mysql8.0-php7.2
-- apiCoreUKey-40-16-master-mysql8.0-php7.2
-- apiCoreUKey-40-17-master-mysql8.0-php7.2
-- apiCoreUKey-40-18-master-mysql8.0-php7.2
-- apiCoreUKey-40-19-master-mysql8.0-php7.2
-- apiCoreUKey-40-20-master-mysql8.0-php7.2
-- apiCoreUKey-40-21-master-mysql8.0-php7.2
-- apiCoreUKey-40-22-master-mysql8.0-php7.2
-- apiCoreUKey-40-23-master-mysql8.0-php7.2
-- apiCoreUKey-40-24-master-mysql8.0-php7.2
-- apiCoreUKey-40-25-master-mysql8.0-php7.2
-- apiCoreUKey-40-26-master-mysql8.0-php7.2
-- apiCoreUKey-40-27-master-mysql8.0-php7.2
-- apiCoreUKey-40-28-master-mysql8.0-php7.2
-- apiCoreUKey-40-29-master-mysql8.0-php7.2
-- apiCoreUKey-40-30-master-mysql8.0-php7.2
-- apiCoreUKey-40-31-master-mysql8.0-php7.2
-- apiCoreUKey-40-32-master-mysql8.0-php7.2
-- apiCoreUKey-40-33-master-mysql8.0-php7.2
-- apiCoreUKey-40-34-master-mysql8.0-php7.2
-- apiCoreUKey-40-35-master-mysql8.0-php7.2
-- apiCoreUKey-40-36-master-mysql8.0-php7.2
-- apiCoreUKey-40-37-master-mysql8.0-php7.2
-- apiCoreUKey-40-38-master-mysql8.0-php7.2
-- apiCoreUKey-40-39-master-mysql8.0-php7.2
-- apiCoreUKey-40-40-master-mysql8.0-php7.2
-- apiCoreUKey-40-1-latest-mysql8.0-php7.2
-- apiCoreUKey-40-2-latest-mysql8.0-php7.2
-- apiCoreUKey-40-3-latest-mysql8.0-php7.2
-- apiCoreUKey-40-4-latest-mysql8.0-php7.2
-- apiCoreUKey-40-5-latest-mysql8.0-php7.2
-- apiCoreUKey-40-6-latest-mysql8.0-php7.2
-- apiCoreUKey-40-7-latest-mysql8.0-php7.2
-- apiCoreUKey-40-8-latest-mysql8.0-php7.2
-- apiCoreUKey-40-9-latest-mysql8.0-php7.2
-- apiCoreUKey-40-10-latest-mysql8.0-php7.2
-- apiCoreUKey-40-11-latest-mysql8.0-php7.2
-- apiCoreUKey-40-12-latest-mysql8.0-php7.2
-- apiCoreUKey-40-13-latest-mysql8.0-php7.2
-- apiCoreUKey-40-14-latest-mysql8.0-php7.2
-- apiCoreUKey-40-15-latest-mysql8.0-php7.2
-- apiCoreUKey-40-16-latest-mysql8.0-php7.2
-- apiCoreUKey-40-17-latest-mysql8.0-php7.2
-- apiCoreUKey-40-18-latest-mysql8.0-php7.2
-- apiCoreUKey-40-19-latest-mysql8.0-php7.2
-- apiCoreUKey-40-20-latest-mysql8.0-php7.2
-- apiCoreUKey-40-21-latest-mysql8.0-php7.2
-- apiCoreUKey-40-22-latest-mysql8.0-php7.2
-- apiCoreUKey-40-23-latest-mysql8.0-php7.2
-- apiCoreUKey-40-24-latest-mysql8.0-php7.2
-- apiCoreUKey-40-25-latest-mysql8.0-php7.2
-- apiCoreUKey-40-26-latest-mysql8.0-php7.2
-- apiCoreUKey-40-27-latest-mysql8.0-php7.2
-- apiCoreUKey-40-28-latest-mysql8.0-php7.2
-- apiCoreUKey-40-29-latest-mysql8.0-php7.2
-- apiCoreUKey-40-30-latest-mysql8.0-php7.2
-- apiCoreUKey-40-31-latest-mysql8.0-php7.2
-- apiCoreUKey-40-32-latest-mysql8.0-php7.2
-- apiCoreUKey-40-33-latest-mysql8.0-php7.2
-- apiCoreUKey-40-34-latest-mysql8.0-php7.2
-- apiCoreUKey-40-35-latest-mysql8.0-php7.2
-- apiCoreUKey-40-36-latest-mysql8.0-php7.2
-- apiCoreUKey-40-37-latest-mysql8.0-php7.2
-- apiCoreUKey-40-38-latest-mysql8.0-php7.2
-- apiCoreUKey-40-39-latest-mysql8.0-php7.2
-- apiCoreUKey-40-40-latest-mysql8.0-php7.2
+- apiCoreMKey-39-1-master-mysql8.0-php7.2
+- apiCoreMKey-39-2-master-mysql8.0-php7.2
+- apiCoreMKey-39-3-master-mysql8.0-php7.2
+- apiCoreMKey-39-4-master-mysql8.0-php7.2
+- apiCoreMKey-39-5-master-mysql8.0-php7.2
+- apiCoreMKey-39-6-master-mysql8.0-php7.2
+- apiCoreMKey-39-7-master-mysql8.0-php7.2
+- apiCoreMKey-39-8-master-mysql8.0-php7.2
+- apiCoreMKey-39-9-master-mysql8.0-php7.2
+- apiCoreMKey-39-10-master-mysql8.0-php7.2
+- apiCoreMKey-39-11-master-mysql8.0-php7.2
+- apiCoreMKey-39-12-master-mysql8.0-php7.2
+- apiCoreMKey-39-13-master-mysql8.0-php7.2
+- apiCoreMKey-39-14-master-mysql8.0-php7.2
+- apiCoreMKey-39-15-master-mysql8.0-php7.2
+- apiCoreMKey-39-16-master-mysql8.0-php7.2
+- apiCoreMKey-39-17-master-mysql8.0-php7.2
+- apiCoreMKey-39-18-master-mysql8.0-php7.2
+- apiCoreMKey-39-19-master-mysql8.0-php7.2
+- apiCoreMKey-39-20-master-mysql8.0-php7.2
+- apiCoreMKey-39-21-master-mysql8.0-php7.2
+- apiCoreMKey-39-22-master-mysql8.0-php7.2
+- apiCoreMKey-39-23-master-mysql8.0-php7.2
+- apiCoreMKey-39-24-master-mysql8.0-php7.2
+- apiCoreMKey-39-25-master-mysql8.0-php7.2
+- apiCoreMKey-39-26-master-mysql8.0-php7.2
+- apiCoreMKey-39-27-master-mysql8.0-php7.2
+- apiCoreMKey-39-28-master-mysql8.0-php7.2
+- apiCoreMKey-39-29-master-mysql8.0-php7.2
+- apiCoreMKey-39-30-master-mysql8.0-php7.2
+- apiCoreMKey-39-31-master-mysql8.0-php7.2
+- apiCoreMKey-39-32-master-mysql8.0-php7.2
+- apiCoreMKey-39-33-master-mysql8.0-php7.2
+- apiCoreMKey-39-34-master-mysql8.0-php7.2
+- apiCoreMKey-39-35-master-mysql8.0-php7.2
+- apiCoreMKey-39-36-master-mysql8.0-php7.2
+- apiCoreMKey-39-37-master-mysql8.0-php7.2
+- apiCoreMKey-39-38-master-mysql8.0-php7.2
+- apiCoreMKey-39-39-master-mysql8.0-php7.2
+- apiCoreMKey-39-1-latest-mysql8.0-php7.2
+- apiCoreMKey-39-2-latest-mysql8.0-php7.2
+- apiCoreMKey-39-3-latest-mysql8.0-php7.2
+- apiCoreMKey-39-4-latest-mysql8.0-php7.2
+- apiCoreMKey-39-5-latest-mysql8.0-php7.2
+- apiCoreMKey-39-6-latest-mysql8.0-php7.2
+- apiCoreMKey-39-7-latest-mysql8.0-php7.2
+- apiCoreMKey-39-8-latest-mysql8.0-php7.2
+- apiCoreMKey-39-9-latest-mysql8.0-php7.2
+- apiCoreMKey-39-10-latest-mysql8.0-php7.2
+- apiCoreMKey-39-11-latest-mysql8.0-php7.2
+- apiCoreMKey-39-12-latest-mysql8.0-php7.2
+- apiCoreMKey-39-13-latest-mysql8.0-php7.2
+- apiCoreMKey-39-14-latest-mysql8.0-php7.2
+- apiCoreMKey-39-15-latest-mysql8.0-php7.2
+- apiCoreMKey-39-16-latest-mysql8.0-php7.2
+- apiCoreMKey-39-17-latest-mysql8.0-php7.2
+- apiCoreMKey-39-18-latest-mysql8.0-php7.2
+- apiCoreMKey-39-19-latest-mysql8.0-php7.2
+- apiCoreMKey-39-20-latest-mysql8.0-php7.2
+- apiCoreMKey-39-21-latest-mysql8.0-php7.2
+- apiCoreMKey-39-22-latest-mysql8.0-php7.2
+- apiCoreMKey-39-23-latest-mysql8.0-php7.2
+- apiCoreMKey-39-24-latest-mysql8.0-php7.2
+- apiCoreMKey-39-25-latest-mysql8.0-php7.2
+- apiCoreMKey-39-26-latest-mysql8.0-php7.2
+- apiCoreMKey-39-27-latest-mysql8.0-php7.2
+- apiCoreMKey-39-28-latest-mysql8.0-php7.2
+- apiCoreMKey-39-29-latest-mysql8.0-php7.2
+- apiCoreMKey-39-30-latest-mysql8.0-php7.2
+- apiCoreMKey-39-31-latest-mysql8.0-php7.2
+- apiCoreMKey-39-32-latest-mysql8.0-php7.2
+- apiCoreMKey-39-33-latest-mysql8.0-php7.2
+- apiCoreMKey-39-34-latest-mysql8.0-php7.2
+- apiCoreMKey-39-35-latest-mysql8.0-php7.2
+- apiCoreMKey-39-36-latest-mysql8.0-php7.2
+- apiCoreMKey-39-37-latest-mysql8.0-php7.2
+- apiCoreMKey-39-38-latest-mysql8.0-php7.2
+- apiCoreMKey-39-39-latest-mysql8.0-php7.2
+- apiCoreUKey-39-1-master-mysql8.0-php7.2
+- apiCoreUKey-39-2-master-mysql8.0-php7.2
+- apiCoreUKey-39-3-master-mysql8.0-php7.2
+- apiCoreUKey-39-4-master-mysql8.0-php7.2
+- apiCoreUKey-39-5-master-mysql8.0-php7.2
+- apiCoreUKey-39-6-master-mysql8.0-php7.2
+- apiCoreUKey-39-7-master-mysql8.0-php7.2
+- apiCoreUKey-39-8-master-mysql8.0-php7.2
+- apiCoreUKey-39-9-master-mysql8.0-php7.2
+- apiCoreUKey-39-10-master-mysql8.0-php7.2
+- apiCoreUKey-39-11-master-mysql8.0-php7.2
+- apiCoreUKey-39-12-master-mysql8.0-php7.2
+- apiCoreUKey-39-13-master-mysql8.0-php7.2
+- apiCoreUKey-39-14-master-mysql8.0-php7.2
+- apiCoreUKey-39-15-master-mysql8.0-php7.2
+- apiCoreUKey-39-16-master-mysql8.0-php7.2
+- apiCoreUKey-39-17-master-mysql8.0-php7.2
+- apiCoreUKey-39-18-master-mysql8.0-php7.2
+- apiCoreUKey-39-19-master-mysql8.0-php7.2
+- apiCoreUKey-39-20-master-mysql8.0-php7.2
+- apiCoreUKey-39-21-master-mysql8.0-php7.2
+- apiCoreUKey-39-22-master-mysql8.0-php7.2
+- apiCoreUKey-39-23-master-mysql8.0-php7.2
+- apiCoreUKey-39-24-master-mysql8.0-php7.2
+- apiCoreUKey-39-25-master-mysql8.0-php7.2
+- apiCoreUKey-39-26-master-mysql8.0-php7.2
+- apiCoreUKey-39-27-master-mysql8.0-php7.2
+- apiCoreUKey-39-28-master-mysql8.0-php7.2
+- apiCoreUKey-39-29-master-mysql8.0-php7.2
+- apiCoreUKey-39-30-master-mysql8.0-php7.2
+- apiCoreUKey-39-31-master-mysql8.0-php7.2
+- apiCoreUKey-39-32-master-mysql8.0-php7.2
+- apiCoreUKey-39-33-master-mysql8.0-php7.2
+- apiCoreUKey-39-34-master-mysql8.0-php7.2
+- apiCoreUKey-39-35-master-mysql8.0-php7.2
+- apiCoreUKey-39-36-master-mysql8.0-php7.2
+- apiCoreUKey-39-37-master-mysql8.0-php7.2
+- apiCoreUKey-39-38-master-mysql8.0-php7.2
+- apiCoreUKey-39-39-master-mysql8.0-php7.2
+- apiCoreUKey-39-1-latest-mysql8.0-php7.2
+- apiCoreUKey-39-2-latest-mysql8.0-php7.2
+- apiCoreUKey-39-3-latest-mysql8.0-php7.2
+- apiCoreUKey-39-4-latest-mysql8.0-php7.2
+- apiCoreUKey-39-5-latest-mysql8.0-php7.2
+- apiCoreUKey-39-6-latest-mysql8.0-php7.2
+- apiCoreUKey-39-7-latest-mysql8.0-php7.2
+- apiCoreUKey-39-8-latest-mysql8.0-php7.2
+- apiCoreUKey-39-9-latest-mysql8.0-php7.2
+- apiCoreUKey-39-10-latest-mysql8.0-php7.2
+- apiCoreUKey-39-11-latest-mysql8.0-php7.2
+- apiCoreUKey-39-12-latest-mysql8.0-php7.2
+- apiCoreUKey-39-13-latest-mysql8.0-php7.2
+- apiCoreUKey-39-14-latest-mysql8.0-php7.2
+- apiCoreUKey-39-15-latest-mysql8.0-php7.2
+- apiCoreUKey-39-16-latest-mysql8.0-php7.2
+- apiCoreUKey-39-17-latest-mysql8.0-php7.2
+- apiCoreUKey-39-18-latest-mysql8.0-php7.2
+- apiCoreUKey-39-19-latest-mysql8.0-php7.2
+- apiCoreUKey-39-20-latest-mysql8.0-php7.2
+- apiCoreUKey-39-21-latest-mysql8.0-php7.2
+- apiCoreUKey-39-22-latest-mysql8.0-php7.2
+- apiCoreUKey-39-23-latest-mysql8.0-php7.2
+- apiCoreUKey-39-24-latest-mysql8.0-php7.2
+- apiCoreUKey-39-25-latest-mysql8.0-php7.2
+- apiCoreUKey-39-26-latest-mysql8.0-php7.2
+- apiCoreUKey-39-27-latest-mysql8.0-php7.2
+- apiCoreUKey-39-28-latest-mysql8.0-php7.2
+- apiCoreUKey-39-29-latest-mysql8.0-php7.2
+- apiCoreUKey-39-30-latest-mysql8.0-php7.2
+- apiCoreUKey-39-31-latest-mysql8.0-php7.2
+- apiCoreUKey-39-32-latest-mysql8.0-php7.2
+- apiCoreUKey-39-33-latest-mysql8.0-php7.2
+- apiCoreUKey-39-34-latest-mysql8.0-php7.2
+- apiCoreUKey-39-35-latest-mysql8.0-php7.2
+- apiCoreUKey-39-36-latest-mysql8.0-php7.2
+- apiCoreUKey-39-37-latest-mysql8.0-php7.2
+- apiCoreUKey-39-38-latest-mysql8.0-php7.2
+- apiCoreUKey-39-39-latest-mysql8.0-php7.2
 - cliCoreMKey-3-1-master-mysql8.0-php7.2
 - cliCoreMKey-3-2-master-mysql8.0-php7.2
 - cliCoreMKey-3-3-master-mysql8.0-php7.2
