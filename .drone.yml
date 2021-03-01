@@ -101,7 +101,7 @@ steps:
     db_type: sqlite
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: setup-server-encryption
   pull: always
@@ -152,7 +152,7 @@ steps:
     db_type: sqlite
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: setup-server-encryption
   pull: always
@@ -231,7 +231,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: setup-server-encryption
   pull: always
@@ -322,7 +322,7 @@ steps:
     db_type: pgsql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: setup-server-encryption
   pull: always
@@ -410,7 +410,7 @@ steps:
     db_type: sqlite
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: setup-server-encryption
   pull: always
@@ -467,7 +467,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: setup-server-encryption
   pull: always
@@ -536,7 +536,7 @@ steps:
     db_type: pgsql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: setup-server-encryption
   pull: always
@@ -602,7 +602,7 @@ steps:
     db_type: sqlite
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: setup-server-encryption
   pull: always
@@ -659,7 +659,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: setup-server-encryption
   pull: always
@@ -728,7 +728,7 @@ steps:
     db_type: pgsql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: setup-server-encryption
   pull: always
@@ -818,7 +818,7 @@ steps:
     db_type: sqlite
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: sync-from-cache
   pull: always
@@ -912,7 +912,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -1026,7 +1026,7 @@ steps:
     db_type: pgsql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -1137,7 +1137,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -1251,7 +1251,7 @@ steps:
     db_type: pgsql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -1362,7 +1362,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -1476,7 +1476,7 @@ steps:
     db_type: pgsql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -1587,7 +1587,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -1701,7 +1701,7 @@ steps:
     db_type: pgsql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -1812,7 +1812,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -1941,7 +1941,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -2070,7 +2070,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -2184,7 +2184,7 @@ steps:
     db_type: pgsql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -2295,7 +2295,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -2409,7 +2409,7 @@ steps:
     db_type: pgsql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -2520,7 +2520,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -2649,7 +2649,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -2778,7 +2778,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -2952,7 +2952,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -3126,7 +3126,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -3300,7 +3300,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -3474,7 +3474,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -3648,7 +3648,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -3822,7 +3822,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -3996,7 +3996,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -4170,7 +4170,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -4344,7 +4344,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -4518,7 +4518,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -4692,7 +4692,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -4866,7 +4866,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -5040,7 +5040,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -5214,7 +5214,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -5388,7 +5388,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -5562,7 +5562,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -5736,7 +5736,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -5910,7 +5910,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -6084,7 +6084,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -6258,7 +6258,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -6432,7 +6432,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -6606,7 +6606,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -6780,7 +6780,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -6954,7 +6954,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -7128,7 +7128,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -7302,7 +7302,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -7476,7 +7476,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -7650,7 +7650,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -7824,7 +7824,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -7998,7 +7998,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -8172,7 +8172,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -8346,7 +8346,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -8520,7 +8520,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -8694,7 +8694,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -8868,7 +8868,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -9042,7 +9042,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -9216,7 +9216,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -9390,7 +9390,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -9564,7 +9564,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -9736,7 +9736,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -9908,7 +9908,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -10080,7 +10080,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -10252,7 +10252,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -10424,7 +10424,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -10596,7 +10596,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -10768,7 +10768,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -10940,7 +10940,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -11112,7 +11112,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -11284,7 +11284,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -11456,7 +11456,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -11628,7 +11628,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -11800,7 +11800,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -11972,7 +11972,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -12144,7 +12144,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -12316,7 +12316,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -12488,7 +12488,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -12660,7 +12660,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -12832,7 +12832,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -13004,7 +13004,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -13176,7 +13176,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -13348,7 +13348,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -13520,7 +13520,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -13692,7 +13692,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -13864,7 +13864,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -14036,7 +14036,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -14208,7 +14208,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -14380,7 +14380,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -14552,7 +14552,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -14724,7 +14724,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -14896,7 +14896,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -15068,7 +15068,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -15240,7 +15240,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -15412,7 +15412,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -15584,7 +15584,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -15756,7 +15756,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -15928,7 +15928,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -16100,7 +16100,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -16272,7 +16272,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -16446,7 +16446,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -16620,7 +16620,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -16794,7 +16794,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -16968,7 +16968,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -17142,7 +17142,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -17316,7 +17316,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -17490,7 +17490,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -17664,7 +17664,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -17838,7 +17838,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -18012,7 +18012,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -18186,7 +18186,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -18360,7 +18360,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -18534,7 +18534,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -18708,7 +18708,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -18882,7 +18882,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -19056,7 +19056,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -19230,7 +19230,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -19404,7 +19404,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -19578,7 +19578,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -19752,7 +19752,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -19926,7 +19926,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -20100,7 +20100,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -20274,7 +20274,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -20448,7 +20448,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -20622,7 +20622,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -20796,7 +20796,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -20970,7 +20970,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -21144,7 +21144,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -21318,7 +21318,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -21492,7 +21492,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -21666,7 +21666,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -21840,7 +21840,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -22014,7 +22014,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -22188,7 +22188,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -22362,7 +22362,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -22536,7 +22536,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -22710,7 +22710,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -22884,7 +22884,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -23058,7 +23058,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -23230,7 +23230,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -23402,7 +23402,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -23574,7 +23574,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -23746,7 +23746,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -23918,7 +23918,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -24090,7 +24090,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -24262,7 +24262,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -24434,7 +24434,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -24606,7 +24606,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -24778,7 +24778,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -24950,7 +24950,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -25122,7 +25122,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -25294,7 +25294,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -25466,7 +25466,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -25638,7 +25638,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -25810,7 +25810,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -25982,7 +25982,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -26154,7 +26154,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -26326,7 +26326,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -26498,7 +26498,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -26670,7 +26670,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -26842,7 +26842,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -27014,7 +27014,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -27186,7 +27186,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -27358,7 +27358,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -27530,7 +27530,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -27702,7 +27702,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -27874,7 +27874,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -28046,7 +28046,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -28218,7 +28218,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -28390,7 +28390,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -28562,7 +28562,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -28734,7 +28734,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -28906,7 +28906,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -29078,7 +29078,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -29250,7 +29250,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -29422,7 +29422,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -29594,7 +29594,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -29766,7 +29766,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -29887,7 +29887,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -30008,7 +30008,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -30129,7 +30129,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -30250,7 +30250,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -30371,7 +30371,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -30492,7 +30492,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -30676,7 +30676,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -30860,7 +30860,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -31044,7 +31044,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -31228,7 +31228,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -31412,7 +31412,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -31596,7 +31596,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -31780,7 +31780,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -31964,7 +31964,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -32148,7 +32148,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -32332,7 +32332,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -32516,7 +32516,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -32700,7 +32700,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -32884,7 +32884,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -33068,7 +33068,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -33252,7 +33252,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -33436,7 +33436,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -33620,7 +33620,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -33804,7 +33804,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -33988,7 +33988,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -34170,7 +34170,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -34352,7 +34352,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -34534,7 +34534,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -34716,7 +34716,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -34898,7 +34898,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -35080,7 +35080,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -35262,7 +35262,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -35444,7 +35444,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -35626,7 +35626,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -35808,7 +35808,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -35990,7 +35990,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -36172,7 +36172,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -36354,7 +36354,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -36536,7 +36536,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -36718,7 +36718,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -36900,7 +36900,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -37082,7 +37082,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -37264,7 +37264,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -37446,7 +37446,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -37630,7 +37630,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -37814,7 +37814,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -37998,7 +37998,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -38182,7 +38182,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -38366,7 +38366,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -38550,7 +38550,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -38734,7 +38734,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -38918,7 +38918,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -39102,7 +39102,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -39286,7 +39286,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -39470,7 +39470,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -39654,7 +39654,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -39838,7 +39838,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -40022,7 +40022,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -40206,7 +40206,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -40390,7 +40390,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -40574,7 +40574,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -40758,7 +40758,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: daily-master-qa
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -40942,7 +40942,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -41124,7 +41124,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -41306,7 +41306,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -41488,7 +41488,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -41670,7 +41670,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -41852,7 +41852,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -42034,7 +42034,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -42216,7 +42216,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -42398,7 +42398,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -42580,7 +42580,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -42762,7 +42762,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -42944,7 +42944,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -43126,7 +43126,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -43308,7 +43308,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -43490,7 +43490,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -43672,7 +43672,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -43854,7 +43854,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -44036,7 +44036,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
@@ -44218,7 +44218,7 @@ steps:
     db_type: mysql
     db_username: owncloud
     exclude: apps/encryption
-    version: latest
+    git_reference: fix-encrypted-storage-copy
 
 - name: install-testrunner
   pull: always
