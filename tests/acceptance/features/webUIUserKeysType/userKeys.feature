@@ -6,7 +6,7 @@ Feature: encrypt files using user specific keys
 
   Background:
     Given app "encryption" has been enabled
-    And these users have been created with skeleton files but not initialized:
+    And these users have been created with large skeleton files but not initialized:
       | username |
       | Alice    |
     And encryption has been enabled
