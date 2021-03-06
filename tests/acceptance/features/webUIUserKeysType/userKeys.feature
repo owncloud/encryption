@@ -26,7 +26,7 @@ Feature: encrypt files using user specific keys
     Then file "textfile0.txt" of user "Alice" should be encrypted
 
   Scenario: decrypt user keys based encryption of all users
-    Given these users have been created with skeleton files but not initialized:
+    Given these users have been created with large skeleton files but not initialized:
       | username |
       | Brian    |
     And the administrator has set the encryption type to "user-keys"
@@ -49,7 +49,7 @@ Feature: encrypt files using user specific keys
   @issue-encryption-206
   Scenario Outline: Sharer shares a file where receiver already has a file with the matching name
     Given using OCS API version "<ocs_api_version>"
-    And user "Brian" has been created with default attributes and skeleton files
+    And user "Brian" has been created with default attributes and large skeleton files
     And user "Alice" has shared file "textfile0.txt" with user "Brian"
     When user "Alice" gets all shares shared by him using the sharing API
     Then the OCS status code should be "<ocs_status_code>"
