@@ -168,7 +168,7 @@ class CryptHSM extends Crypt {
 
 			// now decode the file.
 			// version and position are 0 because we always use fresh random data as passphrase
-			$decryptedContent = $this->symmetricDecryptFileContent($encKeyFile, $decryptedKey, self::DEFAULT_CIPHER, 0, 0, true);
+			$decryptedContent = $this->symmetricDecryptFileContent($encKeyFile, $decryptedKey, self::DEFAULT_CIPHER, 0, 0, false);
 
 			return $decryptedContent;
 		} catch (ServerException $e) {

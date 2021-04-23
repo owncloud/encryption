@@ -107,7 +107,7 @@ class Recovery {
 		$keyManager = $this->keyManager;
 
 		if (!$keyManager->recoveryKeyExists()) {
-			$keyPair = $this->crypt->createKeyPair();
+			$keyPair = $this->crypt->createKeyPair("oc:".$this->keyManager->getRecoveryKeyId());
 			if (!\is_array($keyPair)) {
 				return false;
 			}

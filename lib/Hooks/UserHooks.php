@@ -281,7 +281,7 @@ class UserHooks implements IHook {
 
 				$newUserPassword = $params->getArgument('password');
 
-				$keyPair = $this->crypt->createKeyPair();
+				$keyPair = $this->crypt->createKeyPair("oc:uid:$user");
 
 				// Save public key
 				$this->keyManager->setPublicKey($user, $keyPair['publicKey']);
