@@ -33238,7 +33238,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-1-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-1-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -33349,7 +33349,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -33422,7 +33422,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-2-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-2-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -33533,7 +33533,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -33606,7 +33606,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-3-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-3-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -33717,7 +33717,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -33790,7 +33790,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-4-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-4-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -33901,7 +33901,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -33974,7 +33974,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-5-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-5-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -34085,7 +34085,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -34158,7 +34158,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-6-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-6-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -34269,7 +34269,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -34342,7 +34342,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-7-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-7-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -34453,7 +34453,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -34526,7 +34526,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-8-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-8-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -34637,7 +34637,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -34710,7 +34710,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-9-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-9-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -34821,7 +34821,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -34894,7 +34894,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-10-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-10-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -35005,7 +35005,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -35078,7 +35078,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-11-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-11-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -35189,7 +35189,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -35262,7 +35262,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-12-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-12-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -35373,7 +35373,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -35446,7 +35446,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-13-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-13-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -35557,7 +35557,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -35630,7 +35630,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-14-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-14-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -35741,7 +35741,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -35814,7 +35814,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-15-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-15-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -35925,7 +35925,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -35998,7 +35998,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-16-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-16-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -36109,7 +36109,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -36182,7 +36182,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-17-master-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-17-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -36293,7 +36293,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -36366,375 +36366,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-18-master-chrome-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: daily-master-qa
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: daily-master-qa
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type masterkey --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-webui
-  environment:
-    BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
-    ENCRYPTION_TYPE: masterkey
-    MAILHOG_HOST: email
-    PLATFORM: Linux
-    RUN_PART: 18
-    SELENIUM_HOST: selenium
-    SELENIUM_PORT: 4444
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: selenium
-  pull: always
-  image: selenium/standalone-chrome-debug:3.141.59-oxygen
-  environment:
-    JAVA_OPTS: -Dselenium.LOGGER.level=WARNING
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  ref:
-  - refs/pull/**
-  - refs/tags/**
-  - refs/heads/master
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: webUIcoreMKey-19-19-master-chrome-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: daily-master-qa
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: daily-master-qa
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type masterkey --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-webui
-  environment:
-    BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
-    ENCRYPTION_TYPE: masterkey
-    MAILHOG_HOST: email
-    PLATFORM: Linux
-    RUN_PART: 19
-    SELENIUM_HOST: selenium
-    SELENIUM_PORT: 4444
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: selenium
-  pull: always
-  image: selenium/standalone-chrome-debug:3.141.59-oxygen
-  environment:
-    JAVA_OPTS: -Dselenium.LOGGER.level=WARNING
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  ref:
-  - refs/pull/**
-  - refs/tags/**
-  - refs/heads/master
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: webUIcoreMKey-19-1-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-1-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -36845,7 +36477,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -36916,7 +36548,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-2-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-2-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -37027,7 +36659,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -37098,7 +36730,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-3-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-3-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -37209,7 +36841,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -37280,7 +36912,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-4-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-4-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -37391,7 +37023,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -37462,7 +37094,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-5-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-5-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -37573,7 +37205,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -37644,7 +37276,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-6-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-6-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -37755,7 +37387,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -37826,7 +37458,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-7-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-7-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -37937,7 +37569,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -38008,7 +37640,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-8-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-8-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -38119,7 +37751,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -38190,7 +37822,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-9-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-9-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -38301,7 +37933,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -38372,7 +38004,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-10-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-10-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -38483,7 +38115,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -38554,7 +38186,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-11-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-11-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -38665,7 +38297,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -38736,7 +38368,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-12-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-12-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -38847,7 +38479,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -38918,7 +38550,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-13-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-13-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -39029,7 +38661,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -39100,7 +38732,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-14-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-14-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -39211,7 +38843,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -39282,7 +38914,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-15-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-15-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -39393,7 +39025,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -39464,7 +39096,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-16-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-16-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -39575,7 +39207,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -39646,7 +39278,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-17-latest-chrome-mysql8.0-php7.2
+name: webUIcoreMKey-17-17-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -39757,7 +39389,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: masterkey
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -39828,371 +39460,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreMKey-19-18-latest-chrome-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: latest
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: latest
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type masterkey --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-webui
-  environment:
-    BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
-    ENCRYPTION_TYPE: masterkey
-    MAILHOG_HOST: email
-    PLATFORM: Linux
-    RUN_PART: 18
-    SELENIUM_HOST: selenium
-    SELENIUM_PORT: 4444
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: selenium
-  pull: always
-  image: selenium/standalone-chrome-debug:3.141.59-oxygen
-  environment:
-    JAVA_OPTS: -Dselenium.LOGGER.level=WARNING
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  cron:
-  - nightly
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: webUIcoreMKey-19-19-latest-chrome-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: latest
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: latest
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type masterkey --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-webui
-  environment:
-    BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
-    ENCRYPTION_TYPE: masterkey
-    MAILHOG_HOST: email
-    PLATFORM: Linux
-    RUN_PART: 19
-    SELENIUM_HOST: selenium
-    SELENIUM_PORT: 4444
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: selenium
-  pull: always
-  image: selenium/standalone-chrome-debug:3.141.59-oxygen
-  environment:
-    JAVA_OPTS: -Dselenium.LOGGER.level=WARNING
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  cron:
-  - nightly
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: webUIcoreUKey-19-1-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-1-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -40303,7 +39571,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -40376,7 +39644,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-2-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-2-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -40487,7 +39755,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -40560,7 +39828,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-3-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-3-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -40671,7 +39939,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -40744,7 +40012,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-4-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-4-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -40855,7 +40123,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -40928,7 +40196,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-5-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-5-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -41039,7 +40307,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -41112,7 +40380,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-6-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-6-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -41223,7 +40491,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -41296,7 +40564,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-7-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-7-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -41407,7 +40675,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -41480,7 +40748,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-8-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-8-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -41591,7 +40859,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -41664,7 +40932,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-9-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-9-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -41775,7 +41043,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -41848,7 +41116,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-10-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-10-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -41959,7 +41227,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -42032,7 +41300,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-11-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-11-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -42143,7 +41411,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -42216,7 +41484,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-12-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-12-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -42327,7 +41595,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -42400,7 +41668,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-13-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-13-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -42511,7 +41779,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -42584,7 +41852,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-14-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-14-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -42695,7 +41963,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -42768,7 +42036,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-15-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-15-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -42879,7 +42147,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -42952,7 +42220,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-16-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-16-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -43063,7 +42331,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -43136,7 +42404,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-17-master-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-17-master-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -43247,7 +42515,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -43320,375 +42588,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-18-master-chrome-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: daily-master-qa
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: daily-master-qa
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type user-keys --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-webui
-  environment:
-    BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
-    ENCRYPTION_TYPE: user-keys
-    MAILHOG_HOST: email
-    PLATFORM: Linux
-    RUN_PART: 18
-    SELENIUM_HOST: selenium
-    SELENIUM_PORT: 4444
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: selenium
-  pull: always
-  image: selenium/standalone-chrome-debug:3.141.59-oxygen
-  environment:
-    JAVA_OPTS: -Dselenium.LOGGER.level=WARNING
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  ref:
-  - refs/pull/**
-  - refs/tags/**
-  - refs/heads/master
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: webUIcoreUKey-19-19-master-chrome-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: daily-master-qa
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: daily-master-qa
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type user-keys --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-webui
-  environment:
-    BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
-    ENCRYPTION_TYPE: user-keys
-    MAILHOG_HOST: email
-    PLATFORM: Linux
-    RUN_PART: 19
-    SELENIUM_HOST: selenium
-    SELENIUM_PORT: 4444
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: selenium
-  pull: always
-  image: selenium/standalone-chrome-debug:3.141.59-oxygen
-  environment:
-    JAVA_OPTS: -Dselenium.LOGGER.level=WARNING
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  ref:
-  - refs/pull/**
-  - refs/tags/**
-  - refs/heads/master
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: webUIcoreUKey-19-1-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-1-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -43799,7 +42699,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -43870,7 +42770,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-2-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-2-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -43981,7 +42881,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -44052,7 +42952,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-3-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-3-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -44163,7 +43063,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -44234,7 +43134,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-4-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-4-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -44345,7 +43245,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -44416,7 +43316,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-5-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-5-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -44527,7 +43427,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -44598,7 +43498,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-6-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-6-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -44709,7 +43609,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -44780,7 +43680,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-7-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-7-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -44891,7 +43791,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -44962,7 +43862,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-8-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-8-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -45073,7 +43973,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -45144,7 +44044,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-9-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-9-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -45255,7 +44155,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -45326,7 +44226,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-10-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-10-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -45437,7 +44337,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -45508,7 +44408,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-11-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-11-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -45619,7 +44519,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -45690,7 +44590,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-12-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-12-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -45801,7 +44701,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -45872,7 +44772,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-13-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-13-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -45983,7 +44883,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -46054,7 +44954,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-14-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-14-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -46165,7 +45065,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -46236,7 +45136,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-15-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-15-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -46347,7 +45247,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -46418,7 +45318,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-16-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-16-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -46529,7 +45429,7 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
@@ -46600,7 +45500,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: webUIcoreUKey-19-17-latest-chrome-mysql8.0-php7.2
+name: webUIcoreUKey-17-17-latest-chrome-mysql8.0-php7.2
 
 platform:
   os: linux
@@ -46711,375 +45611,11 @@ steps:
   - make test-acceptance-core-webui
   environment:
     BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
+    DIVIDE_INTO_NUM_PARTS: 17
     ENCRYPTION_TYPE: user-keys
     MAILHOG_HOST: email
     PLATFORM: Linux
     RUN_PART: 17
-    SELENIUM_HOST: selenium
-    SELENIUM_PORT: 4444
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: selenium
-  pull: always
-  image: selenium/standalone-chrome-debug:3.141.59-oxygen
-  environment:
-    JAVA_OPTS: -Dselenium.LOGGER.level=WARNING
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  cron:
-  - nightly
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: webUIcoreUKey-19-18-latest-chrome-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: latest
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: latest
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type user-keys --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-webui
-  environment:
-    BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
-    ENCRYPTION_TYPE: user-keys
-    MAILHOG_HOST: email
-    PLATFORM: Linux
-    RUN_PART: 18
-    SELENIUM_HOST: selenium
-    SELENIUM_PORT: 4444
-    TEST_SERVER_URL: http://server
-
-services:
-- name: mysql
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-- name: selenium
-  pull: always
-  image: selenium/standalone-chrome-debug:3.141.59-oxygen
-  environment:
-    JAVA_OPTS: -Dselenium.LOGGER.level=WARNING
-
-- name: email
-  pull: always
-  image: mailhog/mailhog
-
-- name: server
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/server
-
-- name: federated
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - /usr/local/bin/apachectl -e debug -D FOREGROUND
-  environment:
-    APACHE_WEBROOT: /var/www/owncloud/federated
-
-- name: mysql-federated
-  pull: always
-  image: mysql:8.0
-  command:
-  - --default-authentication-plugin=mysql_native_password
-  environment:
-    MYSQL_DATABASE: owncloud-federated
-    MYSQL_PASSWORD: owncloud
-    MYSQL_ROOT_PASSWORD: owncloud
-    MYSQL_USER: owncloud
-
-trigger:
-  cron:
-  - nightly
-
-depends_on:
-- coding-standard-php7.2
-- coding-standard-php7.3
-- coding-standard-php7.4
-- phpstan-php7.2
-
----
-kind: pipeline
-type: docker
-name: webUIcoreUKey-19-19-latest-chrome-mysql8.0-php7.2
-
-platform:
-  os: linux
-  arch: amd64
-
-workspace:
-  base: /var/www/owncloud
-  path: testrunner/apps/encryption
-
-steps:
-- name: install-core
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/server
-    db_host: mysql
-    db_name: owncloud
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    exclude: apps/encryption
-    version: latest
-
-- name: install-testrunner
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - mkdir /tmp/testrunner
-  - git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner
-  - rsync -aIX /tmp/testrunner /var/www/owncloud
-  - cp -r /var/www/owncloud/testrunner/apps/encryption /var/www/owncloud/server/apps/
-
-- name: install-federated
-  pull: always
-  image: owncloudci/core
-  settings:
-    core_path: /var/www/owncloud/federated
-    db_host: mysql-federated
-    db_name: owncloud-federated
-    db_password: owncloud
-    db_type: mysql
-    db_username: owncloud
-    version: latest
-
-- name: configure-federation
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - echo "export TEST_SERVER_FED_URL=http://federated" > /var/www/owncloud/saved-settings.sh
-  - cd /var/www/owncloud/federated
-  - php occ a:l
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=federated
-  - php occ log:manage --level 2
-  - php occ config:list
-
-- name: owncloud-log-federated
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/federated/data/owncloud.log
-
-- name: setup-server-encryption
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ a:l
-  - php occ a:e encryption
-  - php occ a:e testing
-  - php occ a:l
-  - php occ config:system:set trusted_domains 1 --value=server
-  - php occ log:manage --level 2
-
-- name: owncloud-log-server
-  pull: always
-  image: owncloud/ubuntu:18.04
-  detach: true
-  commands:
-  - tail -f /var/www/owncloud/server/data/owncloud.log
-
-- name: configure-app
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - cd /var/www/owncloud/server
-  - php occ encryption:enable
-  - php occ encryption:select-encryption-type user-keys --yes
-  - php occ config:list
-
-- name: fix-permissions
-  pull: always
-  image: owncloudci/php:7.2
-  commands:
-  - chown -R www-data /var/www/owncloud/server
-  - wait-for-it -t 600 server:80
-  - chown -R www-data /var/www/owncloud/federated
-  - wait-for-it -t 600 federated:80
-
-- name: acceptance-tests
-  pull: always
-  image: owncloudci/php:7.4
-  commands:
-  - touch /var/www/owncloud/saved-settings.sh
-  - . /var/www/owncloud/saved-settings.sh
-  - make test-acceptance-core-webui
-  environment:
-    BROWSER: chrome
-    DIVIDE_INTO_NUM_PARTS: 19
-    ENCRYPTION_TYPE: user-keys
-    MAILHOG_HOST: email
-    PLATFORM: Linux
-    RUN_PART: 19
     SELENIUM_HOST: selenium
     SELENIUM_PORT: 4444
     TEST_SERVER_URL: http://server
@@ -47368,81 +45904,73 @@ depends_on:
 - cliCoreUKey-3-1-master-mysql8.0-php7.2
 - cliCoreUKey-3-2-master-mysql8.0-php7.2
 - cliCoreUKey-3-3-master-mysql8.0-php7.2
-- webUIcoreMKey-19-1-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-2-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-3-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-4-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-5-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-6-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-7-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-8-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-9-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-10-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-11-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-12-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-13-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-14-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-15-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-16-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-17-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-18-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-19-master-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-1-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-2-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-3-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-4-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-5-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-6-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-7-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-8-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-9-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-10-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-11-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-12-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-13-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-14-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-15-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-16-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-17-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-18-latest-chrome-mysql8.0-php7.2
-- webUIcoreMKey-19-19-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-1-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-2-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-3-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-4-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-5-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-6-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-7-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-8-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-9-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-10-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-11-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-12-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-13-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-14-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-15-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-16-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-17-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-18-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-19-master-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-1-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-2-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-3-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-4-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-5-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-6-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-7-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-8-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-9-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-10-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-11-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-12-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-13-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-14-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-15-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-16-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-17-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-18-latest-chrome-mysql8.0-php7.2
-- webUIcoreUKey-19-19-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-1-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-2-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-3-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-4-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-5-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-6-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-7-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-8-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-9-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-10-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-11-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-12-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-13-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-14-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-15-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-16-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-17-master-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-1-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-2-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-3-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-4-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-5-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-6-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-7-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-8-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-9-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-10-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-11-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-12-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-13-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-14-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-15-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-16-latest-chrome-mysql8.0-php7.2
+- webUIcoreMKey-17-17-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-1-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-2-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-3-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-4-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-5-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-6-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-7-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-8-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-9-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-10-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-11-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-12-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-13-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-14-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-15-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-16-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-17-master-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-1-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-2-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-3-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-4-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-5-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-6-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-7-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-8-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-9-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-10-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-11-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-12-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-13-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-14-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-15-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-16-latest-chrome-mysql8.0-php7.2
+- webUIcoreUKey-17-17-latest-chrome-mysql8.0-php7.2
 
 ...
