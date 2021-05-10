@@ -1694,7 +1694,7 @@ def installTestrunner(phpVersion, useBundledApp):
 		'pull': 'always',
 		'commands': [
 			'mkdir /tmp/testrunner',
-			'git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner',
+			'git clone -b adjust-local-storage-tests --depth=1 https://github.com/owncloud/core.git /tmp/testrunner',
 			'rsync -aIX /tmp/testrunner /var/www/owncloud',
 		] + ([
 			'cp -r /var/www/owncloud/testrunner/apps/%s /var/www/owncloud/server/apps/' % config['app']
