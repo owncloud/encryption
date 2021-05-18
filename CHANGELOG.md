@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased] - XXXX-XX-XX
 
+### Fixed
+
 - Use legacy-encoding setting for HSM also [#269](https://github.com/owncloud/encryption/issues/269)
+
+- `fix-encrypted-version` command restores value to original if no fix is found  [#269](https://github.com/owncloud/encryption/issues/269)
 
 ## [1.5.0] - 2021-03-11
 

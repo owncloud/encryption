@@ -273,6 +273,34 @@ The file /test_enc_version_affected_user1/files/world.txt is: OK
 Fixed the file: /test_enc_version_affected_user1/files/world.txt with version 9", $output);
 	}
 
+	public function testVersionIsRestoredToOriginalIfNoFixIsFound() {
+		\OC::$server->getUserSession()->login(self::TEST_ENCRYPTION_VERSION_AFFECTED_USER, 'foo');
+		$view = new View("/" . self::TEST_ENCRYPTION_VERSION_AFFECTED_USER . "/files");
+
+		$view->touch('bar.txt');
+		for ($i=0; $i < 40; $i++) {
+			$view->file_put_contents('bar.txt', 'a test string for hello ' . $i);
+		}
+
+		$fileInfo = $view->getFileInfo('bar.txt');
+
+		$storage = $fileInfo->getStorage();
+		$cache = $storage->getCache();
+		$fileCache = $cache->get($fileInfo->getId());
+
+		$cacheInfo = ['encryptedVersion' => 15, 'encrypted' => 15];
+		$cache->put($fileCache->getPath(), $cacheInfo);
+
+		$this->commandTester->execute([
+			'user' => self::TEST_ENCRYPTION_VERSION_AFFECTED_USER
+		]);
+
+		$cacheInfo = $cache->get($fileInfo->getId());
+		$encryptedVersion = $cacheInfo["encryptedVersion"];
+
+		$this->assertEquals(15, $encryptedVersion);
+	}
+
 	/**
 	 * Test commands with a file path
 	 */
