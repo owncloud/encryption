@@ -63,6 +63,12 @@ class FixEncryptedVersion extends Command {
 				'p',
 				InputArgument::OPTIONAL,
 				'Limit files to fix with path, e.g., --path="/Music/Artist". If path indicates a directory, all the files inside directory will be fixed.'
+			)->addOption(
+				'increment-range',
+				'i',
+				InputArgument::OPTIONAL,
+				'Find the correct version of the file to verify the signature. Searches in increments from -n to +n.',
+				'5'
 			);
 	}
 
@@ -92,16 +98,24 @@ class FixEncryptedVersion extends Command {
 			$output->writeln("<error>User id $user does not exist. Please provide a valid user id</error>");
 			return 1;
 		}
-		return $this->walkPathOfUser($user, $pathToWalk, $output);
+
+		$increment = \intval($input->getOption('increment-range'));
+		if ($increment === 0 || $increment < 0) {
+			$output->writeln("<error>Invalid increment value: $increment. Must be a positive integer.</error>");
+			return 1;
+		}
+
+		return $this->walkPathOfUser($user, $pathToWalk, $output, $increment);
 	}
 
 	/**
 	 * @param string $user
 	 * @param string $path
 	 * @param OutputInterface $output
+	 * @param int $incrRange  Range of versions to try (upper/lower bound)
 	 * @return int 0 for success, 1 for error
 	 */
-	private function walkPathOfUser($user, $path, OutputInterface $output) {
+	private function walkPathOfUser($user, $path, OutputInterface $output, $incrRange) {
 		$this->setupUserFs($user);
 		if (!$this->view->file_exists($path)) {
 			$output->writeln("<error>Path $path does not exist. Please provide a valid path.</error>");
@@ -110,7 +124,7 @@ class FixEncryptedVersion extends Command {
 
 		if ($this->view->is_file($path)) {
 			$output->writeln("Verifying the content of file $path");
-			$this->verifyFileContent($path, $output);
+			$this->verifyFileContent($path, $output, $incrRange);
 			return 0;
 		}
 		$directories = [];
@@ -123,7 +137,7 @@ class FixEncryptedVersion extends Command {
 					$directories[] = $path;
 				} else {
 					$output->writeln("Verifying the content of file $path");
-					$this->verifyFileContent($path, $output);
+					$this->verifyFileContent($path, $output, $incrRange);
 				}
 			}
 		}
@@ -135,7 +149,7 @@ class FixEncryptedVersion extends Command {
 	 * @param OutputInterface $output
 	 * @param bool $ignoreCorrectEncVersionCall, setting this variable to false avoids recursion
 	 */
-	private function verifyFileContent($path, OutputInterface $output, $ignoreCorrectEncVersionCall = true) {
+	private function verifyFileContent($path, OutputInterface $output, $incrRange, $ignoreCorrectEncVersionCall = true) {
 		try {
 			/**
 			 * In encryption, the files are read in a block size of 8192 bytes
@@ -159,7 +173,7 @@ class FixEncryptedVersion extends Command {
 			if ($ignoreCorrectEncVersionCall === true) {
 				//Lets rectify the file by correcting encrypted version
 				$output->writeln("<info>Attempting to fix the path: $path</info>");
-				return $this->correctEncryptedVersion($path, $output);
+				return $this->correctEncryptedVersion($path, $output, $incrRange);
 			}
 			return false;
 		}
@@ -170,7 +184,7 @@ class FixEncryptedVersion extends Command {
 	 * @param OutputInterface $output
 	 * @return bool
 	 */
-	private function correctEncryptedVersion($path, OutputInterface $output) {
+	private function correctEncryptedVersion($path, OutputInterface $output, $incrRange) {
 		$fileInfo = $this->view->getFileInfo($path);
 		$fileId = $fileInfo->getId();
 		$encryptedVersion = $fileInfo->getEncryptedVersion();
@@ -195,7 +209,7 @@ class FixEncryptedVersion extends Command {
 				$cacheInfo = ['encryptedVersion' => $encryptedVersion, 'encrypted' => $encryptedVersion];
 				$cache->put($fileCache->getPath(), $cacheInfo);
 				$output->writeln("<info>Decrement the encrypted version to $encryptedVersion</info>");
-				if ($this->verifyFileContent($path, $output, false) === true) {
+				if ($this->verifyFileContent($path, $output, $incrRange, false) === true) {
 					$output->writeln("<info>Fixed the file: $path with version " . $encryptedVersion . "</info>");
 					return true;
 				}
@@ -204,7 +218,7 @@ class FixEncryptedVersion extends Command {
 
 			//So decrementing did not work. Now lets increment. Max increment is till 5
 			$increment = 1;
-			while ($increment <= 5) {
+			while ($increment <= $incrRange) {
 				/**
 				 * The wrongEncryptedVersion would not be incremented so nothing to worry about here.
 				 * Only the newEncryptedVersion is incremented.
@@ -218,7 +232,7 @@ class FixEncryptedVersion extends Command {
 				$cacheInfo = ['encryptedVersion' => $newEncryptedVersion, 'encrypted' => $newEncryptedVersion];
 				$cache->put($fileCache->getPath(), $cacheInfo);
 				$output->writeln("<info>Increment the encrypted version to $newEncryptedVersion</info>");
-				if ($this->verifyFileContent($path, $output, false) === true) {
+				if ($this->verifyFileContent($path, $output, $incrRange, false) === true) {
 					$output->writeln("<info>Fixed the file: $path with version " . $newEncryptedVersion . "</info>");
 					return true;
 				}
