@@ -1,6 +1,7 @@
 <?php
 /**
  * @author Sujith Haridasan <sharidasan@owncloud.com>
+ * @author Ilja Neumann <ineumann@owncloud.com>
  *
  * @copyright Copyright (c) 2019, ownCloud GmbH
  * @license AGPL-3.0
@@ -185,6 +186,8 @@ class FixEncryptedVersion extends Command {
 			return true;
 		}
 
+		// Save original encrypted version so we can restore it if decryption fails with all version
+		$originalEncryptedVersion = $encryptedVersion;
 		if ($encryptedVersion >= 0) {
 			//test by decrementing the value till 1 and if nothing works try incrementing
 			$encryptedVersion--;
@@ -222,6 +225,11 @@ class FixEncryptedVersion extends Command {
 				$increment++;
 			}
 		}
+
+		$cacheInfo = ['encryptedVersion' => $originalEncryptedVersion, 'encrypted' => $originalEncryptedVersion];
+		$cache->put($fileCache->getPath(), $cacheInfo);
+		$output->writeln("<info>No fix found for $path, restored version to original: $originalEncryptedVersion</info>");
+
 		return false;
 	}
 
