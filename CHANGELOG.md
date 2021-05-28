@@ -4,13 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased] - XXXX-XX-XX
+## [1.5.1] - 2021-05-28
 
 ### Fixed
 
 - Use legacy-encoding setting for HSM also [#269](https://github.com/owncloud/encryption/issues/269)
-
-- `fix-encrypted-version` command restores value to original if no fix is found  [#269](https://github.com/owncloud/encryption/issues/269)
+- `fix-encrypted-version` command restores value to original if no fix is found  [#275](https://github.com/owncloud/encryption/issues/275)
 
 ## [1.5.0] - 2021-03-11
 
@@ -44,5 +43,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - Issues with recreating masterkeys when HSM is used [#128](https://github.com/owncloud/encryption/pull/128)
 
 
-[Unreleased]: https://github.com/owncloud/encryption/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/owncloud/encryption/compare/v1.5.1...HEAD
+[1.5.1]: https://github.com/owncloud/encryption/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/owncloud/encryption/compare/v1.4.0...v1.5.0
