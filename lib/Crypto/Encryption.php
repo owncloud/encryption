@@ -184,10 +184,18 @@ class Encryption implements IEncryptionModule {
 		if ($this->session->decryptAllModeActivated()) {
 			$encryptedFileKey = $this->keyManager->getEncryptedFileKey($this->path);
 			$shareKey = $this->keyManager->getShareKey($this->path, $this->session->getDecryptAllUid());
+
+			if ($this->util->isMasterKeyEnabled()) {
+				$masterKeyId = $this->keyManager->getMasterKeyId();
+				$recoveryKey = $this->keyManager->getSystemPrivateKey($masterKeyId);
+			} else {
+				$recoveryKey = $this->keyManager->getPrivateKey($user);
+			}
+
 			$this->fileKey = $this->crypt->multiKeyDecrypt($encryptedFileKey,
 				$shareKey,
 				$this->session->getDecryptAllKey(),
-				$user);
+				$recoveryKey);
 		} else {
 			$this->fileKey = $this->keyManager->getFileKey($this->path, $this->user);
 		}

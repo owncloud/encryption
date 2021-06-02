@@ -415,10 +415,17 @@ class KeyManager {
 		}
 
 		if ($encryptedFileKey && $shareKey && $privateKey) {
+			if ($this->util->isMasterKeyEnabled()) {
+				$masterKeyId = $this->getMasterKeyId();
+				$recoveryKey = $this->getSystemPrivateKey($masterKeyId);
+			} else {
+				$recoveryKey = $this->getPrivateKey($uid);
+			}
+
 			return $this->crypt->multiKeyDecrypt($encryptedFileKey,
 				$shareKey,
 				$privateKey,
-				$uid);
+				$recoveryKey);
 		}
 
 		return '';

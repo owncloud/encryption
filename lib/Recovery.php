@@ -69,6 +69,10 @@ class Recovery {
 	 * @var IFile
 	 */
 	private $file;
+	/**
+	 * @var Util
+	 */
+	private $util;
 
 	/**
 	 * @param IUserSession $user
@@ -79,6 +83,7 @@ class Recovery {
 	 * @param IStorage $keyStorage
 	 * @param IFile $file
 	 * @param View $view
+	 * @param Util $util
 	 */
 	public function __construct(IUserSession $user,
 								Crypt $crypt,
@@ -87,7 +92,8 @@ class Recovery {
 								IConfig $config,
 								IStorage $keyStorage,
 								IFile $file,
-								View $view) {
+								View $view,
+								Util $util) {
 		$this->user = ($user !== null && $user->isLoggedIn()) ? $user->getUser() : false;
 		$this->crypt = $crypt;
 		$this->random = $random;
@@ -96,6 +102,7 @@ class Recovery {
 		$this->keyStorage = $keyStorage;
 		$this->view = $view;
 		$this->file = $file;
+		$this->util = $util;
 	}
 
 	/**
@@ -309,10 +316,17 @@ class Recovery {
 		$shareKey = $this->keyManager->getShareKey($path, $this->keyManager->getRecoveryKeyId());
 
 		if ($encryptedFileKey && $shareKey && $privateKey) {
+			if ($this->util->isMasterKeyEnabled()) {
+				$masterKeyId = $this->keyManager->getMasterKeyId();
+				$recoveryKey = $this->keyManager->getSystemPrivateKey($masterKeyId);
+			} else {
+				$recoveryKey = $this->keyManager->getPrivateKey($uid);
+			}
+
 			$fileKey = $this->crypt->multiKeyDecrypt($encryptedFileKey,
 				$shareKey,
 				$privateKey,
-				$uid);
+				$recoveryKey);
 		}
 
 		if (!empty($fileKey)) {
