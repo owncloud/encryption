@@ -186,7 +186,8 @@ class Encryption implements IEncryptionModule {
 			$shareKey = $this->keyManager->getShareKey($this->path, $this->session->getDecryptAllUid());
 			$this->fileKey = $this->crypt->multiKeyDecrypt($encryptedFileKey,
 				$shareKey,
-				$this->session->getDecryptAllKey());
+				$this->session->getDecryptAllKey(),
+				$user);
 		} else {
 			$this->fileKey = $this->keyManager->getFileKey($this->path, $this->user);
 		}

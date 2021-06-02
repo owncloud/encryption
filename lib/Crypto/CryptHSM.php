@@ -30,6 +30,8 @@ use OC\Encryption\Exceptions\DecryptionFailedException;
 use OCA\Encryption\Exceptions\MultiKeyDecryptException;
 use OCA\Encryption\Exceptions\MultiKeyEncryptException;
 use OCA\Encryption\JWT;
+use OCA\Encryption\KeyManager;
+use OCA\Encryption\Util;
 use OCP\AppFramework\Utility\ITimeFactory;
 use OCP\Http\Client\IClientService;
 use OCP\IConfig;
@@ -76,6 +78,16 @@ class CryptHSM extends Crypt {
 	 */
 	private $timeFactory;
 
+	/**
+	 * @var KeyManager
+	 */
+	private $keyManager;
+
+	/**
+	 * @var Util
+	 */
+	private $util;
+
 	const PATH_NEW_KEY = '/keys/new';
 	const PATH_DECRYPT = '/decrypt/'; // appended with keyid
 
@@ -86,8 +98,10 @@ class CryptHSM extends Crypt {
 	 * @param IL10N $l
 	 * @param IClientService $clientService
 	 * @param ITimeFactory $timeFactory
+	 * @param KeyManager $keyManager
+	 * @param Util $util
 	 */
-	public function __construct(ILogger $logger, IUserSession $userSession, IConfig $config, IL10N $l, IClientService $clientService, IRequest $request, ITimeFactory $timeFactory) {
+	public function __construct(ILogger $logger, IUserSession $userSession, IConfig $config, IL10N $l, IClientService $clientService, IRequest $request, ITimeFactory $timeFactory, KeyManager $keyManager, Util $util) {
 		parent::__construct($logger, $userSession, $config, $l);
 		$this->hsmUrl = \rtrim($this->config->getAppValue('encryption', 'hsm.url'), '/'); // no default, because Application DI only instantiates this if it is configured non empty
 		$this->secret = $this->config->getAppValue('encryption', 'hsm.jwt.secret', 'secret');
@@ -95,6 +109,8 @@ class CryptHSM extends Crypt {
 		$this->clientService = $clientService;
 		$this->request = $request;
 		$this->timeFactory = $timeFactory;
+		$this->keyManager = $keyManager;
+		$this->util = $util;
 	}
 
 	/**
@@ -139,10 +155,11 @@ class CryptHSM extends Crypt {
 	 * @param string $encKeyFile
 	 * @param string $shareKey
 	 * @param string $privateKey string contains the key uuid in the hsm
+	 * @param string $user
 	 * @return string
 	 * @throws MultiKeyDecryptException
 	 */
-	public function multiKeyDecrypt($encKeyFile, $shareKey, $privateKey) { // done with HSM, private key contains the key id in the hsm
+	public function multiKeyDecrypt($encKeyFile, $shareKey, $privateKey, $user) { // done with HSM, private key contains the key id in the hsm
 		if (!$encKeyFile) {
 			throw new MultiKeyDecryptException('Cannot multikey decrypt empty plain content');
 		}
@@ -166,7 +183,15 @@ class CryptHSM extends Crypt {
 			]);
 
 			$decryptedKey = $response->getBody();
-			$header = $this->parseHeader($privateKey);
+
+			if ($this->util->isMasterKeyEnabled()) {
+				$masterKeyId = $this->keyManager->getMasterKeyId();
+				$recoveryKey = $this->keyManager->getSystemPrivateKey($masterKeyId);
+			} else {
+				$recoveryKey = $this->keyManager->getPrivateKey($user);
+			}
+
+			$header = $this->parseHeader($recoveryKey);
 			$binaryEncode = $this->useDefaultEncodingFormat($header);
 			
 			// now decode the file.

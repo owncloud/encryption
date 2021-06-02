@@ -660,10 +660,11 @@ class Crypt {
 	 * @param string $encKeyFile
 	 * @param string $shareKey
 	 * @param string $privateKey
+	 * @param string $user
 	 * @return string
 	 * @throws MultiKeyDecryptException
 	 */
-	public function multiKeyDecrypt($encKeyFile, $shareKey, $privateKey) {
+	public function multiKeyDecrypt($encKeyFile, $shareKey, $privateKey, $user) {
 		if (!$encKeyFile) {
 			throw new MultiKeyDecryptException('Cannot multikey decrypt empty plain content');
 		}

@@ -311,7 +311,8 @@ class Recovery {
 		if ($encryptedFileKey && $shareKey && $privateKey) {
 			$fileKey = $this->crypt->multiKeyDecrypt($encryptedFileKey,
 				$shareKey,
-				$privateKey);
+				$privateKey,
+				$uid);
 		}
 
 		if (!empty($fileKey)) {

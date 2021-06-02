@@ -417,7 +417,8 @@ class KeyManager {
 		if ($encryptedFileKey && $shareKey && $privateKey) {
 			return $this->crypt->multiKeyDecrypt($encryptedFileKey,
 				$shareKey,
-				$privateKey);
+				$privateKey,
+				$uid);
 		}
 
 		return '';
