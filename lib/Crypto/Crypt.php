@@ -416,7 +416,7 @@ class Crypt {
 			$password = $this->generatePasswordHash($password, $cipher, $uid);
 		}
 
-		$binaryEncode = isset($header['encoding']) && $header['encoding'] === self::DEFAULT_ENCODING_FORMAT;
+		$binaryEncode = $this->useDefaultEncodingFormat($header);
 
 		// If we found a header we need to remove it from the key we want to decrypt
 		if (!empty($header)) {
@@ -716,5 +716,13 @@ class Crypt {
 	 */
 	public function useLegacyEncoding(): bool {
 		return $this->useLegacyEncoding;
+	}
+
+	/**
+	 * @param array header
+	 * @return bool
+	 */
+	protected function useDefaultEncodingFormat($header): bool {
+		return isset($header['encoding']) && $header['encoding'] === self::DEFAULT_ENCODING_FORMAT;
 	}
 }

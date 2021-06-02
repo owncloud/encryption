@@ -78,7 +78,6 @@ class CryptHSM extends Crypt {
 
 	const PATH_NEW_KEY = '/keys/new';
 	const PATH_DECRYPT = '/decrypt/'; // appended with keyid
-	const BINARY_ENCODED_KEY_LENGTH = 256;
 
 	/**
 	 * @param ILogger $logger
@@ -165,16 +164,14 @@ class CryptHSM extends Crypt {
 				],
 				'body' => $shareKey
 			]);
-			$decryptedKey = $response->getBody();
 
-			// differentiate encryption type by looking key length
-			$binaryEncode = \strlen(\bin2hex($encKeyFile)) === self::BINARY_ENCODED_KEY_LENGTH;
+			$decryptedKey = $response->getBody();
+			$header = $this->parseHeader($privateKey);
+			$binaryEncode = $this->useDefaultEncodingFormat($header);
 			
 			// now decode the file.
 			// version and position are 0 because we always use fresh random data as passphrase
-			$decryptedContent = $this->symmetricDecryptFileContent($encKeyFile, $decryptedKey, self::DEFAULT_CIPHER, 0, 0, $binaryEncode);
-
-			return $decryptedContent;
+			return $this->symmetricDecryptFileContent($encKeyFile, $decryptedKey, self::DEFAULT_CIPHER, 0, 0, $binaryEncode);
 		} catch (ServerException $e) {
 			$body = $e->getResponse()->getBody();
 			$this->logger->logException($e, ['message' => $body, 'app' => __CLASS__]);
