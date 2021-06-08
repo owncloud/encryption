@@ -344,6 +344,7 @@ config = {
 }
 
 def main(ctx):
+	
 	before = beforePipelines()
 
 	coverageTests = coveragePipelines(ctx)
@@ -493,7 +494,7 @@ def jscodestyle():
 		'steps': [
 			{
 				'name': 'coding-standard-js',
-				'image': 'owncloudci/php:7.2',
+				'image': 'owncloudci/php:8.0',
 				'pull': 'always',
 				'commands': [
 					'make test-js-style'
@@ -768,6 +769,7 @@ def javascript(ctx):
 		'extraEnvironment': {},
 		'extraCommandsBeforeTestRun': [],
 		'extraTeardown': [],
+		'skip': False
 	}
 
 	if 'defaults' in config:
@@ -788,6 +790,9 @@ def javascript(ctx):
 	for item in default:
 		params[item] = matrix[item] if item in matrix else default[item]
 
+	if params['skip']:
+		return pipelines
+
 	result = {
 		'kind': 'pipeline',
 		'type': 'docker',
@@ -798,13 +803,13 @@ def javascript(ctx):
 		},
 		'steps':
 			installCore('daily-master-qa', 'sqlite', False) +
-			installApp('7.2') +
-			setupServerAndApp('7.2', params['logLevel']) +
+			installApp('7.4') +
+			setupServerAndApp('7.4', params['logLevel']) +
 			params['extraSetup'] +
 		[
 			{
 				'name': 'js-tests',
-				'image': 'owncloudci/php:7.2',
+				'image': 'owncloudci/php:8.0',
 				'pull': 'always',
 				'environment': params['extraEnvironment'],
 				'commands': params['extraCommandsBeforeTestRun'] + [
@@ -833,7 +838,7 @@ def javascript(ctx):
 				},
 				'bucket': 'cache',
 				'source': './coverage/lcov.info',
-				'target': '%s/%s' % (ctx.repo.slug, '${DRONE_COMMIT}-${DRONE_BUILD_NUMBER}'),
+				'target': '%s/%s' % (ctx.repo.slug, ctx.build.commit + '-${DRONE_BUILD_NUMBER}'),
 				'path_style': True,
 				'strip_prefix': './coverage',
 				'access_key': {
@@ -874,6 +879,7 @@ def phpTests(ctx, testType):
 		'extraCommandsBeforeTestRun': [],
 		'extraApps': {},
 		'extraTeardown': [],
+		'skip': False
 	}
 
 	if 'defaults' in config:
@@ -898,6 +904,9 @@ def phpTests(ctx, testType):
 		params = {}
 		for item in default:
 			params[item] = matrix[item] if item in matrix else default[item]
+
+		if params['skip']:
+			continue
 
 		cephS3Params = params['cephS3']
 		if type(cephS3Params) == "bool":
@@ -1006,7 +1015,7 @@ def phpTests(ctx, testType):
 							},
 							'bucket': 'cache',
 							'source': 'tests/output/clover-%s.xml' % (name),
-							'target': '%s/%s' % (ctx.repo.slug, '${DRONE_COMMIT}-${DRONE_BUILD_NUMBER}'),
+							'target': '%s/%s' % (ctx.repo.slug, ctx.build.commit + '-${DRONE_BUILD_NUMBER}'),
 							'path_style': True,
 							'strip_prefix': 'tests/output',
 							'access_key': {
@@ -1068,6 +1077,9 @@ def acceptance(ctx):
 		'numberOfParts': 1,
 		'cron': '',
 		'pullRequestAndCron': 'nightly',
+		'skip': False,
+		'debugSuites': [],
+		'skipExceptParts': []
 	}
 
 	if 'defaults' in config:
@@ -1082,6 +1094,14 @@ def acceptance(ctx):
 				suites[suite] = suite
 		else:
 			suites = matrix['suites']
+		
+		if 'debugSuites' in matrix and len(matrix['debugSuites']) != 0:
+			if type(matrix['debugSuites']) == "list":
+				suites = {}
+				for suite in matrix['debugSuites']:
+					suites[suite] = suite
+			else:
+				suites = matrix['debugSuites']
 
 		for suite, alternateSuiteName in suites.items():
 			isWebUI = suite.startswith('webUI')
@@ -1091,6 +1111,9 @@ def acceptance(ctx):
 			params = {}
 			for item in default:
 				params[item] = matrix[item] if item in matrix else default[item]
+
+			if params['skip']:
+				continue
 
 			if isAPI or isCLI:
 				params['browsers'] = ['']
@@ -1121,6 +1144,10 @@ def acceptance(ctx):
 				params['extraApps'] = extraAppsDict
 
 			for testConfig in buildTestConfig(params):
+				debugPartsEnabled = (len(testConfig['skipExceptParts']) != 0)
+				if debugPartsEnabled and testConfig['runPart'] not in testConfig['skipExceptParts']:
+					continue
+
 				name = 'unknown'
 				if isWebUI or isAPI or isCLI:
 					esString = '-es' + testConfig['esVersion'] if testConfig['esVersion'] != 'none' else ''
@@ -1238,14 +1265,13 @@ def acceptance(ctx):
 				if (testConfig['cron'] != ''):
 					result['trigger']['cron'] = testConfig['cron']
 				else:
-					result['trigger'] = {
-						'ref': [
+					if ((testConfig['pullRequestAndCron'] != '') and (ctx.build.event != 'pull_request')):
+						result['trigger']['cron'] = testConfig['pullRequestAndCron']
+					else:
+						result['trigger']['ref'] = [
 							'refs/pull/**',
 							'refs/tags/**'
 						]
-					}
-					for branch in config['branches']:
-						result['trigger']['ref'].append('refs/heads/%s' % branch)
 
 				pipelines.append(result)
 
@@ -1279,7 +1305,7 @@ def sonarAnalysis(ctx, phpVersion = '7.4'):
 				},
 				'commands': [
 					'mkdir -p results',
-					'mc mirror cache/cache/%s/%s results/' % (ctx.repo.slug, '${DRONE_COMMIT}-${DRONE_BUILD_NUMBER}'),
+					'mc mirror cache/cache/%s/%s results/' % (ctx.repo.slug, ctx.build.commit + '-${DRONE_BUILD_NUMBER}'),
 				]
 			},
 			{
@@ -1291,42 +1317,23 @@ def sonarAnalysis(ctx, phpVersion = '7.4'):
 				]
 			},
 			{
-				'name': 'sonarcloud-pr',
+				'name': 'sonarcloud',
 				'image': 'sonarsource/sonar-scanner-cli',
 				'pull': 'always',
 				'environment': {
 					'SONAR_TOKEN': {
 						'from_secret': 'sonar_token'
 					},
-					'SONAR_PULL_REQUEST_BASE': 'master',
-					'SONAR_PULL_REQUEST_BRANCH': '${DRONE_SOURCE_BRANCH}',
-					'SONAR_PULL_REQUEST_KEY': '${DRONE_COMMIT_REF}'.replace("refs/pull/", "").split("/")[0],
+					'SONAR_PULL_REQUEST_BASE': 'master' if ctx.build.event == 'pull_request' else '',
+					'SONAR_PULL_REQUEST_BRANCH': ctx.build.source if ctx.build.event == 'pull_request' else '',
+					'SONAR_PULL_REQUEST_KEY': ctx.build.ref.replace("refs/pull/", "").split("/")[0] if ctx.build.event == 'pull_request' else '',
 					'SONAR_SCANNER_OPTS': '-Xdebug'
 				},
 				'when': {
-					'event': {
-						'include': [
-							'pull_request'
-						],
-					},
-				}
-			},
-			{
-				'name': 'sonarcloud-master',
-				'image': 'sonarsource/sonar-scanner-cli',
-				'pull': 'always',
-				'environment': {
-					'SONAR_TOKEN': {
-						'from_secret': 'sonar_token'
-					},
-					'SONAR_SCANNER_OPTS': '-Xdebug'
-				},
-				'when': {
-					'event': {
-						'exclude': [
-							'pull_request'
-						],
-					},
+					'instance': [
+						'drone.owncloud.services',
+						'drone.owncloud.com'
+					],
 				}
 			},
 			{
@@ -1338,7 +1345,7 @@ def sonarAnalysis(ctx, phpVersion = '7.4'):
 					}
 				},
 				'commands': [
-				'mc rm --recursive --force cache/cache/%s/%s' % (ctx.repo.slug, '${DRONE_COMMIT}-${DRONE_BUILD_NUMBER}'),
+				'mc rm --recursive --force cache/cache/%s/%s' % (ctx.repo.slug, ctx.build.commit + '-${DRONE_BUILD_NUMBER}'),
 				]
 			},
 		],
@@ -1554,11 +1561,13 @@ def owncloudService(version, phpVersion, name = 'server', path = '/var/www/owncl
 			'APACHE_CONFIG_TEMPLATE': 'ssl',
 			'APACHE_SSL_CERT_CN': 'server',
 			'APACHE_SSL_CERT': '/var/www/owncloud/%s.crt' % name,
-			'APACHE_SSL_KEY': '/var/www/owncloud/%s.key' % name
+			'APACHE_SSL_KEY': '/var/www/owncloud/%s.key' % name,
+			'APACHE_LOGGING_PATH': '/dev/null',
 		}
 	else:
 		environment = {
-			'APACHE_WEBROOT': path
+			'APACHE_WEBROOT': path,
+			'APACHE_LOGGING_PATH': '/dev/null',
 		}
 
 	return [{
