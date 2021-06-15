@@ -63,7 +63,8 @@ class AdminTest extends \Test\TestCase {
 			$this->userSession,
 			$this->userManager,
 			$this->session,
-			$this->l);
+			$this->l
+		);
 	}
 
 	public function testGetSection() {

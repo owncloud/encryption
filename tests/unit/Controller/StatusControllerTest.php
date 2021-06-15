@@ -56,10 +56,12 @@ class StatusControllerTest extends TestCase {
 				return $message;
 			}));
 
-		$this->controller = new StatusController('encryptionTest',
+		$this->controller = new StatusController(
+			'encryptionTest',
 			$this->requestMock,
 			$this->l10nMock,
-			$this->sessionMock);
+			$this->sessionMock
+		);
 	}
 
 	/**

@@ -299,7 +299,8 @@ class Migration {
 							$this->logger->warning(
 								'did not move key "' . $file
 								. '" could not find the corresponding file in /data/' . $user . '/files.'
-							. 'Most likely the key was already moved in a previous migration run and is already on the right place.');
+							. 'Most likely the key was already moved in a previous migration run and is already on the right place.'
+							);
 						}
 					}
 				}

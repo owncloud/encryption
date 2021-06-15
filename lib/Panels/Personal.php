@@ -54,7 +54,8 @@ class Personal implements ISettings {
 		IL10N $l,
 		IUserManager $userManager,
 		ISession $session,
-		IStorage $encKeyStorage) {
+		IStorage $encKeyStorage
+	) {
 		$this->logger = $logger;
 		$this->userSession = $userSession;
 		$this->config = $config;
@@ -82,7 +83,8 @@ class Personal implements ISettings {
 			$this->logger,
 			$this->userSession,
 			$this->config,
-			$this->l);
+			$this->l
+		);
 
 		$util = new \OCA\Encryption\Util(
 			new \OC\Files\View(),
@@ -90,7 +92,8 @@ class Personal implements ISettings {
 			$this->logger,
 			$this->userSession,
 			$this->config,
-			$this->userManager);
+			$this->userManager
+		);
 
 		$user = $this->userSession->getUser()->getUID();
 		$privateKeySet = $session->isPrivateKeySet();

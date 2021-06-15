@@ -54,11 +54,13 @@ class MigrateKeys extends Command {
 	 * @param IConfig $config
 	 * @param ILogger $logger
 	 */
-	public function __construct(IUserManager $userManager,
-								View $view,
-								IDBConnection $connection,
-								IConfig $config,
-								ILogger $logger) {
+	public function __construct(
+		IUserManager $userManager,
+		View $view,
+		IDBConnection $connection,
+		IConfig $config,
+		ILogger $logger
+	) {
 		$this->userManager = $userManager;
 		$this->view = $view;
 		$this->connection = $connection;

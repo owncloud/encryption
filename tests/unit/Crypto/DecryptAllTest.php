@@ -176,7 +176,8 @@ class DecryptAllTest extends TestCase {
 				->with($userKey, $password, $user)->willReturn($unencryptedKey);
 		}
 
-		$this->assertSame($unencryptedKey,
+		$this->assertSame(
+			$unencryptedKey,
 			$this->invokePrivate($this->instance, 'getPrivateKey', [$user, $password])
 		);
 	}

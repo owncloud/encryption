@@ -68,12 +68,13 @@ class Util {
 	 * @param IConfig $config
 	 * @param IUserManager $userManager
 	 */
-	public function __construct(View $files,
-								Crypt $crypt,
-								ILogger $logger,
-								IUserSession $userSession,
-								IConfig $config,
-								IUserManager $userManager
+	public function __construct(
+		View $files,
+		Crypt $crypt,
+		ILogger $logger,
+		IUserSession $userSession,
+		IConfig $config,
+		IUserManager $userManager
 	) {
 		$this->files = $files;
 		$this->crypt = $crypt;
@@ -90,10 +91,12 @@ class Util {
 	 * @return bool
 	 */
 	public function isRecoveryEnabledForUser($uid) {
-		$recoveryMode = $this->config->getUserValue($uid,
+		$recoveryMode = $this->config->getUserValue(
+			$uid,
 			'encryption',
 			'recoveryEnabled',
-			'0');
+			'0'
+		);
 
 		return ($recoveryMode === '1');
 	}
@@ -145,10 +148,12 @@ class Util {
 		$value = $enabled ? '1' : '0';
 
 		try {
-			$this->config->setUserValue($this->user->getUID(),
+			$this->config->setUserValue(
+				$this->user->getUID(),
 				'encryption',
 				'recoveryEnabled',
-				$value);
+				$value
+			);
 			return true;
 		} catch (PreConditionNotMetException $e) {
 			return false;

@@ -146,8 +146,10 @@ class SettingsControllerTest extends TestCase {
 		$data = $result->getData();
 
 		$this->assertSame(Http::STATUS_BAD_REQUEST, $result->getStatus());
-		$this->assertSame('The current log-in password was not correct, please try again.',
-			$data['message']);
+		$this->assertSame(
+			'The current log-in password was not correct, please try again.',
+			$data['message']
+		);
 	}
 
 	/**
@@ -172,8 +174,10 @@ class SettingsControllerTest extends TestCase {
 		$data = $result->getData();
 
 		$this->assertSame(Http::STATUS_BAD_REQUEST, $result->getStatus());
-		$this->assertSame('The old password was not correct, please try again.',
-			$data['message']);
+		$this->assertSame(
+			'The old password was not correct, please try again.',
+			$data['message']
+		);
 	}
 
 	/**
@@ -233,8 +237,10 @@ class SettingsControllerTest extends TestCase {
 		$data = $result->getData();
 
 		$this->assertSame(Http::STATUS_OK, $result->getStatus());
-		$this->assertSame('Private key password successfully updated.',
-			$data['message']);
+		$this->assertSame(
+			'Private key password successfully updated.',
+			$data['message']
+		);
 	}
 
 	public function testSetEncryptHomeStorage() {

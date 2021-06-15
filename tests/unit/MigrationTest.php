@@ -29,9 +29,9 @@ use OCA\Encryption\Migration;
 use OCP\ILogger;
 
 class MigrationTest extends \Test\TestCase {
-	const TEST_ENCRYPTION_MIGRATION_USER1='test_encryption_user1';
-	const TEST_ENCRYPTION_MIGRATION_USER2='test_encryption_user2';
-	const TEST_ENCRYPTION_MIGRATION_USER3='test_encryption_user3';
+	public const TEST_ENCRYPTION_MIGRATION_USER1='test_encryption_user1';
+	public const TEST_ENCRYPTION_MIGRATION_USER2='test_encryption_user2';
+	public const TEST_ENCRYPTION_MIGRATION_USER3='test_encryption_user3';
 
 	/** @var \OC\Files\View */
 	private $view;
@@ -223,7 +223,8 @@ class MigrationTest extends \Test\TestCase {
 		$this->assertTrue(
 			$this->view->file_exists(
 				self::TEST_ENCRYPTION_MIGRATION_USER1 . '/files_encryption/' .
-				$this->moduleId . '/' . self::TEST_ENCRYPTION_MIGRATION_USER1 . '.publicKey')
+				$this->moduleId . '/' . self::TEST_ENCRYPTION_MIGRATION_USER1 . '.publicKey'
+			)
 		);
 
 		$this->loginAsUser(self::TEST_ENCRYPTION_MIGRATION_USER2);
@@ -231,7 +232,8 @@ class MigrationTest extends \Test\TestCase {
 		$this->assertTrue(
 			$this->view->file_exists(
 				self::TEST_ENCRYPTION_MIGRATION_USER2 . '/files_encryption/' .
-				$this->moduleId . '/' . self::TEST_ENCRYPTION_MIGRATION_USER2 . '.publicKey')
+				$this->moduleId . '/' . self::TEST_ENCRYPTION_MIGRATION_USER2 . '.publicKey'
+			)
 		);
 
 		$this->loginAsUser(self::TEST_ENCRYPTION_MIGRATION_USER3);
@@ -239,18 +241,21 @@ class MigrationTest extends \Test\TestCase {
 		$this->assertTrue(
 			$this->view->file_exists(
 				self::TEST_ENCRYPTION_MIGRATION_USER3 . '/files_encryption/' .
-				$this->moduleId . '/' . self::TEST_ENCRYPTION_MIGRATION_USER3 . '.publicKey')
+				$this->moduleId . '/' . self::TEST_ENCRYPTION_MIGRATION_USER3 . '.publicKey'
+			)
 		);
 
 		$this->loginAsUser(self::TEST_ENCRYPTION_MIGRATION_USER1);
 
 		$this->assertTrue(
 			$this->view->file_exists(
-				'/files_encryption/' . $this->moduleId . '/systemwide_1.publicKey')
+				'/files_encryption/' . $this->moduleId . '/systemwide_1.publicKey'
+			)
 		);
 		$this->assertTrue(
 			$this->view->file_exists(
-				'/files_encryption/' . $this->moduleId . '/systemwide_2.publicKey')
+				'/files_encryption/' . $this->moduleId . '/systemwide_2.publicKey'
+			)
 		);
 
 		$this->verifyNewKeyPath(self::TEST_ENCRYPTION_MIGRATION_USER1);
@@ -271,13 +276,13 @@ class MigrationTest extends \Test\TestCase {
 		// share keys
 		$this->assertTrue(
 			$this->view->file_exists($uid . '/files_encryption/keys/files_trashbin/file1.d5457864/' . $this->moduleId . '/' . self::TEST_ENCRYPTION_MIGRATION_USER1 . '.shareKey')
-			);
+		);
 		$this->assertTrue(
 			$this->view->file_exists($uid . '/files_encryption/keys/files_trashbin/file1.d5457864/' . $this->moduleId . '/' . self::TEST_ENCRYPTION_MIGRATION_USER1 . '.shareKey')
-			);
+		);
 		$this->assertTrue(
 			$this->view->file_exists($uid . '/files_encryption/keys/files_trashbin/folder1.d7437648723/file2/' . $this->moduleId . '/' . self::TEST_ENCRYPTION_MIGRATION_USER1 . '.shareKey')
-			);
+		);
 
 		// file keys
 		$this->assertTrue(
@@ -285,7 +290,7 @@ class MigrationTest extends \Test\TestCase {
 		);
 
 		$this->assertTrue(
-		$this->view->file_exists($uid . '/files_encryption/keys/files_trashbin/file1.d5457864/' . $this->moduleId . '/fileKey')
+			$this->view->file_exists($uid . '/files_encryption/keys/files_trashbin/file1.d5457864/' . $this->moduleId . '/fileKey')
 		);
 		$this->assertTrue(
 			$this->view->file_exists($uid . '/files_encryption/keys/files_trashbin/folder1.d7437648723/file2/' . $this->moduleId . '/fileKey')
@@ -436,7 +441,8 @@ class MigrationTest extends \Test\TestCase {
 			->setParameter('appid', $appid);
 		$result = $query->execute();
 		$values = $result->fetchAll();
-		$this->assertSame($expected,
+		$this->assertSame(
+			$expected,
 			\count($values)
 		);
 	}
@@ -496,7 +502,8 @@ class MigrationTest extends \Test\TestCase {
 				->setParameter('encrypted', $i % 2)
 				->setParameter('size', $i)
 				->setParameter('unencrypted_size', $i + 2);
-			$this->assertSame(1,
+			$this->assertSame(
+				1,
 				$query->execute()
 			);
 		}
@@ -528,7 +535,8 @@ class MigrationTest extends \Test\TestCase {
 		$m->expects($this->any())->method('getSystemMountPoints')
 			->willReturn($systemMounts);
 
-		$this->assertSame($expected,
+		$this->assertSame(
+			$expected,
 			$this->invokePrivate($m, 'getTargetDir', [$user, $keyPath, $filename, $trash])
 		);
 	}

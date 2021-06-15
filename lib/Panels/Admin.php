@@ -48,12 +48,14 @@ class Admin implements ISettings {
 	/** @var IL10N */
 	protected $l;
 
-	public function __construct(IConfig $config,
-								ILogger $logger,
-								IUserSession $userSession,
-								IUserManager $userManager,
-								ISession $session,
-								IL10N $l) {
+	public function __construct(
+		IConfig $config,
+		ILogger $logger,
+		IUserSession $userSession,
+		IUserManager $userManager,
+		ISession $session,
+		IL10N $l
+	) {
 		$this->config = $config;
 		$this->logger = $logger;
 		$this->userSession = $userSession;
@@ -76,7 +78,8 @@ class Admin implements ISettings {
 			$this->logger,
 			$this->userSession,
 			$this->config,
-			$this->l);
+			$this->l
+		);
 		$util = new Util(
 			new View(),
 			$crypt,

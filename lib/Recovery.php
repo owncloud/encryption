@@ -80,14 +80,16 @@ class Recovery {
 	 * @param IFile $file
 	 * @param View $view
 	 */
-	public function __construct(IUserSession $user,
-								Crypt $crypt,
-								ISecureRandom $random,
-								KeyManager $keyManager,
-								IConfig $config,
-								IStorage $keyStorage,
-								IFile $file,
-								View $view) {
+	public function __construct(
+		IUserSession $user,
+		Crypt $crypt,
+		ISecureRandom $random,
+		KeyManager $keyManager,
+		IConfig $config,
+		IStorage $keyStorage,
+		IFile $file,
+		View $view
+	) {
 		$this->user = ($user !== null && $user->isLoggedIn()) ? $user->getUser() : false;
 		$this->crypt = $crypt;
 		$this->random = $random;
@@ -169,10 +171,12 @@ class Recovery {
 	 */
 	public function isRecoveryEnabledForUser($user = '') {
 		$uid = empty($user) ? $this->user->getUID() : $user;
-		$recoveryMode = $this->config->getUserValue($uid,
+		$recoveryMode = $this->config->getUserValue(
+			$uid,
 			'encryption',
 			'recoveryEnabled',
-			0);
+			0
+		);
 
 		return ($recoveryMode === '1');
 	}
@@ -194,10 +198,12 @@ class Recovery {
 	 */
 	public function setRecoveryForUser($value) {
 		try {
-			$this->config->setUserValue($this->user->getUID(),
+			$this->config->setUserValue(
+				$this->user->getUID(),
 				'encryption',
 				'recoveryEnabled',
-				$value);
+				$value
+			);
 
 			if ($value === '1') {
 				$this->addRecoveryKeys('/' . $this->user->getUID() . '/files/');
@@ -309,9 +315,11 @@ class Recovery {
 		$shareKey = $this->keyManager->getShareKey($path, $this->keyManager->getRecoveryKeyId());
 
 		if ($encryptedFileKey && $shareKey && $privateKey) {
-			$fileKey = $this->crypt->multiKeyDecrypt($encryptedFileKey,
+			$fileKey = $this->crypt->multiKeyDecrypt(
+				$encryptedFileKey,
 				$shareKey,
-				$privateKey);
+				$privateKey
+			);
 		}
 
 		if (!empty($fileKey)) {

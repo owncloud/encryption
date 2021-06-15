@@ -198,9 +198,11 @@ class CryptTest extends TestCase {
 		$result = self::invokePrivate(
 			$this->crypt,
 			'concatIV',
-			['content', 'my_iv']);
+			['content', 'my_iv']
+		);
 
-		$this->assertSame('content00iv00my_iv',
+		$this->assertSame(
+			'content00iv00my_iv',
 			$result
 		);
 	}
@@ -233,7 +235,8 @@ class CryptTest extends TestCase {
 	 * @dataProvider dataTestHasSignature
 	 */
 	public function testHasSignature($data, $expected) {
-		$this->assertSame($expected,
+		$this->assertSame(
+			$expected,
 			$this->invokePrivate($this->crypt, 'hasSignature', [$data, 'AES-256-CFB'])
 		);
 	}
@@ -344,7 +347,8 @@ class CryptTest extends TestCase {
 		$result = self::invokePrivate(
 			$this->crypt,
 			'decrypt',
-			[$data['encrypted'], $data['iv'], $data['password'], $this->crypt::DEFAULT_CIPHER, true]);
+			[$data['encrypted'], $data['iv'], $data['password'], $this->crypt::DEFAULT_CIPHER, true]
+		);
 
 		$this->assertSame($data['decrypted'], $result);
 	}

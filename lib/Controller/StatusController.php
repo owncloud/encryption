@@ -42,11 +42,12 @@ class StatusController extends Controller {
 	 * @param IL10N $l10n
 	 * @param Session $session
 	 */
-	public function __construct($AppName,
-								IRequest $request,
-								IL10N $l10n,
-								Session $session
-								) {
+	public function __construct(
+		$AppName,
+		IRequest $request,
+		IL10N $l10n,
+		Session $session
+	) {
 		parent::__construct($AppName, $request);
 		$this->l = $l10n;
 		$this->session = $session;
