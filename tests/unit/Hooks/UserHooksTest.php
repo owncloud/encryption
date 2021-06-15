@@ -196,7 +196,9 @@ class UserHooksTest extends TestCase {
 				$header = \substr($key, 0, \strlen(Crypt::HEADER_START));
 				$this->assertSame(
 					Crypt::HEADER_START,
-					$header, 'every encrypted file should start with a header');
+					$header,
+					'every encrypted file should start with a header'
+				);
 			});
 
 		$this->assertNull($this->instance->setPassphrase($this->params));

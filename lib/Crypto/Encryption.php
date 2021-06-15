@@ -40,8 +40,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class Encryption implements IEncryptionModule {
-	const ID = 'OC_DEFAULT_MODULE';
-	const DISPLAY_NAME = 'Default encryption module';
+	public const ID = 'OC_DEFAULT_MODULE';
+	public const DISPLAY_NAME = 'Default encryption module';
 
 	/**
 	 * @var Crypt
@@ -117,14 +117,16 @@ class Encryption implements IEncryptionModule {
 	 * @param ILogger $logger
 	 * @param IL10N $il10n
 	 */
-	public function __construct(Crypt $crypt,
-								KeyManager $keyManager,
-								Util $util,
-								Session $session,
-								EncryptAll $encryptAll,
-								DecryptAll $decryptAll,
-								ILogger $logger,
-								IL10N $il10n) {
+	public function __construct(
+		Crypt $crypt,
+		KeyManager $keyManager,
+		Util $util,
+		Session $session,
+		EncryptAll $encryptAll,
+		DecryptAll $decryptAll,
+		ILogger $logger,
+		IL10N $il10n
+	) {
 		$this->crypt = $crypt;
 		$this->keyManager = $keyManager;
 		$this->util = $util;
@@ -184,9 +186,11 @@ class Encryption implements IEncryptionModule {
 		if ($this->session->decryptAllModeActivated()) {
 			$encryptedFileKey = $this->keyManager->getEncryptedFileKey($this->path);
 			$shareKey = $this->keyManager->getShareKey($this->path, $this->session->getDecryptAllUid());
-			$this->fileKey = $this->crypt->multiKeyDecrypt($encryptedFileKey,
+			$this->fileKey = $this->crypt->multiKeyDecrypt(
+				$encryptedFileKey,
 				$shareKey,
-				$this->session->getDecryptAllKey());
+				$this->session->getDecryptAllKey()
+			);
 		} else {
 			$this->fileKey = $this->keyManager->getFileKey($this->path, $this->user);
 		}
@@ -414,8 +418,10 @@ class Encryption implements IEncryptionModule {
 
 			$this->keyManager->setAllFileKeys($path, $encryptedFileKey);
 		} else {
-			$this->logger->debug('no file key found, we assume that the file "{file}" is not encrypted',
-				['file' => $path, 'app' => 'encryption']);
+			$this->logger->debug(
+				'no file key found, we assume that the file "{file}" is not encrypted',
+				['file' => $path, 'app' => 'encryption']
+			);
 
 			return false;
 		}

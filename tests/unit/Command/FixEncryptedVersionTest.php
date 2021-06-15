@@ -41,7 +41,7 @@ use Test\TestCase;
  * @package OCA\Encryption\Tests\Command
  */
 class FixEncryptedVersionTest extends TestCase {
-	const TEST_ENCRYPTION_VERSION_AFFECTED_USER = 'test_enc_version_affected_user1';
+	public const TEST_ENCRYPTION_VERSION_AFFECTED_USER = 'test_enc_version_affected_user1';
 
 	/** @var IRootFolder */
 	private $rootFolder;
@@ -68,9 +68,15 @@ class FixEncryptedVersionTest extends TestCase {
 		$encryptionSession = new Session(\OC::$server->getSession());
 		$view = new View("/");
 		$encryptionUtil = new Util($view, $crypt, \OC::$server->getLogger(), \OC::$server->getUserSession(), \OC::$server->getConfig(), \OC::$server->getUserManager());
-		$keyManager = new KeyManager(\OC::$server->getEncryptionKeyStorage(),
-			$crypt, \OC::$server->getConfig(), \OC::$server->getUserSession(),
-			$encryptionSession, \OC::$server->getLogger(), $encryptionUtil);
+		$keyManager = new KeyManager(
+			\OC::$server->getEncryptionKeyStorage(),
+			$crypt,
+			\OC::$server->getConfig(),
+			\OC::$server->getUserSession(),
+			$encryptionSession,
+			\OC::$server->getLogger(),
+			$encryptionUtil
+		);
 		$userSetup = new Setup(\OC::$server->getLogger(), \OC::$server->getUserSession(), $crypt, $keyManager);
 		$userSetup->setupSystem();
 		\OC::$server->getUserManager()->createUser(self::TEST_ENCRYPTION_VERSION_AFFECTED_USER, 'foo');

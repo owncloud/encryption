@@ -91,7 +91,8 @@ class KeyManagerTest extends TestCase {
 			$this->userMock,
 			$this->sessionMock,
 			$this->logMock,
-			$this->utilMock);
+			$this->utilMock
+		);
 	}
 
 	public function returnAppValue() {
@@ -120,7 +121,8 @@ class KeyManagerTest extends TestCase {
 			->with($this->equalTo($this->userId), $this->equalTo('privateKey'))
 			->willReturn('privateKey');
 
-		$this->assertSame('privateKey',
+		$this->assertSame(
+			'privateKey',
 			$this->instance->getPrivateKey($this->userId)
 		);
 	}
@@ -131,7 +133,8 @@ class KeyManagerTest extends TestCase {
 			->with($this->equalTo($this->userId), $this->equalTo('publicKey'))
 			->willReturn('publicKey');
 
-		$this->assertSame('publicKey',
+		$this->assertSame(
+			'publicKey',
 			$this->instance->getPublicKey($this->userId)
 		);
 	}
@@ -164,7 +167,8 @@ class KeyManagerTest extends TestCase {
 			->with(
 				$this->equalTo($this->userId),
 				$this->equalTo('publicKey'),
-				$this->equalTo('key'))
+				$this->equalTo('key')
+			)
 			->willReturn(true);
 
 		$this->assertTrue(
@@ -178,7 +182,8 @@ class KeyManagerTest extends TestCase {
 			->with(
 				$this->equalTo($this->userId),
 				$this->equalTo('privateKey'),
-				$this->equalTo('key'))
+				$this->equalTo('key')
+			)
 			->willReturn(true);
 
 		$this->assertTrue(
@@ -195,7 +200,8 @@ class KeyManagerTest extends TestCase {
 			->with($this->equalTo($this->userId), $this->anything())
 			->willReturn($key);
 
-		$this->assertSame($expected,
+		$this->assertSame(
+			$expected,
 			$this->instance->userHasKeys($this->userId)
 		);
 	}
@@ -307,8 +313,10 @@ class KeyManagerTest extends TestCase {
 			->willReturn('decryptedPrivateKey');
 
 		$this->assertTrue(
-			$this->instance->setRecoveryKey('pass',
-				['publicKey' => 'publicKey', 'privateKey' => 'privateKey'])
+			$this->instance->setRecoveryKey(
+				'pass',
+				['publicKey' => 'publicKey', 'privateKey' => 'privateKey']
+			)
 		);
 	}
 
@@ -329,7 +337,8 @@ class KeyManagerTest extends TestCase {
 			->with($this->equalTo('keyId.privateKey'))
 			->willReturn('systemPrivateKey');
 
-		$this->assertSame('systemPrivateKey',
+		$this->assertSame(
+			'systemPrivateKey',
 			$this->instance->getSystemPrivateKey('keyId')
 		);
 	}
@@ -414,7 +423,8 @@ class KeyManagerTest extends TestCase {
 				->method('multiKeyDecrypt');
 		}
 
-		$this->assertSame($expected,
+		$this->assertSame(
+			$expected,
 			$this->instance->getFileKey($path, $uid)
 		);
 	}
@@ -425,9 +435,11 @@ class KeyManagerTest extends TestCase {
 			->with('user1', 'privateKey')
 			->willReturn(true);
 
-		$this->assertTrue(self::invokePrivate($this->instance,
+		$this->assertTrue(self::invokePrivate(
+			$this->instance,
 			'deletePrivateKey',
-			[$this->userId]));
+			[$this->userId]
+		));
 	}
 
 	public function testDeleteAllFileKeys() {
@@ -544,7 +556,8 @@ class KeyManagerTest extends TestCase {
 		$this->configMock->expects($this->once())->method('getSystemValue')->with('secret')
 			->willReturn('password');
 
-		$this->assertSame('password',
+		$this->assertSame(
+			'password',
 			$this->invokePrivate($this->instance, 'getMasterKeyPassword', [])
 		);
 	}

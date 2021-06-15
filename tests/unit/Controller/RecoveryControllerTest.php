@@ -65,9 +65,11 @@ class RecoveryControllerTest extends TestCase {
 			->method('disableAdminRecovery')
 			->willReturn(true);
 
-		$response = $this->controller->adminRecovery($recoveryPassword,
+		$response = $this->controller->adminRecovery(
+			$recoveryPassword,
 			$passConfirm,
-			$enableRecovery);
+			$enableRecovery
+		);
 
 		$this->assertEquals($expectedMessage, $response->getData()['data']['message']);
 		$this->assertEquals($expectedStatus, $response->getStatus());
@@ -100,9 +102,11 @@ class RecoveryControllerTest extends TestCase {
 				['test', 'oldtest', true]
 			]));
 
-		$response = $this->controller->changeRecoveryPassword($password,
+		$response = $this->controller->changeRecoveryPassword(
+			$password,
 			$oldPassword,
-			$confirmPassword);
+			$confirmPassword
+		);
 
 		$this->assertEquals($expectedMessage, $response->getData()['data']['message']);
 		$this->assertEquals($expectedStatus, $response->getStatus());
@@ -160,10 +164,12 @@ class RecoveryControllerTest extends TestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$this->controller = new RecoveryController('encryption',
+		$this->controller = new RecoveryController(
+			'encryption',
 			$this->requestMock,
 			$this->configMock,
 			$this->l10nMock,
-			$this->recoveryMock);
+			$this->recoveryMock
+		);
 	}
 }

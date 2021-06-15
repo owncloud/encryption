@@ -53,10 +53,12 @@ class Setup {
 	 * @param Crypt $crypt
 	 * @param KeyManager $keyManager
 	 */
-	public function __construct(ILogger $logger,
-								IUserSession $userSession,
-								Crypt $crypt,
-								KeyManager $keyManager) {
+	public function __construct(
+		ILogger $logger,
+		IUserSession $userSession,
+		Crypt $crypt,
+		KeyManager $keyManager
+	) {
 		$this->logger = $logger;
 		$this->user = $userSession !== null && $userSession->isLoggedIn() ? $userSession->getUser()->getUID() : false;
 		$this->crypt = $crypt;
@@ -70,8 +72,11 @@ class Setup {
 	 */
 	public function setupUser($uid, $password) {
 		if (!$this->keyManager->userHasKeys($uid)) {
-			return $this->keyManager->storeKeyPair($uid, $password,
-				$this->crypt->createKeyPair());
+			return $this->keyManager->storeKeyPair(
+				$uid,
+				$password,
+				$this->crypt->createKeyPair()
+			);
 		}
 		return true;
 	}

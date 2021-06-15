@@ -102,11 +102,22 @@ class EncDecAllFactory {
 	 * @param Crypt $crypt
 	 * @param IUserSession $userSession
 	 */
-	public function __construct(Manager $encryptionManager, IUserManager $userManager,
-								ILogger $logger, Util $encUtil, IConfig $config, IMailer $mailer,
-								IL10N $l10n, QuestionHelper $questionHelper, ISecureRandom $secureRandom,
-								IStorage $encStorage, Session $encSession, CryptHSM $cryptHSM,
-								Crypt $crypt, IUserSession $userSession) {
+	public function __construct(
+		Manager $encryptionManager,
+		IUserManager $userManager,
+		ILogger $logger,
+		Util $encUtil,
+		IConfig $config,
+		IMailer $mailer,
+		IL10N $l10n,
+		QuestionHelper $questionHelper,
+		ISecureRandom $secureRandom,
+		IStorage $encStorage,
+		Session $encSession,
+		CryptHSM $cryptHSM,
+		Crypt $crypt,
+		IUserSession $userSession
+	) {
 		$this->encryptionManager = $encryptionManager;
 		$this->userManager = $userManager;
 		$this->logger = $logger;
@@ -146,13 +157,28 @@ class EncDecAllFactory {
 		 * 1. Setup class depends on KeyManager, which depends on crypto engine
 		 * 2. EncryptAll also depends on KeyManager, which depends on crypto engine
 		 */
-		$keyManager = new KeyManager($this->encStorage, $this->getCryptoEngine(),
-			$this->config, $this->userSession, $this->encSession, $this->logger,
-			$this->encUtil);
+		$keyManager = new KeyManager(
+			$this->encStorage,
+			$this->getCryptoEngine(),
+			$this->config,
+			$this->userSession,
+			$this->encSession,
+			$this->logger,
+			$this->encUtil
+		);
 		$userSetup = new Setup($this->logger, $this->userSession, $this->getCryptoEngine(), $keyManager);
-		return new EncryptAll($userSetup, $this->userManager, $rootView,
-			$keyManager, $this->encUtil, $this->config, $this->mailer, $this->l10n,
-			$this->questionHelper, $this->secureRandom);
+		return new EncryptAll(
+			$userSetup,
+			$this->userManager,
+			$rootView,
+			$keyManager,
+			$this->encUtil,
+			$this->config,
+			$this->mailer,
+			$this->l10n,
+			$this->questionHelper,
+			$this->secureRandom
+		);
 	}
 
 	/**

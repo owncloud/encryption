@@ -98,8 +98,14 @@ class RecreateMasterKeyTest extends TestCase {
 
 		$this->encdecAllFactory = $this->createMock(EncDecAllFactory::class);
 
-		$recreateMasterKeyCommand = new RecreateMasterKey($this->rootView, $this->util,
-			$this->encUitl, $this->appManager, $this->appConfig, $this->encdecAllFactory);
+		$recreateMasterKeyCommand = new RecreateMasterKey(
+			$this->rootView,
+			$this->util,
+			$this->encUitl,
+			$this->appManager,
+			$this->appConfig,
+			$this->encdecAllFactory
+		);
 
 		$this->commandTester = new CommandTester($recreateMasterKeyCommand);
 	}
@@ -170,8 +176,14 @@ class RecreateMasterKeyTest extends TestCase {
 			->willReturn(true);
 
 		$application = new Application();
-		$recreateCmd = new RecreateMasterKey($this->rootView, $this->util,
-			$this->encUitl, $this->appManager, $this->appConfig, $this->encdecAllFactory);
+		$recreateCmd = new RecreateMasterKey(
+			$this->rootView,
+			$this->util,
+			$this->encUitl,
+			$this->appManager,
+			$this->appConfig,
+			$this->encdecAllFactory
+		);
 		$application->add($recreateCmd);
 
 		$command = $application->find('encryption:recreate-master-key');

@@ -47,9 +47,11 @@ class SelectEncryptionType extends Command {
 	 * @param IConfig $config
 	 * @param QuestionHelper $questionHelper
 	 */
-	public function __construct(Util $util,
-								IConfig $config,
-								QuestionHelper $questionHelper) {
+	public function __construct(
+		Util $util,
+		IConfig $config,
+		QuestionHelper $questionHelper
+	) {
 		$this->util = $util;
 		$this->config = $config;
 		$this->questionHelper = $questionHelper;
@@ -63,7 +65,7 @@ class SelectEncryptionType extends Command {
 			->setName('encryption:select-encryption-type')
 			->setDescription('Select the encryption type. The encryption types available are: masterkey and user-keys. There is also no way to disable it again.')
 			->addArgument(
-					'encryption-type',
+				'encryption-type',
 				InputArgument::REQUIRED,
 				'Encryption type can be either: masterkey | user-keys'
 			)
@@ -107,7 +109,9 @@ class SelectEncryptionType extends Command {
 		if ($encryptionType === "masterkey") {
 			$question = new ConfirmationQuestion(
 				'Warning: Only available for fresh installations with no existing encrypted data! '
-				. 'There is also no way to disable it again. Do you want to continue? (y/n) ', false);
+				. 'There is also no way to disable it again. Do you want to continue? (y/n) ',
+				false
+			);
 			if ($yes || $this->questionHelper->ask($input, $output, $question)) {
 				$this->config->setAppValue('encryption', 'useMasterKey', '1');
 				$output->writeln('Master key successfully enabled.');
@@ -115,7 +119,9 @@ class SelectEncryptionType extends Command {
 		} elseif ($encryptionType === "user-keys") {
 			$question = new ConfirmationQuestion(
 				'Warning: Only available for fresh installations with no existing encrypted data! '
-				. 'There is also no way to disable it again. Do you want to continue? (y/n) ', false);
+				. 'There is also no way to disable it again. Do you want to continue? (y/n) ',
+				false
+			);
 			if ($yes || $this->questionHelper->ask($input, $output, $question)) {
 				$this->config->setAppValue('encryption', 'userSpecificKey', '1');
 				$output->writeln('User key successfully enabled.');

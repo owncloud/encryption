@@ -132,8 +132,10 @@ class RecoveryTest extends TestCase {
 	}
 
 	public function testChangeRecoveryKeyPasswordSuccessful() {
-		$this->assertFalse($this->instance->changeRecoveryKeyPassword('password',
-			'passwordOld'));
+		$this->assertFalse($this->instance->changeRecoveryKeyPassword(
+			'password',
+			'passwordOld'
+		));
 
 		$this->keyManagerMock->expects($this->once())
 			->method('getSystemPrivateKey');
@@ -145,8 +147,10 @@ class RecoveryTest extends TestCase {
 			->method('encryptPrivateKey')
 			->willReturn(true);
 
-		$this->assertTrue($this->instance->changeRecoveryKeyPassword('password',
-			'passwordOld'));
+		$this->assertTrue($this->instance->changeRecoveryKeyPassword(
+			'password',
+			'passwordOld'
+		));
 	}
 
 	public function testChangeRecoveryKeyPasswordCouldNotDecryptPrivateRecoveryKey() {
@@ -240,9 +244,11 @@ class RecoveryTest extends TestCase {
 		$this->keyManagerMock->expects($this->once())
 			->method('setAllFileKeys');
 
-		$this->assertNull(self::invokePrivate($this->instance,
+		$this->assertNull(self::invokePrivate(
+			$this->instance,
 			'recoverFile',
-			['/', 'testkey', 'admin']));
+			['/', 'testkey', 'admin']
+		));
 	}
 
 	public function testNormalShareOrFedShareRecoveryKeySkipped() {
@@ -305,14 +311,16 @@ class RecoveryTest extends TestCase {
 			->method('getAppValue')
 			->will($this->returnCallback([$this, 'getValueTester']));
 
-		$this->instance = new Recovery($this->userSessionMock,
+		$this->instance = new Recovery(
+			$this->userSessionMock,
 			$this->cryptMock,
 			$randomMock,
 			$this->keyManagerMock,
 			$this->configMock,
 			$keyStorageMock,
 			$this->fileMock,
-			$this->viewMock);
+			$this->viewMock
+		);
 	}
 
 	/**
