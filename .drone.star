@@ -49,236 +49,10 @@ config = {
 	},
 
 	'acceptance': {
-		'cli-masterkey': {
-			'suites': [
-				'cliEncryption',
-			],
-			'databases': [
-				'mysql:8.0',
-				'postgres:9.4',
-			],
-			'servers': [
-				'daily-master-qa',
-				'latest'
-			],
-			'extraSetup': [
-				{
-					'name': 'configure-app',
-					'image': 'owncloudci/php:7.2',
-					'pull': 'always',
-					'commands': [
-						'cd /var/www/owncloud/server',
-						'php occ encryption:enable',
-						'php occ encryption:select-encryption-type masterkey --yes',
-						'php occ config:list',
-					]
-				}
-			],
-		},
-		'api-masterkey': {
-			'suites': {
-				'apiEncryption': 'apiMasterKeys',
-			},
-			'databases': [
-				'mysql:8.0',
-				'postgres:9.4',
-			],
-			'servers': [
-				'daily-master-qa',
-				'latest'
-			],
-			'extraSetup': [
-				{
-					'name': 'configure-app',
-					'image': 'owncloudci/php:7.2',
-					'pull': 'always',
-					'commands': [
-						'cd /var/www/owncloud/server',
-						'php occ encryption:enable',
-						'php occ encryption:select-encryption-type masterkey --yes',
-						'php occ config:list',
-					]
-				}
-			],
-		},
-		'webUI-masterkey': {
-			'suites': {
-				'webUIMasterKeyType': 'webUIMasterKey',
-			},
-			'databases': [
-				'mysql:8.0',
-			],
-			'servers': [
-				'daily-master-qa',
-				'latest'
-			],
-			'emailNeeded': True,
-			'extraSetup': [
-				{
-					'name': 'configure-app',
-					'image': 'owncloudci/php:7.2',
-					'pull': 'always',
-					'commands': [
-						'cd /var/www/owncloud/server',
-						'php occ encryption:enable',
-						'php occ encryption:select-encryption-type masterkey --yes',
-						'php occ config:list',
-					]
-				}
-			],
-		},
-		'api-userkeys': {
-			'suites': {
-				'apiEncryption': 'apiUserKeys',
-			},
-			'databases': [
-				'mysql:8.0',
-				'postgres:9.4',
-			],
-			'servers': [
-				'daily-master-qa',
-				'latest'
-			],
-			'extraSetup': [
-				{
-					'name': 'configure-app',
-					'image': 'owncloudci/php:7.2',
-					'pull': 'always',
-					'commands': [
-						'cd /var/www/owncloud/server',
-						'php occ encryption:enable',
-						'php occ encryption:select-encryption-type user-keys --yes',
-						'php occ config:list',
-					]
-				}
-			],
-		},
-		'webUI-userkeys': {
-			'suites': {
-				'webUIUserKeysType': 'webUIUserKeys',
-			},
-			'databases': [
-				'mysql:8.0',
-			],
-			'servers': [
-				'daily-master-qa',
-				'latest'
-			],
-			'emailNeeded': True,
-			'extraSetup': [
-				{
-					'name': 'configure-app',
-					'image': 'owncloudci/php:7.2',
-					'pull': 'always',
-					'commands': [
-						'cd /var/www/owncloud/server',
-						'php occ encryption:enable',
-						'php occ encryption:select-encryption-type user-keys --yes',
-						'php occ config:list',
-					]
-				}
-			],
-		},
-		'api-core-masterkey': {
-			'suites': [
-				'apiCoreMKey',
-			],
-			'databases': [
-				'mysql:8.0',
-			],
-			'servers': [
-				'daily-master-qa',
-			],
-			'runCoreTests': True,
-			'runAllSuites': True,
-			'numberOfParts': 57,
-			'emailNeeded': True,
-			'federatedServerNeeded': True,
-			'extraEnvironment': {
-				'ENCRYPTION_TYPE': 'masterkey',
-			},
-			'extraSetup': [
-				{
-					'name': 'configure-app',
-					'image': 'owncloudci/php:7.2',
-					'pull': 'always',
-					'commands': [
-						'cd /var/www/owncloud/server',
-						'php occ encryption:enable',
-						'php occ encryption:select-encryption-type masterkey --yes',
-						'php occ config:list',
-					]
-				}
-			],
-		},
-		'api-core-latest-masterkey': {
-			'suites': [
-				'apiCoreMKey',
-			],
-			'databases': [
-				'mysql:8.0',
-			],
-			'servers': [
-				'latest',
-			],
-			'runCoreTests': True,
-			'runAllSuites': True,
-			'numberOfParts': 57,
-			'emailNeeded': True,
-			'federatedServerNeeded': True,
-			'cron': 'nightly',
-			'extraEnvironment': {
-				'ENCRYPTION_TYPE': 'masterkey',
-			},
-			'extraSetup': [
-				{
-					'name': 'configure-app',
-					'image': 'owncloudci/php:7.2',
-					'pull': 'always',
-					'commands': [
-						'cd /var/www/owncloud/server',
-						'php occ encryption:enable',
-						'php occ encryption:select-encryption-type masterkey --yes',
-						'php occ config:list',
-					]
-				}
-			],
-		},
-		'cli-core-masterkey': {
-			'suites': [
-				'cliCoreMKey',
-			],
-			'databases': [
-				'mysql:8.0',
-			],
-			'servers': [
-				'daily-master-qa',
-			],
-			'runCoreTests': True,
-			'runAllSuites': True,
-			'numberOfParts': 7,
-			'emailNeeded': True,
-			'extraEnvironment': {
-				'ENCRYPTION_TYPE': 'masterkey',
-			},
-			'extraSetup': [
-				{
-					'name': 'configure-app',
-					'image': 'owncloudci/php:7.2',
-					'pull': 'always',
-					'commands': [
-						'cd /var/www/owncloud/server',
-						'php occ encryption:enable',
-						'php occ encryption:select-encryption-type masterkey --yes',
-						'php occ config:list',
-					]
-				}
-			],
-		},
 		'webUI-core-masterkey': {
-			'suites': [
-				'webUIcoreMKey',
-			],
+			'suites': {
+				'webUISharingInternalGroups2': 'webUISharingIntGrp2',
+			},
 			'databases': [
 				'mysql:8.0',
 			],
@@ -286,43 +60,8 @@ config = {
 				'daily-master-qa',
 			],
 			'runCoreTests': True,
-			'runAllSuites': True,
-			'numberOfParts': 33,
 			'emailNeeded': True,
 			'federatedServerNeeded': True,
-			'extraEnvironment': {
-				'ENCRYPTION_TYPE': 'masterkey',
-			},
-			'extraSetup': [
-				{
-					'name': 'configure-app',
-					'image': 'owncloudci/php:7.2',
-					'pull': 'always',
-					'commands': [
-						'cd /var/www/owncloud/server',
-						'php occ encryption:enable',
-						'php occ encryption:select-encryption-type masterkey --yes',
-						'php occ config:list',
-					]
-				}
-			],
-		},
-		'webUI-core-latest-masterkey': {
-			'suites': [
-				'webUIcoreMKey',
-			],
-			'databases': [
-				'mysql:8.0',
-			],
-			'servers': [
-				'latest',
-			],
-			'runCoreTests': True,
-			'runAllSuites': True,
-			'numberOfParts': 33,
-			'emailNeeded': True,
-			'federatedServerNeeded': True,
-			'cron': 'nightly',
 			'extraEnvironment': {
 				'ENCRYPTION_TYPE': 'masterkey',
 			},
@@ -344,7 +83,7 @@ config = {
 }
 
 def main(ctx):
-	
+
 	before = beforePipelines()
 
 	coverageTests = coveragePipelines(ctx)
@@ -1713,7 +1452,7 @@ def installCore(version, db, useBundledApp):
 		'image': 'owncloudci/core',
 		'pull': 'always',
 		'settings': {
-			'version': version,
+			'git_reference': 'rerun-possibly-flaky-webUI-test',
 			'core_path': '/var/www/owncloud/server',
 			'db_type': dbType,
 			'db_name': database,
