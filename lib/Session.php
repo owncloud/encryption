@@ -31,10 +31,10 @@ class Session {
 	/** @var ISession */
 	protected $session;
 
-	const NOT_INITIALIZED = '0';
-	const INIT_EXECUTED = '1';
-	const INIT_SUCCESSFUL = '2';
-	const RUN_MIGRATION = '3';
+	public const NOT_INITIALIZED = '0';
+	public const INIT_EXECUTED = '1';
+	public const INIT_SUCCESSFUL = '2';
+	public const RUN_MIGRATION = '3';
 
 	/**
 	 * @param ISession $session

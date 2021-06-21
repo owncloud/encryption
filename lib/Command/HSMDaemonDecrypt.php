@@ -61,12 +61,14 @@ class HSMDaemonDecrypt extends Command {
 	 * @param CryptHSM $crypt
 	 * @param Util $util
 	 */
-	public function __construct(IClientService $httpClient,
-								IConfig $config,
-								ITimeFactory $timeFactory,
-								KeyManager $keyManager,
-								CryptHSM $crypt,
-								Util $util) {
+	public function __construct(
+		IClientService $httpClient,
+		IConfig $config,
+		ITimeFactory $timeFactory,
+		KeyManager $keyManager,
+		CryptHSM $crypt,
+		Util $util
+	) {
 		$this->httpClient = $httpClient->newClient();
 		$this->config = $config;
 		$this->timeFactory = $timeFactory;

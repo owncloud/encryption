@@ -52,11 +52,13 @@ class RecoveryController extends Controller {
 	 * @param IL10N $l10n
 	 * @param Recovery $recovery
 	 */
-	public function __construct($AppName,
-								IRequest $request,
-								IConfig $config,
-								IL10N $l10n,
-								Recovery $recovery) {
+	public function __construct(
+		$AppName,
+		IRequest $request,
+		IConfig $config,
+		IL10N $l10n,
+		Recovery $recovery
+	) {
 		parent::__construct($AppName, $request);
 		$this->config = $config;
 		$this->l = $l10n;
@@ -73,20 +75,26 @@ class RecoveryController extends Controller {
 		// Check if both passwords are the same
 		if (empty($recoveryPassword)) {
 			$errorMessage = (string)$this->l->t('Missing recovery key password');
-			return new DataResponse(['data' => ['message' => $errorMessage]],
-				Http::STATUS_BAD_REQUEST);
+			return new DataResponse(
+				['data' => ['message' => $errorMessage]],
+				Http::STATUS_BAD_REQUEST
+			);
 		}
 
 		if (empty($confirmPassword)) {
 			$errorMessage = (string)$this->l->t('Please repeat the recovery key password');
-			return new DataResponse(['data' => ['message' => $errorMessage]],
-				Http::STATUS_BAD_REQUEST);
+			return new DataResponse(
+				['data' => ['message' => $errorMessage]],
+				Http::STATUS_BAD_REQUEST
+			);
 		}
 
 		if ($recoveryPassword !== $confirmPassword) {
 			$errorMessage = (string)$this->l->t('Repeated recovery key password does not match the provided recovery key password');
-			return new DataResponse(['data' => ['message' => $errorMessage]],
-				Http::STATUS_BAD_REQUEST);
+			return new DataResponse(
+				['data' => ['message' => $errorMessage]],
+				Http::STATUS_BAD_REQUEST
+			);
 		}
 
 		if ($adminEnableRecovery === '1') {
@@ -132,8 +140,10 @@ class RecoveryController extends Controller {
 			return new DataResponse(['data' => ['message' => $errorMessage]], Http::STATUS_BAD_REQUEST);
 		}
 
-		$result = $this->recovery->changeRecoveryKeyPassword($newPassword,
-			$oldPassword);
+		$result = $this->recovery->changeRecoveryKeyPassword(
+			$newPassword,
+			$oldPassword
+		);
 
 		if ($result) {
 			return new DataResponse(
@@ -148,7 +158,9 @@ class RecoveryController extends Controller {
 				'data' => [
 					'message' => (string)$this->l->t('Could not change the password. Maybe the old password was not correct.')
 				]
-			], Http::STATUS_BAD_REQUEST);
+			],
+			Http::STATUS_BAD_REQUEST
+		);
 	}
 
 	/**
@@ -183,6 +195,8 @@ class RecoveryController extends Controller {
 				'data' => [
 					'message' => (string)$this->l->t('Could not enable the recovery key, please try again or contact your administrator')
 				]
-			], Http::STATUS_BAD_REQUEST);
+			],
+			Http::STATUS_BAD_REQUEST
+		);
 	}
 }

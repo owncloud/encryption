@@ -165,7 +165,8 @@ class EncryptionTest extends TestCase {
 	 * @dataProvider dataProviderForTestGetPathToRealFile
 	 */
 	public function testGetPathToRealFile($path, $expected) {
-		$this->assertSame($expected,
+		$this->assertSame(
+			$expected,
 			self::invokePrivate($this->instance, 'getPathToRealFile', [$path])
 		);
 	}
@@ -268,7 +269,8 @@ class EncryptionTest extends TestCase {
 
 		$this->instance->begin($path, 'user', 'r', [], []);
 
-		$this->assertSame($fileKey,
+		$this->assertSame(
+			$fileKey,
 			$this->invokePrivate($this->instance, 'fileKey')
 		);
 	}
@@ -295,7 +297,8 @@ class EncryptionTest extends TestCase {
 		$this->keyManagerMock->expects($this->never())->method('getVersion');
 		$this->keyManagerMock->expects($this->never())->method('setVersion');
 
-		$this->assertSame($expected,
+		$this->assertSame(
+			$expected,
 			$this->instance->update('path', 'user1', ['users' => ['user1']])
 		);
 	}
@@ -376,7 +379,8 @@ class EncryptionTest extends TestCase {
 				->willReturn($this->storageMock);
 		}
 
-		$this->assertSame($expected,
+		$this->assertSame(
+			$expected,
 			$this->instance->shouldEncrypt($path)
 		);
 	}

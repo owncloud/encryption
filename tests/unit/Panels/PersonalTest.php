@@ -69,7 +69,8 @@ class PersonalTest extends \Test\TestCase {
 			$this->l,
 			$this->userManager,
 			$this->session,
-			$this->encKeyStorage);
+			$this->encKeyStorage
+		);
 	}
 
 	public function testGetSection() {

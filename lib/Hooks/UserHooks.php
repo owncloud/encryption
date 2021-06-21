@@ -102,17 +102,19 @@ class UserHooks implements IHook {
 	 * @param IConfig $config
 	 * @param EventDispatcherInterface $eventDispatcher
 	 */
-	public function __construct(KeyManager $keyManager,
-								IUserManager $userManager,
-								ILogger $logger,
-								Setup $userSetup,
-								IUserSession $user,
-								Util $util,
-								Session $session,
-								Crypt $crypt,
-								Recovery $recovery,
-								IConfig $config,
-								EventDispatcherInterface $eventDispatcher) {
+	public function __construct(
+		KeyManager $keyManager,
+		IUserManager $userManager,
+		ILogger $logger,
+		Setup $userSetup,
+		IUserSession $user,
+		Util $util,
+		Session $session,
+		Crypt $crypt,
+		Recovery $recovery,
+		IConfig $config,
+		EventDispatcherInterface $eventDispatcher
+	) {
 		$this->keyManager = $keyManager;
 		$this->userManager = $userManager;
 		$this->logger = $logger;
@@ -253,8 +255,10 @@ class UserHooks implements IHook {
 
 			// Save private key
 			if ($encryptedPrivateKey) {
-				$this->keyManager->setPrivateKey($this->user->getUser()->getUID(),
-					$this->crypt->generateHeader() . $encryptedPrivateKey);
+				$this->keyManager->setPrivateKey(
+					$this->user->getUser()->getUID(),
+					$this->crypt->generateHeader() . $encryptedPrivateKey
+				);
 			} else {
 				$this->logger->error('Encryption could not update users encryption password');
 			}

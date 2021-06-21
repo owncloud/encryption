@@ -60,8 +60,15 @@ class CryptHSMTest extends TestCase {
 		$this->clientService = $this->createMock(IClientService::class);
 		$this->request = $this->createMock(IRequest::class);
 		$this->timeFactory = $this->createMock(ITimeFactory::class);
-		$this->cryptHSM = new CryptHSM($this->logger, $this->userSession, $this->config,
-			$this->l10n, $this->clientService, $this->request, $this->timeFactory);
+		$this->cryptHSM = new CryptHSM(
+			$this->logger,
+			$this->userSession,
+			$this->config,
+			$this->l10n,
+			$this->clientService,
+			$this->request,
+			$this->timeFactory
+		);
 	}
 
 	public function testCreateKeyPair() {

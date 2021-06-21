@@ -77,11 +77,22 @@ class EncDecAllFactoryTest extends TestCase {
 		$this->cryptHSM = $this->createMock(CryptHSM::class);
 		$this->crypt = $this->createMock(Crypt::class);
 		$this->userSession = $this->createMock(IUserSession::class);
-		$this->encdecAllFactory = new EncDecAllFactory($this->encryptionManager,
-			$this->userManager, $this->logger, $this->encUtil, $this->config,
-			$this->mailer, $this->l10n, $this->questionHelper, $this->secureRandom,
-			$this->encStorage, $this->encSession, $this->cryptHSM, $this->crypt,
-			$this->userSession);
+		$this->encdecAllFactory = new EncDecAllFactory(
+			$this->encryptionManager,
+			$this->userManager,
+			$this->logger,
+			$this->encUtil,
+			$this->config,
+			$this->mailer,
+			$this->l10n,
+			$this->questionHelper,
+			$this->secureRandom,
+			$this->encStorage,
+			$this->encSession,
+			$this->cryptHSM,
+			$this->crypt,
+			$this->userSession
+		);
 	}
 
 	public function testGetDecryptAllObj() {

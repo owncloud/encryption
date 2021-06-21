@@ -66,9 +66,14 @@ class RecreateMasterKey extends Command {
 	 * @param IAppConfig $appConfig
 	 * @param EncDecAllFactory $encDecAllFactory
 	 */
-	public function __construct(View $rootView, Util $util, \OC\Encryption\Util $encUtil,
-								IAppManager $appManager, IAppConfig $appConfig,
-								EncDecAllFactory $encDecAllFactory) {
+	public function __construct(
+		View $rootView,
+		Util $util,
+		\OC\Encryption\Util $encUtil,
+		IAppManager $appManager,
+		IAppConfig $appConfig,
+		EncDecAllFactory $encDecAllFactory
+	) {
 		parent::__construct();
 		$this->rootView = $rootView;
 		$this->util = $util;
@@ -105,7 +110,9 @@ class RecreateMasterKey extends Command {
 		if ($this->util->isMasterKeyEnabled()) {
 			$question = new ConfirmationQuestion(
 				'Warning: In order to re-create master key, the entire ownCloud filesystem will be decrypted and then encrypted using new master key.'
-				. ' Do you want to continue? (y/n)', false);
+				. ' Do you want to continue? (y/n)',
+				false
+			);
 			//$questionHelper = $this->getHelper('question');
 			if ($yes || $this->getHelper('question')->ask($input, $output, $question)) {
 				$output->writeln("Decryption started\n");

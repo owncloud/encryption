@@ -76,9 +76,9 @@ class CryptHSM extends Crypt {
 	 */
 	private $timeFactory;
 
-	const PATH_NEW_KEY = '/keys/new';
-	const PATH_DECRYPT = '/decrypt/'; // appended with keyid
-	const BINARY_ENCODED_KEY_LENGTH = 256;
+	public const PATH_NEW_KEY = '/keys/new';
+	public const PATH_DECRYPT = '/decrypt/'; // appended with keyid
+	public const BINARY_ENCODED_KEY_LENGTH = 256;
 
 	/**
 	 * @param ILogger $logger
@@ -107,7 +107,8 @@ class CryptHSM extends Crypt {
 	 */
 	public function createKeyPair($label = null) {
 		$response = $this->clientService->newClient()->post(
-			$this->hsmUrl.$this::PATH_NEW_KEY, [
+			$this->hsmUrl.$this::PATH_NEW_KEY,
+			[
 			'headers' => [
 				'Authorization' => 'Bearer ' . JWT::token([
 						'iss' => $this->config->getSystemValue('instanceid'),
@@ -117,7 +118,8 @@ class CryptHSM extends Crypt {
 						'rid' => $this->request->getId(),
 					], $this->secret)
 			],
-		]);
+		]
+		);
 		$keyPair = \json_decode($response->getBody(), true);
 
 		return [
@@ -153,7 +155,8 @@ class CryptHSM extends Crypt {
 
 		try {
 			$response =  $this->clientService->newClient()->post(
-				$this->hsmUrl.$this::PATH_DECRYPT.$keyId, [
+				$this->hsmUrl.$this::PATH_DECRYPT.$keyId,
+				[
 				'headers' => [
 					'Authorization' => 'Bearer ' . JWT::token([
 							'iss' => $this->config->getSystemValue('instanceid'),
@@ -164,7 +167,8 @@ class CryptHSM extends Crypt {
 						], $this->secret)
 				],
 				'body' => $shareKey
-			]);
+			]
+			);
 			$decryptedKey = $response->getBody();
 
 			// differentiate encryption type by looking key length

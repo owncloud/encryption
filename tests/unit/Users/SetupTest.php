@@ -57,10 +57,12 @@ class SetupTest extends TestCase {
 
 		/** @var \OCP\ILogger $logMock */
 		/** @var \OCP\IUserSession $userSessionMock */
-		$this->instance = new Setup($logMock,
+		$this->instance = new Setup(
+			$logMock,
 			$userSessionMock,
 			$this->cryptMock,
-			$this->keyManagerMock);
+			$this->keyManagerMock
+		);
 	}
 
 	public function testSetupSystem() {
@@ -88,7 +90,8 @@ class SetupTest extends TestCase {
 				->with('uid', 'password', 'keyPair')->willReturn(true);
 		}
 
-		$this->assertSame($expected,
+		$this->assertSame(
+			$expected,
 			$this->instance->setupUser('uid', 'password')
 		);
 	}
