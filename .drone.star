@@ -34,18 +34,6 @@ config = {
 				'postgres:9.4',
 			],
 		},
-		'withoutCoverage' : {
-			'phpVersions': [
-				'7.3',
-				'7.4',
-			],
-			'databases': [
-				'sqlite',
-				'mysql:8.0',
-				'postgres:9.4',
-			],
-			'coverage': False
-		},
 	},
 
 	'acceptance': {
