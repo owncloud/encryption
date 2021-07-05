@@ -191,7 +191,7 @@ config = {
 			],
 			'runCoreTests': True,
 			'runAllSuites': True,
-			'numberOfParts': 57,
+			'numberOfParts': 50,
 			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'extraEnvironment': {
@@ -223,7 +223,7 @@ config = {
 			],
 			'runCoreTests': True,
 			'runAllSuites': True,
-			'numberOfParts': 57,
+			'numberOfParts': 50,
 			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'cron': 'nightly',
@@ -287,7 +287,7 @@ config = {
 			],
 			'runCoreTests': True,
 			'runAllSuites': True,
-			'numberOfParts': 33,
+			'numberOfParts': 28,
 			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'extraEnvironment': {
@@ -319,7 +319,7 @@ config = {
 			],
 			'runCoreTests': True,
 			'runAllSuites': True,
-			'numberOfParts': 33,
+			'numberOfParts': 28,
 			'emailNeeded': True,
 			'federatedServerNeeded': True,
 			'cron': 'nightly',
@@ -344,7 +344,7 @@ config = {
 }
 
 def main(ctx):
-	
+
 	before = beforePipelines(ctx)
 
 	coverageTests = coveragePipelines(ctx)
