@@ -554,6 +554,23 @@ class Encryption implements IEncryptionModule {
 			$realPath = \substr($realPath, 0, $length);
 		}
 
+		// handle versions for file spaces
+		if ($parts[1] === 'files_spaces' && $parts[3] === 'versions') {
+			$fileId = (int)$parts[4];
+			$cache = \OC::$server->getMountProviderCollection()->getMountCache();
+			$mounts = $cache->getMountsForFileId($fileId);
+			$filePath = $mounts[0]->getMountPoint();
+
+			$view = new View();
+			$fileInfo = $view->getFileInfo($path);
+			$storage = $fileInfo->getStorage();
+
+			$cache = $storage->getCache();
+			$fileName = $cache->get($fileId)->getName();
+
+			return $filePath . $fileName;
+		}
+
 		return $realPath;
 	}
 
