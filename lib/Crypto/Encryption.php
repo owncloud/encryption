@@ -172,7 +172,7 @@ class Encryption implements IEncryptionModule {
 	 *                       or if no additional data is needed return a empty array
 	 */
 	public function begin($path, $user, $mode, array $header, array $accessList, $sourceFileOfRename = null) {
-		$this->path = $this->getPathToRealFile($path);
+		$this->path = $this->getPathToRealFile($path, $user);
 		$this->accessList = $accessList;
 		$this->user = $user;
 		$this->isWriteOperation = false;
@@ -545,7 +545,7 @@ class Encryption implements IEncryptionModule {
 	 * @param string $path
 	 * @return string
 	 */
-	protected function getPathToRealFile($path) {
+	protected function getPathToRealFile($path, $user) {
 		$realPath = $path;
 		$parts = \explode('/', $path);
 		if ($parts[2] === 'files_versions') {
@@ -567,6 +567,11 @@ class Encryption implements IEncryptionModule {
 
 			$cache = $storage->getCache();
 			$fileName = $cache->get($fileId)->getName();
+			$pathParts = \explode("/", $filePath);
+			if ($pathParts[1] !== $user) {
+				$pathParts[1] = $user;
+				$filePath = \implode("/", $pathParts);
+			}
 
 			return $filePath . $fileName;
 		}
