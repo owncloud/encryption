@@ -566,7 +566,7 @@ class Encryption implements IEncryptionModule {
 			$storage = $fileInfo->getStorage();
 
 			$cache = $storage->getCache();
-			$fileName = $cache->get($fileId)->getName();
+			$fileName = $cache->get($fileId)->getPath();
 			$pathParts = \explode("/", $filePath);
 			if ($pathParts[1] !== $user) {
 				$pathParts[1] = $user;
