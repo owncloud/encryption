@@ -70,15 +70,14 @@ class TestEnableMasterKey extends TestCase {
 	 * @param string $answer
 	 */
 	public function testExecute($isAlreadyEnabled, $answer) {
-		$this->config->expects($this->at(0))
+		$this->config
+			->expects($this->exactly(2))
 			->method('getAppValue')
-			->with('core', 'encryption_enabled', 'no')
-			->willReturn("yes");
-
-		$this->config->expects($this->at(1))
-			->method('getAppValue')
-			->with('encryption', 'userSpecificKey', '')
-			->willReturn("");
+			->withConsecutive(
+				['core', 'encryption_enabled', 'no'],
+				['encryption', 'userSpecificKey', ''],
+			)
+			->willReturnOnConsecutiveCalls("yes", "");
 
 		$this->util->expects($this->once())->method('isMasterKeyEnabled')
 			->willReturn($isAlreadyEnabled);

@@ -168,9 +168,9 @@ class EncryptAllTest extends TestCase {
 			->getMock();
 
 		$this->util->method('isMasterKeyEnabled')->willReturn(false);
-		$encryptAll->expects($this->at(0))->method('createKeyPairs')->with();
-		$encryptAll->expects($this->at(1))->method('encryptAllUsersFiles')->with();
-		$encryptAll->expects($this->at(2))->method('outputPasswords')->with();
+		$encryptAll->expects($this->once())->method('createKeyPairs')->with();
+		$encryptAll->expects($this->once())->method('encryptAllUsersFiles')->with();
+		$encryptAll->expects($this->once())->method('outputPasswords')->with();
 
 		$encryptAll->encryptAll($this->inputInterface, $this->outputInterface);
 	}
@@ -198,7 +198,7 @@ class EncryptAllTest extends TestCase {
 		$this->util->method('isMasterKeyEnabled')->willReturn(true);
 		$encryptAll->expects($this->never())->method('createKeyPairs');
 		$this->keyManager->expects($this->once())->method('validateMasterKey');
-		$encryptAll->expects($this->at(0))->method('encryptAllUsersFiles')->with();
+		$encryptAll->expects($this->once())->method('encryptAllUsersFiles')->with();
 		$encryptAll->expects($this->never())->method('outputPasswords');
 
 		$encryptAll->encryptAll($this->inputInterface, $this->outputInterface);
@@ -278,8 +278,13 @@ class EncryptAllTest extends TestCase {
 		$this->invokePrivate($encryptAll, 'output', [$this->outputInterface]);
 		$this->invokePrivate($encryptAll, 'userPasswords', [['user1' => 'pwd1', 'user2' => 'pwd2']]);
 
-		$encryptAll->expects($this->at(0))->method('encryptUsersFiles')->with('user1');
-		$encryptAll->expects($this->at(1))->method('encryptUsersFiles')->with('user2');
+		$encryptAll
+			->expects($this->exactly(2))
+			->method('encryptUsersFiles')
+			->withConsecutive(
+				['user1'],
+				['user2'],
+			);
 
 		$this->invokePrivate($encryptAll, 'encryptAllUsersFiles');
 	}
@@ -310,20 +315,18 @@ class EncryptAllTest extends TestCase {
 		$mountPoint = $this->createMock(IMountPoint::class);
 		$fileInfo1 = new FileInfo('/usr1/files/foo', $commonStorage, 'foo', ['name' => 'foo', 'type'=>'dir'], $mountPoint);
 		$fileInfo2 = new FileInfo('/usr1/files/bar', $commonStorage, 'foo', ['name' => 'bar', 'type'=>'file'], $mountPoint);
-		$this->view->expects($this->at(0))->method('getDirectoryContent')
-			->with('/user1/files')->willReturn(
-				[
-					$fileInfo1,
-					$fileInfo2,
-				]
-			);
-
 		$fileInfo3 = new FileInfo('/usr1/files/foo/subfile', $commonStorage, 'foo', ['name' => 'subfile', 'type'=>'file'], $mountPoint);
-		$this->view->expects($this->at(3))->method('getDirectoryContent')
-			->with('/user1/files/foo')->willReturn(
-				[
-					$fileInfo3
-				]
+
+		$this->view
+			->expects($this->exactly(2))
+			->method('getDirectoryContent')
+			->withConsecutive(
+				['/user1/files'],
+				['/user1/files/foo'],
+			)
+			->willReturnOnConsecutiveCalls(
+				[$fileInfo1, $fileInfo2],
+				[$fileInfo3],
 			);
 
 		$this->view->method('is_dir')
@@ -336,8 +339,13 @@ class EncryptAllTest extends TestCase {
 				}
 			);
 
-		$encryptAll->expects($this->at(1))->method('encryptFile')->with('/user1/files/bar');
-		$encryptAll->expects($this->at(2))->method('encryptFile')->with('/user1/files/foo/subfile');
+		$encryptAll
+			->expects($this->exactly(2))
+			->method('encryptFile')
+			->withConsecutive(
+				['/user1/files/bar'],
+				['/user1/files/foo/subfile'],
+			);
 
 		$progressBar = new ProgressBar(new NullOutput());
 
