@@ -19,7 +19,7 @@ config = {
     "phpunit": {
         "withCoverage": {
             "phpVersions": [
-                "7.3",
+                "7.4",
             ],
             "databases": [
                 "sqlite",
@@ -29,7 +29,7 @@ config = {
         },
         "withoutCoverage": {
             "phpVersions": [
-                "7.4",
+                "7.3",
             ],
             "databases": [
                 "sqlite",
