@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased] - XXXX-XX-XX
 
+### Added
+- Add increment option to fix-encrypted-version command [#279](https://github.com/owncloud/encryption/issues/279)
 
 ## [1.5.1] - 2021-05-28
 
