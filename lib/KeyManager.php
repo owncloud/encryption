@@ -62,10 +62,6 @@ class KeyManager {
 	 */
 	private $masterKeyId;
 	/**
-	 * @var string UserID
-	 */
-	private $keyId;
-	/**
 	 * @var string
 	 */
 	private $publicKeyId = 'publicKey';
@@ -100,7 +96,6 @@ class KeyManager {
 	 * @param IStorage $keyStorage
 	 * @param Crypt $crypt
 	 * @param IConfig $config
-	 * @param IUserSession $userSession
 	 * @param Session $session
 	 * @param ILogger $log
 	 * @param Util $util
@@ -109,7 +104,6 @@ class KeyManager {
 		IStorage $keyStorage,
 		Crypt $crypt,
 		IConfig $config,
-		IUserSession $userSession,
 		Session $session,
 		ILogger $log,
 		Util $util
@@ -136,7 +130,6 @@ class KeyManager {
 
 		$this->setPublicShareKeyIDAndMasterKeyId();
 
-		$this->keyId = $userSession !== null && $userSession->isLoggedIn() ? $userSession->getUser()->getUID() : false;
 		$this->log = $log;
 	}
 
@@ -539,11 +532,13 @@ class KeyManager {
 
 		if ($privateKey && $publicKey) {
 			return true;
-		} elseif (!$privateKey && !$publicKey) {
-			return false;
-		} else {
-			throw $exception;
 		}
+
+		if (!$privateKey && !$publicKey) {
+			return false;
+		}
+
+		throw $exception;
 	}
 
 	/**

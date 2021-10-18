@@ -178,7 +178,6 @@ class Application extends \OCP\AppFramework\App {
 					$server->getEncryptionKeyStorage(),
 					$c->query('Crypt'),
 					$server->getConfig(),
-					$server->getUserSession(),
 					new Session($server->getSession()),
 					$server->getLogger(),
 					$c->query('Util')

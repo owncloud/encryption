@@ -72,7 +72,6 @@ class FixEncryptedVersionTest extends TestCase {
 			\OC::$server->getEncryptionKeyStorage(),
 			$crypt,
 			\OC::$server->getConfig(),
-			\OC::$server->getUserSession(),
 			$encryptionSession,
 			\OC::$server->getLogger(),
 			$encryptionUtil

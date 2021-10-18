@@ -48,9 +48,6 @@ class KeyManagerTest extends TestCase {
 	/** @var \OCA\Encryption\Crypto\Crypt|\PHPUnit\Framework\MockObject\MockObject */
 	private $cryptMock;
 
-	/** @var \OCP\IUserSession|\PHPUnit\Framework\MockObject\MockObject */
-	private $userMock;
-
 	/** @var \OCA\Encryption\Session|\PHPUnit\Framework\MockObject\MockObject */
 	private $sessionMock;
 
@@ -75,7 +72,6 @@ class KeyManagerTest extends TestCase {
 		$this->configMock->expects($this->any())
 			->method('getAppValue')
 			->will($this->returnCallback([$this, 'returnAppValue']));
-		$this->userMock = $this->createMock('OCP\IUserSession');
 		$this->sessionMock = $this->getMockBuilder('OCA\Encryption\Session')
 			->disableOriginalConstructor()
 			->getMock();
@@ -88,7 +84,6 @@ class KeyManagerTest extends TestCase {
 			$this->keyStorageMock,
 			$this->cryptMock,
 			$this->configMock,
-			$this->userMock,
 			$this->sessionMock,
 			$this->logMock,
 			$this->utilMock
@@ -261,7 +256,6 @@ class KeyManagerTest extends TestCase {
 					$this->keyStorageMock,
 					$this->cryptMock,
 					$this->configMock,
-					$this->userMock,
 					$this->sessionMock,
 					$this->logMock,
 					$this->utilMock
@@ -518,7 +512,6 @@ class KeyManagerTest extends TestCase {
 					$this->keyStorageMock,
 					$this->cryptMock,
 					$localConfigMock,
-					$this->userMock,
 					$this->sessionMock,
 					$this->logMock,
 					$this->utilMock
@@ -538,7 +531,6 @@ class KeyManagerTest extends TestCase {
 					$this->keyStorageMock,
 					$this->cryptMock,
 					$localConfigMock,
-					$this->userMock,
 					$this->sessionMock,
 					$this->logMock,
 					$this->utilMock
@@ -593,7 +585,6 @@ class KeyManagerTest extends TestCase {
 					$this->keyStorageMock,
 					$this->cryptMock,
 					$localConfigMock,
-					$this->userMock,
 					$this->sessionMock,
 					$this->logMock,
 					$this->utilMock

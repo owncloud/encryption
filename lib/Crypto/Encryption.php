@@ -171,7 +171,7 @@ class Encryption implements IEncryptionModule {
 	 *                       written to the header, in case of a write operation
 	 *                       or if no additional data is needed return a empty array
 	 */
-	public function begin($path, $user, $mode, array $header, array $accessList, $sourceFileOfRename = null) {
+	public function begin($path, $user, $mode, array $header, array $accessList, $sourceFileOfRename = null, $fileEncryptionVersion = null) {
 		$this->path = $this->getPathToRealFile($path);
 		$this->accessList = $accessList;
 		$this->user = $user;
@@ -198,10 +198,13 @@ class Encryption implements IEncryptionModule {
 		// always use the version from the original file, also part files
 		// need to have a correct version number if they get moved over to the
 		// final location
-		if ($sourceFileOfRename !== null) {
-			$this->version = $this->keyManager->getVersion($sourceFileOfRename, new View());
-		} else {
-			$this->version = (int)$this->keyManager->getVersion($this->stripPartFileExtension($path), new View());
+		$this->version = $fileEncryptionVersion;
+		if (!$this->version) {
+			if ($sourceFileOfRename !== null) {
+				$this->version = $this->keyManager->getVersion($sourceFileOfRename, new View());
+			} else {
+				$this->version = (int)$this->keyManager->getVersion($this->stripPartFileExtension($path), new View());
+			}
 		}
 
 		if (
