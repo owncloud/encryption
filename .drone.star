@@ -1860,7 +1860,7 @@ def installCore(ctx, version, db, useBundledApp):
 
     stepDefinition = {
         "name": "install-core",
-        "image": "owncloudci/core",
+        "image": "owncloudci/core:nodejs14",
         "pull": "always",
         "settings": {
             "git_reference": "feat/storage-based-encryption-key-location-2",
