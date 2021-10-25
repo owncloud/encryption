@@ -44,7 +44,7 @@ class PersonalEncryptionSettingsPage extends OwncloudPage {
 	 *
 	 * @return void
 	 */
-	public function enablePasswordRecovery() {
+	public function enablePasswordRecovery():void {
 		$userEnableRecoveryCheckbox = $this->find('xpath', $this->userEnableRecoveryCheckboxXpath);
 		$this->assertElementNotNull(
 			$userEnableRecoveryCheckbox,
@@ -68,8 +68,8 @@ class PersonalEncryptionSettingsPage extends OwncloudPage {
 	 */
 	public function waitTillPageIsLoaded(
 		Session $session,
-		$timeout_msec = STANDARD_UI_WAIT_TIMEOUT_MILLISEC
-	) {
+		int $timeout_msec = STANDARD_UI_WAIT_TIMEOUT_MILLISEC
+	):void {
 		$currentTime = \microtime(true);
 		$end = $currentTime + ($timeout_msec / 1000);
 		while ($currentTime <= $end) {

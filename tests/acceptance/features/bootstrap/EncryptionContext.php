@@ -49,7 +49,7 @@ class EncryptionContext implements Context {
 	 * @return void
 	 * @throws \Exception
 	 */
-	public function recreateMasterKeyUsingOccCommand() {
+	public function recreateMasterKeyUsingOccCommand():void {
 		$this->featureContext->runOcc(['encryption:recreate-master-key', '-y']);
 		$this->occContext->theCommandShouldHaveBeenSuccessful();
 	}
@@ -59,7 +59,7 @@ class EncryptionContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function encryptionHasBeenEnabled() {
+	public function encryptionHasBeenEnabled():void {
 		$this->featureContext->runOcc(['encryption:enable']);
 	}
 
@@ -72,7 +72,7 @@ class EncryptionContext implements Context {
 	 * @return void
 	 * @throws \Exception
 	 */
-	public function theAdministratorSetsEncryptionTypeToUsingTheOccCommand($encryptionType) {
+	public function theAdministratorSetsEncryptionTypeToUsingTheOccCommand(string $encryptionType):void {
 		$this->featureContext->runOcc(
 			["encryption:select-encryption-type", $encryptionType, "-y"]
 		);
@@ -84,7 +84,7 @@ class EncryptionContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function theAdministratorEncryptsAllDataUsingTheOccCommand() {
+	public function theAdministratorEncryptsAllDataUsingTheOccCommand():void {
 		$this->featureContext->runOcc(["encryption:encrypt-all", "-y"]);
 	}
 
@@ -95,7 +95,7 @@ class EncryptionContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function theAdministratorDecryptsUserKeysBasedEncryptionWithKey($recoveryKey) {
+	public function theAdministratorDecryptsUserKeysBasedEncryptionWithKey(string $recoveryKey):void {
 		$this->occContext->invokingTheCommandWithEnvVariable(
 			"encryption:decrypt-all -m recovery -c yes",
 			'OC_RECOVERY_PASSWORD',
@@ -111,7 +111,10 @@ class EncryptionContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function fileOfUserShouldNotBeEncrypted($fileName, $username) {
+	public function fileOfUserShouldNotBeEncrypted(
+		string $fileName,
+		string $username
+	):void {
 		$fileName = \ltrim($fileName, "/");
 		$filePath = "data/$username/files/$fileName";
 		$this->featureContext->readFileInServerRoot($filePath);
@@ -138,7 +141,10 @@ class EncryptionContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function fileOfUserShouldBeEncrypted($fileName, $username) {
+	public function fileOfUserShouldBeEncrypted(
+		string $fileName,
+		string $username
+	):void {
 		$fileName = \ltrim($fileName, "/");
 		$filePath = "data/$username/files/$fileName";
 		$this->featureContext->readFileInServerRoot($filePath);
@@ -161,7 +167,7 @@ class EncryptionContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function setUpScenario(BeforeScenarioScope $scope) {
+	public function setUpScenario(BeforeScenarioScope $scope):void {
 		// Get the environment
 		$environment = $scope->getEnvironment();
 		// Get all the contexts you need in this context
