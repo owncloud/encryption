@@ -37,7 +37,7 @@ class WebUIPersonalEncryptionSettingsContext extends RawMinkContext implements C
 	 * @var FeatureContext
 	 */
 	private $featureContext;
-	
+
 	/**
 	 *
 	 * @var WebUIGeneralContext
@@ -75,7 +75,7 @@ class WebUIPersonalEncryptionSettingsContext extends RawMinkContext implements C
 	 *
 	 * @return void
 	 */
-	public function theUserHasBrowsedToThePersonalEncryptionSettingsPage() {
+	public function theUserHasBrowsedToThePersonalEncryptionSettingsPage():void {
 		$this->personalEncryptionSettingsPage->open();
 		$this->personalEncryptionSettingsPage->waitTillPageIsLoaded($this->getSession());
 	}
@@ -85,7 +85,7 @@ class WebUIPersonalEncryptionSettingsContext extends RawMinkContext implements C
 	 *
 	 * @return void
 	 */
-	public function theUserHasEnabledPasswordRecovery() {
+	public function theUserHasEnabledPasswordRecovery():void {
 		$this->personalEncryptionSettingsPage->enablePasswordRecovery();
 		$this->personalEncryptionSettingsPage->waitForAjaxCallsToStartAndFinish($this->getSession());
 	}
@@ -97,7 +97,7 @@ class WebUIPersonalEncryptionSettingsContext extends RawMinkContext implements C
 	 *
 	 * @return void
 	 */
-	public function setUpScenario(BeforeScenarioScope $scope) {
+	public function setUpScenario(BeforeScenarioScope $scope):void {
 		// Get the environment
 		$environment = $scope->getEnvironment();
 		// Get all the contexts you need in this context
