@@ -40,137 +40,7 @@ config = {
         },
     },
     "acceptance": {
-        "cli-masterkey": {
-            "suites": [
-                "cliEncryption",
-            ],
-            "databases": [
-                "mysql:8.0",
-                "postgres:9.4",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": "owncloudci/php:7.4",
-                    "pull": "always",
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "api-masterkey": {
-            "suites": {
-                "apiEncryption": "apiMasterKeys",
-            },
-            "databases": [
-                "mysql:8.0",
-                "postgres:9.4",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": "owncloudci/php:7.4",
-                    "pull": "always",
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "webUI-masterkey": {
-            "suites": {
-                "webUIMasterKeyType": "webUIMasterKey",
-            },
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "emailNeeded": True,
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": "owncloudci/php:7.4",
-                    "pull": "always",
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "api-userkeys": {
-            "suites": {
-                "apiEncryption": "apiUserKeys",
-            },
-            "databases": [
-                "mysql:8.0",
-                "postgres:9.4",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": "owncloudci/php:7.4",
-                    "pull": "always",
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type user-keys --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "webUI-userkeys": {
-            "suites": {
-                "webUIUserKeysType": "webUIUserKeys",
-            },
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "emailNeeded": True,
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": "owncloudci/php:7.4",
-                    "pull": "always",
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type user-keys --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "api-core-masterkey": {
+        "api-core-user-keys": {
             "suites": [
                 "apiCoreMKey",
             ],
@@ -186,7 +56,7 @@ config = {
             "emailNeeded": True,
             "federatedServerNeeded": True,
             "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
+                "ENCRYPTION_TYPE": "user-keys",
             },
             "extraSetup": [
                 {
@@ -196,13 +66,13 @@ config = {
                     "commands": [
                         "cd /var/www/owncloud/server",
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
+                        "php occ encryption:select-encryption-type user-keys --yes",
                         "php occ config:list",
                     ],
                 },
             ],
         },
-        "api-core-latest-masterkey": {
+        "api-core-latest-user-keys": {
             "suites": [
                 "apiCoreMKey",
             ],
@@ -219,7 +89,7 @@ config = {
             "federatedServerNeeded": True,
             "cron": "nightly",
             "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
+                "ENCRYPTION_TYPE": "user-keys",
             },
             "extraSetup": [
                 {
@@ -229,13 +99,13 @@ config = {
                     "commands": [
                         "cd /var/www/owncloud/server",
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
+                        "php occ encryption:select-encryption-type user-keys --yes",
                         "php occ config:list",
                     ],
                 },
             ],
         },
-        "cli-core-masterkey": {
+        "cli-core-user-keys": {
             "suites": [
                 "cliCoreMKey",
             ],
@@ -250,7 +120,7 @@ config = {
             "numberOfParts": 7,
             "emailNeeded": True,
             "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
+                "ENCRYPTION_TYPE": "user-keys",
             },
             "extraSetup": [
                 {
@@ -260,13 +130,13 @@ config = {
                     "commands": [
                         "cd /var/www/owncloud/server",
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
+                        "php occ encryption:select-encryption-type user-keys --yes",
                         "php occ config:list",
                     ],
                 },
             ],
         },
-        "webUI-core-masterkey": {
+        "webUI-core-user-keys": {
             "suites": [
                 "webUIcoreMKey",
             ],
@@ -283,7 +153,7 @@ config = {
             "federatedServerNeeded": True,
             "selUserNeeded": True,
             "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
+                "ENCRYPTION_TYPE": "user-keys",
             },
             "extraSetup": [
                 {
@@ -293,13 +163,13 @@ config = {
                     "commands": [
                         "cd /var/www/owncloud/server",
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
+                        "php occ encryption:select-encryption-type user-keys --yes",
                         "php occ config:list",
                     ],
                 },
             ],
         },
-        "webUI-core-latest-masterkey": {
+        "webUI-core-latest-user-keys": {
             "suites": [
                 "webUIcoreMKey",
             ],
@@ -317,7 +187,7 @@ config = {
             "selUserNeeded": True,
             "cron": "nightly",
             "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
+                "ENCRYPTION_TYPE": "user-keys",
             },
             "extraSetup": [
                 {
@@ -327,7 +197,7 @@ config = {
                     "commands": [
                         "cd /var/www/owncloud/server",
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
+                        "php occ encryption:select-encryption-type user-keys --yes",
                         "php occ config:list",
                     ],
                 },
