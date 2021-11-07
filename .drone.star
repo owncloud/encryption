@@ -182,7 +182,7 @@ config = {
             ],
             "runCoreTests": True,
             "runAllSuites": True,
-            "numberOfParts": 50,
+            "numberOfParts": 46,
             "emailNeeded": True,
             "federatedServerNeeded": True,
             "extraEnvironment": {
@@ -214,7 +214,7 @@ config = {
             ],
             "runCoreTests": True,
             "runAllSuites": True,
-            "numberOfParts": 50,
+            "numberOfParts": 46,
             "emailNeeded": True,
             "federatedServerNeeded": True,
             "cron": "nightly",
