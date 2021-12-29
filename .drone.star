@@ -55,7 +55,7 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
+                "10.9.1RC1",
             ],
             "extraSetup": [
                 {
@@ -81,7 +81,7 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
+                "10.9.1RC1",
             ],
             "extraSetup": [
                 {
@@ -106,7 +106,7 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
+                "10.9.1RC1",
             ],
             "emailNeeded": True,
             "extraSetup": [
@@ -133,7 +133,7 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
+                "10.9.1RC1",
             ],
             "extraSetup": [
                 {
@@ -158,7 +158,7 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
+                "10.9.1RC1",
             ],
             "emailNeeded": True,
             "extraSetup": [
@@ -215,7 +215,7 @@ config = {
                 "mysql:8.0",
             ],
             "servers": [
-                "latest",
+                "10.9.1RC1",
             ],
             "runCoreTests": True,
             "runAllSuites": True,
