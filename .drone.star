@@ -306,13 +306,13 @@ config = {
         },
         "webUI-core-latest-masterkey": {
             "suites": [
-                "webUIcoreMKey",
+                "webUIcoreMK",
             ],
             "databases": [
                 "mysql:8.0",
             ],
             "servers": [
-                "latest",
+                "10.9.1RC1",
             ],
             "runCoreTests": True,
             "runAllSuites": True,
