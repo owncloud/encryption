@@ -55,7 +55,7 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "10.9.1RC2",
+                "latest",
             ],
             "extraSetup": [
                 {
@@ -81,7 +81,7 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "10.9.1RC2",
+                "latest",
             ],
             "extraSetup": [
                 {
@@ -106,7 +106,7 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "10.9.1RC2",
+                "latest",
             ],
             "emailNeeded": True,
             "extraSetup": [
@@ -133,7 +133,7 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "10.9.1RC2",
+                "latest",
             ],
             "extraSetup": [
                 {
@@ -158,7 +158,7 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "10.9.1RC2",
+                "latest",
             ],
             "emailNeeded": True,
             "extraSetup": [
@@ -215,7 +215,7 @@ config = {
                 "mysql:8.0",
             ],
             "servers": [
-                "10.9.1RC2",
+                "latest",
             ],
             "runCoreTests": True,
             "runAllSuites": True,
@@ -306,13 +306,13 @@ config = {
         },
         "webUI-core-latest-masterkey": {
             "suites": [
-                "webUIcoreMK",
+                "webUIcoreMKey",
             ],
             "databases": [
                 "mysql:8.0",
             ],
             "servers": [
-                "10.9.1RC2",
+                "latest",
             ],
             "runCoreTests": True,
             "runAllSuites": True,
