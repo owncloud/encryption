@@ -254,6 +254,7 @@ config = {
             "runAllSuites": True,
             "numberOfParts": 7,
             "emailNeeded": True,
+            "federatedServerNeeded": True,
             "extraEnvironment": {
                 "ENCRYPTION_TYPE": "masterkey",
             },
