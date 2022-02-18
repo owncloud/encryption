@@ -254,8 +254,10 @@ config = {
             "runAllSuites": True,
             "numberOfParts": 7,
             "emailNeeded": True,
+            "federatedServerNeeded": True,
             "extraEnvironment": {
                 "ENCRYPTION_TYPE": "masterkey",
+                "EXPECTED_FAILURES_FILE": "%s/apps/encryption/tests/acceptance/expected-failures-cli.md" % dir["testrunner"],
             },
             "extraSetup": [
                 {
