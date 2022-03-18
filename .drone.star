@@ -210,6 +210,9 @@ config = {
             "numberOfParts": 40,
             "emailNeeded": True,
             "federatedServerNeeded": True,
+            "extraApps": {
+                "files_external": "",
+            },
             "extraEnvironment": {
                 "ENCRYPTION_TYPE": "masterkey",
             },
@@ -242,6 +245,9 @@ config = {
             "emailNeeded": True,
             "federatedServerNeeded": True,
             "cron": "nightly",
+            "extraApps": {
+                "files_external": "",
+            },
             "extraEnvironment": {
                 "ENCRYPTION_TYPE": "masterkey",
             },
@@ -273,6 +279,9 @@ config = {
             "numberOfParts": 7,
             "emailNeeded": True,
             "federatedServerNeeded": True,
+            "extraApps": {
+                "files_external": "",
+            },
             "extraEnvironment": {
                 "ENCRYPTION_TYPE": "masterkey",
                 "EXPECTED_FAILURES_FILE": "%s/apps/encryption/tests/acceptance/expected-failures-cli.md" % dir["testrunner"],
@@ -306,6 +315,9 @@ config = {
             "emailNeeded": True,
             "federatedServerNeeded": True,
             "selUserNeeded": True,
+            "extraApps": {
+                "files_external": "",
+            },
             "extraEnvironment": {
                 "ENCRYPTION_TYPE": "masterkey",
             },
@@ -339,6 +351,9 @@ config = {
             "federatedServerNeeded": True,
             "selUserNeeded": True,
             "cron": "nightly",
+            "extraApps": {
+                "files_external": "",
+            },
             "extraEnvironment": {
                 "ENCRYPTION_TYPE": "masterkey",
             },
