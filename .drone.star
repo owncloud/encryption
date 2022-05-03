@@ -1059,7 +1059,7 @@ def acceptance(ctx):
                         alternateSuiteName,
                         keyString,
                         partString,
-                        testConfig["server"].replace("daily-", "").replace("-qa", "").replace('check-scroll-into-menu-flaky', 'flaky'),
+                        testConfig["server"].replace("daily-", "").replace("-qa", "").replace("check-scroll-into-menu-flaky", "flaky"),
                         browserString,
                         testConfig["database"].replace(":", ""),
                         testConfig["phpVersion"],
