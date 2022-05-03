@@ -946,12 +946,12 @@ def acceptance(ctx):
                 continue
 
             # switch off earlyFail if the PR title contains full-ci
-            if ("full-ci" in ctx.build.title.lower()):
-                params["earlyFail"] = False
+            # if ("full-ci" in ctx.build.title.lower()):
+            #     params["earlyFail"] = False
 
             # switch off earlyFail when running cron builds (for example, nightly CI)
-            if (ctx.build.event == "cron"):
-                params["earlyFail"] = False
+            # if (ctx.build.event == "cron"):
+            #     params["earlyFail"] = False
 
             if "externalScality" in params and len(params["externalScality"]) != 0:
                 # We want to use an external scality server for this pipeline.
@@ -1121,6 +1121,8 @@ def acceptance(ctx):
                         environment["S3_TYPE"] = "scality"
                 federationDbSuffix = "-federated"
 
+                params["earlyFail"] = False
+
                 result = {
                     "kind": "pipeline",
                     "type": "docker",
@@ -1129,8 +1131,7 @@ def acceptance(ctx):
                         "base": dir["base"],
                         "path": "testrunner/apps/%s" % ctx.repo.name,
                     },
-                    "steps": skipIfUnchanged(ctx, "acceptance-tests") +
-                             installCore(ctx, testConfig["server"], testConfig["database"], testConfig["useBundledApp"]) +
+                    "steps": installCore(ctx, testConfig["server"], testConfig["database"], testConfig["useBundledApp"]) +
                              installTestrunner(ctx, DEFAULT_PHP_VERSION, testConfig["useBundledApp"]) +
                              (installFederated(testConfig["server"], testConfig["phpVersion"], testConfig["logLevel"], testConfig["database"], federationDbSuffix) + owncloudLog("federated") if testConfig["federatedServerNeeded"] else []) +
                              installAppPhp(ctx, testConfig["phpVersion"]) +
