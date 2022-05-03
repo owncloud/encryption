@@ -1664,7 +1664,7 @@ def installTestrunner(ctx, phpVersion, useBundledApp):
         "image": OC_CI_PHP % phpVersion,
         "commands": [
             "mkdir /tmp/testrunner",
-            "git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner",
+            "git clone -b check-scroll-into-menu-flaky --depth=1 https://github.com/owncloud/core.git /tmp/testrunner",
             "rsync -aIX /tmp/testrunner %s" % dir["base"],
         ] + ([
             "cp -r %s/apps/%s %s/apps/" % (dir["testrunner"], ctx.repo.name, dir["server"]),
@@ -1909,7 +1909,7 @@ def installFederated(federatedServerVersion, phpVersion, logLevel, db, dbSuffix 
             "name": "install-federated",
             "image": OC_CI_CORE,
             "settings": {
-                "version": federatedServerVersion,
+                "git_reference": federatedServerVersion,
                 "core_path": dir["federated"],
                 "db_type": "mysql",
                 "db_name": database,
