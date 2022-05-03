@@ -44,274 +44,22 @@ config = {
         "master",
     ],
     "codestyle": True,
-    "phpstan": True,
+    "phpstan": False,
     "javascript": False,
-    "phpunit": {
-        "withCoverage": {
-            "phpVersions": [
-                DEFAULT_PHP_VERSION,
-            ],
-            "databases": [
-                "sqlite",
-                "mysql:8.0",
-                "postgres:9.4",
-            ],
-        },
-        "withoutCoverage": {
-            "phpVersions": [
-                "7.3",
-            ],
-            "databases": [
-                "sqlite",
-                "mysql:8.0",
-                "postgres:9.4",
-            ],
-            "coverage": False,
-        },
-    },
+    "phpunit": False,
     "acceptance": {
-        "cli-masterkey": {
-            "suites": [
-                "cliEncryption",
-            ],
-            "databases": [
-                "mysql:8.0",
-                "postgres:9.4",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "api-masterkey": {
-            "suites": {
-                "apiEncryption": "apiMasterKeys",
-            },
-            "databases": [
-                "mysql:8.0",
-                "postgres:9.4",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "webUI-masterkey": {
-            "suites": {
-                "webUIMasterKeyType": "webUIMasterKey",
-            },
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "emailNeeded": True,
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "api-userkeys": {
-            "suites": {
-                "apiEncryption": "apiUserKeys",
-            },
-            "databases": [
-                "mysql:8.0",
-                "postgres:9.4",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type user-keys --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "webUI-userkeys": {
-            "suites": {
-                "webUIUserKeysType": "webUIUserKeys",
-            },
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "emailNeeded": True,
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type user-keys --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "api-core-masterkey": {
-            "suites": [
-                "apiCoreMKey",
-            ],
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "daily-master-qa",
-            ],
-            "runCoreTests": True,
-            "runAllSuites": True,
-            "numberOfParts": 40,
-            "emailNeeded": True,
-            "federatedServerNeeded": True,
-            "extraApps": {
-                "files_external": "",
-            },
-            "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
-            },
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "api-core-latest-masterkey": {
-            "suites": [
-                "apiCoreMKey",
-            ],
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "latest",
-            ],
-            "runCoreTests": True,
-            "runAllSuites": True,
-            "numberOfParts": 40,
-            "emailNeeded": True,
-            "federatedServerNeeded": True,
-            "cron": "nightly",
-            "extraApps": {
-                "files_external": "",
-            },
-            "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
-            },
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "cli-core-masterkey": {
-            "suites": [
-                "cliCoreMKey",
-            ],
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "daily-master-qa",
-            ],
-            "runCoreTests": True,
-            "runAllSuites": True,
-            "numberOfParts": 7,
-            "emailNeeded": True,
-            "federatedServerNeeded": True,
-            "extraApps": {
-                "files_external": "",
-            },
-            "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
-                "EXPECTED_FAILURES_FILE": "%s/apps/encryption/tests/acceptance/expected-failures-cli.md" % dir["testrunner"],
-            },
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
         "webUI-core-masterkey": {
             "suites": [
-                "webUIcoreMKey",
+                "webUIScroll",
             ],
             "databases": [
                 "mysql:8.0",
             ],
             "servers": [
-                "daily-master-qa",
+                "check-scroll-into-menu-flaky",
             ],
             "runCoreTests": True,
-            "runAllSuites": True,
-            "numberOfParts": 20,
+            "runAllSuites": False,
             "emailNeeded": True,
             "federatedServerNeeded": True,
             "selUserNeeded": True,
@@ -333,42 +81,8 @@ config = {
                     ],
                 },
             ],
-        },
-        "webUI-core-latest-masterkey": {
-            "suites": [
-                "webUIcoreMKey",
-            ],
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "latest",
-            ],
-            "runCoreTests": True,
-            "runAllSuites": True,
-            "numberOfParts": 20,
-            "emailNeeded": True,
-            "federatedServerNeeded": True,
-            "selUserNeeded": True,
-            "cron": "nightly",
-            "extraApps": {
-                "files_external": "",
-            },
-            "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
-            },
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd /var/www/owncloud/server",
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
+            "filterTags": "@focus",
+            "screenShots": True,
         },
     },
 }
@@ -1197,6 +911,7 @@ def acceptance(ctx):
         "earlyFail": True,
         "enableApp": True,
         "selUserNeeded": False,
+        "screenShots": True,
     }
 
     if "defaults" in config:
@@ -1233,12 +948,12 @@ def acceptance(ctx):
                 continue
 
             # switch off earlyFail if the PR title contains full-ci
-            if ("full-ci" in ctx.build.title.lower()):
-                params["earlyFail"] = False
+            # if ("full-ci" in ctx.build.title.lower()):
+            #     params["earlyFail"] = False
 
             # switch off earlyFail when running cron builds (for example, nightly CI)
-            if (ctx.build.event == "cron"):
-                params["earlyFail"] = False
+            # if (ctx.build.event == "cron"):
+            #     params["earlyFail"] = False
 
             if "externalScality" in params and len(params["externalScality"]) != 0:
                 # We want to use an external scality server for this pipeline.
@@ -1342,7 +1057,16 @@ def acceptance(ctx):
                     browserString = "" if testConfig["browser"] == "" else "-" + testConfig["browser"]
                     keyString = "-" + category if testConfig["includeKeyInMatrixName"] else ""
                     partString = "" if testConfig["numberOfParts"] == 1 else "-%d-%d" % (testConfig["numberOfParts"], testConfig["runPart"])
-                    name = "%s%s%s-%s%s-%s-php%s%s" % (alternateSuiteName, keyString, partString, testConfig["server"].replace("daily-", "").replace("-qa", ""), browserString, testConfig["database"].replace(":", ""), testConfig["phpVersion"], esString)
+                    name = "%s%s%s-%s%s-%s-php%s%s" % (
+                        alternateSuiteName,
+                        keyString,
+                        partString,
+                        testConfig["server"].replace("daily-", "").replace("-qa", "").replace("check-scroll-into-menu-flaky", "flaky"),
+                        browserString,
+                        testConfig["database"].replace(":", ""),
+                        testConfig["phpVersion"],
+                        esString,
+                    )
                     maxLength = 50
                     nameLength = len(name)
                     if nameLength > maxLength:
@@ -1354,7 +1078,7 @@ def acceptance(ctx):
                     environment[env] = testConfig["extraEnvironment"][env]
 
                 environment["TEST_SERVER_URL"] = "http://server"
-                environment["BEHAT_FILTER_TAGS"] = testConfig["filterTags"]
+                environment["BEHAT_FILTER_TAGS"] = "@focus"
                 environment["DOWNLOADS_DIRECTORY"] = "%s/downloads" % dir["server"]
 
                 if (testConfig["runAllSuites"] == False):
@@ -1399,6 +1123,11 @@ def acceptance(ctx):
                         environment["S3_TYPE"] = "scality"
                 federationDbSuffix = "-federated"
 
+                if (testConfig["screenShots"]):
+                    environment["SCREENSHOTS"] = "true"
+
+                params["earlyFail"] = False
+
                 result = {
                     "kind": "pipeline",
                     "type": "docker",
@@ -1407,8 +1136,7 @@ def acceptance(ctx):
                         "base": dir["base"],
                         "path": "testrunner/apps/%s" % ctx.repo.name,
                     },
-                    "steps": skipIfUnchanged(ctx, "acceptance-tests") +
-                             installCore(ctx, testConfig["server"], testConfig["database"], testConfig["useBundledApp"]) +
+                    "steps": installCore(ctx, testConfig["server"], testConfig["database"], testConfig["useBundledApp"]) +
                              installTestrunner(ctx, DEFAULT_PHP_VERSION, testConfig["useBundledApp"]) +
                              (installFederated(testConfig["server"], testConfig["phpVersion"], testConfig["logLevel"], testConfig["database"], federationDbSuffix) + owncloudLog("federated") if testConfig["federatedServerNeeded"] else []) +
                              installAppPhp(ctx, testConfig["phpVersion"]) +
@@ -1432,14 +1160,20 @@ def acceptance(ctx):
                                      "commands": testConfig["extraCommandsBeforeTestRun"] + [
                                          "touch %s/saved-settings.sh" % dir["base"],
                                          ". %s/saved-settings.sh" % dir["base"],
-                                         "make %s" % makeParameter,
+                                         "make test-acceptance-core-api",
                                      ],
                                      "volumes": [{
                                          "name": "downloads",
                                          "path": "%s/downloads" % dir["server"],
                                      }],
                                  }),
-                             ] + testConfig["extraTeardown"] + githubComment(params["earlyFail"]) + stopBuild(ctx, params["earlyFail"]),
+                             ] +
+                             testConfig["extraTeardown"] +
+                             uploadScreenShots(ctx, testConfig["screenShots"]) +
+                             buildGithubComment(ctx, testConfig["screenShots"], alternateSuiteName) +
+                             buildGithubCommentForBuildStopped(testConfig["earlyFail"]) +
+                             githubComment(alternateSuiteName) +
+                             stopBuild(ctx, params["earlyFail"]),
                     "services": databaseService(testConfig["database"]) +
                                 browserService(testConfig["browser"]) +
                                 emailService(testConfig["emailNeeded"]) +
@@ -1920,7 +1654,7 @@ def installCore(ctx, version, db, useBundledApp):
         "name": "install-core",
         "image": OC_CI_CORE,
         "settings": {
-            "version": version,
+            "git_reference": version,
             "core_path": dir["server"],
             "db_type": dbType,
             "db_name": database,
@@ -1941,7 +1675,7 @@ def installTestrunner(ctx, phpVersion, useBundledApp):
         "image": OC_CI_PHP % phpVersion,
         "commands": [
             "mkdir /tmp/testrunner",
-            "git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner",
+            "git clone -b check-scroll-into-menu-flaky --depth=1 https://github.com/owncloud/core.git /tmp/testrunner",
             "rsync -aIX /tmp/testrunner %s" % dir["base"],
         ] + ([
             "cp -r %s/apps/%s %s/apps/" % (dir["testrunner"], ctx.repo.name, dir["server"]),
@@ -2186,7 +1920,7 @@ def installFederated(federatedServerVersion, phpVersion, logLevel, db, dbSuffix 
             "name": "install-federated",
             "image": OC_CI_CORE,
             "settings": {
-                "version": federatedServerVersion,
+                "git_reference": federatedServerVersion,
                 "core_path": dir["federated"],
                 "db_type": "mysql",
                 "db_name": database,
@@ -2277,32 +2011,120 @@ def stopBuild(ctx, earlyFail):
     else:
         return []
 
-def githubComment(earlyFail):
-    if (earlyFail):
-        return [{
-            "name": "github-comment",
-            "image": THEGEEKLAB_DRONE_GITHUB_COMMENT,
-            "pull": "if-not-exists",
-            "settings": {
-                "message": ":boom: Acceptance tests pipeline <strong>${DRONE_STAGE_NAME}</strong> failed. The build has been cancelled.\\n\\n${DRONE_BUILD_LINK}/${DRONE_JOB_NUMBER}${DRONE_STAGE_NUMBER}",
-                "key": "pr-${DRONE_PULL_REQUEST}",
-                "update": "true",
-                "api_key": {
-                    "from_secret": "github_token",
-                },
-            },
-            "when": {
-                "status": [
-                    "failure",
-                ],
-                "event": [
-                    "pull_request",
-                ],
-            },
-        }]
-
-    else:
+def uploadScreenShots(ctx, screenShots):
+    if not screenShots:
         return []
+    return [{
+        "name": "upload-screenshots",
+        "image": PLUGINS_S3,
+        "pull": "if-not-exists",
+        "settings": {
+            "bucket": {
+                "from_secret": "cache_public_s3_bucket",
+            },
+            "endpoint": {
+                "from_secret": "cache_public_s3_server",
+            },
+            "path_style": True,
+            "source": "%s/apps/%s/tests/acceptance/reports/screenshots/**/*" % (dir["testrunner"], ctx.repo.name),
+            "strip_prefix": "%s/apps/%s/tests/acceptance/reports/screenshots" % (dir["testrunner"], ctx.repo.name),
+            "target": "/${DRONE_REPO}/${DRONE_BUILD_NUMBER}/screenshots",
+        },
+        "environment": {
+            "AWS_ACCESS_KEY_ID": {
+                "from_secret": "cache_public_s3_access_key",
+            },
+            "AWS_SECRET_ACCESS_KEY": {
+                "from_secret": "cache_public_s3_secret_key",
+            },
+        },
+        "when": {
+            "status": [
+                "failure",
+            ],
+            "event": [
+                "pull_request",
+            ],
+        },
+    }]
+
+def buildGithubComment(ctx, screenshots, suite):
+    if not screenshots:
+        return []
+    return [{
+        "name": "build-github-comment",
+        "image": OC_UBUNTU,
+        "commands": [
+            "cd %s/apps/%s/tests/acceptance/reports/screenshots/" % (dir["testrunner"], ctx.repo.name),
+            'echo "<details><summary>:boom: The acceptance tests failed on retry. Please find the screenshots inside ...</summary>\\n\\n<p>\\n\\n" >> %s/comments.file' % dir["testrunner"],
+            'for f in *.png; do echo "### $f\n" \'!\'"[$f]($CACHE_ENDPOINT/$CACHE_BUCKET/${DRONE_REPO}/${DRONE_BUILD_NUMBER}/screenshots/$f) \n" >> %s/comments.file; done' % dir["testrunner"],
+            'echo "\n</p></details>" >> %s/comments.file' % dir["testrunner"],
+            "more %s/comments.file" % dir["testrunner"],
+        ],
+        "environment": {
+            "TEST_CONTEXT": suite,
+            "CACHE_ENDPOINT": {
+                "from_secret": "cache_public_s3_server",
+            },
+            "CACHE_BUCKET": {
+                "from_secret": "cache_public_s3_bucket",
+            },
+        },
+        "when": {
+            "status": [
+                "failure",
+            ],
+            "event": [
+                "pull_request",
+            ],
+        },
+    }]
+
+def buildGithubCommentForBuildStopped(earlyFail):
+    if not earlyFail:
+        return []
+    return [{
+        "name": "build-github-comment-buildStop",
+        "image": OC_UBUNTU,
+        "commands": [
+            'echo ":boom: Acceptance tests pipeline <strong>${DRONE_STAGE_NAME}</strong> failed. The build has been cancelled.\\n\\n${DRONE_BUILD_LINK}/${DRONE_JOB_NUMBER}${DRONE_STAGE_NUMBER}" >> %s/comments.file' % dir["testrunner"],
+        ],
+        "when": {
+            "status": [
+                "failure",
+            ],
+            "event": [
+                "pull_request",
+            ],
+        },
+    }]
+
+def githubComment(alternateSuiteName):
+    prefix = "Results for <strong>%s</strong> ${DRONE_BUILD_LINK}/${DRONE_JOB_NUMBER}${DRONE_STAGE_NUMBER}/1" % alternateSuiteName
+    return [{
+        "name": "github-comment",
+        "image": THEGEEKLAB_DRONE_GITHUB_COMMENT,
+        "pull": "if-not-exists",
+        "settings": {
+            "message": "%s/comments.file" % dir["testrunner"],
+            "key": "pr-${DRONE_PULL_REQUEST}",  #TODO: we could delete the comment after a successful CI run
+            "update": "true",
+            "api_key": {
+                "from_secret": "github_token",
+            },
+        },
+        "commands": [
+            "if [ -s %s/comments.file ]; then echo '%s' | cat - comments.file > temp && mv temp comments.file && /bin/drone-github-comment; fi" % (dir["testrunner"], prefix),
+        ],
+        "when": {
+            "status": [
+                "failure",
+            ],
+            "event": [
+                "pull_request",
+            ],
+        },
+    }]
 
 def checkStarlark():
     return [{
