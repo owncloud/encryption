@@ -910,6 +910,7 @@ def acceptance(ctx):
         "earlyFail": True,
         "enableApp": True,
         "selUserNeeded": False,
+        "screenShots": False,
     }
 
     if "defaults" in config:
@@ -1121,6 +1122,9 @@ def acceptance(ctx):
                         environment["S3_TYPE"] = "scality"
                 federationDbSuffix = "-federated"
 
+                if (testConfig["screenShots"]):
+                    environment["SCREENSHOTS"] = "true"
+
                 params["earlyFail"] = False
 
                 result = {
@@ -1162,7 +1166,13 @@ def acceptance(ctx):
                                          "path": "%s/downloads" % dir["server"],
                                      }],
                                  }),
-                             ] + testConfig["extraTeardown"] + githubComment(params["earlyFail"]) + stopBuild(ctx, params["earlyFail"]),
+                             ] +
+                             testConfig["extraTeardown"] +
+                             uploadScreenShots(ctx, testConfig["screenShots"]) +
+                             buildGithubComment(ctx, testConfig["screenShots"], alternateSuiteName) +
+                             buildGithubCommentForBuildStopped(testConfig["earlyFail"]) +
+                             githubComment(alternateSuiteName) +
+                             stopBuild(ctx, params["earlyFail"]),
                     "services": databaseService(testConfig["database"]) +
                                 browserService(testConfig["browser"]) +
                                 emailService(testConfig["emailNeeded"]) +
@@ -2000,32 +2010,118 @@ def stopBuild(ctx, earlyFail):
     else:
         return []
 
-def githubComment(earlyFail):
-    if (earlyFail):
-        return [{
-            "name": "github-comment",
-            "image": THEGEEKLAB_DRONE_GITHUB_COMMENT,
-            "pull": "if-not-exists",
-            "settings": {
-                "message": ":boom: Acceptance tests pipeline <strong>${DRONE_STAGE_NAME}</strong> failed. The build has been cancelled.\\n\\n${DRONE_BUILD_LINK}/${DRONE_JOB_NUMBER}${DRONE_STAGE_NUMBER}",
-                "key": "pr-${DRONE_PULL_REQUEST}",
-                "update": "true",
-                "api_key": {
-                    "from_secret": "github_token",
-                },
-            },
-            "when": {
-                "status": [
-                    "failure",
-                ],
-                "event": [
-                    "pull_request",
-                ],
-            },
-        }]
-
-    else:
+def uploadScreenShots(ctx, screenShots):
+    if not screenShots:
         return []
+    return [{
+        "name": "upload-screenshots",
+        "image": PLUGINS_S3,
+        "pull": "if-not-exists",
+        "settings": {
+            "bucket": {
+                "from_secret": "cache_public_s3_bucket",
+            },
+            "endpoint": {
+                "from_secret": "cache_public_s3_server",
+            },
+            "path_style": True,
+            "source": "%s/apps/%s/tests/acceptance/reports/screenshots/**/*" % (dir["testrunner"], ctx.repo.name),
+            "strip_prefix": "%s/apps/%s/tests/acceptance/reports/screenshots" % (dir["testrunner"], ctx.repo.name),
+            "target": "/${DRONE_REPO}/${DRONE_BUILD_NUMBER}/screenshots",
+        },
+        "environment": {
+            "AWS_ACCESS_KEY_ID": {
+                "from_secret": "cache_public_s3_access_key",
+            },
+            "AWS_SECRET_ACCESS_KEY": {
+                "from_secret": "cache_public_s3_secret_key",
+            },
+        },
+        "when": {
+            "status": [
+                "failure",
+            ],
+            "event": [
+                "pull_request",
+            ],
+        },
+    }]
+
+def buildGithubComment(ctx, suite):
+    return [{
+        "name": "build-github-comment",
+        "image": OC_UBUNTU,
+        "commands": [
+            "cd %s/apps/%s/tests/acceptance/reports/screenshots/" % (dir["testrunner"], ctx.repo.name),
+            'echo "<details><summary>:boom: The acceptance tests failed on retry. Please find the screenshots inside ...</summary>\\n\\n<p>\\n\\n" >> %s/comments.file' % dir["testrunner"],
+            'for f in *.png; do echo "### $f\n" \'!\'"[$f]($CACHE_ENDPOINT/$CACHE_BUCKET/${DRONE_REPO}/${DRONE_BUILD_NUMBER}/screenshots/$f) \n" >> %s/comments.file; done' % dir["testrunner"],
+            'echo "\n</p></details>" >> %s/comments.file' % dir["testrunner"],
+            "more %s/comments.file" % dir["testrunner"],
+        ],
+        "environment": {
+            "TEST_CONTEXT": suite,
+            "CACHE_ENDPOINT": {
+                "from_secret": "cache_public_s3_server",
+            },
+            "CACHE_BUCKET": {
+                "from_secret": "cache_public_s3_bucket",
+            },
+        },
+        "when": {
+            "status": [
+                "failure",
+            ],
+            "event": [
+                "pull_request",
+            ],
+        },
+    }]
+
+def buildGithubCommentForBuildStopped(earlyFail):
+    if not earlyFail:
+        return []
+    return [{
+        "name": "build-github-comment-buildStop",
+        "image": OC_UBUNTU,
+        "commands": [
+            'echo ":boom: Acceptance tests pipeline <strong>${DRONE_STAGE_NAME}</strong> failed. The build has been cancelled.\\n\\n${DRONE_BUILD_LINK}/${DRONE_JOB_NUMBER}${DRONE_STAGE_NUMBER}" >> %s/comments.file' % dir["testrunner"],
+        ],
+        "when": {
+            "status": [
+                "failure",
+            ],
+            "event": [
+                "pull_request",
+            ],
+        },
+    }]
+
+def githubComment(alternateSuiteName):
+    prefix = "Results for <strong>%s</strong> ${DRONE_BUILD_LINK}/${DRONE_JOB_NUMBER}${DRONE_STAGE_NUMBER}/1" % alternateSuiteName
+    return [{
+        "name": "github-comment",
+        "image": THEGEEKLAB_DRONE_GITHUB_COMMENT,
+        "pull": "if-not-exists",
+        "settings": {
+            "message": "%s/comments.file" % dir["testrunner"],
+            "key": "pr-${DRONE_PULL_REQUEST}",  #TODO: we could delete the comment after a successful CI run
+            "update": "true",
+            "api_key": {
+                "from_secret": "github_token",
+            },
+        },
+        "commands": [
+            "if [ -s %s/comments.file ]; then echo '%s' | cat - comments.file > temp && mv temp comments.file && /bin/drone-github-comment; fi" % (dir["testrunner"], prefix),
+        ],
+        "when": {
+            "status": [
+                "failure",
+            ],
+            "event": [
+                "pull_request",
+            ],
+        },
+    }]
 
 def checkStarlark():
     return [{
