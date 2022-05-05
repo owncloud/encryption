@@ -1078,7 +1078,7 @@ def acceptance(ctx):
                     environment[env] = testConfig["extraEnvironment"][env]
 
                 environment["TEST_SERVER_URL"] = "http://server"
-                environment["BEHAT_FILTER_TAGS"] = testConfig["filterTags"]
+                environment["BEHAT_FILTER_TAGS"] = "@focus"
                 environment["DOWNLOADS_DIRECTORY"] = "%s/downloads" % dir["server"]
 
                 if (testConfig["runAllSuites"] == False):
