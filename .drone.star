@@ -50,7 +50,7 @@ config = {
     "acceptance": {
         "webUI-core-masterkey": {
             "suites": [
-                "webUIFiles",
+                "webUIScroll",
             ],
             "databases": [
                 "mysql:8.0",
@@ -911,7 +911,7 @@ def acceptance(ctx):
         "earlyFail": True,
         "enableApp": True,
         "selUserNeeded": False,
-        "screenShots": False,
+        "screenShots": True,
     }
 
     if "defaults" in config:
@@ -1160,7 +1160,7 @@ def acceptance(ctx):
                                      "commands": testConfig["extraCommandsBeforeTestRun"] + [
                                          "touch %s/saved-settings.sh" % dir["base"],
                                          ". %s/saved-settings.sh" % dir["base"],
-                                         "make %s" % makeParameter,
+                                         "make test-acceptance-core-api",
                                      ],
                                      "volumes": [{
                                          "name": "downloads",
