@@ -82,6 +82,7 @@ config = {
                 },
             ],
             "filterTags": "@focus",
+            "screenShots": True,
         },
     },
 }
