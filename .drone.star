@@ -2047,7 +2047,9 @@ def uploadScreenShots(ctx, screenShots):
         },
     }]
 
-def buildGithubComment(ctx, suite):
+def buildGithubComment(ctx, screenshots, suite):
+    if not screenshots:
+        return []
     return [{
         "name": "build-github-comment",
         "image": OC_UBUNTU,
