@@ -68,6 +68,7 @@ config = {
             ],
             "coverage": False,
         },
+        "skip": True,
     },
     "acceptance": {
         "cli-masterkey": {
@@ -94,6 +95,7 @@ config = {
                     ],
                 },
             ],
+            "skip": True,
         },
         "api-masterkey": {
             "suites": {
@@ -119,6 +121,7 @@ config = {
                     ],
                 },
             ],
+            "skip": True,
         },
         "webUI-masterkey": {
             "suites": {
@@ -144,6 +147,7 @@ config = {
                     ],
                 },
             ],
+            "skip": True,
         },
         "api-userkeys": {
             "suites": {
@@ -169,6 +173,7 @@ config = {
                     ],
                 },
             ],
+            "skip": True,
         },
         "webUI-userkeys": {
             "suites": {
@@ -194,6 +199,7 @@ config = {
                     ],
                 },
             ],
+            "skip": True,
         },
         "api-core-masterkey": {
             "suites": [
@@ -228,6 +234,7 @@ config = {
                     ],
                 },
             ],
+            "skip": True,
         },
         "api-core-latest-masterkey": {
             "suites": [
@@ -263,6 +270,7 @@ config = {
                     ],
                 },
             ],
+            "skip": True,
         },
         "cli-core-masterkey": {
             "suites": [
@@ -276,7 +284,7 @@ config = {
             ],
             "runCoreTests": True,
             "runAllSuites": True,
-            "numberOfParts": 7,
+            # "numberOfParts": 7,
             "emailNeeded": True,
             "federatedServerNeeded": True,
             "extraApps": {
@@ -333,6 +341,7 @@ config = {
                     ],
                 },
             ],
+            "skip": True,
         },
         "webUI-core-latest-masterkey": {
             "suites": [
@@ -369,44 +378,46 @@ config = {
                     ],
                 },
             ],
+            "skip": True,
         },
     },
 }
 
 def main(ctx):
-    before = beforePipelines(ctx)
+    # before = beforePipelines(ctx)
 
-    coverageTests = coveragePipelines(ctx)
-    if (coverageTests == False):
-        print("Errors detected in coveragePipelines. Review messages above.")
-        return []
+    # coverageTests = coveragePipelines(ctx)
+    # if (coverageTests == False):
+    #     print("Errors detected in coveragePipelines. Review messages above.")
+    #     return []
 
-    dependsOn(before, coverageTests)
+    # dependsOn(before, coverageTests)
 
-    nonCoverageTests = nonCoveragePipelines(ctx)
-    if (nonCoverageTests == False):
-        print("Errors detected in nonCoveragePipelines. Review messages above.")
-        return []
+    # nonCoverageTests = nonCoveragePipelines(ctx)
+    # if (nonCoverageTests == False):
+    #     print("Errors detected in nonCoveragePipelines. Review messages above.")
+    #     return []
 
-    dependsOn(before, nonCoverageTests)
+    # dependsOn(before, nonCoverageTests)
 
     stages = stagePipelines(ctx)
-    if (stages == False):
-        print("Errors detected. Review messages above.")
-        return []
+    # if (stages == False):
+    #     print("Errors detected. Review messages above.")
+    #     return []
 
-    dependsOn(before, stages)
+    # dependsOn(before, stages)
 
-    if (coverageTests == []):
-        afterCoverageTests = []
-    else:
-        afterCoverageTests = afterCoveragePipelines(ctx)
-        dependsOn(coverageTests, afterCoverageTests)
+    # if (coverageTests == []):
+    #     afterCoverageTests = []
+    # else:
+    #     afterCoverageTests = afterCoveragePipelines(ctx)
+    #     dependsOn(coverageTests, afterCoverageTests)
 
-    after = afterPipelines(ctx)
-    dependsOn(afterCoverageTests + nonCoverageTests + stages, after)
+    # after = afterPipelines(ctx)
+    # dependsOn(afterCoverageTests + nonCoverageTests + stages, after)
 
-    return before + coverageTests + afterCoverageTests + nonCoverageTests + stages + after
+    # return before + coverageTests + afterCoverageTests + nonCoverageTests + stages + after
+    return stages
 
 def beforePipelines(ctx):
     return codestyle(ctx) + jscodestyle(ctx) + cancelPreviousBuilds() + phpstan(ctx) + phan(ctx) + phplint(ctx) + checkStarlark()
@@ -1407,8 +1418,7 @@ def acceptance(ctx):
                         "base": dir["base"],
                         "path": "testrunner/apps/%s" % ctx.repo.name,
                     },
-                    "steps": skipIfUnchanged(ctx, "acceptance-tests") +
-                             installCore(ctx, testConfig["server"], testConfig["database"], testConfig["useBundledApp"]) +
+                    "steps": installCore(ctx, testConfig["server"], testConfig["database"], testConfig["useBundledApp"]) +
                              installTestrunner(ctx, DEFAULT_PHP_VERSION, testConfig["useBundledApp"]) +
                              (installFederated(testConfig["server"], testConfig["phpVersion"], testConfig["logLevel"], testConfig["database"], federationDbSuffix) + owncloudLog("federated") if testConfig["federatedServerNeeded"] else []) +
                              installAppPhp(ctx, testConfig["phpVersion"]) +
@@ -1941,7 +1951,7 @@ def installTestrunner(ctx, phpVersion, useBundledApp):
         "image": OC_CI_PHP % phpVersion,
         "commands": [
             "mkdir /tmp/testrunner",
-            "git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner",
+            "git clone -b fix-grep-command --depth=1 https://github.com/owncloud/core.git /tmp/testrunner",
             "rsync -aIX /tmp/testrunner %s" % dir["base"],
         ] + ([
             "cp -r %s/apps/%s %s/apps/" % (dir["testrunner"], ctx.repo.name, dir["server"]),
