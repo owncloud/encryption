@@ -63,5 +63,5 @@
     "Enabling this option will allow you to reobtain access to your encrypted files in case of password loss" : "L'abilitazione di questa opzione ti consentirà di accedere nuovamente ai file cifrati in caso di perdita della password",
     "Enabled" : "Abilitata",
     "Disabled" : "Disabilitata"
-},"pluralForm" :"nplurals=2; plural=(n != 1);"
+},"pluralForm" :"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
