@@ -19,7 +19,7 @@
 		<admin>admin-encryption</admin>
 	</documentation>
 	<rememberlogin>false</rememberlogin>
-	<version>1.5.1</version>
+	<version>1.5.2</version>
 	<category>security</category>
 	<types>
 		<filesystem/>
