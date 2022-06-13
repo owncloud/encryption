@@ -4,7 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
-## [1.5.2] - 2022-0525
+## [Unreleased] - XXXX-XX-XX
+
+
+## [1.5.2] - 2022-05-25
 
 ### Added
 - Add increment option to fix-encrypted-version command [#279](https://github.com/owncloud/encryption/issues/279)
