@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased] - XXXX-XX-XX
 
+
+## [1.5.2] - 2022-05-25
+
 ### Added
 - Add increment option to fix-encrypted-version command [#279](https://github.com/owncloud/encryption/issues/279)
 
@@ -49,6 +52,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - Issues with recreating masterkeys when HSM is used [#128](https://github.com/owncloud/encryption/pull/128)
 
 
-[Unreleased]: https://github.com/owncloud/encryption/compare/v1.5.1...HEAD
+[Unreleased]: https://github.com/owncloud/encryption/compare/v1.5.2...HEAD
+[1.5.2]: https://github.com/owncloud/encryption/compare/v1.5.1...v1.5.2
 [1.5.1]: https://github.com/owncloud/encryption/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/owncloud/encryption/compare/v1.4.0...v1.5.0
