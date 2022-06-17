@@ -16,8 +16,7 @@ Feature: quota
     And user "Alice" has shared file "/testquota.txt" with user "Brian"
     And user "Brian" has accepted share "/testquota.txt" offered by user "Alice"
     When user "Brian" copies file "/Shares/testquota.txt" to "/testquota.txt" using the WebDAV API
-    # The status indicates that the copy was successful, but actually the copied file does not exist
-    # The status is misleading
+    # The status indicates that the copy was successful, but actually 507 InsufficientStorage should happen
     Then the HTTP status code should be "201"
     #Then the HTTP status code should be "507"
     #And the DAV exception should be "Sabre\DAV\Exception\InsufficientStorage"
@@ -36,8 +35,7 @@ Feature: quota
     And user "Alice" has shared folder "/shareFolder" with user "Brian"
     And user "Brian" has accepted share "/shareFolder" offered by user "Alice"
     When user "Brian" copies file "/Shares/shareFolder/testquota.txt" to "/testquota.txt" using the WebDAV API
-    # The status indicates that the copy was successful, but actually the copied file does not exist
-    # The status is misleading
+    # The status indicates that the copy was successful, but actually 507 InsufficientStorage should happen
     Then the HTTP status code should be "201"
     #Then the HTTP status code should be "507"
     #And the DAV exception should be "Sabre\DAV\Exception\InsufficientStorage"
@@ -56,8 +54,7 @@ Feature: quota
     And user "Brian" has accepted share "/shareFolder" offered by user "Alice"
     And user "Brian" has uploaded file with content "test-content-15" to "/testquota.txt"
     When user "Brian" copies file "/testquota.txt" to "/Shares/shareFolder/testquota.txt" using the WebDAV API
-    # The status indicates that the copy was successful, but actually the copied file does not exist
-    # The status is misleading
+    # The status indicates that the copy was successful, but actually 507 InsufficientStorage should happen
     Then the HTTP status code should be "201"
     #Then the HTTP status code should be "507"
     #And the DAV exception should be "Sabre\DAV\Exception\InsufficientStorage"
