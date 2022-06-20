@@ -25,7 +25,7 @@ use OCA\Encryption\Crypto\CryptHSM;
 use OCA\Encryption\Exceptions\MultiKeyDecryptException;
 use OCP\AppFramework\Utility\ITimeFactory;
 use OCP\Http\Client\IClientService;
-use GuzzleHttp\Client;
+use OC\Http\Client\Client;
 use OCP\Http\Client\IResponse;
 use OCP\IConfig;
 use OCP\IL10N;
