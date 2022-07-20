@@ -496,14 +496,18 @@ class Crypt {
 	public function symmetricDecryptFileContent($keyFileContents, $passPhrase, $cipher = self::DEFAULT_CIPHER, $version = 0, $position = 0, $binaryEncode = false) {
 		$catFile = $this->splitMetaData($keyFileContents, $cipher);
 
-		if ($catFile['signature'] !== false) {
-			try {
-				$this->checkSignature($catFile['encrypted'], $passPhrase . $version . "-" . $position, $catFile['signature']);
-			} catch (HintException $e) {
-				// Check legacy format...
-				$this->checkSignature($catFile['encrypted'], $passPhrase . $version . $position, $catFile['signature']);
+
+		if (\getenv('ENCRYPTION_DISABLE_SIGNATURE', false) === false) {
+			if ($catFile['signature'] !== false) {
+				try {
+					$this->checkSignature($catFile['encrypted'], $passPhrase . $version . "-" . $position, $catFile['signature']);
+				} catch (HintException $e) {
+					// Check legacy format...
+					$this->checkSignature($catFile['encrypted'], $passPhrase . $version . $position, $catFile['signature']);
+				}
 			}
 		}
+
 
 		return $this->decrypt(
 			$catFile['encrypted'],
@@ -601,9 +605,11 @@ class Crypt {
 		$meta = \substr($catFile, -93);
 		$signaturePosition = \strpos($meta, '00sig00');
 
-		// enforce signature for the new 'CTR' ciphers
-		if ($signaturePosition === false && \strpos(\strtolower($cipher), 'ctr') !== false) {
-			throw new HintException('Missing Signature', $this->l->t('Missing Signature'));
+		if (\getenv('ENCRYPTION_DISABLE_SIGNATURE', false) === false) {
+			// enforce signature for the new 'CTR' ciphers
+			if ($signaturePosition === false && \strpos(\strtolower($cipher), 'ctr') !== false) {
+				throw new HintException('Missing Signature', $this->l->t('Missing Signature'));
+			}
 		}
 
 		return ($signaturePosition !== false);
