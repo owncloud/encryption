@@ -10,6 +10,8 @@ doc_files=README.md CHANGELOG.md LICENSE
 src_dirs=appinfo css img js l10n lib templates
 all_src=$(src_dirs) $(doc_files)
 
+# composer
+composer_deps=vendor
 acceptance_test_deps=vendor-bin/behat/vendor
 
 # bin file definitions
@@ -41,10 +43,11 @@ help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//' | sed -e 's/  */ /' | column -t -s :
 
 .PHONY: clean
-clean: clean-composer-deps
+clean: clean-deps
 
-.PHONY: clean-composer-deps
-clean-composer-deps:
+.PHONY: clean-deps
+clean-deps:
+	rm -Rf ${composer_deps}
 	rm -Rf vendor-bin/**/vendor vendor-bin/**/composer.lock
 
 ##---------------------
