@@ -633,9 +633,9 @@ class Crypt {
 		);
 
 		if ($plainContent === false) {
-			return $plainContent;
-		} else {
 			throw new DecryptionFailedException('Encryption library: Decryption (symmetric) of content failed: ' . \openssl_error_string());
+		} else {
+			return $plainContent;
 		}
 	}
 
