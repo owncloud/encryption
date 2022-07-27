@@ -177,6 +177,8 @@ class EncryptionTest extends TestCase {
 			['/user/files/foo.txt', '/user/files/foo.txt'],
 			['/user/files_versions/foo.txt.v543534', '/user/files/foo.txt'],
 			['/user/files_versions/foo/bar.txt.v5454', '/user/files/foo/bar.txt'],
+			['/user/files_trashbin/versions/foo.txt.v543534.d85747', '/user/files_trashbin/files/foo.txt.d85747'],
+			['/user/files_trashbin/versions/foo/bar.txt.v5454.d918273', '/user/files_trashbin/files/foo/bar.txt.d918273'],
 		];
 	}
 
