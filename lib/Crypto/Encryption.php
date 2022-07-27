@@ -552,6 +552,9 @@ class Encryption implements IEncryptionModule {
 			$realPath = '/' . $parts[1] . '/files/' . \implode('/', \array_slice($parts, 3));
 			$length = \strrpos($realPath, '.');
 			$realPath = \substr($realPath, 0, $length);
+		} elseif ($parts[2] === 'files_trashbin' && $parts[3] === 'versions') {
+			$realPath = "/{$parts[1]}/files_trashbin/files/" . \implode('/', \array_slice($parts, 4));
+			$realPath = \preg_replace('/.v[0-9]+([^\/]*)$/', '$1', $realPath);
 		}
 
 		return $realPath;
