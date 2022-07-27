@@ -262,7 +262,7 @@ class Crypt {
 			$iv
 		);
 
-		if (!$encryptedContent) {
+		if ($encryptedContent === false) {
 			$error = 'Encryption (symmetric) of content failed';
 			$this->logger->error(
 				$error . \openssl_error_string(),
@@ -628,11 +628,11 @@ class Crypt {
 			$iv
 		);
 
-		if ($plainContent) {
-			return $plainContent;
-		} else {
+		if ($plainContent === false) {
 			throw new DecryptionFailedException('Encryption library: Decryption (symmetric) of content failed: ' . \openssl_error_string());
 		}
+
+		return $plainContent;
 	}
 
 	/**
