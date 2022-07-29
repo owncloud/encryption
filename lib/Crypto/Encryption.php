@@ -546,12 +546,18 @@ class Encryption implements IEncryptionModule {
 	 * @return string
 	 */
 	protected function getPathToRealFile($path) {
+		// By default, the "real path" is the same as the original path
 		$realPath = $path;
 		$parts = \explode('/', $path);
 		if ($parts[2] === 'files_versions') {
+			// for versions, we need to point to the actual file, not the version of the file
 			$realPath = '/' . $parts[1] . '/files/' . \implode('/', \array_slice($parts, 3));
 			$length = \strrpos($realPath, '.');
 			$realPath = \substr($realPath, 0, $length);
+		} elseif ($parts[2] === 'files_trashbin' && $parts[3] === 'versions') {
+			// if the version is in the trashbin, we need to point to the actual file inside the trashbin
+			$realPath = "/{$parts[1]}/files_trashbin/files/" . \implode('/', \array_slice($parts, 4));
+			$realPath = \preg_replace('/.v[0-9]+([^\/]*)$/', '$1', $realPath);
 		}
 
 		return $realPath;
