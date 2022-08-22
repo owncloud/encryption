@@ -43,7 +43,7 @@ config = {
     "branches": [
         "master",
     ],
-    "codestyle": True,
+    "codestyle": False,
     "phpstan": False,
     "javascript": False,
     "phpunit": False,
@@ -1079,6 +1079,7 @@ def acceptance(ctx):
 
                 environment["TEST_SERVER_URL"] = "http://server"
                 environment["BEHAT_FILTER_TAGS"] = "@focus"
+                environment["BEHAT_RERUN_TIMES"] = 0
                 environment["DOWNLOADS_DIRECTORY"] = "%s/downloads" % dir["server"]
 
                 if (testConfig["runAllSuites"] == False):
