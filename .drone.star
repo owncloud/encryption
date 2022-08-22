@@ -82,7 +82,6 @@ config = {
                 },
             ],
             "filterTags": "@focus",
-            "screenShots": True,
         },
     },
 }
@@ -911,7 +910,7 @@ def acceptance(ctx):
         "earlyFail": True,
         "enableApp": True,
         "selUserNeeded": False,
-        "screenShots": True,
+        "screenShots": False,
     }
 
     if "defaults" in config:
@@ -1078,7 +1077,7 @@ def acceptance(ctx):
                     environment[env] = testConfig["extraEnvironment"][env]
 
                 environment["TEST_SERVER_URL"] = "http://server"
-                environment["BEHAT_FILTER_TAGS"] = "@focus"
+                environment["BEHAT_FILTER_TAGS"] = testConfig["filterTags"]
                 environment["BEHAT_RERUN_TIMES"] = 0
                 environment["DOWNLOADS_DIRECTORY"] = "%s/downloads" % dir["server"]
 
@@ -1124,8 +1123,7 @@ def acceptance(ctx):
                         environment["S3_TYPE"] = "scality"
                 federationDbSuffix = "-federated"
 
-                if (testConfig["screenShots"]):
-                    environment["SCREENSHOTS"] = "true"
+                environment["SCREENSHOTS"] = "true"
 
                 params["earlyFail"] = False
 
@@ -1161,7 +1159,9 @@ def acceptance(ctx):
                                      "commands": testConfig["extraCommandsBeforeTestRun"] + [
                                          "touch %s/saved-settings.sh" % dir["base"],
                                          ". %s/saved-settings.sh" % dir["base"],
-                                         "make test-acceptance-core-api",
+                                         "pwd",
+                                         "echo $BEHAT_FILTER_TAGS",
+                                         "make %s" % makeParameter,
                                      ],
                                      "volumes": [{
                                          "name": "downloads",
