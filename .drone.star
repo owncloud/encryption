@@ -1161,7 +1161,7 @@ def acceptance(ctx):
                                          ". %s/saved-settings.sh" % dir["base"],
                                          "pwd",
                                          "echo $BEHAT_FILTER_TAGS",
-                                         "make %s" % makeParameter,
+                                         "make %s ../../tests/acceptance/features/webUIScroll/scrollMenuIntoView.feature" % makeParameter,
                                      ],
                                      "volumes": [{
                                          "name": "downloads",
