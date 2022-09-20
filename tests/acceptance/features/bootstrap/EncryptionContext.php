@@ -50,7 +50,9 @@ class EncryptionContext implements Context {
 	 * @throws \Exception
 	 */
 	public function recreateMasterKeyUsingOccCommand():void {
-		$this->featureContext->runOcc(['encryption:recreate-master-key', '-y']);
+		$this->featureContext->setOccLastCode(
+			$this->featureContext->runOcc(['encryption:recreate-master-key', '-y'])
+		);
 		$this->occContext->theCommandShouldHaveBeenSuccessful();
 	}
 
@@ -60,7 +62,9 @@ class EncryptionContext implements Context {
 	 * @return void
 	 */
 	public function encryptionHasBeenEnabled():void {
-		$this->featureContext->runOcc(['encryption:enable']);
+		$this->featureContext->setOccLastCode(
+			$this->featureContext->runOcc(['encryption:enable'])
+		);
 	}
 
 	/**
@@ -73,8 +77,10 @@ class EncryptionContext implements Context {
 	 * @throws \Exception
 	 */
 	public function theAdministratorSetsEncryptionTypeToUsingTheOccCommand(string $encryptionType):void {
-		$this->featureContext->runOcc(
-			["encryption:select-encryption-type", $encryptionType, "-y"]
+		$this->featureContext->setOccLastCode(
+			$this->featureContext->runOcc(
+				["encryption:select-encryption-type", $encryptionType, "-y"]
+			)
 		);
 	}
 
@@ -85,7 +91,9 @@ class EncryptionContext implements Context {
 	 * @return void
 	 */
 	public function theAdministratorEncryptsAllDataUsingTheOccCommand():void {
-		$this->featureContext->runOcc(["encryption:encrypt-all", "-y"]);
+		$this->featureContext->setOccLastCode(
+			$this->featureContext->runOcc(["encryption:encrypt-all", "-y"])
+		);
 	}
 
 	/**
