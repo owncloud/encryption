@@ -19,3 +19,5 @@ vendor-bin/**/composer.lock
 # SonarCloud scanner
 .scannerwork
 
+.idea/
+
