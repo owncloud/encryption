@@ -96,7 +96,6 @@ config = {
             ],
             "servers": [
                 CORE_GIT_REF,
-                "latest",
             ],
             "extraSetup": [
                 {
@@ -168,7 +167,6 @@ config = {
             ],
             "servers": [
                 CORE_GIT_REF,
-                "latest",
             ],
             "emailNeeded": True,
             "extraSetup": [
