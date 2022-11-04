@@ -2324,13 +2324,6 @@ def checkStarlark():
         "name": "check-starlark",
         "steps": [
             {
-                "name": "format-check-starlark",
-                "image": OC_CI_BAZEL_BUILDIFIER,
-                "commands": [
-                    "buildifier --mode=check .drone.star",
-                ],
-            },
-            {
                 "name": "show-diff",
                 "image": OC_CI_BAZEL_BUILDIFIER,
                 "commands": [
