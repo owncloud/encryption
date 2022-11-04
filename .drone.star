@@ -1354,7 +1354,7 @@ def acceptance(ctx):
                     browserString = "" if testConfig["browser"] == "" else "-" + testConfig["browser"]
                     keyString = "-" + category if testConfig["includeKeyInMatrixName"] else ""
                     partString = "" if testConfig["numberOfParts"] == 1 else "-%d-%d" % (testConfig["numberOfParts"], testConfig["runPart"])
-                    coreVersion = "keys"
+                    coreVersion = testConfig["server"] if testConfig["server"] == "latest" else "FixB"
                     name = "%s%s%s-%s%s-%s-php%s%s" % (alternateSuiteName, keyString, partString, coreVersion, browserString, testConfig["database"].replace(":", ""), phpVersionForPipelineName, esString)
                     maxLength = 50
                     nameLength = len(name)
@@ -2323,6 +2323,13 @@ def checkStarlark():
         "type": "docker",
         "name": "check-starlark",
         "steps": [
+            {
+                "name": "format-check-starlark",
+                "image": OC_CI_BAZEL_BUILDIFIER,
+                "commands": [
+                    "buildifier --mode=check .drone.star",
+                ],
+            },
             {
                 "name": "show-diff",
                 "image": OC_CI_BAZEL_BUILDIFIER,
