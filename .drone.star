@@ -72,7 +72,6 @@ config = {
             ],
             "servers": [
                 CORE_GIT_REF,
-                "latest",
             ],
             "extraSetup": [
                 {
@@ -121,7 +120,6 @@ config = {
             ],
             "servers": [
                 CORE_GIT_REF,
-                "latest",
             ],
             "emailNeeded": True,
             "extraSetup": [
@@ -147,7 +145,6 @@ config = {
             ],
             "servers": [
                 CORE_GIT_REF,
-                "latest",
             ],
             "extraSetup": [
                 {
@@ -1168,7 +1165,7 @@ def acceptance(ctx):
     errorFound = False
 
     default = {
-        "servers": [CORE_GIT_REF, "latest"],
+        "servers": [CORE_GIT_REF],
         "browsers": ["chrome"],
         "phpVersions": [DEFAULT_PHP_VERSION],
         "databases": ["mariadb:10.2"],
