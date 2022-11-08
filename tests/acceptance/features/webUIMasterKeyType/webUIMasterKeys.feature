@@ -4,6 +4,7 @@ Feature: encrypt files using master keys
   I want to be able to encrypt user files using master keys
   So that I can use a common key to encrypt files of all user
 
+
   Scenario: user cannot access their file after recreating master key with re-login
     Given user "Alice" has been created with default attributes and large skeleton files
     And the administrator has set the encryption type to "masterkey"
@@ -15,6 +16,7 @@ Feature: encrypt files using master keys
     Then the user should be redirected to the general exception webUI page with the title "%productname%"
     And the title of the exception on general exception webUI page should be "Forbidden"
     And a message should be displayed on the general exception webUI page containing "Encryption not ready"
+
 
   Scenario: user can access their file after recreating master key with re-login
     Given user "Alice" has been created with default attributes and large skeleton files
