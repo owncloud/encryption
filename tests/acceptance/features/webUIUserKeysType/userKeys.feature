@@ -11,6 +11,7 @@ Feature: encrypt files using user specific keys
       | Alice    |
     And encryption has been enabled
 
+
   Scenario: encrypt all files using user keys based encryption via the occ command
     Given these users have been initialized:
       | username |
@@ -20,10 +21,12 @@ Feature: encrypt files using user specific keys
     Then the command should have been successful
     And file "textfile0.txt" of user "Alice" should be encrypted
 
+
   Scenario: file gets encrypted if the encryption is enabled and administrator has not encrypted all files but the user has logged in
     When the administrator sets the encryption type to "user-keys" using the occ command
     And user "Alice" has logged in using the webUI
     Then file "textfile0.txt" of user "Alice" should be encrypted
+
 
   Scenario: decrypt user keys based encryption of all users
     Given these users have been created with large skeleton files but not initialized:
