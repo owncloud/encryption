@@ -205,6 +205,7 @@ class DecryptAll {
 			}
 		}
 
+		/** @phan-suppress-next-line PhanPossiblyUndeclaredVariable */
 		$privateKey = $this->getPrivateKey($user, $password); /** @phpstan-ignore-line */
 		if ($privateKey !== false) {
 			$this->updateSession($user, $privateKey);

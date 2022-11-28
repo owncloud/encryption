@@ -60,7 +60,9 @@ class Session {
 	public function getStatus() {
 		$status = $this->session->get('encryptionInitialized');
 		if ($status === null) {
+			/** @phan-suppress-next-line PhanDeprecatedFunction */
 			if (\OC::$server->getAppConfig()->getValue('encryption', 'useMasterKey', '0') !== '0'
+				/** @phan-suppress-next-line PhanDeprecatedFunction */
 			  or \OC::$server->getAppConfig()->getValue('encryption', 'userSpecificKey', '') !== '') {
 				$status = self::NOT_INITIALIZED;
 			}

@@ -166,6 +166,7 @@ class Migration {
 			->setParameter('appid', 'files_encryption');
 		$appSettings = $oldAppValues->execute();
 
+		/** @phan-suppress-next-line PhanDeprecatedFunction */
 		while ($row = $appSettings->fetch()) {
 			// 'installed_version' gets deleted at the end of the migration process
 			if ($row['configkey'] !== 'installed_version') {
@@ -181,6 +182,7 @@ class Migration {
 			->setParameter('appid', 'files_encryption');
 		$preferenceSettings = $oldPreferences->execute();
 
+		/** @phan-suppress-next-line PhanDeprecatedFunction */
 		while ($row = $preferenceSettings->fetch()) {
 			$this->config->setUserValue($row['userid'], 'encryption', $row['configkey'], $row['configvalue']);
 			$this->config->deleteUserValue($row['userid'], 'files_encryption', $row['configkey']);
@@ -317,6 +319,7 @@ class Migration {
 	 * @return array
 	 */
 	protected function getSystemMountPoints() {
+		/** @phan-suppress-next-line PhanDeprecatedFunction */
 		return \OC\Files\External\LegacyUtil::getSystemMountPoints();
 	}
 

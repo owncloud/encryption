@@ -123,7 +123,9 @@ class CryptHSM extends Crypt {
 		$keyPair = \json_decode($response->getBody(), true);
 
 		return [
+			/** @phan-suppress-next-line PhanTypeArraySuspiciousNullable */
 			'publicKey' => $keyPair['publicKey'],
+			/** @phan-suppress-next-line PhanTypeArraySuspiciousNullable */
 			'privateKey' => $keyPair['privateKeyId'] // returns the key id in the hsm, not the actual private key
 		];
 	}

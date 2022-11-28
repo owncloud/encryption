@@ -696,6 +696,7 @@ class Crypt {
 			throw new MultiKeyDecryptException('Cannot multikey decrypt empty plain content');
 		}
 
+		/** @phan-suppress-next-line PhanParamTooFewInternal */
 		if (\openssl_open($encKeyFile, $plainContent, $shareKey, $privateKey)) {
 			return $plainContent;
 		} else {
@@ -721,11 +722,13 @@ class Crypt {
 		$shareKeys = [];
 		$mappedShareKeys = [];
 
+		/** @phan-suppress-next-line PhanParamTooFewInternal */
 		if (\openssl_seal($plainContent, $sealed, $shareKeys, $keyFiles)) {
 			$i = 0;
 
 			// Ensure each shareKey is labelled with its corresponding key id
 			foreach ($keyFiles as $userId => $publicKey) {
+				/** @phan-suppress-next-line PhanTypeInvalidDimOffset */
 				$mappedShareKeys[$userId] = $shareKeys[$i];
 				$i++;
 			}

@@ -144,7 +144,9 @@ class RecreateMasterKey extends Command {
 
 				//Reencrypt again
 				$this->appManager->enableApp('encryption');
+				/** @phan-suppress-next-line PhanDeprecatedFunction */
 				$this->appConfig->setValue('core', 'encryption_enabled', 'yes');
+				/** @phan-suppress-next-line PhanDeprecatedFunction */
 				$this->appConfig->setValue('encryption', 'useMasterKey', '1');
 
 				$output->writeln("Waiting for creating new masterkey\n");

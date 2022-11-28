@@ -148,6 +148,7 @@ class Application extends \OCP\AppFramework\App {
 						$server->getL10N($c->getAppName()),
 						$server->getHTTPClientService(),
 						$server->getRequest(),
+						/** @phan-suppress-next-line PhanUndeclaredMethod */
 						$server->getTimeFactory()
 					);
 				} else {
