@@ -27,7 +27,6 @@ namespace OCA\Encryption\Hooks;
 use OC\Files\Filesystem;
 use OCP\IConfig;
 use OCP\IUserManager;
-use OCP\Util as OCUtil;
 use OCA\Encryption\Hooks\Contracts\IHook;
 use OCA\Encryption\KeyManager;
 use OCA\Encryption\Crypto\Crypt;

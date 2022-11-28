@@ -23,6 +23,7 @@
 
 namespace OCA\Encryption\AppInfo;
 
+/** @phan-suppress-next-line PhanUndeclaredThis */
 (new Application())->registerRoutes($this, ['routes' => [
 
 	[

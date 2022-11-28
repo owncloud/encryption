@@ -33,9 +33,13 @@ class Version20170913113840 implements ISimpleMigration {
 		$installedVersion = \OC::$server->getConfig()->getSystemValue('version', '0.0.0');
 
 		if (\version_compare('10.0.3', $installedVersion, '>=') === true) {
+			/** @phan-suppress-next-line PhanDeprecatedFunction */
 			$encryptionEnable = \OC::$server->getAppConfig()->getValue('encryption', 'enabled', 'yes');
+			/** @phan-suppress-next-line PhanDeprecatedFunction */
 			$coreEncryptionEnable = \OC::$server->getAppConfig()->getValue('core', 'encryption_enabled', 'yes');
+			/** @phan-suppress-next-line PhanDeprecatedFunction */
 			$userSpecificKey = \OC::$server->getAppConfig()->getValue('encryption', 'userSpecificKey', '');
+			/** @phan-suppress-next-line PhanDeprecatedFunction */
 			$masterKey = \OC::$server->getAppConfig()->getValue('encryption', 'useMasterKey', '');
 
 			if (($userSpecificKey === '') && ($masterKey === '') &&

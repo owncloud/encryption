@@ -153,6 +153,7 @@ class EncryptAll {
 		$headline = 'Encrypt all files with the ' . Encryption::DISPLAY_NAME;
 		$this->output->writeln("\n");
 		$this->output->writeln($headline);
+		/** @phan-suppress-next-line PhanParamSuspiciousOrder phan thinks this is strange code, but it is fine. */
 		$this->output->writeln(\str_pad('', \strlen($headline), '='));
 		$this->output->writeln("\n");
 
