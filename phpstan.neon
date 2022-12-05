@@ -2,7 +2,7 @@ parameters:
   bootstrapFiles:
     - %currentWorkingDirectory%/../../lib/base.php
   inferPrivatePropertyTypeFromConstructor: true
-  excludes_analyse:
+  excludePaths:
     - %currentWorkingDirectory%/appinfo/routes.php
   ignoreErrors:
-
+    -'#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
