@@ -161,7 +161,6 @@ class EncDecAllFactory {
 			$this->encStorage,
 			$this->getCryptoEngine(),
 			$this->config,
-			$this->userSession,
 			$this->encSession,
 			$this->logger,
 			$this->encUtil

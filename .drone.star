@@ -79,7 +79,6 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
             ],
             "extraSetup": [
                 {
@@ -104,7 +103,6 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
             ],
             "extraSetup": [
                 {
@@ -128,7 +126,6 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
             ],
             "emailNeeded": True,
             "extraSetup": [
@@ -154,7 +151,6 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
             ],
             "extraSetup": [
                 {
@@ -178,7 +174,6 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
             ],
             "emailNeeded": True,
             "extraSetup": [
@@ -1939,7 +1934,7 @@ def installCore(ctx, version, db, useBundledApp):
         "name": "install-core",
         "image": OC_CI_CORE,
         "settings": {
-            "version": version,
+            "git_reference": "feat/storage-based-encryption-key-location-2",
             "core_path": dir["server"],
             "db_type": dbType,
             "db_name": database,
