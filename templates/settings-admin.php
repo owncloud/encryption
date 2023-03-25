@@ -13,21 +13,20 @@ style('encryption', 'settings-admin');
 		<label id="encryptionType">
 			<?php
 			$masterKey = \OC::$server->getAppConfig()->getValue('encryption', 'useMasterKey', '0');
-			$userSpecificKey = \OC::$server->getAppConfig()->getValue('encryption', 'userSpecificKey', '');
-			if ($masterKey !== '0') {
-				p($l->t("Encryption type: Master Key"));
-			} else {
-				if ($userSpecificKey !== "") {
-					p($l->t("Encryption type: User Specific Key"));
-				}
+		$userSpecificKey = \OC::$server->getAppConfig()->getValue('encryption', 'userSpecificKey', '');
+		if ($masterKey !== '0') {
+			p($l->t("Encryption type: Master Key"));
+		} else {
+			if ($userSpecificKey !== "") {
+				p($l->t("Encryption type: User Specific Key"));
 			}
-			?>
+		}
+		?>
 		</label>
 		<span id="encryptionKeySelection">
 			<select id="keyTypeId" name="keyType">
 				<option value="nokey"><?php p($l->t("Please select an encryption option"))?></option>
 				<option value="masterkey" <?php \OC::$server->getAppConfig()->getValue('encryption', 'useMasterKey', '0') !== '0' ? print_unescaped('selected="selected"') : print_unescaped(''); ?>><?php p($l->t("Master Key"))?></option>
-				<option value="customkey"><?php p($l->t("User-specific key"))?></option>
 			</select>
 			<button id="select-mode" type="button" class="hidden"><?php p($l->t("Permanently select this mode")); ?></button>
 			<div style="display:inline-block;margin-left: 20px;" class="hidden"></div>
@@ -36,11 +35,18 @@ style('encryption', 'settings-admin');
 		</span>
 		<br />
 
+		<?php if (\OC::$server->getAppConfig()->getValue("encryption", "userSpecificKey", "") !== ""): ?>
+		<p name="userSpecificKeyWarning" id="userSpecificKeyWarning">
+		<span class="msg warning"><?php print_unescaped($l->t("User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information.", ["https://doc.owncloud.com/docs/next/server_release_notes.html#deprecation-note-for-user-key-storage-encryption"]));  ?></span>
+		</p>
+		<br/>
+		<?php endif; ?>
+
 		<p id="encryptHomeStorageSetting" class="hidden">
 			<input type="checkbox" class="checkbox" name="encrypt_home_storage" id="encryptHomeStorage"
 				   value="1" <?php if ($_['encryptHomeStorage']) {
-				print_unescaped('checked="checked"');
-			} ?> />
+				   	print_unescaped('checked="checked"');
+				   } ?> />
 			<label for="encryptHomeStorage"><?php p($l->t('Encrypt the home storage')); ?></label></br>
 			<em><?php p($l->t("Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted")); ?></em>
 		</p>

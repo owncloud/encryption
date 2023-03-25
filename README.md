@@ -35,11 +35,5 @@ Normal ownCloud encryption vs storing decryption-keys in a HSM
 
 `config:app:set encryption recoveryAdminEnabled --value 1/0`
 
-With user-key encryption where only the specific user (not even the admin) can decrypt his data with his password there is an additional option to provide a recovery-key to the admin so he can also decrypt the data if the user leaves the company for example.
-
-`config:app:set encryption userSpecificKey --value 1/0`
-
-Set to 1 if userKey encryption is enabled
-
 
 > Note : You need openSSL version 1.1.x installed for encryption app to work. With the release change of openSSL v1.x to openSSL version 3.x in December 2021, some ciphers which were valid in version 1.x, have been retired with immediate effect. This impacts the ownCloud encryption app. Your encryption environment will break due to openSSL v3 retired (legacy) ciphers. As a result, encrypted files cant be accessed. As a temporary solution, you have to manually reenable in the openSSL v3 config the legacy ciphers. To do so, see the example in the OpenSSL 3.0 Wiki at section 6.2 Providers.

@@ -32,7 +32,6 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Input\InputOption;
 
 class SelectEncryptionType extends Command {
-
 	/** @var Util */
 	protected $util;
 
@@ -63,11 +62,11 @@ class SelectEncryptionType extends Command {
 
 		$this
 			->setName('encryption:select-encryption-type')
-			->setDescription('Select the encryption type. The encryption types available are: masterkey and user-keys. There is also no way to disable it again.')
+			->setDescription('Select the encryption type. The encryption types available are: masterkey. There is also no way to disable it again.')
 			->addArgument(
 				'encryption-type',
 				InputArgument::REQUIRED,
-				'Encryption type can be either: masterkey | user-keys'
+				'Encryption type can be either: masterkey'
 			)
 		;
 
@@ -94,10 +93,10 @@ class SelectEncryptionType extends Command {
 		$yes = $input->getOption('yes');
 
 		$masterKeyNotEnabled = (!$this->util->isMasterKeyEnabled());
-		$userKeysNotEnabled = ($this->config->getAppValue('encryption', 'userSpecificKey', '') === '');
-		$freshInstallation = ($masterKeyNotEnabled && $userKeysNotEnabled);
+		$freshInstallation = ($masterKeyNotEnabled);
 
 		if (!$freshInstallation) {
+			// check which encryption is already enabled
 			if (!$masterKeyNotEnabled) {
 				$output->writeln("Master key already enabled");
 			} else {
@@ -116,18 +115,8 @@ class SelectEncryptionType extends Command {
 				$this->config->setAppValue('encryption', 'useMasterKey', '1');
 				$output->writeln('Master key successfully enabled.');
 			}
-		} elseif ($encryptionType === "user-keys") {
-			$question = new ConfirmationQuestion(
-				'Warning: Only available for fresh installations with no existing encrypted data! '
-				. 'There is also no way to disable it again. Do you want to continue? (y/n) ',
-				false
-			);
-			if ($yes || $this->questionHelper->ask($input, $output, $question)) {
-				$this->config->setAppValue('encryption', 'userSpecificKey', '1');
-				$output->writeln('User key successfully enabled.');
-			}
 		} else {
-			$output->writeln("The option provided for encryption-type " . $encryptionType . " is not valid. The available options are: 'masterkey' or 'user-keys'");
+			$output->writeln("The option provided for encryption-type " . $encryptionType . " is not valid. The available options are: 'masterkey'");
 		}
 	}
 }

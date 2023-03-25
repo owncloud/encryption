@@ -24,9 +24,11 @@
 
 namespace OCA\Encryption\Hooks;
 
+use OC\HintException;
 use OC\Files\Filesystem;
 use OCP\IConfig;
 use OCP\IUserManager;
+use OCP\Encryption\IManager;
 use OCA\Encryption\Hooks\Contracts\IHook;
 use OCA\Encryption\KeyManager;
 use OCA\Encryption\Crypto\Crypt;
@@ -85,6 +87,10 @@ class UserHooks implements IHook {
 	 * @var EventDispatcherInterface
 	 */
 	private $eventDispatcher;
+	/**
+	 * @var IManager
+	 */
+	protected $encryptionManager;
 
 	/**
 	 * UserHooks constructor.
@@ -100,6 +106,7 @@ class UserHooks implements IHook {
 	 * @param Recovery $recovery
 	 * @param IConfig $config
 	 * @param EventDispatcherInterface $eventDispatcher
+	 * @param IManager $encryptionManager
 	 */
 	public function __construct(
 		KeyManager $keyManager,
@@ -112,7 +119,8 @@ class UserHooks implements IHook {
 		Crypt $crypt,
 		Recovery $recovery,
 		IConfig $config,
-		EventDispatcherInterface $eventDispatcher
+		EventDispatcherInterface $eventDispatcher,
+		IManager $encryptionManager
 	) {
 		$this->keyManager = $keyManager;
 		$this->userManager = $userManager;
@@ -125,6 +133,7 @@ class UserHooks implements IHook {
 		$this->crypt = $crypt;
 		$this->config = $config;
 		$this->eventDispatcher = $eventDispatcher;
+		$this->encryptionManager = $encryptionManager;
 	}
 
 	/**
@@ -165,9 +174,10 @@ class UserHooks implements IHook {
 			$this->userSetup->setupUser($params->getArgument('uid'), $params->getArgument('password'));
 		}
 
-		if (($this->util->isMasterKeyEnabled() === false) &&
-			($this->config->getAppValue('encryption', 'userSpecificKey', '') === '')) {
-			$this->config->setAppValue('encryption', 'userSpecificKey', '1');
+		if ($this->encryptionManager->isEnabled() && ($this->util->isMasterKeyEnabled() === false)
+				&& ($this->config->getAppValue('encryption', 'userSpecificKey', '') === '')) {
+			$this->logger->error('Encryption backend not initialized');
+			throw new HintException('Configuration issue in encryption app');
 		}
 
 		$this->keyManager->init($params->getArgument('uid'), $params->getArgument('password'));

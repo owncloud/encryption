@@ -45,7 +45,6 @@ use OCP\IConfig;
 use Symfony\Component\Console\Helper\QuestionHelper;
 
 class Application extends \OCP\AppFramework\App {
-
 	/** @var IManager */
 	private $encryptionManager;
 	/** @var IConfig */
@@ -95,7 +94,8 @@ class Application extends \OCP\AppFramework\App {
 					$container->query('Crypt'),
 					$container->query('Recovery'),
 					$server->getConfig(),
-					$server->getEventDispatcher()
+					$server->getEventDispatcher(),
+					$server->getEncryptionManager()
 				)
 			]);
 
