@@ -81,7 +81,6 @@ config = {
                     "commands": [
                         "cd %s" % dir["server"],
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
                         "php occ config:list",
                     ],
                 },
@@ -106,7 +105,6 @@ config = {
                     "commands": [
                         "cd %s" % dir["server"],
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
                         "php occ config:list",
                     ],
                 },
@@ -131,57 +129,6 @@ config = {
                     "commands": [
                         "cd %s" % dir["server"],
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "api-userkeys": {
-            "suites": {
-                "apiEncryption": "apiUserKeys",
-            },
-            "databases": [
-                "mysql:8.0",
-                "postgres:9.4",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd %s" % dir["server"],
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type user-keys --yes",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "webUI-userkeys": {
-            "suites": {
-                "webUIUserKeysType": "webUIUserKeys",
-            },
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "daily-master-qa",
-                "latest",
-            ],
-            "emailNeeded": True,
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd %s" % dir["server"],
-                        "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type user-keys --yes",
                         "php occ config:list",
                     ],
                 },
@@ -215,7 +162,6 @@ config = {
                     "commands": [
                         "cd %s" % dir["server"],
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
                         "php occ config:list",
                     ],
                 },
@@ -250,7 +196,6 @@ config = {
                     "commands": [
                         "cd %s" % dir["server"],
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
                         "php occ config:list",
                     ],
                 },
@@ -285,7 +230,6 @@ config = {
                     "commands": [
                         "cd %s" % dir["server"],
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
                         "php occ config:list",
                     ],
                 },
@@ -320,7 +264,6 @@ config = {
                     "commands": [
                         "cd %s" % dir["server"],
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
                         "php occ config:list",
                     ],
                 },
@@ -356,7 +299,6 @@ config = {
                     "commands": [
                         "cd %s" % dir["server"],
                         "php occ encryption:enable",
-                        "php occ encryption:select-encryption-type masterkey --yes",
                         "php occ config:list",
                     ],
                 },

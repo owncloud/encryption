@@ -68,7 +68,6 @@ class EncryptionContext implements Context {
 	}
 
 	/**
-	 * @When the administrator sets the encryption type to :encryptionType using the occ command
 	 * @Given the administrator has set the encryption type to :encryptionType
 	 *
 	 * @param string $encryptionType
