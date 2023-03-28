@@ -31,9 +31,17 @@ style('encryption', 'settings-admin');
 			<button id="select-mode" type="button" class="hidden"><?php p($l->t("Permanently select this mode")); ?></button>
 			<div style="display:inline-block;margin-left: 20px;" class="hidden"></div>
 			<div id="masterKeyVal" data-master-key="<?php echo \OC::$server->getAppConfig()->getValue("encryption", "useMasterKey", ""); ?>"></div>
+			<div id="userSpecificKey" data-user-specific-key="<?php echo \OC::$server->getAppConfig()->getValue("encryption", "userSpecificKey", ""); ?>"></div>
 		</span>
 		<br />
 
+		<?php if (\OC::$server->getAppConfig()->getValue("encryption", "userSpecificKey", "") !== ""): ?>
+		<p name="userSpecificKeyWarning" id="userSpecificKeyWarning">
+		<span class="msg warning"><?php print_unescaped($l->t("User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information.", ["https://doc.owncloud.com/docs/next/server_release_notes.html#deprecation-note-for-user-key-storage-encryption"]));  ?></span>
+		</p>
+		<br/>
+		<?php endif; ?>
+		
 		<p id="encryptHomeStorageSetting" class="hidden">
 			<input type="checkbox" class="checkbox" name="encrypt_home_storage" id="encryptHomeStorage"
 				   value="1" <?php if ($_['encryptHomeStorage']) {

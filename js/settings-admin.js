@@ -68,15 +68,6 @@ $(document).ready(function () {
 				$loadSpinner.toggleClass('hidden');
 				location.reload();
 			});
-		} else if($("#keyTypeId :selected").val() === "customkey") {
-			if($("#encryptionType").val().length === 0) {
-				$("#encryptionType").text("Encryption type: User Specific Key");
-			}
-			var userSpecificAjaxObj = OC.AppConfig.setValue("encryption", "userSpecificKey", '1');
-			$.when(userSpecificAjaxObj).done(function (userSpecificAjaxObj) {
-				$loadSpinner.toggleClass('hidden');
-				location.reload();
-			});
 		}
 	});
 
