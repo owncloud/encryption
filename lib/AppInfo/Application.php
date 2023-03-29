@@ -22,6 +22,7 @@
  */
 namespace OCA\Encryption\AppInfo;
 
+use OC\Encryption\Exceptions\ModuleAlreadyExistsException;
 use OC\Files\View;
 use OC\Helper\EnvironmentHelper;
 use OCA\Encryption\Controller\RecoveryController;
@@ -39,27 +40,37 @@ use OCA\Encryption\Session;
 use OCA\Encryption\Users\Setup;
 use OCA\Encryption\Util;
 use OCA\Encryption\Crypto\CryptHSM;
+use OCP\AppFramework\App;
 use OCP\AppFramework\IAppContainer;
+use OCP\AppFramework\QueryException;
 use OCP\Encryption\IManager;
 use OCP\IConfig;
 use Symfony\Component\Console\Helper\QuestionHelper;
 
-class Application extends \OCP\AppFramework\App {
+class Application extends App {
 
 	/** @var IManager */
 	private $encryptionManager;
-	/** @var IConfig */
-	private $config;
+	private IConfig $config;
 
 	/**
-	 * @param array $urlParams
-	 * @param bool $encryptionSystemReady
+	 * @throws QueryException
 	 */
 	public function __construct($urlParams = [], $encryptionSystemReady = true) {
 		parent::__construct('encryption', $urlParams);
 		$this->encryptionManager = \OC::$server->getEncryptionManager();
 		$this->config = \OC::$server->getConfig();
 		$this->registerServices();
+
+		# in case neither master key nor user based key is enabled -> setup master-key
+		if ($this->encryptionManager->isEnabled()) {
+			$masterKeyEnabled = $this->config->getAppValue('encryption', 'useMasterKey', '');
+			$userKeyEnabled = $this->config->getAppValue('encryption', 'userSpecificKey', '');
+			if (($masterKeyEnabled === '') && ($userKeyEnabled === '')) {
+				$this->config->setAppValue('encryption', 'useMasterKey', '1');
+			}
+		}
+
 		if ($encryptionSystemReady === false) {
 			/** @var Session $session */
 			$session = $this->getContainer()->query('Session');
@@ -74,9 +85,11 @@ class Application extends \OCP\AppFramework\App {
 
 	/**
 	 * register hooks
+	 *
+	 * @throws QueryException
 	 */
 
-	public function registerHooks() {
+	public function registerHooks(): void {
 		if (!$this->config->getSystemValue('maintenance', false)) {
 			$container = $this->getContainer();
 			$server = $container->getServer();
@@ -106,7 +119,10 @@ class Application extends \OCP\AppFramework\App {
 		}
 	}
 
-	public function registerEncryptionModule() {
+	/**
+	 * @throws ModuleAlreadyExistsException
+	 */
+	public function registerEncryptionModule(): void {
 		$container = $this->getContainer();
 
 		$this->encryptionManager->registerEncryptionModule(
@@ -127,7 +143,7 @@ class Application extends \OCP\AppFramework\App {
 		);
 	}
 
-	public function registerServices() {
+	public function registerServices(): void {
 		$container = $this->getContainer();
 
 		$container->registerService(
@@ -151,14 +167,14 @@ class Application extends \OCP\AppFramework\App {
 						/** @phan-suppress-next-line PhanUndeclaredMethod */
 						$server->getTimeFactory()
 					);
-				} else {
-					return new Crypt(
-						$server->getLogger(),
-						$server->getUserSession(),
-						$server->getConfig(),
-						$server->getL10N($c->getAppName())
-					);
 				}
+
+				return new Crypt(
+					$server->getLogger(),
+					$server->getUserSession(),
+					$server->getConfig(),
+					$server->getL10N($c->getAppName())
+				);
 			}
 		);
 

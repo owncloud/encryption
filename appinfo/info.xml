@@ -31,7 +31,6 @@
 		<php min-version="7.4" />
 	</dependencies>
 	<commands>
-		<command>OCA\Encryption\Command\SelectEncryptionType</command>
 		<command>OCA\Encryption\Command\RecreateMasterKey</command>
 		<command>OCA\Encryption\Command\MigrateKeys</command>
 		<command>OCA\Encryption\Command\HSMDaemon</command>

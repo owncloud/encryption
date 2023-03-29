@@ -100,7 +100,7 @@ class UserHooksTest extends TestCase {
 
 	private $keyPair = ['publicKey' => 'abcd', 'privateKey' => 'efgh'];
 
-	public function testLogin() {
+	public function testLogin(): void {
 		$this->userSetupMock->expects($this->once())
 			->method('setupUser')
 			->willReturn(true);
@@ -109,23 +109,17 @@ class UserHooksTest extends TestCase {
 			->method('init')
 			->with('testUser', 'password');
 
-		$this->config->expects($this->once())
-			->method('getAppValue')
-			->willReturnMap([
-				['encryption', 'userSpecificKey', '', ''],
-			]);
-
 		$this->assertNull($this->instance->login($this->params));
 	}
 
-	public function testLogout() {
+	public function testLogout(): void {
 		$this->sessionMock->expects($this->once())
 			->method('clear');
 		$this->instance->logout();
 		$this->assertTrue(true);
 	}
 
-	public function testPostCreateUser() {
+	public function testPostCreateUser(): void {
 		$this->userSetupMock->expects($this->once())
 			->method('setupUser');
 
@@ -133,7 +127,7 @@ class UserHooksTest extends TestCase {
 		$this->assertTrue(true);
 	}
 
-	public function testPostDeleteUser() {
+	public function testPostDeleteUser(): void {
 		$this->keyManagerMock->expects($this->once())
 			->method('deletePublicKey')
 			->with('testUser');
@@ -141,7 +135,7 @@ class UserHooksTest extends TestCase {
 		$this->assertNull($this->instance->postDeleteUser($this->params));
 	}
 
-	public function dataTestPreSetPassphrase() {
+	public function dataTestPreSetPassphrase(): array {
 		return [
 			[true],
 			[false]
@@ -151,7 +145,7 @@ class UserHooksTest extends TestCase {
 	/**
 	 * @dataProvider dataTestPreSetPassphrase
 	 */
-	public function testPreSetPassphrase($canChange) {
+	public function testPreSetPassphrase($canChange): void {
 		/** @var UserHooks | MockObject  $instance */
 		$instance = $this->getInstanceMock(['setPassphrase']);
 		$userMock = $this->params['user'];
@@ -173,7 +167,7 @@ class UserHooksTest extends TestCase {
 		$this->assertNull($instance->preSetPassphrase($this->params));
 	}
 
-	public function testSetPassphrase() {
+	public function testSetPassphrase(): void {
 		$this->sessionMock->expects($this->exactly(4))
 			->method('getPrivateKey')
 			->willReturnOnConsecutiveCalls(true, false, false, false);
@@ -182,11 +176,11 @@ class UserHooksTest extends TestCase {
 			->method('encryptPrivateKey')
 			->willReturn(true);
 
-		$this->cryptMock->expects($this->any())
+		$this->cryptMock
 			->method('generateHeader')
 			->willReturn(Crypt::HEADER_START . ':Cipher:test:' . Crypt::HEADER_END);
 
-		$this->cryptMock->expects($this->any())
+		$this->cryptMock
 			->method('createKeyPair')
 			->willReturn($this->keyPair);
 
@@ -243,15 +237,15 @@ class UserHooksTest extends TestCase {
 	/**
 	 * Test setPassphrase without session and no logger error should appear
 	 */
-	public function testSetPassphraseWithoutSession() {
+	public function testSetPassphraseWithoutSession(): void {
 		/** @var UserHooks $userHooks */
 		$userHooks = $this->getInstanceMock(['initMountPoints']);
 
-		$this->userSessionMock->expects($this->any())
+		$this->userSessionMock
 			->method('getUser')
 			->willReturn(null);
 
-		$this->cryptMock->expects($this->any())
+		$this->cryptMock
 			->method('encryptPrivateKey')
 			->willReturn(true);
 
@@ -259,7 +253,7 @@ class UserHooksTest extends TestCase {
 			->method('createKeyPair')
 			->willReturn($this->keyPair);
 
-		$this->keyManagerMock->expects($this->any())
+		$this->keyManagerMock
 			->method('setPrivateKey')
 			->willReturn(true);
 
@@ -270,21 +264,21 @@ class UserHooksTest extends TestCase {
 		$this->assertNull($userHooks->setPassphrase($this->params));
 	}
 
-	public function testSetPassphraseWithoutSessionLoggerError() {
-		$this->userSessionMock->expects($this->any())
+	public function testSetPassphraseWithoutSessionLoggerError(): void {
+		$this->userSessionMock
 			->method('getUser')
 			->willReturn(null);
 
-		$this->cryptMock->expects($this->any())
+		$this->cryptMock
 			->method('createKeyPair')
 			->willReturn($this->keyPair);
 
-		$this->cryptMock->expects($this->any())
+		$this->cryptMock
 			->method('encryptPrivateKey')
 			->willReturn(false);
 
 		//No logger error should appear
-		$this->loggerMock->expects($this->any())
+		$this->loggerMock
 			->method('error')
 			->with('Encryption Could not update users encryption password');
 
@@ -293,22 +287,22 @@ class UserHooksTest extends TestCase {
 		$this->assertNull($userHooks->setPassphrase($this->params));
 	}
 
-	public function testSetPasswordNoUser() {
-		$this->sessionMock->expects($this->any())
+	public function testSetPasswordNoUser(): void {
+		$this->sessionMock
 			->method('getPrivateKey')
 			->willReturn(true);
 
 		$this->userSessionMock = $this->createMock(IUserSession::class);
-		$this->userSessionMock->expects($this->any())
+		$this->userSessionMock
 			->method('getUser')
-			->will($this->returnValue(null));
+			->willReturn(null);
 
 		$this->recoveryMock->expects($this->once())
 			->method('isRecoveryEnabledForUser')
 			->with('testUser')
 			->willReturn(false);
 
-		$this->cryptMock->expects($this->any())
+		$this->cryptMock
 			->method('createKeyPair')
 			->willReturn($this->keyPair);
 
@@ -318,7 +312,7 @@ class UserHooksTest extends TestCase {
 		$this->assertNull($userHooks->setPassphrase($this->params));
 	}
 
-	public function testPostPasswordReset() {
+	public function testPostPasswordReset(): void {
 		$this->keyManagerMock->expects($this->once())
 			->method('deleteUserKeys')
 			->with('testUser');
@@ -376,9 +370,9 @@ class UserHooksTest extends TestCase {
 			])
 			->getMock();
 
-		$this->userSessionMock->expects($this->any())->method('getUID')->will($this->returnValue('testUser'));
+		$this->userSessionMock->method('getUID')->willReturn('testUser');
 
-		$this->userSessionMock->expects($this->any())
+		$this->userSessionMock
 			->method($this->anything())
 			->will($this->returnSelf());
 
@@ -397,11 +391,11 @@ class UserHooksTest extends TestCase {
 		$this->sessionMock = $sessionMock;
 		$this->recoveryMock = $recoveryMock;
 		$this->utilMock = $this->createMock(Util::class);
-		$this->utilMock->expects($this->any())->method('isMasterKeyEnabled')->willReturn(false);
+		$this->utilMock->method('isMasterKeyEnabled')->willReturn(false);
 		$this->eventDispatcher = $this->createMock(EventDispatcher::class);
 
 		$userMock = $this->createMock(IUser::class);
-		$userMock->expects($this->any())->method('getUID')->willReturn('testUser');
+		$userMock->method('getUID')->willReturn('testUser');
 		$this->params = new GenericEvent(null, ['uid' => 'testUser', 'password' => 'password', 'user' => $userMock]);
 		$this->instance = $this->getInstanceMock(['setupFS']);
 	}

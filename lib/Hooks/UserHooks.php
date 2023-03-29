@@ -165,11 +165,6 @@ class UserHooks implements IHook {
 			$this->userSetup->setupUser($params->getArgument('uid'), $params->getArgument('password'));
 		}
 
-		if (($this->util->isMasterKeyEnabled() === false) &&
-			($this->config->getAppValue('encryption', 'userSpecificKey', '') === '')) {
-			$this->config->setAppValue('encryption', 'userSpecificKey', '1');
-		}
-
 		$this->keyManager->init($params->getArgument('uid'), $params->getArgument('password'));
 	}
 
