@@ -38,7 +38,6 @@
     "Encryption type: User Specific Key" : "Тип криптиране: User Specific Key",
     "Please select an encryption option" : "Моля, изберете опция за криптиране",
     "Master Key" : "Master Key",
-    "User-specific key" : "User-specific key",
     "Permanently select this mode" : "Постоянен избор на този режим",
     "Encrypt the home storage" : "Криптиране на домашното хранилище",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "С активирането на тази опция всички файлове, съхранявани в основното хранилище ще бъдат криптирани, в противен случай ще бъдат криптирани само файловете във външното хранилище",

@@ -38,7 +38,6 @@
     "Encryption type: User Specific Key" : "نوع التشفير: مفتاح محدد للمستخدم",
     "Please select an encryption option" : "يُرجى تحديد خيار تشفير",
     "Master Key" : "مفتاح رئيسي",
-    "User-specific key" : "مفتاح محدد للمستخدم",
     "Permanently select this mode" : "حدد هذا الوضع نهائيًا",
     "Encrypt the home storage" : "شفّر وحدة التخزين الرئيسية",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "يؤدي تمكين هذا الخيار إلى تشفير جميع الملفات المخزنة على وحدة التخزين الرئيسية، وإلا سيتم تشفير الملفات الموجودة على وحدة التخزين الخارجية فقط",

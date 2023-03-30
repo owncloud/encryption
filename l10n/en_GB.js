@@ -40,7 +40,6 @@ OC.L10N.register(
     "Encryption type: User Specific Key" : "Encryption type: User Specific Key",
     "Please select an encryption option" : "Please select an encryption option",
     "Master Key" : "Master Key",
-    "User-specific key" : "User-specific key",
     "Permanently select this mode" : "Permanently select this mode",
     "Encrypt the home storage" : "Encrypt the home storage",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted",

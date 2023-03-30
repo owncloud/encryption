@@ -40,7 +40,6 @@ OC.L10N.register(
     "Encryption type: User Specific Key" : "Titkosítás típusa: Felhasználóspecifikus kulcs",
     "Please select an encryption option" : "Kérjük válasszon egy titkosítási opciót",
     "Master Key" : "Mester kulcs",
-    "User-specific key" : "Felhasználóspecifikus kulcs",
     "Permanently select this mode" : "Midig válassza ezt a módot",
     "Encrypt the home storage" : "Saját tároló titkosítása",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Ha engedélyezi ezt az opciót, a fő tárolóban tárolt összes fájlt titkosítja, egyébként csak a külső tárterületen tárolt fájlok lesznek titkosítva",

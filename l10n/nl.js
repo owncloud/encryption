@@ -40,7 +40,6 @@ OC.L10N.register(
     "Encryption type: User Specific Key" : "Encryptietype: Gebruikersspecifieke sleutel",
     "Please select an encryption option" : "Kies een encryptie-optie",
     "Master Key" : "Master Sleutel",
-    "User-specific key" : "Gebruikersspecifieke sleutel",
     "Permanently select this mode" : "Kies deze modus permanent",
     "Encrypt the home storage" : "Versleutel de eigen serveropslag",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Het inschakelen van deze optie zorgt voor versleutelen van alle bestanden op do hoofdopslag, anders worden alleen bestanden op externe opslag versleuteld",

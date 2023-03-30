@@ -40,7 +40,6 @@ OC.L10N.register(
     "Encryption type: User Specific Key" : "암호화 방식: 사용자 전용 키",
     "Please select an encryption option" : "암호화 옵션을 선택해 주십시오",
     "Master Key" : "주 키",
-    "User-specific key" : "사용자 전용 키",
     "Permanently select this mode" : "영구적으로 이 모드 사용",
     "Encrypt the home storage" : "홈 저장소 암호화",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "이 옵션을 사용하면 주 저장소에 있는 모드 파일을 암호화하며, 사용하지 않으면 외부 저장소의 파일만 암호화합니다",

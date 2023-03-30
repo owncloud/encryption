@@ -40,7 +40,6 @@ OC.L10N.register(
     "Encryption type: User Specific Key" : "Tegund dulritunar: Sérlykill notanda",
     "Please select an encryption option" : "Veldu dulritunarvalkost",
     "Master Key" : "Yfirlykill",
-    "User-specific key" : "Sérlykill notanda",
     "Permanently select this mode" : "Velja þennan valkost til frambúðar",
     "Encrypt the home storage" : "Dulrita heimamöppuna",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Ef þessi kostur er virkur verða allar skrár í aðalgeymslu dulritaðar, annars verða einungis skrár í ytri gagnageymslum dulritaðar",

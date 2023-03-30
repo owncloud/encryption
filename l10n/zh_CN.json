@@ -38,7 +38,6 @@
     "Encryption type: User Specific Key" : "加密类型：用户指定密钥",
     "Please select an encryption option" : "请选择加密选项",
     "Master Key" : "主密钥",
-    "User-specific key" : "用户指定密钥",
     "Permanently select this mode" : "永久使用此模式",
     "Encrypt the home storage" : "加密本地存储",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "开启此选项将加密全部本地存储上的文件，否则只加密外部存储上的文件",

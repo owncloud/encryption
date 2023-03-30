@@ -38,7 +38,6 @@
     "Encryption type: User Specific Key" : "Şifreleme türü: Kullanıcıya Özel Anahtar",
     "Please select an encryption option" : "Lütfen bir şifreleme opsiyonu seçiniz",
     "Master Key" : "Ana Anahtar",
-    "User-specific key" : "Kullanıcıya özel anahtar",
     "Permanently select this mode" : "Bu modu kalıcı olarak seç",
     "Encrypt the home storage" : "Ana depolamayı şifrele",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Bu seçeneği etkinleştirmek ana depolamadaki bütün dosyaları şifreler, aksi takdirde sadece harici depolamadaki dosyalar şifrelenir",

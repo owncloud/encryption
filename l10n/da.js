@@ -40,7 +40,6 @@ OC.L10N.register(
     "Encryption type: User Specific Key" : "Krypteringstype: Brugerspecificeret nøgle",
     "Please select an encryption option" : "Vælg venligst en krypteringsindstilling",
     "Master Key" : "Hovednøgle",
-    "User-specific key" : "Brugerspecificeret nøgle",
     "Permanently select this mode" : "Vælg denne tilstand permanent",
     "Encrypt the home storage" : "Krypter hjemmelageret",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Ved at slå denne valgmulighed til krypteres alle filer i hovedlageret, ellers vil kun filer på eksternt lager blive krypteret",

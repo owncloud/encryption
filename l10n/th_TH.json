@@ -38,7 +38,6 @@
     "Encryption type: User Specific Key" : "ประเภทการเข้ารหัส: คีย์เฉพาะของผู้ใช้",
     "Please select an encryption option" : "โปรดเลือกตัวเลือกการเข้ารหัส",
     "Master Key" : "คีย์หลัก",
-    "User-specific key" : "คีย์เฉพาะของผู้ใช้",
     "Permanently select this mode" : "เลือกโหมดนี้อย่างถาวร",
     "Encrypt the home storage" : "การเข้ารหัสพื้นที่จัดเก็บหน้าโฮม",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "การเปิดใช้งานตัวเลือกนี้จะเข้ารหัสไฟล์ทั้งหมดที่เก็บไว้ในพื้นที่จัดเก็บข้อมูลหลัก มิฉะนั้นจะเข้ารหัสเฉพาะไฟล์ที่เป็นพื้นที่จัดเก็บข้อมูลภายนอก",

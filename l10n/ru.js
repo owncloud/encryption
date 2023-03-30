@@ -40,7 +40,6 @@ OC.L10N.register(
     "Encryption type: User Specific Key" : "Тип шифрования: отдельный ключ пользователя",
     "Please select an encryption option" : "Пожалуйста, выберите вариант шифрования",
     "Master Key" : "Мастер-ключ",
-    "User-specific key" : "Отдельный ключ пользователя",
     "Permanently select this mode" : "Выбраить этот режим в качестве постоянного",
     "Encrypt the home storage" : "Зашифровать домашнюю директорию",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Данный параметр позволяет зашифровать все файлы, хранящиеся в главном хранилище, иначе только файлы на внешних хранилищах будут зашифрованы",

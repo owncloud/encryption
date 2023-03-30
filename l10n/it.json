@@ -38,7 +38,6 @@
     "Encryption type: User Specific Key" : "Tipo di crittografazione: Chiave specifica dell'Utente",
     "Please select an encryption option" : "Scegliere un tipo di crittografazione.",
     "Master Key" : "Chiave principale",
-    "User-specific key" : "Chiave definita dall'utente",
     "Permanently select this mode" : "Seelziona questo modo permanentemente",
     "Encrypt the home storage" : "Cifra l'archiviazione principale",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "L'abilitazione di questa opzione cifra tutti i file memorizzati sull'archiviazione principale, altrimenti saranno cifrati solo i file sull'archiviazione esterna.",

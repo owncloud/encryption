@@ -40,7 +40,6 @@ OC.L10N.register(
     "Encryption type: User Specific Key" : "Τύπος κρυπτογράφησης: Ειδικό κλειδί χρήστη",
     "Please select an encryption option" : "Παρακαλώ επιλέξτε τύπο κρυπτογράφησης",
     "Master Key" : "Βασικό Κλειδί",
-    "User-specific key" : "Ειδικό κλειδί χρήστη",
     "Permanently select this mode" : "Επιλέξτε αυτή τη λειτουργία μόνιμα",
     "Encrypt the home storage" : "Κρυπτογράφηση του κεντρικού χώρου αποθήκευσης",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Η ενεργοποίηση αυτή της επιλογής κρυπτογραφεί όλα τα αρχεία που βρίσκονται στον κύριο αποθηκευτικό χώρο, αλλιώς μόνο τα αρχεία σε εξωτερικούς αποθηκευτικούς χώρους θα κρυπτογραφηθούν.",

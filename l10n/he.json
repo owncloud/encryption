@@ -38,7 +38,6 @@
     "Encryption type: User Specific Key" : "סוג הצפנה: מפתח משתמש ספציפי",
     "Please select an encryption option" : "יש לבחור סוג הצפנה",
     "Master Key" : "מפתח ראשי",
-    "User-specific key" : "מפתח משתמש ספציפי",
     "Permanently select this mode" : "בחירת מצב זה באופן קבוע",
     "Encrypt the home storage" : "הצפנת אחסון הבית",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "הפעלת אפשרות זו מצפינה את כל הקבצים המאוחסנים באחסון המרכזי, אחרת רק הקבצים המאוחסנים בהתקנים חיצוניים יוצפנו",

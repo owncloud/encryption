@@ -40,7 +40,6 @@ OC.L10N.register(
     "Encryption type: User Specific Key" : "Lloj fshehtëzimi: Kyç Fshehtëzimi i Përdoruesit",
     "Please select an encryption option" : "Ju lutemi, përzgjidhni një mundësi fshehtëzimi",
     "Master Key" : "Kyç i Përgjithshëm",
-    "User-specific key" : "Kyç përdoruesi",
     "Permanently select this mode" : "Përzgjidhe këtë mënyrë përgjithmonë",
     "Encrypt the home storage" : "Fshehtëzo depozitën bazë",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Aktivizimi i kësaj mundësie fshehtëzon krejt kartelat e depozituara në depon bazë, përndryshe do të fshehtëzohen vetëm kartelat në depozitën e jashtme",

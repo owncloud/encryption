@@ -38,7 +38,6 @@ OC.L10N.register(
     "Encryption type: User Specific Key" : "Rodzaj szyfrowania: Klucz użytkownika",
     "Please select an encryption option" : "Zaznacz opcję szyfrowania",
     "Master Key" : "Główny klucz",
-    "User-specific key" : "Klucz użytkownika",
     "Permanently select this mode" : "Wybierz ten tryb na stałe",
     "Encrypt the home storage" : "Zaszyfruj domowe składowisko danych",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Włączenie tej opcji szyfruje wszystkie pliki przechowywane w głównym składowisku danych, w przeciwnym wypadku zaszyfrowane zostaną tylko pliki przechowywane na zewnętrznych składowiskach.",

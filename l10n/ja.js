@@ -40,7 +40,6 @@ OC.L10N.register(
     "Encryption type: User Specific Key" : "暗号方式: ユーザーごとの鍵",
     "Please select an encryption option" : "暗号化のオプションを選択してください",
     "Master Key" : "マスターキー",
-    "User-specific key" : "ユーザーごとの鍵",
     "Permanently select this mode" : "常にこのモードを選択する",
     "Encrypt the home storage" : "メインストレージを暗号化する",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "このオプションを有効にすると、メインストレージのファイル全てが暗号化されます。無効にすると、外部ストレージのファイルだけが暗号化されます。",
