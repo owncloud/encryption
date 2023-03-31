@@ -41,6 +41,7 @@ OC.L10N.register(
     "Please select an encryption option" : "Ju lutemi, përzgjidhni një mundësi fshehtëzimi",
     "Master Key" : "Kyç i Përgjithshëm",
     "Permanently select this mode" : "Përzgjidhe këtë mënyrë përgjithmonë",
+    "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information." : "Moduli i fshehtëzimit me Kyç Specifik të Përdoruesit është nxjerrë nga përdorimi. Për më tepër hollësi, shihni <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">shënime hedhjeje në qarkullim të shërbyesit ↗</a>.",
     "Encrypt the home storage" : "Fshehtëzo depozitën bazë",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Aktivizimi i kësaj mundësie fshehtëzon krejt kartelat e depozituara në depon bazë, përndryshe do të fshehtëzohen vetëm kartelat në depozitën e jashtme",
     "Enable recovery key" : "Aktivizo kyç rimarrjesh",
