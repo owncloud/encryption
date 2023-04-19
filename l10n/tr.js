@@ -41,6 +41,7 @@ OC.L10N.register(
     "Please select an encryption option" : "Lütfen bir şifreleme opsiyonu seçiniz",
     "Master Key" : "Ana Anahtar",
     "Permanently select this mode" : "Bu modu kalıcı olarak seç",
+    "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information." : "Kullanıcıya Özel Anahtar şifreleme modülü kullanımdan kaldırılmıştır. Daha fazla bilgi için <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">sunucu sürüm notlarına ↗</a> bakın.",
     "Encrypt the home storage" : "Ana depolamayı şifrele",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Bu seçeneği etkinleştirmek ana depolamadaki bütün dosyaları şifreler, aksi takdirde sadece harici depolamadaki dosyalar şifrelenir",
     "Enable recovery key" : "Kurtarma anahtarını etkinleştir",
