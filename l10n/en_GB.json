@@ -39,6 +39,7 @@
     "Please select an encryption option" : "Please select an encryption option",
     "Master Key" : "Master Key",
     "Permanently select this mode" : "Permanently select this mode",
+    "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information." : "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information.",
     "Encrypt the home storage" : "Encrypt the home storage",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted",
     "Enable recovery key" : "Enable recovery key",
