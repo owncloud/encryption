@@ -63,10 +63,10 @@ class HSMDaemon extends Command {
 	/**
 	 * @param InputInterface $input
 	 * @param OutputInterface $output
-	 * @return int|void
+	 * @return int
 	 * @throws \Exception
 	 */
-	protected function execute(InputInterface $input, OutputInterface $output) {
+	protected function execute(InputInterface $input, OutputInterface $output): int {
 		/** @var string|null $hsmUrl */
 		$hsmUrl = $this->config->getAppValue('encryption', 'hsm.url');
 		if (\is_string($hsmUrl) && $hsmUrl !== '') {
@@ -79,6 +79,8 @@ class HSMDaemon extends Command {
 			}
 		} else {
 			$output->writeln("<error>hsm.url not set</error>");
+			return 1;
 		}
+		return 0;
 	}
 }

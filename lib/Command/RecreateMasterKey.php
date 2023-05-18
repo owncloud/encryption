@@ -105,7 +105,7 @@ class RecreateMasterKey extends Command {
 	 * @return int
 	 * @throws \Exception
 	 */
-	protected function execute(InputInterface $input, OutputInterface $output) {
+	protected function execute(InputInterface $input, OutputInterface $output): int {
 		$yes = $input->getOption('yes');
 		if ($this->util->isMasterKeyEnabled()) {
 			$question = new ConfirmationQuestion(
@@ -164,7 +164,7 @@ class RecreateMasterKey extends Command {
 				 * We are reusing the encryptAll code but not the decryptAll. The reason being
 				 * decryptAll finishes by encrypting. Which is not what we want. This will make
 				 * things out of scope for this command. We want first the entire oC FS to be
-				 * decrypt. Then re-encrypt the entire oC FS with the new master key generated.
+				 * decrypted. Then re-encrypt the entire oC FS with the new master key generated.
 				 */
 				$encryptAll->encryptAll($input, $output);
 

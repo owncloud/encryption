@@ -105,10 +105,10 @@ class HSMDaemonDecrypt extends Command {
 	/**
 	 * @param InputInterface $input
 	 * @param OutputInterface $output
-	 * @return int|void
+	 * @return int
 	 * @throws \Exception
 	 */
-	protected function execute(InputInterface $input, OutputInterface $output) {
+	protected function execute(InputInterface $input, OutputInterface $output): int {
 		$hsmUrl = $this->config->getAppValue('encryption', 'hsm.url');
 		if (!$hsmUrl || !\is_string($hsmUrl)) {
 			$output->writeln("<error>hsm.url not set</error>");
@@ -142,6 +142,7 @@ class HSMDaemonDecrypt extends Command {
 
 		$decryptedStr = $response->getBody();
 		$output->writeln("decrypted string (base64 encoded): '".\base64_encode($decryptedStr)."'");
+		return 0;
 	}
 
 	/**

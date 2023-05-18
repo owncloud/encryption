@@ -83,9 +83,9 @@ class MigrateKeys extends Command {
 	/**
 	 * @param InputInterface $input
 	 * @param OutputInterface $output
-	 * @return int|void
+	 * @return int
 	 */
-	protected function execute(InputInterface $input, OutputInterface $output) {
+	protected function execute(InputInterface $input, OutputInterface $output): int {
 
 		// perform system reorganization
 		$migration = new Migration($this->config, $this->view, $this->connection, $this->logger);
@@ -127,5 +127,6 @@ class MigrateKeys extends Command {
 		}
 
 		$migration->finalCleanUp();
+		return 0;
 	}
 }
