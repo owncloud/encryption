@@ -28,6 +28,7 @@ use OC\Files\Storage\Common;
 use OC\Files\View;
 use OCA\Encryption\Crypto\EncryptAll;
 use OCP\Files\Mount\IMountPoint;
+use Symfony\Component\Console\Formatter\OutputFormatterInterface;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -122,8 +123,11 @@ class EncryptAllTest extends TestCase {
 		$this->userInterface = $this->getMockBuilder(UserInterface::class)
 			->disableOriginalConstructor()->getMock();
 
+		$outputFormatterInterface = $this->createMock(OutputFormatterInterface::class);
+		$outputFormatterInterface->expects($this->any())->method('isDecorated')
+			->willReturn(false);
 		$this->outputInterface->method('getFormatter')
-			->willReturn($this->createMock('\Symfony\Component\Console\Formatter\OutputFormatterInterface'));
+			->willReturn($outputFormatterInterface);
 
 		$this->userManager->method('getBackends')->willReturn([$this->userInterface]);
 		$this->userInterface->method('getUsers')->willReturn(['user1', 'user2']);
