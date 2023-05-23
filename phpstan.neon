@@ -5,4 +5,24 @@ parameters:
   excludePaths:
     - %currentWorkingDirectory%/appinfo/routes.php
   ignoreErrors:
-    -'#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
+    -
+      message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
+      path: lib/Command/FixEncryptedVersion.php
+    -
+      message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
+      path: lib/Controller/RecoveryController.php
+    -
+      message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
+      path: lib/Hooks/UserHooks.php
+    -
+      message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
+      path: lib/KeyManager.php
+    -
+      message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
+      path: lib/Recovery.php
+    -
+      message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
+      path: lib/Users/Setup.php
+    -
+      message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
+      path: lib/Util.php
