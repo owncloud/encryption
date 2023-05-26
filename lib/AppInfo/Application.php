@@ -48,7 +48,6 @@ use OCP\IConfig;
 use Symfony\Component\Console\Helper\QuestionHelper;
 
 class Application extends App {
-
 	/** @var IManager */
 	private $encryptionManager;
 	private IConfig $config;

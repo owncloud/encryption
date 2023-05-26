@@ -253,7 +253,6 @@ class KeyManagerTest extends TestCase {
 	 * @param bool $useMasterKey
 	 */
 	public function testInit($useMasterKey) {
-
 		/** @var \OCA\Encryption\KeyManager|\PHPUnit\Framework\MockObject\MockObject $instance */
 		$instance = $this->getMockBuilder('OCA\Encryption\KeyManager')
 			->setConstructorArgs(

@@ -26,7 +26,6 @@ namespace OCA\Encryption\Exceptions;
 use OCP\Encryption\Exceptions\GenericEncryptionException;
 
 class PrivateKeyMissingException extends GenericEncryptionException {
-
 	/**
 	 * @param string $userId
 	 */

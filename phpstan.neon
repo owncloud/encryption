@@ -8,21 +8,28 @@ parameters:
     -
       message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
       path: lib/Command/FixEncryptedVersion.php
+      count: 1
     -
       message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
       path: lib/Controller/RecoveryController.php
+      count: 1
     -
       message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
       path: lib/Hooks/UserHooks.php
+      count: 2
     -
       message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
       path: lib/KeyManager.php
+      count: 1
     -
       message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
       path: lib/Recovery.php
+      count: 2
     -
       message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
       path: lib/Users/Setup.php
+      count: 2
     -
       message: '#^Property OCA\\Encryption\\[^"]* is never read, only written.$#'
       path: lib/Util.php
+      count: 2

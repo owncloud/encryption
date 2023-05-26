@@ -35,7 +35,6 @@ use OCP\IUserSession;
  * @package OCA\Encryption\Tests\Panels
  */
 class PersonalTest extends \Test\TestCase {
-
 	/** @var Personal */
 	private $panel;
 	/** @var IConfig */

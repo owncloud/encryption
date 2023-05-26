@@ -28,7 +28,6 @@ use OCA\Encryption\Hooks\Contracts\IHook;
 use Test\TestCase;
 
 class HookManagerTest extends TestCase {
-
 	/**
 	 * @var HookManager
 	 */

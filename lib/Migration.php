@@ -147,7 +147,6 @@ class Migration {
 	 * update database
 	 */
 	public function updateDB() {
-
 		// make sure that we don't update the file cache multiple times
 		// only update during the first run
 		if ($this->installedVersion === '-1') {

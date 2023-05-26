@@ -39,7 +39,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 
 class HSMDaemonDecrypt extends Command {
-
 	/** @var IClient */
 	private $httpClient;
 	/** @var IConfig */

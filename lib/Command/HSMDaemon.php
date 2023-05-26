@@ -28,7 +28,6 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class HSMDaemon extends Command {
-
 	/** @var IConfig */
 	private $config;
 

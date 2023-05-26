@@ -33,7 +33,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 
 class DecryptAll {
-
 	/** @var Util  */
 	protected $util;
 

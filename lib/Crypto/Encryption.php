@@ -307,7 +307,6 @@ class Encryption implements IEncryptionModule {
 		// If extra data is left over from the last round, make sure it
 		// is integrated into the next block
 		if ($this->writeCache) {
-
 			// Concat writeCache to start of $data
 			$data = $this->writeCache . $data;
 
@@ -319,7 +318,6 @@ class Encryption implements IEncryptionModule {
 		$encrypted = '';
 		// While there still remains some data to be processed & written
 		while (\strlen($data) > 0) {
-
 			// Remaining length for this iteration, not of the
 			// entire file (may be greater than 8192 bytes)
 			$remainingLength = \strlen($data);
@@ -327,7 +325,6 @@ class Encryption implements IEncryptionModule {
 			// If data remaining to be written is less than the
 			// size of 1 unencrypted block size byte block
 			if ($remainingLength < $this->getUnencryptedBlockSize(true)) {
-
 				// Set writeCache to contents of $data
 				// The writeCache will be carried over to the
 				// next write round, and added to the start of
@@ -341,7 +338,6 @@ class Encryption implements IEncryptionModule {
 				// Clear $data ready for next round
 				$data = '';
 			} else {
-
 				// Read the chunk from the start of $data
 				$chunk = \substr($data, 0, $this->getUnencryptedBlockSize(true));
 

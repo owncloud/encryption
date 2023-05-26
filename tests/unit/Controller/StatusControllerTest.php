@@ -28,7 +28,6 @@ use OCA\Encryption\Session;
 use Test\TestCase;
 
 class StatusControllerTest extends TestCase {
-
 	/** @var \OCP\IRequest|\PHPUnit\Framework\MockObject\MockObject */
 	private $requestMock;
 

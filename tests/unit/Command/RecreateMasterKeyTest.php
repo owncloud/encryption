@@ -40,7 +40,6 @@ use Test\TestCase;
  */
 
 class RecreateMasterKeyTest extends TestCase {
-
 	/** @var View | \PHPUnit\Framework\MockObject\MockObject  */
 	protected $rootView;
 

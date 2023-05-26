@@ -33,7 +33,6 @@ use OCP\IUserSession;
  * @package OCA\Encryption\Tests\Panels
  */
 class AdminTest extends \Test\TestCase {
-
 	/** @var Admin */
 	private $panel;
 	/** @var IConfig */

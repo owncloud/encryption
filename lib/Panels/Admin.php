@@ -34,7 +34,6 @@ use OCP\ISession;
 use OCP\IUserSession;
 
 class Admin implements ISettings {
-
 	/** @var IConfig */
 	protected $config;
 	/** @var ILogger */
