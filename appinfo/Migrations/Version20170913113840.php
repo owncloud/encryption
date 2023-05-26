@@ -25,7 +25,6 @@ use OCP\Migration\ISimpleMigration;
 use OCP\Migration\IOutput;
 
 class Version20170913113840 implements ISimpleMigration {
-
 	/**
 	 * @param IOutput $out
 	*/

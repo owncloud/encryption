@@ -36,7 +36,6 @@ use OCP\Encryption\IFile;
 use OCP\Files\FileInfo;
 
 class Recovery {
-
 	/**
 	 * @var null|IUser
 	 */

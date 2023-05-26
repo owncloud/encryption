@@ -36,7 +36,6 @@ use OCP\IUserManager;
 use OCP\IUserSession;
 
 class SettingsController extends Controller {
-
 	/** @var IL10N */
 	private $l;
 

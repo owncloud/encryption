@@ -35,7 +35,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class MigrateKeys extends Command {
-
 	/** @var IUserManager */
 	private $userManager;
 	/** @var View */
@@ -86,7 +85,6 @@ class MigrateKeys extends Command {
 	 * @return int
 	 */
 	protected function execute(InputInterface $input, OutputInterface $output): int {
-
 		// perform system reorganization
 		$migration = new Migration($this->config, $this->view, $this->connection, $this->logger);
 

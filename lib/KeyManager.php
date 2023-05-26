@@ -36,7 +36,6 @@ use OCP\ILogger;
 use OCP\IUserSession;
 
 class KeyManager {
-
 	/**
 	 * @var Session
 	 */

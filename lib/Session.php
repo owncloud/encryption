@@ -27,7 +27,6 @@ use OCA\Encryption\Exceptions\PrivateKeyMissingException;
 use \OCP\ISession;
 
 class Session {
-
 	/** @var ISession */
 	protected $session;
 

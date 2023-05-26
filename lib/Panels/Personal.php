@@ -31,7 +31,6 @@ use OCP\Settings\ISettings;
 use OCP\Template;
 
 class Personal implements ISettings {
-
 	/** @var ILogger */
 	protected $logger;
 	/** @var IUserSession */

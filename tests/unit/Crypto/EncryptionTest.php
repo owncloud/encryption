@@ -28,7 +28,6 @@ use Test\TestCase;
 use OCA\Encryption\Crypto\Encryption;
 
 class EncryptionTest extends TestCase {
-
 	/** @var Encryption */
 	private $instance;
 

@@ -28,7 +28,6 @@ use OCA\Encryption\Crypto\Crypt;
 use Test\TestCase;
 
 class CryptTest extends TestCase {
-
 	/** @var \OCP\ILogger|\PHPUnit\Framework\MockObject\MockObject */
 	private $logger;
 

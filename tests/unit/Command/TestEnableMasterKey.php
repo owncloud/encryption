@@ -27,7 +27,6 @@ use OCA\Encryption\Util;
 use Test\TestCase;
 
 class TestEnableMasterKey extends TestCase {
-
 	/** @var  EnableMasterKey */
 	protected $enableMasterKey;
 

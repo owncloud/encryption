@@ -45,7 +45,6 @@ use OCP\IUserSession;
  * @package OCA\Encryption\Crypto
  */
 class CryptHSM extends Crypt {
-
 	/**
 	 * @var IClientService
 	 */
