@@ -4,8 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased] - XXXX-XX-XX
+## [1.6.1] - 2023-06-27
 
+### Changed
+
+-  [#395](https://github.com/owncloud/encryption/issues/395) - Always return an int from Symfony Command execute method
+- Dependencies updated.
+- Strings updated.
 
 
 ## [1.6.0] - 2023-03-29
