@@ -39,6 +39,7 @@
     "Please select an encryption option" : "Моля, изберете опция за криптиране",
     "Master Key" : "Master Key",
     "Permanently select this mode" : "Постоянен избор на този режим",
+    "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information." : "Модулът за шифроване със специфичен за потребителя ключ е отхвърлен. За повече информация вижте <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">бележките към версията на сървъра ↗</a>.",
     "Encrypt the home storage" : "Криптиране на домашното хранилище",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "С активирането на тази опция всички файлове, съхранявани в основното хранилище ще бъдат криптирани, в противен случай ще бъдат криптирани само файловете във външното хранилище",
     "Enable recovery key" : "Активиране на ключ за възстановяване",
