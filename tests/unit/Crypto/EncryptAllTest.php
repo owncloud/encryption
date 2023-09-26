@@ -428,7 +428,7 @@ class EncryptAllTest extends TestCase {
 			->setMethods(['setupUserFS'])
 			->getMock();
 
-		$result = $this->invokePrivate($encryptAll, 'encryptFile', ["/${userName}/files/bar.txt"]);
+		$result = $this->invokePrivate($encryptAll, 'encryptFile', ["/$userName/files/bar.txt"]);
 		$this->assertTrue($result);
 
 		$view1 = new View('/');
