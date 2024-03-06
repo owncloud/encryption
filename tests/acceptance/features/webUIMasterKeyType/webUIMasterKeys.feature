@@ -6,9 +6,8 @@ Feature: encrypt files using master keys
 
 
   Scenario: user cannot access their file after recreating master key with re-login
-    Given user "Alice" has been created with default attributes and large skeleton files
-    And the administrator has set the encryption type to "masterkey"
-    And user "Alice" has uploaded file "filesForUpload/textfile.txt" to "/somefile.txt"
+    Given user "Alice" has been created with default attributes and small skeleton files
+    And user "Alice" has uploaded file "filesForUpload/textfile.txt" to "/lorem.txt"
     And user "Alice" has logged in using the webUI
     When the administrator successfully recreates the encryption masterkey using the occ command
     Then the command output should contain the text 'Note: All users are required to relogin.'
@@ -19,9 +18,8 @@ Feature: encrypt files using master keys
 
 
   Scenario: user can access their file after recreating master key with re-login
-    Given user "Alice" has been created with default attributes and large skeleton files
-    And the administrator has set the encryption type to "masterkey"
-    And user "Alice" has uploaded file "filesForUpload/textfile.txt" to "/somefile.txt"
+    Given user "Alice" has been created with default attributes and small skeleton files
+    And user "Alice" has uploaded file "filesForUpload/textfile.txt" to "/lorem.txt"
     And user "Alice" has logged in using the webUI
     When the administrator successfully recreates the encryption masterkey using the occ command
     And the user re-logs in as "Alice" using the webUI
