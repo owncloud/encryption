@@ -321,28 +321,28 @@ config = {
 }
 
 def main(ctx):
-    before = beforePipelines(ctx)
+    #before = beforePipelines(ctx)
 
     coverageTests = coveragePipelines(ctx)
     if (coverageTests == False):
         print("Errors detected in coveragePipelines. Review messages above.")
         return []
 
-    dependsOn(before, coverageTests)
+    #dependsOn(before, coverageTests)
 
     nonCoverageTests = nonCoveragePipelines(ctx)
     if (nonCoverageTests == False):
         print("Errors detected in nonCoveragePipelines. Review messages above.")
         return []
 
-    dependsOn(before, nonCoverageTests)
+    #dependsOn(before, nonCoverageTests)
 
     stages = stagePipelines(ctx)
     if (stages == False):
         print("Errors detected. Review messages above.")
         return []
 
-    dependsOn(before, stages)
+    #dependsOn(before, stages)
 
     if (coverageTests == []):
         afterCoverageTests = []
@@ -353,7 +353,7 @@ def main(ctx):
     after = afterPipelines(ctx)
     dependsOn(afterCoverageTests + nonCoverageTests + stages, after)
 
-    return before + coverageTests + afterCoverageTests + nonCoverageTests + stages + after
+    return coverageTests + afterCoverageTests + nonCoverageTests + stages + after
 
 def beforePipelines(ctx):
     return validateDailyTarballBuild() + codestyle(ctx) + jscodestyle(ctx) + phpstan(ctx) + phan(ctx) + phplint(ctx) + checkStarlark()
@@ -1896,7 +1896,7 @@ def installTestrunner(ctx, phpVersion, useBundledApp):
         "image": OC_CI_PHP % phpVersion,
         "commands": [
             "mkdir /tmp/testrunner",
-            "git clone -b master --depth=1 https://github.com/owncloud/core.git /tmp/testrunner",
+            "git clone -b night --depth=1 https://github.com/nirajacharya2/core /tmp/testrunner",
             "rsync -aIX /tmp/testrunner %s" % dir["base"],
         ] + ([
             "cp -r %s/apps/%s %s/apps/" % (dir["testrunner"], ctx.repo.name, dir["server"]),

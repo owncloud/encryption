@@ -5,24 +5,24 @@ Feature: encrypt files using master keys
   So that I can use a common key to encrypt files of all user
 
 
-  Scenario: user cannot access their file after recreating master key with re-login
-    Given user "Alice" has been created with default attributes and small skeleton files
-    And user "Alice" has uploaded file "filesForUpload/textfile.txt" to "/lorem.txt"
+  Scenario: user cannot access their file after recreating master key without re-login
+    Given user "Alice" has been created with default attributes and without skeleton files
+    And user "Alice" has uploaded file "filesForUpload/textfile.txt" to "/somefile.txt"
     And user "Alice" has logged in using the webUI
     When the administrator successfully recreates the encryption masterkey using the occ command
     Then the command output should contain the text 'Note: All users are required to relogin.'
-    When the user opens file "lorem.txt" expecting to fail using the webUI
-    Then the user should be redirected to the general exception webUI page with the title "%productname%"
+    When the user opens file "somefile.txt" expecting to fail using the webUI
+    Then the user should be redirected to the general exception webUI page with the title "server"
     And the title of the exception on general exception webUI page should be "Forbidden"
     And a message should be displayed on the general exception webUI page containing "Encryption not ready"
 
 
   Scenario: user can access their file after recreating master key with re-login
     Given user "Alice" has been created with default attributes and small skeleton files
-    And user "Alice" has uploaded file "filesForUpload/textfile.txt" to "/lorem.txt"
+    And user "Alice" has uploaded file "filesForUpload/textfile.txt" to "/somefile.txt"
     And user "Alice" has logged in using the webUI
     When the administrator successfully recreates the encryption masterkey using the occ command
     And the user re-logs in as "Alice" using the webUI
-    And the user opens file "lorem.txt" using the webUI
+    And the user opens file "somefile.txt" using the webUI
     Then no dialog should be displayed on the webUI
     And the user should be redirected to a webUI page with the title "Files - %productname%"
