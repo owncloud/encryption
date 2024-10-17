@@ -41,6 +41,7 @@ OC.L10N.register(
     "Please select an encryption option" : "Пожалуйста, выберите вариант шифрования",
     "Master Key" : "Мастер-ключ",
     "Permanently select this mode" : "Выбраить этот режим в качестве постоянного",
+    "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information." : "Модуль шифрования ключа пользователя устарел.<a target=\"_blank\" rel=\"noreferrer\" href=\"%s\"> Дополнительную информацию см. </a>в примечаниях к выпуску сервера ↗.",
     "Encrypt the home storage" : "Зашифровать домашнюю директорию",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Данный параметр позволяет зашифровать все файлы, хранящиеся в главном хранилище, иначе только файлы на внешних хранилищах будут зашифрованы",
     "Enable recovery key" : "Включить ключ восстановления",
