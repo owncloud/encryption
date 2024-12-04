@@ -41,6 +41,7 @@ OC.L10N.register(
     "Please select an encryption option" : "Scegliere un tipo di crittografazione.",
     "Master Key" : "Chiave principale",
     "Permanently select this mode" : "Seelziona questo modo permanentemente",
+    "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information." : " Il modulo di crittografia della chiave specifica dell'utente è deprecato. Vedi le <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">note sulla versione del server ↗</a> per maggiori informazioni.",
     "Encrypt the home storage" : "Cifra l'archiviazione principale",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "L'abilitazione di questa opzione cifra tutti i file memorizzati sull'archiviazione principale, altrimenti saranno cifrati solo i file sull'archiviazione esterna.",
     "Enable recovery key" : "Abilita chiave di ripristino",
