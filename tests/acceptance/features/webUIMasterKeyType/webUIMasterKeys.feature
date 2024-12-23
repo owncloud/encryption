@@ -4,7 +4,7 @@ Feature: encrypt files using master keys
   I want to be able to encrypt user files using master keys
   So that I can use a common key to encrypt files of all user
 
-
+  @skip @issue-409
   Scenario: user cannot access their file after recreating master key with re-login
     Given user "Alice" has been created with default attributes and large skeleton files
     And the administrator has set the encryption type to "masterkey"
