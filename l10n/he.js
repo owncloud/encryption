@@ -41,6 +41,7 @@ OC.L10N.register(
     "Please select an encryption option" : "יש לבחור סוג הצפנה",
     "Master Key" : "מפתח ראשי",
     "Permanently select this mode" : "בחירת מצב זה באופן קבוע",
+    "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information." : "מודול הצפנת מפתחות מסוימים למשתמשים לא בשימוש עוד. יש פרטים נוספים ב<a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">הערות הוצאה לאור של השרת ↖</a>.",
     "Encrypt the home storage" : "הצפנת אחסון הבית",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "הפעלת אפשרות זו מצפינה את כל הקבצים המאוחסנים באחסון המרכזי, אחרת רק הקבצים המאוחסנים בהתקנים חיצוניים יוצפנו",
     "Enable recovery key" : "מאפשר מפתח שחזור",
