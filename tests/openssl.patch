@@ -1,0 +1,22 @@
+--- openssltest.cnf	2025-05-09 11:42:11.851363842 +0545
++++ opensslx.cnf	2025-05-09 11:44:56.992072669 +0545
+@@ -57,6 +57,7 @@
+ # List of providers to load
+ [provider_sect]
+ default = default_sect
++legacy = legacy_sect
+ # The fips section name should match the section name inside the
+ # included fipsmodule.cnf.
+ # fips = fips_sect
+@@ -70,7 +71,10 @@
+ # OpenSSL may not work correctly which could lead to significant system
+ # problems including inability to remotely access the system.
+ [default_sect]
+-# activate = 1
++activate = 1
++
++[legacy_sect]
++activate = 1
+ 
+ 
+ ####################################################################
