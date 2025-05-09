@@ -1977,6 +1977,7 @@ def setupServerAndApp(ctx, phpVersion, logLevel, federatedServerNeeded = False, 
         "name": "setup-server-%s" % ctx.repo.name,
         "image": OC_CI_PHP % phpVersion,
         "commands": [
+            "pwd",
             "ls -l /usr/lib/ssl",
             "ls -l /etc/ssl",
             "cat /etc/ssl/openssl.cnf",
