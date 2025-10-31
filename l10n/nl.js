@@ -41,6 +41,7 @@ OC.L10N.register(
     "Please select an encryption option" : "Kies een encryptie-optie",
     "Master Key" : "Master Sleutel",
     "Permanently select this mode" : "Kies deze modus permanent",
+    "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information." : "De coderingsmodule voor gebruikersspecifieke sleutels is afgeschaft. Zie de <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release-opmerkingen ↗</a> Voor meer informatie.",
     "Encrypt the home storage" : "Versleutel de eigen serveropslag",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Het inschakelen van deze optie zorgt voor versleutelen van alle bestanden op do hoofdopslag, anders worden alleen bestanden op externe opslag versleuteld",
     "Enable recovery key" : "Activeer herstelsleutel",
