@@ -51,7 +51,7 @@ OC.L10N.register(
     "Old recovery key password" : "旧的恢复密钥",
     "New recovery key password" : "新的恢复密钥",
     "Repeat new recovery key password" : "重复新的恢复密钥",
-    "Change Password" : "更改密碼",
+    "Change Password" : "修改密码",
     "ownCloud basic encryption module" : "ownCloud 基础加密模块",
     "Your private key password no longer matches your log-in password." : "您的私钥密码不再匹配您的登录密码：",
     "Set your old private key password to your current log-in password:" : "讲您旧的私钥密码改为当前登录密码：",
@@ -61,7 +61,7 @@ OC.L10N.register(
     "Update Private Key Password" : "更新私人金鑰密碼",
     "Enable password recovery:" : "啟用密碼還原:",
     "Enabling this option will allow you to reobtain access to your encrypted files in case of password loss" : "啟用這個選項將會允許您因忘記密碼但需要存取您的加密檔案",
-    "Enabled" : "啟用",
+    "Enabled" : "已啓用",
     "Disabled" : "停用"
 },
 "nplurals=1; plural=0;");

@@ -39,6 +39,7 @@
     "Please select an encryption option" : "Por favor selecione uma opção de encriptação",
     "Master Key" : "Chave-mestra",
     "Permanently select this mode" : "Selecionar este modo permanentemente",
+    "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information." : "O módulo de criptografia de chave específica do usuário está obsoleto. Veja as <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">notas de lançamento do servidor ↗</a> para maiores informações.",
     "Encrypt the home storage" : "Encriptar o armazenamento do início",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "Ativando esta opção todos os ficheiros armazenados no armazenamento principal serão encriptados, senão serão encriptados todos os ficheiros no armazenamento externo",
     "Enable recovery key" : "Ativar a chave de recuperação",
