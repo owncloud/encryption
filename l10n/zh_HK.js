@@ -32,6 +32,7 @@ OC.L10N.register(
     "Can not read this file, probably this is a shared file. Please ask the file owner to reshare the file with you." : "无法读取这个文件（或许这是一个共享文件？），请要求文件所有者重新与您分享这个文件。",
     "Hey there,\n\nthe admin enabled server-side-encryption. Your files were encrypted using the password '%s'.\n\nPlease login to the web interface, go to the section 'ownCloud basic encryption module' of your personal settings and update your encryption password by entering this password into the 'old log-in password' field and your current login-password.\n\n" : "您好，\n\n管理员启用了服务器端加密。你的文件已被用密码 '%s' 加密。\n\n请登录到网页界面，在你的个人设置中找到“ownCloud 基础加密模块”一节，将此密码填入“旧的登录密码”框内，再填写当前的登录密码以更新你的加密密码。\n\n",
     "The share will expire on %s." : "此分享将在 %s 过期。",
+    "Cheers!" : "太棒了！",
     "Hey there,<br><br>the admin enabled server-side-encryption. Your files were encrypted using the password <strong>%s</strong>.<br><br>Please login to the web interface, go to the section \"ownCloud basic encryption module\" of your personal settings and update your encryption password by entering this password into the \"old log-in password\" field and your current login-password.<br><br>" : "您好，<br><br>管理员启用了服务器端加密。你的文件已被用密码 <strong>%s</strong> 加密。<br><br>请登录到网页界面，在你的个人设置中找到“ownCloud 基础加密模块”一节，将此密码填入“旧的登录密码”框内，再填写当前的登录密码以更新你的加密密码。<br><br>",
     "Default encryption module" : "默認加密模組",
     "Encryption App is enabled but your keys are not initialized, please log-out and log-in again" : "加密应用被启用了，但是你的加密密钥没有初始化，请重新登出登录系统一次。",
