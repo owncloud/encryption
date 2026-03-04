@@ -472,7 +472,11 @@ class Crypt {
 	 */
 	protected function isValidPrivateKey($plainKey) {
 		$res = \openssl_get_privatekey($plainKey);
-		if (\is_resource($res)) {
+		if (\is_resource($res) || $res instanceof \OpenSSLAsymmetricKey) {  // @phpstan-ignore-line  @phan-suppress-current-line PhanUndeclaredClassInstanceof
+			// instanceof check is for PHP8.0+
+			// for PHP7.4 it won't be evaluated (because it's a resource)
+			// or it will be evaluated as false if the OpenSSLAsymmetricKey
+			// doesn't exists
 			$sslInfo = \openssl_pkey_get_details($res);
 			if (isset($sslInfo['key'])) {
 				return true;
@@ -697,10 +701,14 @@ class Crypt {
 		}
 
 		/** @phan-suppress-next-line PhanParamTooFewInternal */
-		if (\openssl_open($encKeyFile, $plainContent, $shareKey, $privateKey)) {
+		if (\openssl_open($encKeyFile, $plainContent, $shareKey, $privateKey, 'aes-256-ecb')) {
 			return $plainContent;
 		} else {
-			throw new MultiKeyDecryptException('multikeydecrypt with share key failed:' . \openssl_error_string());
+			if (\openssl_open($encKeyFile, $plainContent, $shareKey, $privateKey, 'RC4')) {
+				return $plainContent;
+			} else {
+				throw new MultiKeyDecryptException('multikeydecrypt with share key failed:' . \openssl_error_string());
+			}
 		}
 	}
 
@@ -723,7 +731,7 @@ class Crypt {
 		$mappedShareKeys = [];
 
 		/** @phan-suppress-next-line PhanParamTooFewInternal */
-		if (\openssl_seal($plainContent, $sealed, $shareKeys, $keyFiles)) {
+		if (\openssl_seal($plainContent, $sealed, $shareKeys, $keyFiles, 'aes-256-ecb')) {
 			$i = 0;
 
 			// Ensure each shareKey is labelled with its corresponding key id
