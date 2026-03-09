@@ -118,7 +118,9 @@ class HSMDaemonDecrypt extends Command {
 		if ($input->getOption('username')) {
 			$question = new Question('Please enter password for user "' . $input->getOption('username') . '": ');
 			$question->setHidden(true);
-			$password = $this->getHelper('question')->ask($input, $output, $question);
+			/** @var \Symfony\Component\Console\Helper\QuestionHelper $questionHelper */
+			$questionHelper = $this->getHelper('question');
+			$password = $questionHelper->ask($input, $output, $question); // @phan-suppress-current-line PhanUndeclaredMethod
 		}
 
 		try {

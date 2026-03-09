@@ -1,8 +1,8 @@
 <?php
-	/** @var array $_ */
-	/** @var \OCP\IL10N $l */
-	script('encryption', 'settings-personal');
-	?>
+/** @var array $_ */
+/** @var \OCP\IL10N $l */
+script('encryption', 'settings-personal');
+?>
 <form id="ocDefaultEncryptionModule" class="section">
 	<h2 class="app-name"><?php p($l->t('ownCloud basic encryption module')); ?></h2>
 
