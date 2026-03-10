@@ -69,7 +69,6 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
             ],
             "extraSetup": [
                 {
@@ -93,7 +92,6 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
             ],
             "extraSetup": [
                 {
@@ -116,7 +114,6 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
             ],
             "emailNeeded": True,
             "extraSetup": [
@@ -146,40 +143,6 @@ config = {
             "numberOfParts": 40,
             "emailNeeded": True,
             "federatedServerNeeded": True,
-            "extraApps": {
-                "files_external": "",
-            },
-            "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
-            },
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd %s" % dir["server"],
-                        "php occ encryption:enable",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "api-core-latest-masterkey": {
-            "suites": [
-                "apiCoreMKey",
-            ],
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "latest",
-            ],
-            "runCoreTests": True,
-            "runAllSuites": True,
-            "numberOfParts": 40,
-            "emailNeeded": True,
-            "federatedServerNeeded": True,
-            "cron": "nightly",
             "extraApps": {
                 "files_external": "",
             },
@@ -248,41 +211,6 @@ config = {
             "emailNeeded": True,
             "federatedServerNeeded": True,
             "selUserNeeded": True,
-            "extraApps": {
-                "files_external": "",
-            },
-            "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
-            },
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd %s" % dir["server"],
-                        "php occ encryption:enable",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "webUI-core-latest-masterkey": {
-            "suites": [
-                "webUIcoreMKey",
-            ],
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "latest",
-            ],
-            "runCoreTests": True,
-            "runAllSuites": True,
-            "numberOfParts": 20,
-            "emailNeeded": True,
-            "federatedServerNeeded": True,
-            "selUserNeeded": True,
-            "cron": "nightly",
             "extraApps": {
                 "files_external": "",
             },
@@ -1076,7 +1004,7 @@ def acceptance(ctx):
     errorFound = False
 
     default = {
-        "servers": ["daily-master-qa", "latest"],
+        "servers": ["daily-master-qa"],
         "browsers": ["chrome"],
         "phpVersions": [DEFAULT_PHP_VERSION],
         "databases": ["mariadb:10.2"],
