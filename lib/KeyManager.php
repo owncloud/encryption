@@ -578,7 +578,7 @@ class KeyManager {
 	 * @param bool $includeUserKeys
 	 */
 	public function backupAllKeys($purpose, $timestamp = true, $includeUserKeys = true) {
-//		$backupDir = $this->keyStorage->;
+		//		$backupDir = $this->keyStorage->;
 	}
 
 	/**

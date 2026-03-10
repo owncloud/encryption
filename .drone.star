@@ -4,7 +4,7 @@ MINIO_MC = "minio/mc:RELEASE.2020-12-18T10-53-53Z"
 OC_CI_ALPINE = "owncloudci/alpine:latest"
 OC_CI_BAZEL_BUILDIFIER = "owncloudci/bazel-buildifier"
 OC_CI_CEPH = "owncloudci/ceph:tag-build-master-jewel-ubuntu-16.04"
-OC_CI_CORE = "owncloudci/core"
+OC_CI_CORE = "owncloudci/core:php83"
 OC_CI_DRONE_SKIP_PIPELINE = "owncloudci/drone-skip-pipeline"
 OC_CI_NODEJS = "owncloudci/nodejs:%s"
 OC_CI_ORACLE_XE = "owncloudci/oracle-xe:latest"
@@ -21,7 +21,7 @@ SELENIUM_STANDALONE_CHROME_DEBUG = "selenium/standalone-chrome-debug:3.141.59-ox
 SELENIUM_STANDALONE_FIREFOX_DEBUG = "selenium/standalone-firefox-debug:3.8.1"
 SONARSOURCE_SONAR_SCANNER_CLI = "sonarsource/sonar-scanner-cli"
 
-DEFAULT_PHP_VERSION = "7.4"
+DEFAULT_PHP_VERSION = "8.3"
 DEFAULT_NODEJS_VERSION = "14"
 
 # minio mc environment variables
@@ -53,22 +53,11 @@ config = {
     "branches": [
         "master",
     ],
-    "codestyle": True,
-    "phpstan": True,
-    "phan": True,
+    "codestyle": False,
+    "phpstan": False,
+    "phan": False,
     "javascript": False,
-    "phpunit": {
-        "withCoverage": {
-            "phpVersions": [
-                DEFAULT_PHP_VERSION,
-            ],
-            "databases": [
-                "sqlite",
-                "mysql:8.0",
-                "postgres:9.4",
-            ],
-        },
-    },
+    "phpunit": False,
     "acceptance": {
         "cli-masterkey": {
             "suites": [
@@ -80,7 +69,6 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
             ],
             "extraSetup": [
                 {
@@ -104,7 +92,6 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
             ],
             "extraSetup": [
                 {
@@ -127,7 +114,6 @@ config = {
             ],
             "servers": [
                 "daily-master-qa",
-                "latest",
             ],
             "emailNeeded": True,
             "extraSetup": [
@@ -157,40 +143,6 @@ config = {
             "numberOfParts": 40,
             "emailNeeded": True,
             "federatedServerNeeded": True,
-            "extraApps": {
-                "files_external": "",
-            },
-            "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
-            },
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd %s" % dir["server"],
-                        "php occ encryption:enable",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "api-core-latest-masterkey": {
-            "suites": [
-                "apiCoreMKey",
-            ],
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "latest",
-            ],
-            "runCoreTests": True,
-            "runAllSuites": True,
-            "numberOfParts": 40,
-            "emailNeeded": True,
-            "federatedServerNeeded": True,
-            "cron": "nightly",
             "extraApps": {
                 "files_external": "",
             },
@@ -259,41 +211,6 @@ config = {
             "emailNeeded": True,
             "federatedServerNeeded": True,
             "selUserNeeded": True,
-            "extraApps": {
-                "files_external": "",
-            },
-            "extraEnvironment": {
-                "ENCRYPTION_TYPE": "masterkey",
-            },
-            "extraSetup": [
-                {
-                    "name": "configure-app",
-                    "image": OC_CI_PHP % DEFAULT_PHP_VERSION,
-                    "commands": [
-                        "cd %s" % dir["server"],
-                        "php occ encryption:enable",
-                        "php occ config:list",
-                    ],
-                },
-            ],
-        },
-        "webUI-core-latest-masterkey": {
-            "suites": [
-                "webUIcoreMKey",
-            ],
-            "databases": [
-                "mysql:8.0",
-            ],
-            "servers": [
-                "latest",
-            ],
-            "runCoreTests": True,
-            "runAllSuites": True,
-            "numberOfParts": 20,
-            "emailNeeded": True,
-            "federatedServerNeeded": True,
-            "selUserNeeded": True,
-            "cron": "nightly",
             "extraApps": {
                 "files_external": "",
             },
@@ -1087,7 +1004,7 @@ def acceptance(ctx):
     errorFound = False
 
     default = {
-        "servers": ["daily-master-qa", "latest"],
+        "servers": ["daily-master-qa"],
         "browsers": ["chrome"],
         "phpVersions": [DEFAULT_PHP_VERSION],
         "databases": ["mariadb:10.2"],

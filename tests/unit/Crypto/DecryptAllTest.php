@@ -70,13 +70,13 @@ class DecryptAllTest extends TestCase {
 	public function setUp(): void {
 		parent::setUp();
 
-		$this->util = $this->getMockBuilder('OCA\Encryption\Util')
+		$this->util = $this->getMockBuilder(Util::class)
 			->disableOriginalConstructor()->getMock();
-		$this->keyManager = $this->getMockBuilder('OCA\Encryption\KeyManager')
+		$this->keyManager = $this->getMockBuilder(KeyManager::class)
 			->disableOriginalConstructor()->getMock();
-		$this->crypt = $this->getMockBuilder('OCA\Encryption\Crypto\Crypt')
+		$this->crypt = $this->getMockBuilder(Crypt::class)
 			->disableOriginalConstructor()->getMock();
-		$this->session = $this->getMockBuilder('OCA\Encryption\Session')
+		$this->session = $this->getMockBuilder(Session::class)
 			->disableOriginalConstructor()->getMock();
 		$this->userManager = $this->createMock(IUserManager::class);
 		$this->questionHelper = $this->getMockBuilder('Symfony\Component\Console\Helper\QuestionHelper')
@@ -120,7 +120,7 @@ class DecryptAllTest extends TestCase {
 		$input->expects($this->once())
 			->method('hasOption')
 			->with('method')
-			->willReturn($method);
+			->willReturn(true);
 
 		$input->expects($this->any())
 			->method('getOption')
@@ -138,7 +138,7 @@ class DecryptAllTest extends TestCase {
 		$this->session->expects($this->once())->method('prepareDecryptAll')
 			->with('user1', 'key1');
 
-		$this->invokePrivate($this->instance, 'updateSession', ['user1', 'key1']);
+		self::invokePrivate($this->instance, 'updateSession', ['user1', 'key1']);
 	}
 
 	/**
@@ -178,7 +178,7 @@ class DecryptAllTest extends TestCase {
 
 		$this->assertSame(
 			$unencryptedKey,
-			$this->invokePrivate($this->instance, 'getPrivateKey', [$user, $password])
+			self::invokePrivate($this->instance, 'getPrivateKey', [$user, $password])
 		);
 	}
 
