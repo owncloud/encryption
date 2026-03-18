@@ -112,8 +112,8 @@ class RecreateMasterKey extends Command {
 				. ' Do you want to continue? (y/n)',
 				false
 			);
-			//$questionHelper = $this->getHelper('question');
-			if ($yes || $this->getHelper('question')->ask($input, $output, $question)) {
+			/** @phpstan-ignore-next-line */
+			if ($yes || $this->getHelper('question')->ask($input, $output, $question)) { // @phan-suppress-current-line PhanUndeclaredMethod
 				$output->writeln("Decryption started\n");
 				$progress = new ProgressBar($output);
 				$progress->start();

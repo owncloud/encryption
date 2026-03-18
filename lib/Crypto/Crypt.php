@@ -164,7 +164,7 @@ class Crypt {
 	/**
 	 * Generates a new private key
 	 *
-	 * @return resource|bool
+	 * @return \OpenSSLAsymmetricKey|resource|bool
 	 */
 	public function getOpenSSLPKey() {
 		$config = $this->getOpenSSLConfig();
@@ -472,7 +472,7 @@ class Crypt {
 	 */
 	protected function isValidPrivateKey($plainKey) {
 		$res = \openssl_get_privatekey($plainKey);
-		if (\is_resource($res) || $res instanceof \OpenSSLAsymmetricKey) {  // @phpstan-ignore-line  @phan-suppress-current-line PhanUndeclaredClassInstanceof
+		if (\is_resource($res) || $res instanceof \OpenSSLAsymmetricKey) {
 			// instanceof check is for PHP8.0+
 			// for PHP7.4 it won't be evaluated (because it's a resource)
 			// or it will be evaluated as false if the OpenSSLAsymmetricKey
