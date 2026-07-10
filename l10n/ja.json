@@ -39,6 +39,7 @@
     "Please select an encryption option" : "暗号化のオプションを選択してください",
     "Master Key" : "マスターキー",
     "Permanently select this mode" : "常にこのモードを選択する",
+    "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information." : "ユーザー固有キー暗号化モジュールは非推奨となりました。詳細については、<a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">サーバーのリリースノート ↗</a> を参照してください。",
     "Encrypt the home storage" : "メインストレージを暗号化する",
     "Enabling this option encrypts all files stored on the main storage, otherwise only files on external storage will be encrypted" : "このオプションを有効にすると、メインストレージのファイル全てが暗号化されます。無効にすると、外部ストレージのファイルだけが暗号化されます。",
     "Enable recovery key" : "復旧キーを有効にする",
