@@ -7,6 +7,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 ## [Unreleased] - XXXX-XX-XX
 
 
+## [1.7.1] - 2026-07-22
+
+### Changed
+- Maintenance release re-signed with the ownCloud G2 code-signing certificate for the ownCloud 11.0.0 release.
+
+## [1.7.0] - 2026-06-29
+
+### Changed
+- ownCloud 11 compatible release (oc 11.0.0-rc1).
 
 ## [1.6.0] - 2023-03-29
 
@@ -64,8 +73,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 - Issues with recreating masterkeys when HSM is used [#128](https://github.com/owncloud/encryption/pull/128)
 
-
-[Unreleased]: https://github.com/owncloud/encryption/compare/v1.6.0...HEAD
+[Unreleased]: https://github.com/owncloud/encryption/compare/v1.7.1..master
+[1.7.1]: https://github.com/owncloud/encryption/compare/v1.7.0..v1.7.1
+[1.7.0]: https://github.com/owncloud/encryption/compare/v1.6.0..v1.7.0
 [1.6.0]: https://github.com/owncloud/encryption/compare/v1.5.3...v1.6.0
 [1.5.3]: https://github.com/owncloud/encryption/compare/v1.5.2...v1.5.3
 [1.5.2]: https://github.com/owncloud/encryption/compare/v1.5.1...v1.5.2
