@@ -16,7 +16,7 @@ This file provides context for AI coding agents (Claude Code, GitHub Copilot, Cu
 - `js/` -- Frontend JavaScript
 - `css/` -- Stylesheets
 - `templates/` -- PHP templates
-- `tests/` -- PHPUnit tests
+- `tests/` -- PHPUnit and acceptance tests
 - `l10n/` -- Translations
 - `Makefile` -- Build and test targets
 
@@ -31,8 +31,17 @@ This file provides context for AI coding agents (Claude Code, GitHub Copilot, Cu
 # Build
 make dist
 
-# Test
+# Test (PHPUnit)
 make test-php-unit
+
+# Test (API acceptance)
+make test-acceptance-api
+
+# Test (CLI acceptance)
+make test-acceptance-cli
+
+# Test (WebUI acceptance)
+make test-acceptance-webui
 
 # Lint
 make test-php-style
