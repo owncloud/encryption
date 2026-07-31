@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE) [![ownCloud OSPO](https://img.shields.io/badge/OSPO-ownCloud-blue)](https://kiteworks.com/opensource) [![Docker Hub](https://img.shields.io/docker/pulls/owncloud)](https://hub.docker.com/r/owncloud/server)
 
-An ownCloud Classic (OC10) app that provides transparent server-side encryption of files using AES-256 keys. Once enabled in the admin settings, all newly uploaded files are encrypted at rest. The module supports master key encryption, per-user keys, recovery keys, and optional HSM (Hardware Security Module) integration for key storage.
+An ownCloud Classic (OC10) app that provides transparent server-side encryption of files using AES-256 keys. Once enabled in the admin settings, all newly uploaded files are encrypted at rest. The module supports master key encryption, recovery keys, and optional HSM (Hardware Security Module) integration for key storage. Per-user key encryption is deprecated and no longer recommended — see the [server release notes](https://doc.owncloud.com/docs/next/server_release_notes.html#deprecation-note-for-user-key-storage-encryption).
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ sudo -u www-data php occ encryption:select-encryption-type masterkey
 sudo -u www-data php occ encryption:encrypt-all
 ```
 
-**Important:** Once enabled, encryption cannot be disabled. Read the documentation thoroughly before enabling. Requires OpenSSL 1.1.x (see repository notes regarding OpenSSL 3.x compatibility).
+**Important:** Read the documentation thoroughly before enabling. To reverse encryption, run `occ encryption:decrypt-all` (decrypts all files and disables encryption), followed by `occ encryption:disable`. Requires OpenSSL 1.1.x: OpenSSL 3.x retired several legacy ciphers this module depends on, which can break access to already-encrypted files. If this happens, re-enable the legacy ciphers in your OpenSSL 3.x config -- see the "Providers" section of the OpenSSL 3.0 wiki for the workaround.
 
 ## Documentation
 
