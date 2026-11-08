@@ -37,7 +37,7 @@
     "Encryption type: Master Key" : "Тип криптиране: Master Key",
     "Encryption type: User Specific Key" : "Тип криптиране: User Specific Key",
     "Please select an encryption option" : "Моля, изберете опция за криптиране",
-    "Master Key" : "Master Key",
+    "Master Key" : "Главен ключ",
     "Permanently select this mode" : "Постоянен избор на този режим",
     "User Specific Key encryption module is deprecated. See the <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">server release notes ↗</a> for more information." : "Модулът за шифроване със специфичен за потребителя ключ е отхвърлен. За повече информация вижте <a target=\"_blank\" rel=\"noreferrer\" href=\"%s\">бележките към версията на сървъра ↗</a>.",
     "Encrypt the home storage" : "Криптиране на домашното хранилище",
