@@ -89,7 +89,7 @@ class CryptHSM extends Crypt {
 	 */
 	public function __construct(ILogger $logger, IUserSession $userSession, IConfig $config, IL10N $l, IClientService $clientService, IRequest $request, ITimeFactory $timeFactory) {
 		parent::__construct($logger, $userSession, $config, $l);
-		$this->hsmUrl = \rtrim($this->config->getAppValue('encryption', 'hsm.url'), '/'); // no default, because Application DI only instantiates this if it is configured non empty
+		$this->hsmUrl = \rtrim($this->config->getAppValue('encryption', 'hsm.url') ?? '', '/'); // no default, because Application DI only instantiates this if it is configured non empty
 		$this->secret = $this->config->getAppValue('encryption', 'hsm.jwt.secret', 'secret');
 		$this->clockSkew = (int)$this->config->getAppValue('encryption', 'hsm.jwt.clockskew', 120); // 2min
 		$this->clientService = $clientService;
