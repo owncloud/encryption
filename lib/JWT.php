@@ -47,7 +47,7 @@ class JWT {
 	}
 
 	public static function signature($data, $key) {
-		return self::base64UrlEncode(\hash_hmac('sha256', $data, $key, true));
+		return self::base64UrlEncode(\hash_hmac('sha256', $data ?? '', $key ?? '', true));
 	}
 
 	public static function token($payload, $secret) {
