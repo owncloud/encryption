@@ -29,7 +29,12 @@ use OCA\Encryption\Factory\EncDecAllFactory;
 use OCA\Encryption\Util;
 use OCP\App\IAppManager;
 use OCP\IAppConfig;
+use OCP\UserInterface;
+use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Helper\QuestionHelper;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Tester\CommandTester;
 use Test\TestCase;
 
@@ -40,28 +45,34 @@ use Test\TestCase;
  */
 
 class RecreateMasterKeyTest extends TestCase {
-	/** @var View | \PHPUnit\Framework\MockObject\MockObject  */
+	/** @var View | MockObject  */
 	protected $rootView;
 
-	/** @var Util | \PHPUnit\Framework\MockObject\MockObject  */
+	/** @var Util | MockObject  */
 	protected $util;
 
-	/** @var \OC\Encryption\Util | \PHPUnit\Framework\MockObject\MockObject */
-	protected $encUitl;
+	/** @var \OC\Encryption\Util | MockObject */
+	protected $encUtil;
 
-	/** @var  IAppManager | \PHPUnit\Framework\MockObject\MockObject */
+	/** @var  IAppManager | MockObject */
 	protected $appManager;
 
-	/** @var  IAppConfig | \PHPUnit\Framework\MockObject\MockObject */
+	/** @var  IAppConfig | MockObject */
 	protected $appConfig;
 
-	/** @var  \Symfony\Component\Console\Output\OutputInterface | \PHPUnit\Framework\MockObject\MockObject */
+	/** @var  UserInterface | MockObject */
+	protected $userInterface;
+
+	/** @var  QuestionHelper | MockObject */
+	protected $questionHelper;
+
+	/** @var  OutputInterface | MockObject */
 	protected $output;
 
-	/** @var  \Symfony\Component\Console\Input\InputInterface | \PHPUnit\Framework\MockObject\MockObject */
+	/** @var  InputInterface | MockObject */
 	protected $input;
 
-	/** @var EncDecAllFactory | \PHPUnit\Framework\MockObject\MockObject */
+	/** @var EncDecAllFactory | MockObject */
 	private $encdecAllFactory;
 
 	/** @var  RecreateMasterKey */
@@ -76,7 +87,7 @@ class RecreateMasterKeyTest extends TestCase {
 		->disableOriginalConstructor()->getMock();
 		$this->util = $this->getMockBuilder('OCA\Encryption\Util')
 		->disableOriginalConstructor()->getMock();
-		$this->encUitl = $this->getMockBuilder('OC\Encryption\Util')
+		$this->encUtil = $this->getMockBuilder('OC\Encryption\Util')
 		->disableOriginalConstructor()->getMock();
 		$this->appManager = $this->getMockBuilder('OCP\App\IAppManager')
 		->disableOriginalConstructor()->getMock();
@@ -100,7 +111,7 @@ class RecreateMasterKeyTest extends TestCase {
 		$recreateMasterKeyCommand = new RecreateMasterKey(
 			$this->rootView,
 			$this->util,
-			$this->encUitl,
+			$this->encUtil,
 			$this->appManager,
 			$this->appConfig,
 			$this->encdecAllFactory
@@ -178,7 +189,7 @@ class RecreateMasterKeyTest extends TestCase {
 		$recreateCmd = new RecreateMasterKey(
 			$this->rootView,
 			$this->util,
-			$this->encUitl,
+			$this->encUtil,
 			$this->appManager,
 			$this->appConfig,
 			$this->encdecAllFactory

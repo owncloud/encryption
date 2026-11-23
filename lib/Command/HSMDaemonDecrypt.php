@@ -138,7 +138,7 @@ class HSMDaemonDecrypt extends Command {
 						'exp' => $this->timeFactory->getTime(),
 					], $this->config->getAppValue('encryption', 'hsm.jwt.secret', 'secret'))
 			],
-			'body' => \base64_decode($input->getArgument('decrypt'))
+			'body' => \base64_decode($input->getArgument('decrypt') ?? '')
 		]);
 
 		$decryptedStr = $response->getBody();
